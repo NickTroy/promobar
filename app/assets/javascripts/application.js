@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.minicolors
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui
-//= require jquery-ui/slider
 //= require turbolinks
 //= require_tree .

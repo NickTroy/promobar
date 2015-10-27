@@ -59,8 +59,4 @@ group :production do
 end
 
 # Use colorpicker
-group :assets do
-  gem 'bootstrap-colorpicker-rails'
-end
-# Use slider
-gem 'bootstrap-slider-rails'
+gem 'jquery-minicolors-rails'
