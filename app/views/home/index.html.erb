@@ -18,6 +18,7 @@
     <table class="table table-bordered table-striped table-hover">
       <thead>
       <tr>
+        <th>Bar text</th>
         <th>Type</th>
         <th colspan="2"></th>
       </tr>
@@ -27,7 +28,8 @@
 
         <% @promobars.each do |bar| %>
             <tr>
-              <td style="width: 95%;"><%= bar.bar_type == 1? "HEADER BAR": "FOOTER BAR" %></td>
+              <td style="width: 65%;"><%= bar.bar_text %></td>
+              <td style="width: 30%;"><%= bar.bar_type == 1? "HEADER BAR": "FOOTER BAR" %></td>
               <td style="width: 5%;"><%= link_to 'Delete', promobar_path(bar), method: :delete, data: { confirm: 'Are you sure, you want to delete this bar?' } %></td>
             </tr>
         <% end %>
