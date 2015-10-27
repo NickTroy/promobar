@@ -1,5 +1,5 @@
 class PromobarsController < ApplicationController
-  before_action :set_promobar, only: [:edit, :update, :destroy]
+  before_action :set_promobar, only: [:update, :destroy]
 
   # GET /promobars/new
   def new
@@ -7,8 +7,23 @@ class PromobarsController < ApplicationController
       @footer_promobar = Promobar.new
   end
 
-  # GET /promobars/manage
+  # GET /promobars/edit
   def edit
+  end
+
+  # GET /promobars/manage
+  def manage
+    if Promobar.where(type: 1).nil?
+      @header_promobar = Promobar.new
+    else
+      @header_promobar = Promobar.where(type: 1)
+    end
+
+    if Promobar.where(type: 2).nil?
+      @header_promobar = Promobar.new
+    else
+      @header_promobar = Promobar.where(type: 2)
+    end
   end
 
   # POST /promobars
