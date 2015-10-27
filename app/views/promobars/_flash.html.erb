@@ -4,10 +4,10 @@
     </div>
 <% end %>
 
-<% if @promobar.errors.any? %>
+<% if @header_promobar.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <ul>
-        <% @promobar.errors.full_messages.each do |message| %>
+        <% @header_promobar.errors.full_messages.each do |message| %>
             <li><%= message %></li>
         <% end %>
       </ul>
