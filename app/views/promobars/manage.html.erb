@@ -1,0 +1,18 @@
+<script type="text/javascript">
+    ShopifyApp.ready(function(){
+        ShopifyApp.Bar.initialize({
+            title: "Promotion bar",
+            icon: "<%= asset_path('faveicon.png') %>"
+        });
+    });
+</script>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+</div>
+
+
+
+
