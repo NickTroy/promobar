@@ -33,7 +33,7 @@ class PromobarsController < ApplicationController
 
     respond_to do |format|
       if @promobar.save
-        format.html { redirect_to root_url, notice: 'Promobar was successfully created.' }
+        format.html { redirect_to manage_promobars_url, notice: 'Promobar was successfully created.' }
         format.json { render :show, status: :created, location: @promobar }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class PromobarsController < ApplicationController
   def update
     respond_to do |format|
       if @promobar.update(promobar_params)
-        format.html { redirect_to root_url, notice: 'Promobar was successfully updated.' }
+        format.html { redirect_to manage_promobars_url, notice: 'Promobar was successfully updated.' }
         format.json { render :show, status: :ok, location: @promobar }
       else
         format.html { render :edit }
