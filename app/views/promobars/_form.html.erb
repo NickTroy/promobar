@@ -4,7 +4,7 @@
       range: "max",
       min: 1,
       max: 100,
-      value: $(".header-bar-opacity-switcher").attr("value")
+      value: $(".header-bar-opacity-switcher").attr("value"),
       slide: function( event, ui ) {
         $(".header-bar-opacity-switcher").attr("value", ui.value );
         $(".header-bar-opacity-value").html(ui.value + "%");
@@ -15,10 +15,10 @@
       range: "max",
       min: 1,
       max: 100,
-      value: $(".header-bar-opacity-switcher").attr("value")
+      value: $(".footer-bar-opacity-switcher").attr("value"),
       slide: function( event, ui ) {
-        $(".header-bar-opacity-switcher").attr("value", ui.value );
-        $(".header-bar-opacity-value").html(ui.value + "%");
+        $(".footer-bar-opacity-switcher").attr("value", ui.value );
+        $(".footer-bar-opacity-value").html(ui.value + "%");
       }
     });
   });
