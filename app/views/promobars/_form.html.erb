@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  ShopifyApp.ready(function() {
+    $(".header-background-color").colorpicker();
+  });
+</script>
+
 <%= form_for(@header_promobar) do |f| %>
 
   <div class="col-md-12">
@@ -74,7 +80,7 @@
     </div>
 
     <div class="col-md-4">
-      <div class="form-group">
+      <div class="form-group header-background-color">
         <%= f.label :bar_background_color %><br>
         <%= f.text_field :bar_background_color, class: "form-control" %>
       </div>
