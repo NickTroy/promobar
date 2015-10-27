@@ -16,13 +16,13 @@ class PromobarsController < ApplicationController
     if Promobar.where(type: 1).nil?
       @header_promobar = Promobar.new
     else
-      @header_promobar = Promobar.where(type: 1).take
+      @header_promobar = Promobar.where(bar_type: 1).take
     end
 
     if Promobar.where(type: 2).nil?
       @header_promobar = Promobar.new
     else
-      @header_promobar = Promobar.where(type: 2).take
+      @header_promobar = Promobar.where(bar_type: 2).take
     end
   end
 
