@@ -3,6 +3,8 @@ class PromobarsController < ApplicationController
 
   # GET /promobars/new
   def new
+    @header_promobar = Promobar.new
+    @footer_promobar = Promobar.new
   end
 
   # GET /promobars/manage
