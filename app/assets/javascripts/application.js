@@ -16,4 +16,4 @@
 //= require turbolinks
 //= require jquery.minicolors
 //= require_tree .
-//= require jquery # Not included
+
