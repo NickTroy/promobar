@@ -1,9 +1,26 @@
 <script type="text/javascript">
-  $(document).on('click', function(e) {
-    console.log(123);
+  $(function() {
+    $( "#slider-range-max" ).slider({
+      range: "max",
+      min: 1,
+      max: 10,
+      value: 2,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+      }
+    });
+    $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
   });
 </script>
-<div id="slider"></div>
+
+<div id="slider">
+  <p>
+    <label for="amount">Minimum number of bedrooms:</label>
+    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  </p>
+  <div id="slider-range-max"></div>
+</div>
+
 <%= form_for(@header_promobar) do |f| %>
 
   <div class="col-md-12">
