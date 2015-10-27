@@ -3,55 +3,56 @@
   <div class="col-md-12">
     <%= render 'flash' %>
 
-    <div class="col-md-6">
+    <div class="col-md-8">
       <div class="form-group">
         <%= f.label :bar_type %><br>
-        <%= f.text_field :bar_type %>
+        <%= f.text_field :bar_type, class: "form-control" %>
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="actions">
-        <%= f.submit nil, class: "btn btn-success" %>
+        <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left" %>
+        <%= f.submit "Save", class: "btn btn-success pull-right" %>
       </div>
     </div>
 
     <div class="col-md-12">
       <div class="form-group">
       <%= f.label :bar_text %><br>
-      <%= f.text_field :bar_text %>
+      <%= f.text_field :bar_text, class: "form-control" %>
     </div>
       <div class="form-group">
         <%= f.label :bar_font %><br>
-        <%= f.text_field :bar_font %>
+        <%= f.text_field :bar_font, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :bar_font_size %><br>
-        <%= f.number_field :bar_font_size %>
+        <%= f.number_field :bar_font_size, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :bar_tracking %><br>
-        <%= f.number_field :bar_tracking %>
+        <%= f.number_field :bar_tracking, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :bar_leading %><br>
-        <%= f.number_field :bar_leading %>
+        <%= f.number_field :bar_leading, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :bar_text_formatting %><br>
-        <%= f.number_field :bar_text_formatting %>
+        <%= f.number_field :bar_text_formatting, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :bar_text_color %><br>
-        <%= f.text_field :bar_text_color %>
+        <%= f.text_field :bar_text_color, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :bar_background_color %><br>
-        <%= f.text_field :bar_background_color %>
+        <%= f.text_field :bar_background_color, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :bar_background_opacity %><br>
-        <%= f.number_field :bar_background_opacity %>
+        <%= f.number_field :bar_background_opacity, class: "form-control" %>
       </div>
 
     </div>
