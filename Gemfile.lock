@@ -35,6 +35,8 @@ GEM
     autoprefixer-rails (6.0.3)
       execjs
       json
+    bootstrap-colorpicker-rails (0.4.0)
+      railties (>= 4.0)
     bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -154,6 +156,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bootstrap-colorpicker-rails
   bootstrap-sass (~> 3.3.5)
   coffee-rails (~> 4.0.0)
   coffee-script-source (= 1.8.0)
