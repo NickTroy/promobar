@@ -1,10 +1,21 @@
 <script type="text/javascript">
   $(function() {
-    $( "#slider-range-max" ).slider({
+    $( ".header-bar-opacity-slider" ).slider({
       range: "max",
       min: 1,
       max: 100,
-      value: 1,
+      value: $(".header-bar-opacity-switcher").attr("value")
+      slide: function( event, ui ) {
+        $(".header-bar-opacity-switcher").attr("value", ui.value );
+        $(".header-bar-opacity-value").html(ui.value + "%");
+      }
+    });
+
+    $( ".footer-bar-opacity-slider" ).slider({
+      range: "max",
+      min: 1,
+      max: 100,
+      value: $(".header-bar-opacity-switcher").attr("value")
       slide: function( event, ui ) {
         $(".header-bar-opacity-switcher").attr("value", ui.value );
         $(".header-bar-opacity-value").html(ui.value + "%");
@@ -125,7 +136,7 @@
       <div class="form-group">
         <%= f.label :bar_background_opacity %><br>
         <span class="header-bar-opacity-value"></span>
-        <div id="slider-range-max"></div>
+        <div class="header-bar-opacity-slider"><%= @header_promobar.bar_background_opacity %>%</div>
         <%= f.hidden_field :bar_background_opacity, class: "form-control header-bar-opacity-switcher" %>
       </div>
     </div>
@@ -240,7 +251,9 @@
         <div class="col-md-3">
           <div class="form-group">
             <%= f.label :bar_background_opacity %><br>
-            <%= f.number_field :bar_background_opacity, value: 1, within: 1..100, class: "form-control" %>
+            <span class="footer-bar-opacity-value"></span>
+            <div class="footer-bar-opacity-slider"><%= @footer_promobar.bar_background_opacity %>%</div>
+            <%= f.hidden_field :bar_background_opacity, class: "form-control footer-bar-opacity-switcher" %>
           </div>
         </div>
 
