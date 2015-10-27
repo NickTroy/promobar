@@ -28,7 +28,7 @@
         <% @promobars.each do |bar| %>
             <tr>
               <td style="width: 95%;"><%= bar.bar_type == 1? "HEADER BAR": "FOOTER BAR" %></td>
-              <td style="width: 5%;"><%= link_to 'Destroy', promobar_path(bar), method: :delete, data: { confirm: 'Are you sure, you want to delete this bar?' } %></td>
+              <td style="width: 5%;"><%= link_to 'Delete', promobar_path(bar), method: :delete, data: { confirm: 'Are you sure, you want to delete this bar?' } %></td>
             </tr>
         <% end %>
 
