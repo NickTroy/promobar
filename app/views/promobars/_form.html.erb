@@ -4,10 +4,11 @@
       range: "max",
       min: 1,
       max: 100,
-      value: 2,
+      value: 1,
       slide: function( event, ui ) {
-        $(".header-bar .opacity-switcher").attr("value", ui.value );
-        $(".header-bar .opacity-value").html(ui.value + "%")
+        $(".opacity-switcher").attr("value", ui.value );
+        $(".opacity-value").html(ui.value + "%");
+        console.log(ui.value)
       }
     });
   });
