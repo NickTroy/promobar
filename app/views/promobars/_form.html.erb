@@ -6,14 +6,14 @@
     <div class="col-md-8">
       <div class="form-group">
         <%= f.label :bar_type %><br>
-        <%= f.text_field :bar_type, class: "form-control" %>
+        <%= f.collection_select :promobar, :bar_type, [1,2,3],class: "form-control", style: "width:30%;" %>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="actions">
-        <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left" %>
-        <%= f.submit "Save", class: "btn btn-success pull-right" %>
+        <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left", style: "width:20%;" %>
+        <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:20%;" %>
       </div>
     </div>
 
