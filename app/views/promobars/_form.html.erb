@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    console.log('1234');
+  $('#color').colorpicker()
 </script>
 
 <%= form_for(@promobar) do |f| %>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="col-md-4">
-      <div class="form-group header-background-color">
+      <div id="color" class="form-group header-background-color input-append color" data-color="rgb(255, 146, 180)" data-color-format="rgb">
         <%= f.label :bar_background_color %><br>
         <%= f.text_field :bar_background_color, class: "form-control" %>
       </div>
