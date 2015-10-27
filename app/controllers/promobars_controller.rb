@@ -41,7 +41,6 @@ class PromobarsController < ApplicationController
     end
   end
 
-=begin
   # DELETE /promobars/1
   # DELETE /promobars/1.json
   def destroy
@@ -51,7 +50,6 @@ class PromobarsController < ApplicationController
       format.json { head :no_content }
     end
   end
-=end
 
   private
     # Use callbacks to share common setup or constraints between actions.
