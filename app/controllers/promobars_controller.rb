@@ -1,5 +1,5 @@
 class PromobarsController < ApplicationController
-  before_action :set_promobar, only: [:edit, :update, :destroy]
+  before_action :set_promobar, only: [:update, :destroy]
 
   # GET /promobars/new
 =begin
@@ -10,7 +10,7 @@ class PromobarsController < ApplicationController
 =end
 
   # GET /promobars/manage
-  def manage
+  def edit
     if Promobar.where(type: 1).nil?
       @header_promobar = Promobar.new
     else
