@@ -1,9 +1,7 @@
 <script type="text/javascript">
-  ShopifyApp.ready(function() {
-    $( "#promobar_bar_background_opacity" ).slider({
+    $( ".opacity-switcher" ).slider({
       animate: "fast"
     });
-  });
 </script>
 
 <%= form_for(@header_promobar) do |f| %>
@@ -93,7 +91,7 @@
     <div class="col-md-3">
       <div class="form-group">
         <%= f.label :bar_background_opacity %><br>
-        <%= f.text_field :bar_background_opacity, class: "form-control" %>
+        <%= f.text_field :bar_background_opacity, class: "opacity-switcher" %>
       </div>
     </div>
 
