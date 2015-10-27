@@ -1,5 +1,7 @@
 <script type="text/javascript">
-  $('#color').colorpicker()
+  $(function(){
+    $('.text_color').colorpicker();
+  });
 </script>
 
 <%= form_for(@promobar) do |f| %>
@@ -73,12 +75,12 @@
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[bar_text_formatting]', "FORMATTING" %>
-        <%= f.text_field :bar_text_color, class: "form-control" %>
+        <%= f.text_field :bar_text_color, class: "form-control text_color" %>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div id="color" class="form-group header-background-color input-append color" data-color="rgb(255, 146, 180)" data-color-format="rgb">
+      <div id="color" class="form-group">
         <%= f.label :bar_background_color %><br>
         <%= f.text_field :bar_background_color, class: "form-control" %>
       </div>
