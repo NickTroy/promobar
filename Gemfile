@@ -57,3 +57,6 @@ group :production do
   # gem 'rails_stdout_logging'
   # gem 'rails_serve_static_assets'
 end
+
+# Color picker
+gem 'jquery-minicolors-rails'

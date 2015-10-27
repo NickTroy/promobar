@@ -1,3 +1,3 @@
 class Promobar < ActiveRecord::Base
-  has_many :buttons
+  has_one :button
 end
