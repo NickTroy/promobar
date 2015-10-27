@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :promobars
+  get '/promobars/manage' => "promobars#manage"
 
   root :to => 'home#index'
 
