@@ -6,10 +6,10 @@
       max: 10,
       value: 2,
       slide: function( event, ui ) {
-        $(".header-bar .opacity-value").val( ui.value );
+        $(".opacity-switcher").val( ui.value );
       }
     });
-    $( ".header-bar .opacity-value" ).val( $( "#slider-range-max" ).slider( "value" ) );
+    //$( ".header-bar .opacity-value" ).val( $( "#slider-range-max" ).slider( "value" ) );
   });
 </script>
 
@@ -134,7 +134,7 @@
           <span class="header-bar opacity-value"></span>
         </p>
         <div id="slider-range-max"></div>
-        
+
         <%= f.text_field :bar_background_opacity, class: "form-control opacity-switcher" %>
       </div>
     </div>
