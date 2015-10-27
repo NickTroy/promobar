@@ -6,19 +6,15 @@
       max: 10,
       value: 2,
       slide: function( event, ui ) {
-        $( "#amount" ).val( ui.value );
+        $(".header-bar .opacity-value").val( ui.value );
       }
     });
-    $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+    $( ".header-bar .opacity-value" ).val( $( "#slider-range-max" ).slider( "value" ) );
   });
 </script>
 
 <div id="slider">
-  <p>
-    <label for="amount">Minimum number of bedrooms:</label>
-    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-  </p>
-  <div id="slider-range-max"></div>
+
 </div>
 
 <%= form_for(@header_promobar) do |f| %>
@@ -132,6 +128,13 @@
     <div class="col-md-3">
       <div class="form-group">
         <%= f.label :bar_background_opacity %><br>
+
+        <p>
+          <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+          <span class="header-bar opacity-value"></span>
+        </p>
+        <div id="slider-range-max"></div>
+        
         <%= f.text_field :bar_background_opacity, class: "form-control opacity-switcher" %>
       </div>
     </div>
