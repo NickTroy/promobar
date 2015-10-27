@@ -61,7 +61,7 @@
 
 <%= form_for(@header_promobar, class: "header-bar-form") do |f| %>
 
-  <div class="col-md-12" style="border-bottom: 3px solid #000;">
+  <div class="col-md-12" style="border-bottom: 3px solid #000;margin-bottom: 30px;">
     <% if notice %>
         <div class="alert alert-success" role="alert">
           <%= notice %>
@@ -89,7 +89,7 @@
     <% end %>
 
     <div class="col-md-9">
-      <div class="form-group" style="border-bottom: 3px solid #000;">
+      <div class="form-group">
         <h3>HEADER BAR</h3>
 
         <%= f.hidden_field :bar_type, value: 1 %>
@@ -204,7 +204,7 @@
       <% end %>
 
       <div class="col-md-9">
-        <div class="form-group" style="border-bottom: 3px solid #000;">
+        <div class="form-group">
           <h3>FOOTER BAR</h3>
 
           <%= f.hidden_field :bar_type, value: 2 %>
