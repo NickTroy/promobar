@@ -29,17 +29,17 @@
     <div class="col-md-6">
       <div class="form-group">
         <%= label_tag 'promobar[bar_font]', "FONT" %>
-        <%= f.select :bar_font, { 1 => 'TIMES NEW ROMAN', 2 => 'ARIAL' }, {}, { :class => "form-control", :style => "width:30%;" } %>
+        <%= f.select :bar_font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control" } %>
       </div>
     </div>
 
     <div class="col-md-2">
       <div class="form-group">
         <%= label_tag 'promobar[bar_font_size]', "SIZE" %>
-        <%= f.number_field :bar_font_size, within: 5...50, class: "form-control" %>
+        <%= f.number_field :bar_font_size, value: 5, within: 5...50, class: "form-control" %>
       </div>
     </div>
-      
+
       <div class="form-group">
         <%= f.label :bar_tracking %><br>
         <%= f.number_field :bar_tracking, class: "form-control" %>
