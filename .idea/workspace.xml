@@ -41,12 +41,14 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/promobars/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4297694">
-              <caret line="137" column="105" selection-start-line="137" selection-start-column="105" selection-end-line="137" selection-end-column="105" />
+            <state vertical-scroll-proportion="0.32285115">
+              <caret line="251" column="76" selection-start-line="251" selection-start-column="76" selection-end-line="251" selection-end-column="76" />
               <folding>
                 <element signature="n#style#0;n#div#6;n#div#5;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#8;n#div#5;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#8;n#div#5;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#6;n#div#4;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#8;n#div#4;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#8;n#div#4;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -801,12 +803,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/promobars/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4297694">
-          <caret line="137" column="105" selection-start-line="137" selection-start-column="105" selection-end-line="137" selection-end-column="105" />
+        <state vertical-scroll-proportion="0.32285115">
+          <caret line="251" column="76" selection-start-line="251" selection-start-column="76" selection-end-line="251" selection-end-column="76" />
           <folding>
             <element signature="n#style#0;n#div#6;n#div#5;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#8;n#div#5;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#8;n#div#5;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#6;n#div#4;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#8;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#8;n#div#4;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
