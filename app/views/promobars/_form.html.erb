@@ -6,19 +6,15 @@
       max: 100,
       value: 1,
       slide: function( event, ui ) {
-        $(".opacity-switcher").attr("value", ui.value );
-        $(".opacity-value").html(ui.value + "%");
+        $(".header-bar-form").find(".opacity-switcher").attr("value", ui.value );
+        $(".header-bar-form").find(".opacity-value").html(ui.value + "%");
         console.log(ui.value)
       }
     });
   });
 </script>
 
-<div id="slider">
-
-</div>
-
-<%= form_for(@header_promobar) do |f| %>
+<%= form_for(@header_promobar, class: "header-bar-form") do |f| %>
 
   <div class="col-md-12">
     <% if notice %>
@@ -129,15 +125,11 @@
     <div class="col-md-3">
       <div class="form-group">
         <%= f.label :bar_background_opacity %><br>
-
-        <p>
-          <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-          <span class="header-bar opacity-value"></span>
-        </p>
+        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        <span class="header-bar opacity-value"></span>
         <div id="slider-range-max"></div>
 
         <%= f.hidden_field :bar_background_opacity, class: "form-control header-bar opacity-switcher" %>
-        <span class="header-bar opacity-value"></span>
       </div>
     </div>
 
