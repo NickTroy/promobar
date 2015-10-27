@@ -97,8 +97,6 @@
   </div>
 <% end %>
 
-<div></div><br><br><br>
-
 <%= form_for(@footer_promobar) do |f| %>
 
     <div class="col-md-12">
@@ -108,7 +106,7 @@
         <div class="form-group">
           <b>FOOTER BAR</b>
 
-          <%= f.hidden_field :bar_type, value: 1 %>
+          <%= f.hidden_field :bar_type, value: 2 %>
           <%#= label_tag 'SELECT BAR' %><br>
           <%#= f.select :bar_type, ['HEADER BAR', 'FOOTER BAR'], {}, { :class => "form-control", :style => "width:30%;" } %>
         </div>
