@@ -1,5 +1,5 @@
 class PromobarsController < ApplicationController
-  before_action :set_note, only: [:destroy]
+  before_action :set_note, only: [:update, :destroy]
 
   # GET /promobars/manage
   def manage
