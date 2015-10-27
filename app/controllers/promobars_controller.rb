@@ -62,9 +62,9 @@ class PromobarsController < ApplicationController
       end
 
       if Promobar.where(type: 2).nil?
-        @footer_promobar = Promobar.where(type: 2).nil?
+        @footer_promobar = Promobar.new
       else
-        @footer_promobar = Promobar.where(type: 2).nil?
+        @footer_promobar = Promobar.where(type: 2)
       end
     end
 
