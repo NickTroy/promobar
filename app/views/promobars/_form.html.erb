@@ -29,28 +29,28 @@
     <div class="col-md-6">
       <div class="form-group">
         <%= label_tag 'promobar[bar_font]', "FONT" %>
-        <%= f.select :bar_font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control", style: "width 30%;" } %>
+        <%= f.select :bar_font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control", style: "width 30%; display:inline-block;" } %>
       </div>
     </div>
 
     <div class="col-md-2">
       <div class="form-group">
         <%= label_tag 'promobar[bar_font_size]', "SIZE" %>
-        <%= f.number_field :bar_font_size, value: 5, within: 5...50, class: "form-control", style: "width 50%;" %>
+        <%= f.number_field :bar_font_size, value: 5, within: 5...50, class: "form-control", style: "width 70%; display:inline-block;" %>
       </div>
     </div>
 
     <div class="col-md-2">
       <div class="form-group">
         <%= label_tag 'promobar[bar_tracking]', "TRACKING" %>
-        <%= f.number_field :bar_tracking, value: 1, within: 1...100, class: "form-control", style: "width 50%;" %>
+        <%= f.number_field :bar_tracking, value: 1, within: 1...100, class: "form-control", style: "width 70%; display:inline-block;" %>
       </div>
     </div>
 
     <div class="col-md-2">
       <div class="form-group">
         <%= label_tag 'promobar[bar_leading]', "LEADING" %>
-        <%= f.number_field :bar_leading, value: 1, within: 1...100, class: "form-control", style: "width 50%" %>
+        <%= f.number_field :bar_leading, value: 1, within: 1...100, class: "form-control", style: "width 70%; display:inline-block;" %>
       </div>
     </div>
 
