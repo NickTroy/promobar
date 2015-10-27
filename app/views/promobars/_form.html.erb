@@ -5,7 +5,31 @@
 <%= form_for(@header_promobar) do |f| %>
 
   <div class="col-md-12">
-    <%#= render 'flash' %>
+    <% if notice %>
+        <div class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+    <% end %>
+
+    <% if @header_promobar.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <ul>
+            <% @header_promobar.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <% if flash[:error] %>
+        <div class="alert alert-danger" role="alert">
+          <ul>
+            <% flash[:error].each do |error| %>
+                <li><%= error %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
     <div class="col-md-9">
       <div class="form-group">
@@ -100,7 +124,31 @@
 <%= form_for(@footer_promobar) do |f| %>
 
     <div class="col-md-12">
-      <%#= render 'flash' %>
+      <% if notice %>
+          <div class="alert alert-success" role="alert">
+            <%= notice %>
+          </div>
+      <% end %>
+
+      <% if @footer_promobar.errors.any? %>
+          <div class="alert alert-danger" role="alert">
+            <ul>
+              <% @footer_promobar.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <% if flash[:error] %>
+          <div class="alert alert-danger" role="alert">
+            <ul>
+              <% flash[:error].each do |error| %>
+                  <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
 
       <div class="col-md-9">
         <div class="form-group">
