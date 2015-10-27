@@ -54,21 +54,7 @@ class PromobarsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_promobar
-=begin
-      if Promobar.where(type: 1).nil?
-        @header_promobar = Promobar.new
-      else
-        @header_promobar = Promobar.where(type: 1)
-      end
-
-      if Promobar.where(type: 2).nil?
-        @footer_promobar = Promobar.new
-      else
-        @footer_promobar = Promobar.where(type: 2)
-      end
-=end
-    @header_promobar = Promobar.where(type: 1)
-    @footer_promobar = Promobar.where(type: 2)
+      @promobar = Promobar.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
