@@ -4,6 +4,7 @@ class PromobarsController < ApplicationController
   # GET /promobars/new
   def new
     @header_promobar = Promobar.new
+    @footer_promobar = Promobar.new
   end
 
   # GET /promobars/manage
@@ -55,6 +56,7 @@ class PromobarsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_promobar
+=begin
       if Promobar.where(type: 1).nil?
         @header_promobar = Promobar.new
       else
@@ -66,6 +68,9 @@ class PromobarsController < ApplicationController
       else
         @footer_promobar = Promobar.where(type: 2)
       end
+=end
+    @header_promobar = Promobar.where(type: 1)
+    @footer_promobar = Promobar.where(type: 2)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

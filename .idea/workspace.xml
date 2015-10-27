@@ -32,13 +32,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/promobars/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.509434">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.4129979">
+              <caret line="104" column="9" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#2;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_flash.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_flash.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/promobars/_flash.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30357143">
+            <state vertical-scroll-proportion="-5.8846154">
               <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding />
             </state>
@@ -78,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/promobars_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+              <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -98,9 +99,9 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/promobars/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/promobars_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/promobars/_flash.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/promobars_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/promobars/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -386,8 +387,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="709b7042-2cbf-4717-948f-7e86178ffc95" name="Default" comment="" />
@@ -593,21 +599,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/promobars_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/promobars/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/promobars/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/promobars/_flash.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.509434">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -619,19 +623,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/promobars/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/promobars_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/promobars/_flash.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/promobars/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30357143">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
+        <state vertical-scroll-proportion="0.4129979">
+          <caret line="104" column="9" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#2;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
