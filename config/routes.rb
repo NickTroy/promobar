@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :buttons
+
   resources :promobars, :except => [:edit, :new, :index] do
     get 'manage', on: :collection
   end
