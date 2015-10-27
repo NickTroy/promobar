@@ -1,6 +1,15 @@
-<h1>Editing promobar</h1>
+<script type="text/javascript">
+    ShopifyApp.ready(function(){
+        ShopifyApp.Bar.initialize({
+            title: "Promotion bar",
+            icon: "<%= asset_path('faveicon.png') %>"
+        });
+    });
+</script>
 
-<%= render 'form' %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= render 'edit_form' %>
+  </div>
+</div>
 
-<%= link_to 'Show', @promobar %> |
-<%= link_to 'Back', promobars_path %>
