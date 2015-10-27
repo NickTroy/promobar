@@ -81,7 +81,7 @@
 
       <div class="form-group">
         <%= f.label :bar_background_opacity %><br>
-        <%= f.number_field :bar_background_opacity, class: "form-control" %>
+        <%= f.number_field :bar_background_opacity, value: 1, within: 1...100, class: "form-control" %>
       </div>
     </div>
 
