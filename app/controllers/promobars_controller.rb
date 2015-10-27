@@ -14,15 +14,15 @@ class PromobarsController < ApplicationController
   # GET /promobars/manage
   def manage
     if Promobar.exists?(bar_type: 2)
-      @header_promobar = Promobar.new
-    else
       @header_promobar = Promobar.where(bar_type: 1).take
+    else
+      @header_promobar = Promobar.new
     end
 
     if Promobar.exists?(bar_type: 2)
-      raise "NULL"
-    else
       @footer_promobar = Promobar.where(bar_type: 2).take
+    else
+      @footer_promobar = Promobar.new
     end
   end
 
