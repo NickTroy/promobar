@@ -3,13 +3,6 @@ Rails.application.routes.draw do
     get 'manage', on: :collection
   end
 
-  #promobars routes
-=begin
-  get '/promobars' => 'promobars#index', as: :promobars
-  post '/promobars' => 'promobars#create', as: :new_promobar
-  delete '/promobars' => 'promobars#destroy', as: :promobar
-=end
-
   root :to => 'home#index'
 
   mount ShopifyApp::Engine, at: '/'
