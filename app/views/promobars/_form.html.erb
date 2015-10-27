@@ -7,6 +7,7 @@
       value: 2,
       slide: function( event, ui ) {
         $(".header-bar .opacity-switcher").val( ui.value );
+        $(".header-bar .opacity-value").html(ui.value + "%")
       }
     });
   });
@@ -135,6 +136,7 @@
         <div id="slider-range-max"></div>
 
         <%= f.hidden_field :bar_background_opacity, class: "form-control header-bar opacity-switcher" %>
+        <span class="header-bar opacity-value"></span>
       </div>
     </div>
 
