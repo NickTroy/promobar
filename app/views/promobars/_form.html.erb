@@ -1,7 +1,7 @@
 <script type="text/javascript">
-  $( "#slider" ).slider();
-</script>
 
+</script>
+<div id="slider"></div>
 <%= form_for(@header_promobar) do |f| %>
 
   <div class="col-md-12">
@@ -89,8 +89,7 @@
     <div class="col-md-3">
       <div class="form-group">
         <%= f.label :bar_background_opacity %><br>
-        <div id="slider"></div>
-        <%= f.text_field :bar_background_opacity, class: "form-control" %>
+        <%= f.number_field :bar_background_opacity, value: 1, within: 1...100, class: "form-control" %>
       </div>
     </div>
 
