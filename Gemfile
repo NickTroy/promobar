@@ -60,3 +60,5 @@ end
 group :assets do
   gem 'bootstrap-colorpicker-rails'
 end
+# Use slider
+gem 'bootstrap-slider-rails'
