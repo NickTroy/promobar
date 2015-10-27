@@ -124,11 +124,6 @@
 <%= form_for(@footer_promobar) do |f| %>
 
     <div class="col-md-12">
-      <% if notice %>
-          <div class="alert alert-success" role="alert">
-            <%= notice %>
-          </div>
-      <% end %>
 
       <% if @footer_promobar.errors.any? %>
           <div class="alert alert-danger" role="alert">
