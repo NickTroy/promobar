@@ -6,7 +6,7 @@
       max: 100,
       value: 2,
       slide: function( event, ui ) {
-        $(".header-bar .opacity-switcher").val( ui.value );
+        $(".header-bar .opacity-switcher").attr("value", ui.value );
         $(".header-bar .opacity-value").html(ui.value + "%")
       }
     });
