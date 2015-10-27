@@ -1,0 +1,25 @@
+<% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
+<% end %>
+
+<% if @promobar.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        <% @promobar.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<% if flash[:error] %>
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        <% flash[:error].each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

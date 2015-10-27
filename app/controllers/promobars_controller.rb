@@ -1,21 +1,6 @@
 class PromobarsController < ApplicationController
   before_action :set_promobar, only: [:edit, :update, :destroy]
 
-=begin
-  # GET /promobars
-  # GET /promobars.json
-  def index
-    @promobars = Promobar.all
-  end
-=end
-
-  # GET /promobars/1
-  # GET /promobars/1.json
-=begin
-  def show
-  end
-=end
-
   # GET /promobars/new
   def new
     @promobar = Promobar.new
