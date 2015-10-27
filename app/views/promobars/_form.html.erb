@@ -11,7 +11,7 @@
         <%#= label_tag 'SELECT BAR' %><br>
         <%#= f.select :bar_type, ['HEADER BAR', 'FOOTER BAR'], {}, { :class => "form-control", :style => "width:30%;" } %>
       </div>
-    </div>
+    </div><br><br>
 
     <div class="col-md-3">
       <div class="actions">
@@ -25,14 +25,21 @@
       <%= label_tag 'promobar[bar_text]', "HEADER BAR TEXT" %><br>
       <%= f.text_field :bar_text, class: "form-control" %>
     </div>
+
+    <div class="col-md-6">
       <div class="form-group">
-        <%= f.label :bar_font %><br>
-        <%= f.text_field :bar_font, class: "form-control" %>
+        <%= label_tag 'promobar[bar_font]', "FONT" %>
+        <%= f.select :bar_font, { 1 => 'TIMES NEW ROMAN', 2 => 'ARIAL' }, {}, { :class => "form-control", :style => "width:30%;" } %>
       </div>
+    </div>
+
+    <div class="col-md-2">
       <div class="form-group">
-        <%= f.label :bar_font_size %><br>
-        <%= f.number_field :bar_font_size, class: "form-control" %>
+        <%= label_tag 'promobar[bar_font_size]', "SIZE" %>
+        <%= f.number_field :bar_font_size, within: 5...50, class: "form-control" %>
       </div>
+    </div>
+      
       <div class="form-group">
         <%= f.label :bar_tracking %><br>
         <%= f.number_field :bar_tracking, class: "form-control" %>
