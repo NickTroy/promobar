@@ -6,7 +6,7 @@
     <div class="col-md-8">
       <div class="form-group">
         <%= f.label :bar_type %><br>
-        <%= f.collection_select :promobar, :bar_type, [1,2,3],class: "form-control", style: "width:30%;" %>
+        <%= f.select :bar_type, ['header bar', 'footer bar'], include_blank: true ,class: "form-control", style: "width:30%;" %>
       </div>
     </div>
 
