@@ -14,6 +14,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.minicolors
 //= require_tree .
 //= require jquery # Not included
-//= require jquery.minicolors
