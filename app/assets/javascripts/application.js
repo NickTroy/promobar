@@ -14,6 +14,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require bootstrap-colorpicker
-//= require bootstrap-slider
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-slider
