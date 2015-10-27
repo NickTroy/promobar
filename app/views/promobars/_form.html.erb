@@ -1,7 +1,5 @@
 <script type="text/javascript">
-    $( ".opacity-switcher" ).slider({
-      animate: "fast"
-    });
+  $( "#slider" ).slider();
 </script>
 
 <%= form_for(@header_promobar) do |f| %>
@@ -91,7 +89,8 @@
     <div class="col-md-3">
       <div class="form-group">
         <%= f.label :bar_background_opacity %><br>
-        <%= f.text_field :bar_background_opacity, class: "opacity-switcher" %>
+        <div id="slider"></div>
+        <%= f.text_field :bar_background_opacity, class: "form-control" %>
       </div>
     </div>
 
