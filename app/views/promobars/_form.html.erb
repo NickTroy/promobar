@@ -1,5 +1,39 @@
 <script type="text/javascript">
-  $(function() {
+  jQuery( function($) {
+    // Colorpickers init
+    $(".header-bar-text-color").minicolors({
+      "theme": "bootstrap",
+      "change": function(value, opacity) {
+        $(".header-bar-text-color").attr("value", value);
+      },
+      "defaultValue": $(".header-bar-text-color").attr("value") || "#000000",
+    });
+
+    $(".header-bar-background-color").minicolors({
+      "theme": "bootstrap",
+      "change": function(value, opacity) {
+        $(".header-bar-text-color").attr("value", value);
+      },
+      "defaultValue": $(".header-bar-background-color").attr("value") || "#ffffff",
+    });
+
+    $(".footer-bar-text-color").minicolors({
+      "theme": "bootstrap",
+      "change": function(value, opacity) {
+        $(".footer-bar-text-color").attr("value", value);
+      },
+      "defaultValue": $(".footer-bar-text-color").attr("value") || "#000000",
+    });
+
+    $(".footer-bar-background-color").minicolors({
+      "theme": "bootstrap",
+      "change": function(value, opacity) {
+        $(".footer-bar-background-color").attr("value", value);
+      },
+      "defaultValue": $(".footer-bar-background-color").attr("value") || "#ffffff",
+    });
+
+    //Sliders init
     $( ".header-bar-opacity-slider" ).slider({
       range: "max",
       min: 1,
@@ -21,13 +55,8 @@
         $(".footer-bar-opacity-value").html(ui.value + "%");
       }
     });
-
-    jQuery( function($) {
-      $(".text-color").minicolors({
-        "theme": "bootstrap"
-      })
-    });
   });
+
 </script>
 
 <%= form_for(@header_promobar, class: "header-bar-form") do |f| %>
@@ -126,7 +155,7 @@
       <div class="col-md-5">
         <div class="form-group">
           <%= label_tag 'promobar[bar_text_formatting]', "TEXT COLOR" %>
-          <%= f.text_field :bar_text_color, class: "form-control text-color" %>
+          <%= f.text_field :bar_text_color, class: "form-control header-bar-text-color" %>
         </div>
       </div>
     </div>
@@ -134,7 +163,7 @@
     <div class="col-md-4">
       <div id="color" class="form-group">
         <%= label_tag 'promobar[bar_background_color]', "BACKGROUND COLOR" %>
-        <%= f.text_field :bar_background_color, class: "form-control" %>
+        <%= f.text_field :bar_background_color, class: "form-control header-bar-background-color" %>
       </div>
     </div>
 
@@ -241,7 +270,7 @@
           <div class="col-md-5">
             <div class="form-group">
               <%= label_tag 'promobar[bar_text_formatting]', "TEXT COLOR" %>
-              <%= f.text_field :bar_text_color, class: "form-control text-color" %>
+              <%= f.text_field :bar_text_color, class: "form-control footer-bar-text-color" %>
             </div>
           </div>
         </div>
@@ -249,7 +278,7 @@
         <div class="col-md-4">
           <div id="color" class="form-group">
             <%= label_tag 'promobar[bar_background_color]', "BACKGROUND COLOR" %>
-            <%= f.text_field :bar_background_color, class: "form-control" %>
+            <%= f.text_field :bar_background_color, class: "form-control footer-bar-background-color" %>
           </div>
         </div>
 
