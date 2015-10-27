@@ -1,5 +1,5 @@
 <script type="text/javascript">
-
+  $(".opacity-input").slider();
 </script>
 
 <%= form_for(@header_promobar) do |f| %>
@@ -89,7 +89,7 @@
     <div class="col-md-3">
       <div class="form-group">
         <%= f.label :bar_background_opacity %><br>
-        <%= f.number_field :bar_background_opacity, value: 1, within: 1...100, class: "form-control" %>
+        <%= f.number_field :bar_background_opacity, value: 1, within: 1...100, class: "form-control opacity-input" %>
       </div>
     </div>
 
