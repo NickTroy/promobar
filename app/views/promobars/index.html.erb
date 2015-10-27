@@ -1,0 +1,43 @@
+<h1>Listing promobars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bar type</th>
+      <th>Bar text</th>
+      <th>Bar font</th>
+      <th>Bar font size</th>
+      <th>Bar tracking</th>
+      <th>Bar leading</th>
+      <th>Bar text formatting</th>
+      <th>Bar text color</th>
+      <th>Bar background color</th>
+      <th>Bar background opacity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promobars.each do |promobar| %>
+      <tr>
+        <td><%= promobar.bar_type %></td>
+        <td><%= promobar.bar_text %></td>
+        <td><%= promobar.bar_font %></td>
+        <td><%= promobar.bar_font_size %></td>
+        <td><%= promobar.bar_tracking %></td>
+        <td><%= promobar.bar_leading %></td>
+        <td><%= promobar.bar_text_formatting %></td>
+        <td><%= promobar.bar_text_color %></td>
+        <td><%= promobar.bar_background_color %></td>
+        <td><%= promobar.bar_background_opacity %></td>
+        <td><%= link_to 'Show', promobar %></td>
+        <td><%= link_to 'Edit', edit_promobar_path(promobar) %></td>
+        <td><%= link_to 'Destroy', promobar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promobar', new_promobar_path %>

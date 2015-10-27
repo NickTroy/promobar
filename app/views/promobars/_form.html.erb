@@ -1,0 +1,57 @@
+<%= form_for(@promobar) do |f| %>
+  <% if @promobar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@promobar.errors.count, "error") %> prohibited this promobar from being saved:</h2>
+
+      <ul>
+      <% @promobar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bar_type %><br>
+    <%= f.number_field :bar_type %>
+  </div>
+  <div class="field">
+    <%= f.label :bar_text %><br>
+    <%= f.text_field :bar_text %>
+  </div>
+  <div class="field">
+    <%= f.label :bar_font %><br>
+    <%= f.text_field :bar_font %>
+  </div>
+  <div class="field">
+    <%= f.label :bar_font_size %><br>
+    <%= f.number_field :bar_font_size %>
+  </div>
+  <div class="field">
+    <%= f.label :bar_tracking %><br>
+    <%= f.number_field :bar_tracking %>
+  </div>
+  <div class="field">
+    <%= f.label :bar_leading %><br>
+    <%= f.number_field :bar_leading %>
+  </div>
+  <div class="field">
+    <%= f.label :bar_text_formatting %><br>
+    <%= f.number_field :bar_text_formatting %>
+  </div>
+  <div class="field">
+    <%= f.label :bar_text_color %><br>
+    <%= f.text_field :bar_text_color %>
+  </div>
+  <div class="field">
+    <%= f.label :bar_background_color %><br>
+    <%= f.text_field :bar_background_color %>
+  </div>
+  <div class="field">
+    <%= f.label :bar_background_opacity %><br>
+    <%= f.number_field :bar_background_opacity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

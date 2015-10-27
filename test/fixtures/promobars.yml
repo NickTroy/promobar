@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bar_type: 1
+  bar_text: MyString
+  bar_font: MyString
+  bar_font_size: 1
+  bar_tracking: 1
+  bar_leading: 1
+  bar_text_formatting: 1
+  bar_text_color: MyString
+  bar_background_color: MyString
+  bar_background_opacity: 1
+
+two:
+  bar_type: 1
+  bar_text: MyString
+  bar_font: MyString
+  bar_font_size: 1
+  bar_tracking: 1
+  bar_leading: 1
+  bar_text_formatting: 1
+  bar_text_color: MyString
+  bar_background_color: MyString
+  bar_background_opacity: 1
