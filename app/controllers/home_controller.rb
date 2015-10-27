@@ -1,6 +1,7 @@
 class HomeController < AuthenticatedController
+  # GET /promobars
+  # GET /promobars.json
   def index
-    @products = ShopifyAPI::Product.find(:all, :params => {:limit => 10})
-    @msg = "qwerty"
+    @promobars = Promobar.all
   end
 end

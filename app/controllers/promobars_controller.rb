@@ -1,11 +1,13 @@
 class PromobarsController < ApplicationController
   before_action :set_promobar, only: [:edit, :update, :destroy]
 
+=begin
   # GET /promobars
   # GET /promobars.json
   def index
     @promobars = Promobar.all
   end
+=end
 
   # GET /promobars/1
   # GET /promobars/1.json
@@ -30,7 +32,7 @@ class PromobarsController < ApplicationController
 
     respond_to do |format|
       if @promobar.save
-        format.html { redirect_to promobars_path, notice: 'Promobar was successfully created.' }
+        format.html { redirect_to :root_url, notice: 'Promobar was successfully created.' }
         format.json { render :show, status: :created, location: @promobar }
       else
         format.html { render :new }
@@ -44,7 +46,7 @@ class PromobarsController < ApplicationController
   def update
     respond_to do |format|
       if @promobar.update(promobar_params)
-        format.html { redirect_to promobars_path, notice: 'Promobar was successfully updated.' }
+        format.html { redirect_to :root_url, notice: 'Promobar was successfully updated.' }
         format.json { render :show, status: :ok, location: @promobar }
       else
         format.html { render :edit }
