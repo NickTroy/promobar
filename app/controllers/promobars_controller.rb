@@ -1,4 +1,5 @@
 class PromobarsController < ApplicationController
+  before_action :set_note, only: [:destroy]
 
   # GET /promobars/manage
   def manage
@@ -56,6 +57,11 @@ class PromobarsController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_note
+      @note = Admin::Note.find(params[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def promobar_params
       params.require(:promobar).permit(:bar_type, :bar_text, :bar_font, :bar_font_size, :bar_tracking, :bar_leading, :bar_font_regular, :bar_font_bold, :bar_font_italic, :bar_text_color, :bar_background_color, :bar_background_opacity)
