@@ -5,8 +5,11 @@
 
     <div class="col-md-9">
       <div class="form-group">
-        <%= f.label :bar_type %><br>
-        <%= f.select :bar_type, ['HEADER BAR', 'FOOTER BAR'], {}, { :class => "form-control", :style => "width:30%;" } %>
+        HEADER BAR
+
+        <%= f.hidden_field :bar_type, value: 1 %>
+        <%#= label_tag 'SELECT BAR' %><br>
+        <%#= f.select :bar_type, ['HEADER BAR', 'FOOTER BAR'], {}, { :class => "form-control", :style => "width:30%;" } %>
       </div>
     </div>
 
