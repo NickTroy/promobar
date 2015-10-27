@@ -3,17 +3,17 @@
   <div class="col-md-12">
     <%= render 'flash' %>
 
-    <div class="col-md-8">
+    <div class="col-md-9">
       <div class="form-group">
         <%= f.label :bar_type %><br>
-        <%= f.select :bar_type, ['header bar', 'footer bar'], include_blank: true ,class: "form-control", style: "width:30%;" %>
+        <%= f.select :bar_type, ['HEADER BAR', 'FOOTER BAR'], class: "form-control", style: "width:30%;" %>
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="actions">
-        <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left", style: "width:20%;" %>
-        <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:20%;" %>
+        <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left", style: "width:40%;" %>
+        <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:40%;" %>
       </div>
     </div>
 
