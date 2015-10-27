@@ -57,10 +57,12 @@
     <div class="col-md-6">
       <div class="form-group">
         <%= label_tag 'promobar[bar_text_formatting]', "FORMATTING" %>
-        <%= f.check_box :bar_text_formatting, checked_valu: "1", unchecked_value: "0" %>
-        <%= f.check_box :bar_text_formatting, checked_value: "2", unchecked_value: "0" %>
-        <%= f.check_box :bar_text_formatting, checked_value: "3", unchecked_value: "0" %>
-
+        <%= f.check_box :bar_text_formatting %>
+        <span>REGULAR</span>
+        <%= f.check_box :bar_text_formatting %>
+        <span>BOLD</span>
+        <%= f.check_box :bar_text_formatting %>
+        <span>ITALIC</span>
       </div>
     </div><br>
 
