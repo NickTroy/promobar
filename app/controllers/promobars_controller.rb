@@ -3,11 +3,11 @@ class PromobarsController < ApplicationController
 
   # GET /promobars/new
   def new
-    @promobar = Promobar.new
+    @header_promobar = Promobar.new
   end
 
-  # GET /promobars/1/edit
-  def edit
+  # GET /promobars/manage
+  def manage
   end
 
   # POST /promobars
@@ -40,6 +40,7 @@ class PromobarsController < ApplicationController
     end
   end
 
+=begin
   # DELETE /promobars/1
   # DELETE /promobars/1.json
   def destroy
@@ -49,15 +50,26 @@ class PromobarsController < ApplicationController
       format.json { head :no_content }
     end
   end
+=end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_promobar
-      @promobar = Promobar.find(params[:id])
+      if Promobar.where(type: 1).nil?
+        @header_promobar = Promobar.new
+      else
+        @header_promobar = Promobar.where(type: 1)
+      end
+
+      if Promobar.where(type: 2).nil?
+        @footer_promobar = Promobar.where(type: 2).nil?
+      else
+        @footer_promobar = Promobar.where(type: 2).nil?
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def promobar_params
-      params.require(:promobar).permit(:bar_type, :bar_text, :bar_font, :bar_font_size, :bar_tracking, :bar_leading, :bar_font_regular, :bar_font_bold, :bar_font_italic, :bar_text_color, :bar_background_color, :bar_background_opacity)
+    def header_promobar_params
+      params.require(:header_promobar).permit(:bar_type, :bar_text, :bar_font, :bar_font_size, :bar_tracking, :bar_leading, :bar_font_regular, :bar_font_bold, :bar_font_italic, :bar_text_color, :bar_background_color, :bar_background_opacity)
     end
 end
