@@ -13,3 +13,7 @@ $ -> $('.footer-bar-text-color').minicolors theme: 'bootstrap', defaultValue: $(
 
 $ -> $('.footer-bar-background-color').minicolors theme: 'bootstrap', defaultValue: $(".footer-bar-background-color").attr("value") || "#000000", change: (value) ->
   $('.footer-bar-background-color').attr("value", value)
+
+$ -> $( ".header-bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(".header-bar-opacity-switcher").attr("value"), slide: (event, ui) ->
+  $(".header-bar-opacity-switcher").attr("value", ui.value)
+  $(".header-bar-opacity-value").html(ui.value + "%")
