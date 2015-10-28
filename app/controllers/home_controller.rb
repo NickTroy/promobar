@@ -5,9 +5,8 @@ class HomeController < AuthenticatedController
     @promobars = Promobar.all
 
 
-      sess = ShopifyAPI::Session.new(params[:shop], response[:credentials][:token])
-      session[:shopify] = sess
-      ShopifyAPI::Base.activate_session(sess)
+      session = ShopifyAPI::Session.new(ShopifyAPI::Shop.current.attributes[:domain])
+      ShopifyAPI::Base.activate_session(session)
       ShopifyAPI::ScriptTag.create(:event => "onload", :src => "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
 
 
