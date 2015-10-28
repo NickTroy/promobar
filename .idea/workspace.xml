@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="709b7042-2cbf-4717-948f-7e86178ffc95" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/shop.rb" afterPath="$PROJECT_DIR$/app/models/shop.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/shopify_session_repository.rb" afterPath="$PROJECT_DIR$/config/initializers/shopify_session_repository.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/shopify_app.rb" afterPath="$PROJECT_DIR$/config/initializers/shopify_app.rb" />
     </list>
     <ignored path="promoBar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shop.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shop.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/shop.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3207547">
+            <state vertical-scroll-proportion="0.0">
               <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shopify_app.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/initializers/shopify_app.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12830189">
+              <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -151,11 +160,11 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/promobars/script.js.erb" />
         <option value="$PROJECT_DIR$/config/initializers/omniauth.rb" />
-        <option value="$PROJECT_DIR$/config/initializers/shopify_app.rb" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/config/initializers/shopify_session_repository.rb" />
         <option value="$PROJECT_DIR$/app/models/shop.rb" />
+        <option value="$PROJECT_DIR$/config/initializers/shopify_app.rb" />
       </list>
     </option>
   </component>
@@ -899,14 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/shopify_app.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12830189">
-          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -945,8 +946,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/shop.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3207547">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/shopify_app.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12830189">
+          <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
           <folding />
         </state>
       </provider>
