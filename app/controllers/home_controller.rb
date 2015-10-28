@@ -2,8 +2,6 @@ class HomeController < AuthenticatedController
   # GET /promobars
   # GET /promobars.json
   def index
-    @promobars = Promobar.all
-
     if request.query_parameters.empty? || request.query_parameters[:promobar][:name].empty?
       @promobars = Promobar.all
     else
