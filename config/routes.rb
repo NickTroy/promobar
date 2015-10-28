@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :promobars
+  resources :promobars do
+    get '/script' => 'promobars#script', :on => :collection
+  end
 
   root :to => 'home#index'
 

@@ -53,6 +53,13 @@ class PromobarsController < ApplicationController
     end
   end
 
+  # GET /promobars/script
+  def script
+    respond_to do |format|
+      format.js { render :script }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_promobar
