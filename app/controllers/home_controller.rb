@@ -7,8 +7,7 @@ class HomeController < AuthenticatedController
     ShopifyAPI::Session.setup({:api_key => '1542338d97c3e62b5b1e0a8b3ab8c5a8', :secret => 'dd149cca1adf1ec3e7383c02ad8b1a2e'})
 
     session = ShopifyAPI::Session.new(params[:shop])
-    scope = ["write_script_tags"]
-    permission_url = session.create_permission_url(scope)
+
     token = session.request_token(params)
 
     if session.valid?
