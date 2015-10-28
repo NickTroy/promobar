@@ -3,5 +3,11 @@ class HomeController < AuthenticatedController
   # GET /promobars.json
   def index
     @promobars = Promobar.all
+
+    if request.query_parameters.empty? || request.query_parameters[:promobar][:name].empty?
+      @promobars = Promobar.all
+    else
+      @promobars = Promobar.where( 'name LIKE ?', '%' + request.query_parameters[:promobar][:name] + '%' ).all
+    end
   end
 end
