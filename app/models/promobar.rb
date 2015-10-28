@@ -3,6 +3,5 @@ class Promobar < ActiveRecord::Base
 
   validates :name,
             presence: true,
-            uniqueness: true,
-            :format => { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
+            uniqueness: true
 end
