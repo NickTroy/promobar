@@ -8,10 +8,8 @@ class HomeController < AuthenticatedController
 
     session = ShopifyAPI::Session.new(params[:shop])
 
-    token = session.request_token(params)
-
     if session.valid?
-      @valid = token
+      @valid = session
 
       # ShopifyAPI::Base.activate_session(session)
       script = ShopifyAPI::ScriptTag.new
