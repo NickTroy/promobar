@@ -1,5 +1,5 @@
 class HomeController < AuthenticatedController
-  around_filter :shopify_session
+  # around_filter :shopify_session
 
   # GET /promobars
   # GET /promobars.json
