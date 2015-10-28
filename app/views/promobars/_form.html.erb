@@ -252,6 +252,17 @@
       </div>
     </div>
 
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[text_animation]', "URL LINK" %><br>
+        <%= f.text_field :url_link, class: "form-control" %>
+        <%= label_tag nil, "OPEN IN NEW TAB" %>
+        <%= f.check_box :url_link_blank %>
+        <%= label_tag nil, "ENABLE ON MOBILE DEVICES" %>
+        <%= f.check_box :enable_on_mobile %>
+      </div>
+    </div>
+
 <% end %>
 <!-- Bar form end -->
 
