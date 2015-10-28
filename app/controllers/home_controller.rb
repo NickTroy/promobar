@@ -6,10 +6,20 @@ class HomeController < AuthenticatedController
 
     ShopifyAPI::Session.setup({:api_key => '1542338d97c3e62b5b1e0a8b3ab8c5a8', :secret => 'dd149cca1adf1ec3e7383c02ad8b1a2e'})
 
-    session = ShopifyAPI::Session.new(params[:shop], params[:signature] + '1')
-
+    session = ShopifyAPI::Session.new(params[:shop])
+    scope = ["write_script_tags"]
+    permission_url = session.create_permission_url(scope)
+    token = session.request_token(params)
+    session = ShopifyAPI::Session.new(params[:shop], token)
+    ShopifyAPI::Base.activate_session(session)
     if session.valid?
       @valid = 'true'
+
+      # ShopifyAPI::Base.activate_session(session)
+      script = ShopifyAPI::ScriptTag.new
+      script.event = "onload"
+      script.src = "https://js-aplenty.com/foo.js"
+      script.save
     else
       @valid = 'false'
     end
@@ -21,11 +31,6 @@ class HomeController < AuthenticatedController
     session = ShopifyAPI::Session.new(params[:shop], token)
     ShopifyAPI::Base.activate_session(session)
 =end
-
-    script = ShopifyAPI::ScriptTag.new
-    script.event = "onload"
-    script.src = "https://js-aplenty.com/foo.js"
-    script.save
 
 
   end
