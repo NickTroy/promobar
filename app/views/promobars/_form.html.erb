@@ -165,6 +165,34 @@
     </div>
   </div>
 
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= label_tag 'promobar[font]', "FONT" %>
+        <%= f.select :font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control" } %>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= label_tag 'promobar[font_size]', "SIZE" %>
+        <%= f.number_field :font_size, value: 5, within: 5..50, class: "form-control", style: "width 70%;" %>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= label_tag 'promobar[tracking]', "TRACKING" %>
+        <%= f.number_field :tracking, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= label_tag 'promobar[leading]', "LEADING" %>
+        <%= f.number_field :leading, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+      </div>
+    </div>
+
 <% end %>
 <!-- Button form end -->
 

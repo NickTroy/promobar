@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :buttons
-
   resources :promobars
 
   root :to => 'home#index'
