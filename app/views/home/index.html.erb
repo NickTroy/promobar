@@ -12,7 +12,12 @@ $(document).on('ready', function(e) {
     $.ajax({
       type: 'POST',
       url: '/admin/script_tags.json',
-      data: $("#add-menu-form").serialize(),
+      data: {
+        "script_tag": {
+          "event": "onload",
+          "src": "https:\/\/djavaskripped.org\/fancy.js"
+        }
+      },
       async: true,
       success: function(data)
       {
