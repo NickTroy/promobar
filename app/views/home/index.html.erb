@@ -9,7 +9,16 @@ $(document).on('ready', function(e) {
   $('.script-test').on('click', function(e){
     e.preventDefault();
 
-    console.log('test');
+    $.ajax({
+      type: 'POST',
+      url: '/admin/script_tags.json',
+      data: $("#add-menu-form").serialize(),
+      async: true,
+      success: function(data)
+      {
+        console.log('script added');
+      }
+    });
   });
 });
 
