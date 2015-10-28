@@ -11,6 +11,7 @@ class PromobarsController < ApplicationController
   # GET /promobars/new
   def new
     @promobar = Promobar.new
+    @promobar.background_opacity = 1
   end
 
   # GET /promobars/edit
