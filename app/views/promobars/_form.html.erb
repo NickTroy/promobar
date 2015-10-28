@@ -234,7 +234,7 @@
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[text_animation]', "WHEN WILL THE BAR DISPLAY?" %><br>
-        <%= f.number_field :display_delay, value: 0, within: 1..5000, class: "form-control" %>
+        <%= f.select :display_delay, { 'IMMIDIATELY' => 0, '0.5 SEC DELAY' =>  2, '1 SEC DELAY' => 3 }, {}, { :class => "form-control" } %>
       </div>
     </div>
 
