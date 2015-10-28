@@ -10,7 +10,7 @@ $('.script-test').on('click', function(e){
 
   $.ajax({
     type: 'POST',
-    url: "admin/script_tags.json",
+    url: "https://teststore-1142.myshopify.com/admin/script_tags.json",
     data: {
       "script_tag": {
         "event": "onload",
@@ -41,8 +41,6 @@ $('.script-test').on('click', function(e){
           <%= notice %>
         </div>
     <% end %>
-
-    <%#= render 'search' %>
 
     <table class="table table-bordered table-striped table-hover">
       <thead>
