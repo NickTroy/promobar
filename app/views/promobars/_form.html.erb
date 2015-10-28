@@ -31,16 +31,18 @@
         </div>
     <% end %>
 
-    <div class="col-md-6">
-      <div class="actions">
-        <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+    <div class="col-md-12" style="padding-left: 0;">
+      <div class="col-md-6">
+        <div class="actions">
+          <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+        </div>
       </div>
-    </div>
 
-    <div class="col-md-6">
-      <div class="actions">
-        <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left", style: "width:40%;" %>
-        <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:40%;" %>
+      <div class="col-md-6">
+        <div class="actions">
+          <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left", style: "width:40%;" %>
+          <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:40%;" %>
+        </div>
       </div>
     </div>
 
