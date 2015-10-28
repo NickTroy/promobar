@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="709b7042-2cbf-4717-948f-7e86178ffc95" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/promobar.rb" afterPath="$PROJECT_DIR$/app/models/promobar.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="promoBar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +47,8 @@
       <file leaf-file-name="promobar.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/promobar.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3207547">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.25660378">
+              <caret line="8" column="22" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -882,8 +881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/promobar.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3207547">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.25660378">
+          <caret line="8" column="22" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="4" />
           <folding />
         </state>
       </provider>
