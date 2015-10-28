@@ -37,13 +37,13 @@ $(document).on('ready', function(e) {
   </div>
   <div class="panel-body">
     <%= link_to 'Add promo bar', new_promobar_path, class: 'btn btn-primary' %><br/><br/>
-    <%= link_to 'test', '#', class: 'script-test', data: { url: 'https://' + ShopifyAPI::Shop.current.attributes[:domain] + '/admin/script_tags.json' } %><br/><br/>
+
     <% if notice %>
         <div class="alert alert-success" role="alert">
           <%= notice %>
         </div>
     <% end %>
-    <%= @scripts.inspect %>
+
     <table class="table table-bordered table-striped table-hover">
       <thead>
       <tr>
