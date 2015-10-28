@@ -1,9 +1,15 @@
 class PromobarsController < ApplicationController
-  before_action :set_promobar, only: [:update, :destroy]
-  before_action :define_promobars, only: [:manage]
+  before_action :set_promobar, only: [:edit, :update, :destroy]
+  # before_action :define_promobars, only: [:manage]
 
+=begin
   # GET /promobars/manage
   def manage
+  end
+=end
+
+  # GET /promobars/edit
+  def edit
   end
 
   # POST /promobars
