@@ -1,19 +1,9 @@
 class PromobarsController < ApplicationController
   before_action :set_promobar, only: [:update, :destroy]
+  before_action :define_promobars, only: [:manage]
 
   # GET /promobars/manage
   def manage
-    if Promobar.exists?(bar_type: 1)
-      @header_promobar = Promobar.where(bar_type: 1).take
-    else
-      @header_promobar = Promobar.new
-    end
-
-    if Promobar.exists?(bar_type: 2)
-      @footer_promobar = Promobar.where(bar_type: 2).take
-    else
-      @footer_promobar = Promobar.new
-    end
   end
 
   # POST /promobars
@@ -60,6 +50,21 @@ class PromobarsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_promobar
       @promobar = Promobar.find(params[:id])
+    end
+
+    #
+    def define_promobars
+      if Promobar.exists?(bar_type: 1)
+        @header_promobar = Promobar.where(bar_type: 1).take
+      else
+        @header_promobar = Promobar.new
+      end
+
+      if Promobar.exists?(bar_type: 2)
+        @footer_promobar = Promobar.where(bar_type: 2).take
+      else
+        @footer_promobar = Promobar.new
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
