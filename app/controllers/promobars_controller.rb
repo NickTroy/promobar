@@ -8,6 +8,11 @@ class PromobarsController < ApplicationController
   end
 =end
 
+  # GET /promobars/new
+  def new
+    @promobar = Promobar.new
+  end
+
   # GET /promobars/edit
   def edit
   end
@@ -19,7 +24,7 @@ class PromobarsController < ApplicationController
 
     respond_to do |format|
       if @promobar.save
-        format.html { redirect_to manage_promobars_url, notice: 'Promobar was successfully created.' }
+        format.html { redirect_to edit_promobar_url(@promobar), notice: 'Promobar was successfully created.' }
         format.json { render :show, status: :created, location: @promobar }
       else
         format.html { render :new }
@@ -33,7 +38,7 @@ class PromobarsController < ApplicationController
   def update
     respond_to do |format|
       if @promobar.update(promobar_params)
-        format.html { redirect_to manage_promobars_url, notice: 'Promobar was successfully updated.' }
+        format.html { redirect_to edit_promobar_url(@promobar), notice: 'Promobar was successfully updated.' }
         format.json { render :show, status: :ok, location: @promobar }
       else
         format.html { render :edit }
@@ -58,6 +63,7 @@ class PromobarsController < ApplicationController
       @promobar = Promobar.find(params[:id])
     end
 
+=begin
     #
     def define_promobars
       if Promobar.exists?(bar_type: 1)
@@ -72,6 +78,7 @@ class PromobarsController < ApplicationController
         @footer_promobar = Promobar.new
       end
     end
+=end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promobar_params
