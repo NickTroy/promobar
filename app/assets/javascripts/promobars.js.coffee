@@ -11,7 +11,7 @@ $ -> $('.bar-background-color').minicolors theme: 'bootstrap', defaultValue: $("
 $ -> $('.button-background-color').minicolors theme: 'bootstrap', defaultValue: $(".button-background-color").attr("value") || "#ffffff", change: (value) ->
   $('.button-background-color').attr("value", value)
 
-$ -> $('.hover-color').minicolors theme: 'bootstrap', defaultValue: $(".hover-color").attr("value") || "#ffffff", change: (value) ->
+$ -> $('.hover-color').minicolors theme: 'bootstrap', defaultValue: $(".hover-color").attr("value") || "#000000", change: (value) ->
   $('.hover-color').attr("value", value)
 
 $ -> $( ".bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(".bar-opacity-switcher").attr("value"), slide: (event, ui) ->
