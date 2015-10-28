@@ -1,12 +1,5 @@
 class PromobarsController < ApplicationController
   before_action :set_promobar, only: [:edit, :update, :destroy]
-  # before_action :define_promobars, only: [:manage]
-
-=begin
-  # GET /promobars/manage
-  def manage
-  end
-=end
 
   # GET /promobars/new
   def new
@@ -64,25 +57,8 @@ class PromobarsController < ApplicationController
       @promobar = Promobar.find(params[:id])
     end
 
-=begin
-    #
-    def define_promobars
-      if Promobar.exists?(bar_type: 1)
-        @header_promobar = Promobar.where(bar_type: 1).take
-      else
-        @header_promobar = Promobar.new
-      end
-
-      if Promobar.exists?(bar_type: 2)
-        @footer_promobar = Promobar.where(bar_type: 2).take
-      else
-        @footer_promobar = Promobar.new
-      end
-    end
-=end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def promobar_params
-      params.require(:promobar).permit(:type, :text, :font, :size, :tracking, :leading, :font_regular, :font_bold, :font_italic, :text_color, :background_color, :background_opacity)
+      params.require(:promobar).permit(:type, :name, :text, :font, :size, :tracking, :leading, :font_regular, :font_bold, :font_italic, :text_color, :background_color, :background_opacity)
     end
 end
