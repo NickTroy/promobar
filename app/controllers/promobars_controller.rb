@@ -5,7 +5,6 @@ class PromobarsController < ApplicationController
   def new
     @promobar = Promobar.new
     @promobar.background_opacity = 1
-    @promobar.display_delay = 0
   end
 
   # GET /promobars/edit
