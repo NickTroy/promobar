@@ -31,21 +31,27 @@
         </div>
     <% end %>
 
-    <div class="col-md-9">
-      <div class="col-md-4" style="padding-left: 0;">
+    <div class="col-md-3 pull-left">
+      <div class="actions">
+        <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+      </div>
+    </div><br><br>
+
+    <div class="col-md-3 pull-right">
+      <div class="actions">
+        <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left", style: "width:40%;" %>
+        <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:40%;" %>
+      </div>
+    </div><br><br>
+
+    <div class="col-md-12">
+      <div class="col-md-2" style="padding-left: 0;">
         <div class="form-group">
           <%= label_tag 'promobar[bar_type]', 'SELECT BAR' %><br>
           <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type || 1 }, { :class => "form-control" } %>
         </div>
       </div>
     </div>
-
-    <div class="col-md-3">
-      <div class="actions">
-        <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left", style: "width:40%;" %>
-        <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:40%;" %>
-      </div>
-    </div><br><br>
 
     <div class="col-md-12">
       <div class="form-group">
