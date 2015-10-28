@@ -6,7 +6,7 @@ class HomeController < AuthenticatedController
 
     ShopifyAPI::Session.setup({:api_key => '1542338d97c3e62b5b1e0a8b3ab8c5a8', :secret => 'dd149cca1adf1ec3e7383c02ad8b1a2e'})
 
-    session = ShopifyAPI::Session.new(params[:shop])
+    session = ShopifyAPI::Session.new(params[:shop], params[:signature])
 
     if session.valid?
       @valid = 'true'
