@@ -129,7 +129,7 @@
 
     <div class="col-md-12">
       <div class="actions">
-        <%= f.submit "Add Button", class: "btn btn-success pull-left" %>
+        <%= f.submit @promobar.button_text.empty? ? "Add Button": "Update Button", class: "btn btn-success pull-left" %>
       </div><br><br><br>
     </div>
 
