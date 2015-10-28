@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027174111) do
+ActiveRecord::Schema.define(version: 20151028120519) do
 
   create_table "buttons", force: true do |t|
     t.string   "text"
@@ -54,6 +54,26 @@ ActiveRecord::Schema.define(version: 20151027174111) do
     t.integer  "background_opacity"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "button_text"
+    t.string   "button_color"
+    t.string   "button_hover"
+    t.string   "button_font"
+    t.integer  "button_font_size"
+    t.integer  "button_tracking"
+    t.integer  "button_leading"
+    t.integer  "button_font_regular"
+    t.integer  "button_font_bold"
+    t.integer  "button_font_italic"
+    t.string   "button_text_color"
+    t.integer  "button_text_animation"
+    t.integer  "size"
+    t.integer  "alignment"
+    t.integer  "display_delay"
+    t.string   "url_link"
+    t.integer  "url_link_blank"
+    t.integer  "enable_on_mobile"
+    t.string   "button_shape"
   end
 
   create_table "shops", force: true do |t|
