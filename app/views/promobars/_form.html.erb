@@ -33,7 +33,7 @@
     <div class="col-md-9">
       <div class="form-group">
         <%= label_tag 'promobar[bar_type]', 'SELECT BAR' %><br>
-        <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, {}, { :class => "form-control", :style => "width:30%;" } %>
+        <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { value: @promobar.bar_type }, { :class => "form-control", :style => "width:30%;" } %>
       </div>
     </div>
 

@@ -4,6 +4,7 @@ class PromobarsController < ApplicationController
   # GET /promobars/new
   def new
     @promobar = Promobar.new
+    @promobar.babar_type = 1
     @promobar.background_opacity = 1
   end
 
