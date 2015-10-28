@@ -210,6 +210,48 @@
       </div>
     </div>
 
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[text_animation]', "TEXT ANIMATION" %><br>
+        <%= f.select :text_animatiomn, { 'FLY FROM LEFT' => 1, 'FADE IN' =>  2 }, {}, { :class => "form-control" } %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[text_animation]', "TEXT ANIMATION" %><br>
+        <%= f.select :text_animatiomn, { 'FLY FROM LEFT' => 1, 'FADE IN' =>  2 }, {}, { :class => "form-control" } %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[text_animation]', "TEXT ANIMATION" %><br>
+        <%= f.select :size, { 'REGULAR' => 1, 'SMALL' =>  2, 'LARGE' => 3 }, {}, { :class => "form-control" } %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[text_animation]', "BAR POSITION" %><br>
+        <%= f.select :position, { 'TOP OF PAGE' => 1, 'OTHER POSITION' =>  2 }, {}, { :class => "form-control" } %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[text_animation]', "BAR ALIGNMENT" %><br>
+        <%= f.select :position, { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }, {}, { :class => "form-control" } %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[text_animation]', "WHEN WILL THE BAR DISPLAY?" %><br>
+        <%= f.number_field :display_delay, value: 0, within: 1..5000, class: "form-control" %>
+      </div>
+    </div>
+
 <% end %>
 <!-- Bar form end -->
 
