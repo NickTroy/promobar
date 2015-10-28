@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   resources :buttons
 
-=begin
-  resources :promobars, do
-    get 'manage', on: :collection
-  end
-=end
   resources :promobars
 
   root :to => 'home#index'
