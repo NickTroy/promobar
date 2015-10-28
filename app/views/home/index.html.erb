@@ -12,35 +12,41 @@
   </div>
   <div class="panel-body">
     <%= link_to 'Add promo bar', new_promobar_path, class: 'btn btn-primary' %><br/><br/>
+    
+    <% if notice %>
+        <div class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+    <% end %>
 
-        <table class="table table-bordered table-striped table-hover">
-          <thead>
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Date</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @promobars.each do |bar| %>
           <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Date</th>
-            <th colspan="3"></th>
+            <td style="width: 50%;"><%= bar.name %></td>
+            <td style="width: 20%;"><%= bar.bar_type == 1? "HEADER BAR": "FOOTER BAR" %></td>
+            <td style="width: 20%;"><%= bar.updated_at.nil? ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+            <td style="width: 5%;"><%= link_to 'Edit', edit_promobar_path(bar) %></td>
+            <td style="width: 5%;"><%= link_to 'Destroy', promobar_path(bar), method: :delete, data: { confirm: 'Are you sure, you want to delete this promo bar?' } %></td>
           </tr>
-          </thead>
+      <% end %>
 
-          <tbody>
-          <% @promobars.each do |bar| %>
-              <tr>
-                <td style="width: 50%;"><%= bar.name %></td>
-                <td style="width: 20%;"><%= bar.bar_type == 1? "HEADER BAR": "FOOTER BAR" %></td>
-                <td style="width: 20%;"><%= bar.updated_at.nil? ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
-                <td style="width: 5%;"><%= link_to 'Edit', edit_promobar_path(bar) %></td>
-                <td style="width: 5%;"><%= link_to 'Destroy', promobar_path(bar), method: :delete, data: { confirm: 'Are you sure, you want to delete this promo bar?' } %></td>
-              </tr>
-          <% end %>
+      <% unless @promobars.any? %>
+          <tr>
+            <td colspan="4">No promo bars found.</td>
+          </tr>
+      <% end %>
 
-          <% unless @promobars.any? %>
-              <tr>
-                <td colspan="4">No promo bars found.</td>
-              </tr>
-          <% end %>
-
-          </tbody>
-        </table>
+      </tbody>
+    </table>
   </div>
 </div>
