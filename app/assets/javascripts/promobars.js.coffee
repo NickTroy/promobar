@@ -17,3 +17,7 @@ $ -> $('.footer-bar-background-color').minicolors theme: 'bootstrap', defaultVal
 $ -> $( ".header-bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(".header-bar-opacity-switcher").attr("value"), slide: (event, ui) ->
   $(".header-bar-opacity-switcher").attr("value", ui.value)
   $(".header-bar-opacity-value").html(ui.value + "%")
+
+$ -> $( ".footer-bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(".footer-bar-opacity-switcher").attr("value"), slide: (event, ui) ->
+  $(".footer-bar-opacity-switcher").attr("value", ui.value)
+  $(".footer-bar-opacity-value").html(ui.value + "%")
