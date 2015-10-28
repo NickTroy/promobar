@@ -4,6 +4,28 @@
       title: "Home"
     });
   });
+
+$('.script-test').on('click', function(e){
+  e.preventDefault();
+
+  $.ajax({
+    type: 'POST',
+    url: "admin/script_tags.json",
+    data: {
+      "script_tag": {
+        "event": "onload",
+        "src": "http://test.js"
+      }
+    },
+    async: true,
+    success: function(data)
+    {
+      console.log('script added');
+    }
+  });
+
+});
+
 </script>
 
 <div class="panel panel-default">
@@ -12,7 +34,7 @@
   </div>
   <div class="panel-body">
     <%= link_to 'Add promo bar', new_promobar_path, class: 'btn btn-primary' %><br/><br/>
-    <%= link_to 'test', script_promobars_path+'.js', class: 'btn btn-primary', remote: true %><br/><br/>
+    <%= link_to 'test', '#', class: 'btn btn-primary script-test' %><br/><br/>
 
     <% if notice %>
         <div class="alert alert-success" role="alert">
