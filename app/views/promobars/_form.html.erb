@@ -31,13 +31,13 @@
         </div>
     <% end %>
 
-    <div class="col-md-3 pull-left">
+    <div class="col-md-6">
       <div class="actions">
-        <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+        <%= link_to 'Back', root_path, class: "btn btn-primary pull-left" %>
       </div>
     </div><br><br>
 
-    <div class="col-md-3 pull-right">
+    <div class="col-md-6 pull-right">
       <div class="actions">
         <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left", style: "width:40%;" %>
         <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:40%;" %>
