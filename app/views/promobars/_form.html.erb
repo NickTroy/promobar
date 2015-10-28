@@ -56,8 +56,9 @@
 
     <div class="col-md-12">
       <div class="form-group">
-      <%= label_tag 'promobar[text]', "BAR TEXT" %><br>
-      <%= f.text_field :text, class: "form-control" %>
+        <%= label_tag 'promobar[text]', "BAR TEXT" %><br>
+        <%= f.text_field :text, class: "form-control" %>
+      </div>
     </div>
 
     <div class="col-md-6">
@@ -143,7 +144,6 @@
     <div class="col-md-4">
       <div class="form-group">
         <%= label_tag 'promobar[button_shape]', "BUTTON SHAPE" %>
-        <%#= @promobar.attribute_names %>
         <%= f.select :button_shape, { 'RECTANGLE' => 1, 'SQUARE' =>  2 }, {}, { :class => "form-control" } %>
       </div>
     </div>
@@ -189,6 +189,28 @@
         <%= f.number_field :button_leading, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= label_tag nil, "FORMATTING" %>
+        <%= f.check_box :font_regular %>
+        <span>REGULAR</span>
+        <%= f.check_box :font_bold %>
+        <span>BOLD</span>
+        <%= f.check_box :font_italic %>
+        <span>ITALIC</span>
+      </div>
+    </div><br>
+
+    <div class="col-md-12" style="padding-left: 0;">
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= label_tag 'promobar[button_text_color]', "TEXT COLOR" %>
+          <%= f.text_field :button_text_color, class: "form-control button-text-color" %>
+        </div>
+      </div>
+    </div>
+
 <% end %>
 <!-- Bar form end -->
 
