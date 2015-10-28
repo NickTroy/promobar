@@ -26,7 +26,7 @@
           <tbody>
           <% @promobars.each do |bar| %>
               <tr>
-                <td style="width: 50%;"><%= bar.name %></td>
+                <td style="width: 50%;"><%#= bar.name %></td>
                 <td><%= bar.bar_type %></td>
                 <td style="width: 20%;"><%= bar.updated_at.nil? ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
                 <td style="width: 5%;"><%= link_to 'Edit', edit_promobar_path(bar) %></td>
