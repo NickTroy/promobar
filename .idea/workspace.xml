@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="709b7042-2cbf-4717-948f-7e86178ffc95" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/promobars/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/promobars/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/promobars_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/promobars_controller.rb" />
     </list>
     <ignored path="promoBar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,31 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="promobars_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="promobars_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/promobars_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20377359">
+            <state vertical-scroll-proportion="0.0">
               <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notes_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://E:/BT-Lite/app/controllers/admin/notes_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="80" selection-start-line="38" selection-start-column="8" selection-end-line="40" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/promobars/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.4905663">
-              <caret line="35" column="103" selection-start-line="35" selection-start-column="103" selection-end-line="35" selection-end-column="103" />
+            <state vertical-scroll-proportion="0.7127883">
+              <caret line="35" column="121" selection-start-line="35" selection-start-column="121" selection-end-line="35" selection-end-column="121" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#8;n#div#6;n#div#0;n#!!top" expanded="true" />
@@ -118,8 +107,8 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/models/promobar.rb" />
-        <option value="$PROJECT_DIR$/app/views/promobars/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/promobars_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/promobars/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -929,23 +918,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/promobars_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/promobars/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4905663">
-          <caret line="35" column="103" selection-start-line="35" selection-start-column="103" selection-end-line="35" selection-end-column="103" />
+        <state vertical-scroll-proportion="0.7127883">
+          <caret line="35" column="121" selection-start-line="35" selection-start-column="121" selection-end-line="35" selection-end-column="121" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#8;n#div#6;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#8;n#div#6;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/promobars_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20377359">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
