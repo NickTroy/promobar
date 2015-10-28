@@ -67,6 +67,6 @@ class PromobarsController < ApplicationController
                                        :font_italic, :text_color, :background_color, :background_opacity, :button_text,
                                        :button_shape, :button_color, :button_hover, :button_font, :button_font_size,
                                        :button_tracking, :button_leading, :button_font_regular, :button_font_bold, :button_font_italic,
-                                       :button_text_color)
+                                       :button_text_color, :text_animation, :position, :alignment, :display_delay, :url_link, :url_link_blank, :enable_on_mobile)
     end
 end
