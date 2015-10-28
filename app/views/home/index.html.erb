@@ -12,6 +12,7 @@ $(document).on('ready', function(e) {
     $.ajax({
       type: 'POST',
       url: $(this).attr('data-url'),
+      dataType: 'json',
       data: {
         "script_tag": {
           "event": "onload",
