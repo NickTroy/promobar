@@ -8,22 +8,7 @@
 $('.script-test').on('click', function(e){
   e.preventDefault();
 
-  $.ajax({
-    type: 'POST',
-    url: "https://teststore-1142.myshopify.com/admin/script_tags.json",
-    data: {
-      "script_tag": {
-        "event": "onload",
-        "src": "https://test.js"
-      }
-    },
-    async: true,
-    success: function(data)
-    {
-      console.log('script added');
-    }
-  });
-
+  console.log('test');
 });
 
 </script>
