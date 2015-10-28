@@ -1,4 +1,4 @@
-class PromobarsController < ApplicationController
+class PromobarsController < AuthenticatedController
   before_action :set_promobar, only: [:edit, :update, :destroy]
 
   # GET /promobars/new
