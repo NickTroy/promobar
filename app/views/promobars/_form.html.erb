@@ -32,8 +32,8 @@
 
     <div class="col-md-9">
       <div class="form-group">
-        <%#= label_tag 'SELECT BAR' %><br>
-        <%#= f.select :type, ['HEADER BAR' => 1, 'FOOTER BAR' => 1], {}, { :class => "form-control", :style => "width:30%;" } %>
+        <%= label_tag 'SELECT BAR' %><br>
+        <%= f.select :bar_type, ['HEADER BAR' => 1, 'FOOTER BAR' => 1], {}, { :class => "form-control", :style => "width:30%;" } %>
       </div>
     </div>
 
@@ -44,6 +44,13 @@
       </div>
     </div><br><br>
 
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[name]', "BAR NAME" %><br>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    
     <div class="col-md-12">
       <div class="form-group">
       <%= label_tag 'promobar[text]', "BAR TEXT" %><br>
