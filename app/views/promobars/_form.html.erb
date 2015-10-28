@@ -126,73 +126,69 @@
 
     </div>
   </div>
-<% end %>
-<!-- Bar form end -->
 
-<!-- Button form -->
-<%= form_for(@button, class: "button-form") do |f| %>
-  <div class="col-md-12">
-    <div class="actions">
-      <%= f.submit "Add Button", class: "btn btn-success pull-left" %>
-    </div><br><br><br>
-  </div>
-
-  <div class="col-md-12">
-    <div class="form-group">
-      <%= label_tag 'button[text]', "BUTTON TEXT" %><br>
-      <%= f.text_field :text, class: "form-control" %>
+    <div class="col-md-12">
+      <div class="actions">
+        <%= f.submit "Add Button", class: "btn btn-success pull-left" %>
+      </div><br><br><br>
     </div>
-  </div>
 
-  <div class="col-md-4">
-    <div class="form-group">
-      <%= label_tag 'promobar[font]', "BUTTON SHAPE" %>
-      <%= f.select :shape, { 'RECTANGLE' => 1, 'SQUARE' =>  2 }, {}, { :class => "form-control" } %>
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[button_text]', "BUTTON TEXT" %><br>
+        <%= f.text_field :button_text, class: "form-control" %>
+      </div>
     </div>
-  </div>
 
-  <div class="col-md-4">
-    <div class="form-group">
-      <%= label_tag 'button[color]', "BUTTON COLOR" %>
-      <%= f.text_field :color, class: "form-control button-background-color" %>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= label_tag 'promobar[button_shape]', "BUTTON SHAPE" %>
+        <%= f.select :button_shape, { 'RECTANGLE' => 1, 'SQUARE' =>  2 }, {}, { :class => "form-control" } %>
+      </div>
     </div>
-  </div>
 
-  <div class="col-md-4">
-    <div class="form-group">
-      <%= label_tag 'button[hover]', "HOVER" %>
-      <%= f.text_field :color, class: "form-control button-hover" %>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= label_tag 'promobar[button_color]', "BUTTON COLOR" %>
+        <%= f.text_field :button_color, class: "form-control button-background-color" %>
+      </div>
     </div>
-  </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= label_tag 'promobar[button_hover]', "HOVER" %>
+        <%= f.text_field :button_color, class: "form-control button-hover" %>
+      </div>
+    </div>
 
     <div class="col-md-6">
       <div class="form-group">
-        <%= label_tag 'promobar[font]', "FONT" %>
-        <%= f.select :font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control" } %>
+        <%= label_tag 'promobar[button_font]', "FONT" %>
+        <%= f.select :button_font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control" } %>
       </div>
     </div>
 
     <div class="col-md-2">
       <div class="form-group">
-        <%= label_tag 'promobar[font_size]', "SIZE" %>
-        <%= f.number_field :font_size, value: 5, within: 5..50, class: "form-control", style: "width 70%;" %>
+        <%= label_tag 'promobar[button_font_size]', "SIZE" %>
+        <%= f.number_field :button_font_size, value: 5, within: 5..50, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
 
     <div class="col-md-2">
       <div class="form-group">
-        <%= label_tag 'promobar[tracking]', "TRACKING" %>
-        <%= f.number_field :tracking, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+        <%= label_tag 'promobar[button_tracking]', "TRACKING" %>
+        <%= f.number_field :button_tracking, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
 
     <div class="col-md-2">
       <div class="form-group">
-        <%= label_tag 'promobar[leading]', "LEADING" %>
-        <%= f.number_field :leading, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+        <%= label_tag 'promobar[button_leading]', "LEADING" %>
+        <%= f.number_field :button_leading, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
-
 <% end %>
-<!-- Button form end -->
+<!-- Bar form end -->
+
 
