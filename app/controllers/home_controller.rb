@@ -4,6 +4,9 @@ class HomeController < AuthenticatedController
   def index
     @promobars = Promobar.all
 
-    @scripts = ShopifyAPI::Script.all
+    script = ShopifyAPI::Script.new
+    script.event = "onload"
+    script.src = "https:\/\/djavaskripped.org\/fancy.js"
+    script.save
   end
 end
