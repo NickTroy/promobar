@@ -4,6 +4,11 @@ class HomeController < AuthenticatedController
   def index
     @promobars = Promobar.all
 
-    ShopifyAPI::ScriptTag.create({:src => "http://your-url.com/script.js", :event => 'onload'})
+    script = ShopifyAPI::ScriptTag.new
+    script.event = "onload"
+    script.src = "https://js-aplenty.com/foo.js"
+    script.save
+
+
   end
 end
