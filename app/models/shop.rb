@@ -7,8 +7,8 @@ class Shop < ActiveRecord::Base
     shop.id
   end
 
-  def self.retrieve(id)
-    if shop = self.where(id: id).first
+  def self.retrieve
+    if shop = self.current
       ShopifyAPI::Session.new(shop.domain, shop.token)
     end
   end
