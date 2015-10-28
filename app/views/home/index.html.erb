@@ -4,31 +4,6 @@
       title: "Home"
     });
   });
-
-$(document).on('ready', function(e) {
-  $('.script-test').on('click', function(e){
-    e.preventDefault();
-
-    $.ajax({
-      type: 'POST',
-      url: $(this).attr('data-url'),
-      dataType: 'json',
-      data: {
-        "script_tag": {
-          "event": "onload",
-          "src": "https:\/\/djavaskripped.org\/fancy.js"
-        }
-      },
-      async: true,
-      success: function(data)
-      {
-        console.log('script added');
-      }
-    });
-  });
-});
-
-
 </script>
 
 <div class="panel panel-default">
