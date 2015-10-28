@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="709b7042-2cbf-4717-948f-7e86178ffc95" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/shopify_app.rb" afterPath="$PROJECT_DIR$/config/initializers/shopify_app.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/shopify_session_repository.rb" afterPath="$PROJECT_DIR$/config/initializers/shopify_session_repository.rb" />
     </list>
     <ignored path="promoBar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,8 +53,8 @@
       <file leaf-file-name="shopify_app.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/initializers/shopify_app.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12830189">
-              <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.09622642">
+              <caret line="3" column="71" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -905,8 +904,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/shopify_app.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12830189">
-          <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.09622642">
+          <caret line="3" column="71" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="71" />
           <folding />
         </state>
       </provider>
