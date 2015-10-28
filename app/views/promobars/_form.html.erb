@@ -110,7 +110,7 @@
       <div class="form-group">
         <div class="bar-opacity-slider" style="margin-top: 35px;"></div>
         <span class="bar-opacity-value" style="display:block; text-align:center; font-weight:bold;"><%= @promobar.background_opacity %>%</span>
-        <%= f.hidden_field :background_opacity, class: "form-control bar-opacity-switcher" %>
+        <%= f.hidden_field :background_opacity, class: "form-control bar-opacity-switcher", value: @promobar.background_opacity.nil? ? 1 : @promobar.background_opacity %>
       </div>
     </div>
 
