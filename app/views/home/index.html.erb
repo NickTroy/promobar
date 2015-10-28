@@ -12,5 +12,35 @@
   </div>
   <div class="panel-body" style="padding-top: 10%; text-align: center; min-height:350px;">
     <%= link_to 'Manage promo bars', manage_promobars_path, class: 'btn btn-primary btn-lg' %>
+
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th colspan="3"></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <% @promobars.each do |bar| %>
+              <tr>
+                <td style="width: 50%;"><%= bar.name %></td>
+                <td><%= bar.bar_type %></td>
+                <td style="width: 20%;"><%= bar.updated_at.nil? ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+                <td style="width: 5%;"><%= link_to 'Edit', edit_promobar_path(bar) %></td>
+                <td style="width: 5%;"><%= link_to 'Destroy', destroy_promobar_path(bar), method: :delete, data: { confirm: 'Are you sure, you want to delete this promo bar?' } %></td>
+              </tr>
+          <% end %>
+
+          <% unless @notes.any? %>
+              <tr>
+                <td colspan="4">No notes found.</td>
+              </tr>
+          <% end %>
+
+          </tbody>
+        </table>
   </div>
 </div>
