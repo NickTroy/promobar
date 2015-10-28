@@ -1,7 +1,8 @@
 <script type="text/javascript">
 </script>
 
-<%= form_for(@promobar, class: "header-bar-form") do |f| %>
+<!-- Bar form -->
+<%= form_for(@promobar, class: "bar-form") do |f| %>
 
   <div class="col-md-12" style="border-bottom: 3px solid #000;margin-bottom: 30px;">
     <% if notice %>
@@ -124,7 +125,23 @@
     </div>
   </div>
 <% end %>
+<!-- Bar form end -->
 
+<!-- Button form -->
+<%= form_for(@button, class: "button-form") do |f| %>
+  <div class="col-md-12">
+    <div class="actions">
+      <%= f.submit "Add Button", class: "btn btn-success pull-left" %>
+    </div>
+  </div><br><br>
 
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= label_tag 'button[text]', "BUTTON TEXT" %><br>
+      <%= f.text_field :text, class: "form-control" %>
+    </div>
+  </div>
 
+<% end %>
+<!-- Button form end -->
 
