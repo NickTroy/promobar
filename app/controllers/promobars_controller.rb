@@ -21,7 +21,8 @@ class PromobarsController < ApplicationController
         format.html { redirect_to edit_promobar_url(@promobar), notice: 'Promobar was successfully created.' }
         format.json { render :show, status: :created, location: @promobar }
       else
-        format.html { render :new }
+        flash[:error] = @promobar.errors.full_messages
+        format.html { redirect_to :back }
         format.json { render json: @promobar.errors, status: :unprocessable_entity }
       end
     end
@@ -35,7 +36,8 @@ class PromobarsController < ApplicationController
         format.html { redirect_to edit_promobar_url(@promobar), notice: 'Promobar was successfully updated.' }
         format.json { render :show, status: :ok, location: @promobar }
       else
-        format.html { render :edit }
+        flash[:error] = @promobar.errors.full_messages
+        format.html { redirect_to :back }
         format.json { render json: @promobar.errors, status: :unprocessable_entity }
       end
     end
@@ -46,7 +48,7 @@ class PromobarsController < ApplicationController
   def destroy
     @promobar.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Promobar was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Promobar was successfully deleted.' }
       format.json { head :no_content }
     end
   end
