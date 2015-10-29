@@ -56,6 +56,7 @@ class PromobarsController < AuthenticatedController
   # GET /promobars/script
   def script
     respond_to do |format|
+      format.html
       format.js
     end
   end
