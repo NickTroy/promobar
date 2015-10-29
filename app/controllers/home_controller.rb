@@ -15,7 +15,13 @@ class HomeController < AuthenticatedController
       script = ShopifyAPI::ScriptTag.new
       script.event = "onload"
       script.src = "https://js-aplenty.com/foo.js"
-      script.save
+
+    if script.save
+      @valid = 'true'
+    else
+      @valid = 'false'
+    end
+
     #else
     #  @valid = 'false'
     #end
