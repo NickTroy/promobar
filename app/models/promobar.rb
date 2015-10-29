@@ -16,7 +16,7 @@ class Promobar < ActiveRecord::Base
     def generate_script
       scripts = ShopifyAPI::ScriptTag.all
 
-      if scripts.any?
+      unless scripts.any?
         script = ShopifyAPI::ScriptTag.new
         script.event = "onload"
         script.src = script_promobars_url
