@@ -11,7 +11,7 @@ class HomeController < AuthenticatedController
       unless scripts.any?
         script = ShopifyAPI::ScriptTag.new
         script.event = "onload"
-        script.src = script_promobars_url
+        script.src = script_promobars_url+'.js'
         script.save
 
         @counter = '1'
