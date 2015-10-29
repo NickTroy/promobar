@@ -57,7 +57,9 @@ class PromobarsController < AuthenticatedController
   def script
     respond_to do |format|
       #format.html
-      format.js
+      format.js {
+        :text "Test"
+      }
     end
   end
 
