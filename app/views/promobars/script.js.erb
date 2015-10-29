@@ -1,9 +1,16 @@
-
-    $('<div style="position: absolute; top: 0; width: 100%;' +
+<% unless @header_promobar.nil? %>
+    $('<div style="position: fixed; top: 0; width: 100%;' +
         ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
         ' font-size: <%= @header_promobar.font_size %>px; text-align: center;">' +
         '<h1><%= @header_promobar.text %><h1/></div>').appendTo('body');
+<% end %>
 
+<% unless @footer_promobar.nil? %>
+$('<div style="position: fixed; bottom: 0; width: 100%;' +
+        ' color: <%= @footer_promobar.text_color %>; background: <%= @footer_promobar.background_color %>; ' +
+        ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
+        '<h1><%= @footer_promobar.text %><h1/></div>').appendTo('body');
+<% end %>
 
 
 
