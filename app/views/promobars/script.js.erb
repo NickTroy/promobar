@@ -1,5 +1,5 @@
 <% unless @header_promobar.nil? %>
-    $('<div class= "header-promo-bar" style="position: fixed; top: 0; width: 100%;' +
+    $('<div class= "header-promo-bar" style="position: fixed; top: 0; width: 100%; line-height: 100%;' +
         ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
         ' font-size: <%= @header_promobar.font_size %>px; text-align: center;">' +
         '<h1><%= @header_promobar.text %><h1/></div>').appendTo('body');
