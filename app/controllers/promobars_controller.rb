@@ -58,6 +58,9 @@ class PromobarsController < AuthenticatedController
     header_bars_offset = rand(Promobar.where(bar_type: 1).count)
     @header_promobar = Promobar.where(bar_type: 1).offset(header_bars_offset).first
 
+    footer_bars_offset = rand(Promobar.where(bar_type: 2).count)
+    @footer_promobar = Promobar.where(bar_type: 2).offset(footer_bars_offset).first
+
     respond_to do |format|
       format.js  {}
     end
