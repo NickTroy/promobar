@@ -1,8 +1,6 @@
-(function() {
-
-    alert('sup');
-
-})();
+$('document').bind('ajax:complete', function(e, xhr, status){
+    console.log('loaded');
+});
 
 
 
