@@ -55,8 +55,8 @@ class PromobarsController < AuthenticatedController
 
   # GET /promobars/script
   def script
-    offset = rand(Model.count)
-    @promobar = Model.offset(offset).first
+    offset = rand(Promobar.count)
+    @promobar = Promobar.offset(offset).first
 
     respond_to do |format|
       format.js  {}
