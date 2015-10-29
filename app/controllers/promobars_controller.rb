@@ -56,7 +56,7 @@ class PromobarsController < AuthenticatedController
   # GET /promobars/script
   def script
     respond_to do |format|
-      format.js { render :partial => 'script', :status => 200 }
+      format.js { render nothing: true }
     end
   end
 
