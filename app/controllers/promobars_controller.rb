@@ -63,9 +63,9 @@ class PromobarsController < AuthenticatedController
     end
 
     if Promobar.exists?(:bar_type => 2)
-      @header_promobar = Promobar.where(bar_type: 2).first
+      @footer_promobar = Promobar.where(bar_type: 2).first
     else
-      @header_promobar = false
+      @footer_promobar = false
     end
 
     respond_to do |format|
