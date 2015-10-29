@@ -22,6 +22,7 @@ class HomeController < AuthenticatedController
       @valid = 'false'
     end
 
+    @sc = ShopifyAPI::ScriptTag.first
     #else
     #  @valid = 'false'
     #end
