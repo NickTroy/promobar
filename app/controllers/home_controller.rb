@@ -4,11 +4,13 @@ class HomeController < AuthenticatedController
   def index
     @promobars = Promobar.all
 
-
+    scripts = ShopifyAPI::ScriptTag.all
+    unless scripts.any?
       script = ShopifyAPI::ScriptTag.new
       script.event = "onload"
       script.src = script_promobars_url
       script.save
+    end
 
     # scripts = ShopifyAPI::ScriptTag.all
 
