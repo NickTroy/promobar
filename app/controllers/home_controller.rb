@@ -4,7 +4,7 @@ class HomeController < AuthenticatedController
   def index
     @promobars = Promobar.all
 
-    #scripts = ShopifyAPI::ScriptTag.all
+    scripts = ShopifyAPI::ScriptTag.all
 =begin
     unless scripts.any?
       script = ShopifyAPI::ScriptTag.new
@@ -29,7 +29,7 @@ class HomeController < AuthenticatedController
       @valid = 'false'
     end
 =end
-    # @counter = scripts.count
+    @counter = scripts.count
     @sc = ShopifyAPI::ScriptTag.first || 'No scripts detected'
 
   end

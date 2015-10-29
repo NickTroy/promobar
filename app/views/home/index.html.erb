@@ -18,8 +18,12 @@
         </div>
     <% end %>
     <p>Script counter: <%= @counter %></p>
-    <p>Script attributes: <%= @sc.attributes.inspect %></p>
 
+    <% if @sc.is_a? String %>
+      <p><%= @sc %></p>
+    <% else %>
+      <p>Script attributes: <%= @sc.attributes.inspect %></p>
+    <% end %>
     <table class="table table-bordered table-striped table-hover">
       <thead>
       <tr>
