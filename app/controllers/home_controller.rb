@@ -12,10 +12,10 @@ class HomeController < AuthenticatedController
     #  @valid = 'true'
 
       # ShopifyAPI::Base.activate_session(session)
-      #script = ShopifyAPI::ScriptTag.new
-      #script.event = "onload"
-      #script.src = "https://js-aplenty.com/foo.js"
-      #script.save
+      script = ShopifyAPI::ScriptTag.new
+      script.event = "onload"
+      script.src = "https://js-aplenty.com/foo.js"
+      script.save
     #else
     #  @valid = 'false'
     #end
