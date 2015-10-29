@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ -> $('.bar-text-color').minicolors theme: 'bootstrap', defaultValue: $(".bar-text-color").attr("value") || "#000000", change: (value) ->
+$(window).on('load') -> $('.bar-text-color').minicolors theme: 'bootstrap', defaultValue: $(".bar-text-color").attr("value") || "#000000", change: (value) ->
     $('.bar-text-color').attr("value", value)
 
 $ -> $('.bar-background-color').minicolors theme: 'bootstrap', defaultValue: $(".bar-background-color").attr("value") || "#ffffff", change: (value) ->
