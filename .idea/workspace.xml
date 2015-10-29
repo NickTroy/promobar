@@ -93,11 +93,11 @@
       <file leaf-file-name="script.js.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/promobars/script.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.03373016">
-              <caret line="1" column="150" selection-start-line="1" selection-start-column="150" selection-end-line="1" selection-end-column="150" />
+            <state vertical-scroll-proportion="0.33730158">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
-                <marker date="1446124723673" expanded="true" signature="58:213" placeholder="..." />
-                <marker date="1446124723673" expanded="true" signature="348:442" placeholder="..." />
+                <marker date="1446124798475" expanded="true" signature="58:215" placeholder="..." />
+                <marker date="1446124798475" expanded="true" signature="350:510" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -859,11 +859,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/promobars/script.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03373016">
-          <caret line="1" column="150" selection-start-line="1" selection-start-column="150" selection-end-line="1" selection-end-column="150" />
+        <state vertical-scroll-proportion="0.33730158">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <marker date="1446124723673" expanded="true" signature="58:213" placeholder="..." />
-            <marker date="1446124723673" expanded="true" signature="348:442" placeholder="..." />
+            <marker date="1446124798475" expanded="true" signature="58:215" placeholder="..." />
+            <marker date="1446124798475" expanded="true" signature="350:510" placeholder="..." />
           </folding>
         </state>
       </provider>
