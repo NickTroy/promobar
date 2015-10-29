@@ -7,7 +7,7 @@ class Promobar < ActiveRecord::Base
             :format => { with: /(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?/ix },
             :allow_blank => true
 
-  after_save :create_script
+  after_save :generate_script
   after_destroy :script_cleanup
 
   private
