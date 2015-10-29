@@ -15,7 +15,11 @@ class HomeController < AuthenticatedController
       # script = ShopifyAPI::ScriptTag.new
       # script.event = "onload"
       # script.src = "https://js-aplenty.com/foo.js"
+    scripts = ShopifyAPI::ScriptTag.all
 
+    scripts.each do |script|
+      script.destroy
+    end
 =begin
     if script.save
       @valid = 'true'
@@ -24,7 +28,7 @@ class HomeController < AuthenticatedController
     end
 =end
 
-    @sc = ShopifyAPI::ScriptTag.first.delete
+    @sc = ShopifyAPI::ScriptTag.first
     #else
     #  @valid = 'false'
     #end
