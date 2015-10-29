@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :promobars, constraints: { format: :html } do
+  # resources :promobars, constraints: { format: :html } do
+  resources :promobars do
     get '/script' => 'promobars#script', :on => :collection
   end
 
