@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="709b7042-2cbf-4717-948f-7e86178ffc95" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/promobars/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/promobars/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/promobars/script.js.erb" afterPath="$PROJECT_DIR$/app/views/promobars/script.js.erb" />
     </list>
     <ignored path="promoBar.iws" />
@@ -41,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/promobars/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43849206">
+            <state vertical-scroll-proportion="-8.5">
               <caret line="52" column="107" selection-start-line="52" selection-start-column="107" selection-end-line="52" selection-end-column="107" />
               <folding />
             </state>
@@ -91,14 +90,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="script.js.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/promobars/script.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
-              <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.26984128">
+              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
               <folding>
-                <marker date="1446125724554" expanded="true" signature="58:290" placeholder="..." />
-                <marker date="1446125724554" expanded="true" signature="438:598" placeholder="..." />
+                <marker date="1446126074201" expanded="true" signature="58:290" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -167,8 +165,8 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/promobars_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/promobars/script.js.erb" />
         <option value="$PROJECT_DIR$/app/views/promobars/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/promobars/script.js.erb" />
       </list>
     </option>
   </component>
@@ -834,17 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/promobars/script.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
-          <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
-          <folding>
-            <marker date="1446125724554" expanded="true" signature="58:290" placeholder="..." />
-            <marker date="1446125724554" expanded="true" signature="438:598" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -863,9 +850,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/promobars/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43849206">
+        <state vertical-scroll-proportion="-8.5">
           <caret line="52" column="107" selection-start-line="52" selection-start-column="107" selection-end-line="52" selection-end-column="107" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/promobars/script.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26984128">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+          <folding>
+            <marker date="1446126074201" expanded="true" signature="58:290" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

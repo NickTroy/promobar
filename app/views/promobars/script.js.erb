@@ -6,7 +6,10 @@
 <% end %>
 
 <% unless @footer_promobar == false %>
-    $('<div style="position: absolute; bottom: 0; width: 100%; color:  <%= @footer_promobar.text_color %>; background: <%= @footer_promobar.background_color %> text-align: center;"><h1><%= @footer_promobar.text %><h1/></div>').appendTo('body');
+$('<div style="position: absolute; bottom: 0; width: 100%;' +
+        ' color: <%= @footer_promobar.text_color %>; background: <%= @footer_promobar.background_color %>; ' +
+        ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
+        '<h1><%= @footer_promobar.text %><h1/></div>').appendTo('body');
 <% end %>
 
 
