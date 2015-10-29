@@ -1,9 +1,9 @@
-<% unless @promobar.nil? %>
-    $('<div style="position: absolute; top: 0; width: 100%;' +
-        ' color: <%= @promobar.text_color %>; background: <%= @promobar.background_color %>; ' +
-        ' font-size: <%= @promobar.font_size %>px; text-align: center;">' +
-        '<h1><%= @promobar.text %><h1/></div>').appendTo('body');
-<% end %>
+
+$('<div style="position: absolute; top: 0; width: 100%;' +
+    ' color: <%= @promobar.text_color %>; background: <%= @promobar.background_color %>; ' +
+    ' font-size: <%= @promobar.font_size %>px; text-align: center;">' +
+    '<h1><%= @promobar.text %><h1/></div>').appendTo('body');
+
 
 
 

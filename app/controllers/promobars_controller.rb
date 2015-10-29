@@ -56,7 +56,7 @@ class PromobarsController < AuthenticatedController
   # GET /promobars/script
   def script
 
-    @promobar = Promobar.first
+    @promobar = Promobar.all.first
 
     respond_to do |format|
       format.js  {}
