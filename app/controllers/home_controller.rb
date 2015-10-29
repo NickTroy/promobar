@@ -7,7 +7,6 @@ class HomeController < AuthenticatedController
     scripts = ShopifyAPI::ScriptTag.all
     @counter = scripts.count
 
-=begin
     if @promobars.any?
       unless scripts.any?
         script = ShopifyAPI::ScriptTag.new
@@ -18,7 +17,6 @@ class HomeController < AuthenticatedController
         @counter = '1'
       end
     end
-=end
 
 
     @sc = ShopifyAPI::ScriptTag.first || 'No scripts detected'
