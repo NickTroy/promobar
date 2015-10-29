@@ -21,3 +21,5 @@ $(document).ready -> $( ".bar-opacity-slider" ).slider range: "max", min: 1, max
   $(".bar-opacity-switcher").attr("value", ui.value)
   $(".bar-opacity-value").html(ui.value + "%")
 
+$(document).ready ->
+  console.log('ready')
