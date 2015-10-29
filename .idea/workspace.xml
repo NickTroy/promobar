@@ -94,10 +94,10 @@
         <entry file="file://$PROJECT_DIR$/app/views/promobars/script.js.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.10119048">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+              <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
               <folding>
-                <marker date="1446125400881" expanded="true" signature="58:306" placeholder="..." />
-                <marker date="1446125400881" expanded="true" signature="454:614" placeholder="..." />
+                <marker date="1446125586633" expanded="true" signature="58:290" placeholder="..." />
+                <marker date="1446125586633" expanded="true" signature="438:598" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -860,10 +860,10 @@
     <entry file="file://$PROJECT_DIR$/app/views/promobars/script.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10119048">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
           <folding>
-            <marker date="1446125400881" expanded="true" signature="58:306" placeholder="..." />
-            <marker date="1446125400881" expanded="true" signature="454:614" placeholder="..." />
+            <marker date="1446125586633" expanded="true" signature="58:290" placeholder="..." />
+            <marker date="1446125586633" expanded="true" signature="438:598" placeholder="..." />
           </folding>
         </state>
       </provider>
