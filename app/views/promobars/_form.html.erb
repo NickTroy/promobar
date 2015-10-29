@@ -1,5 +1,13 @@
 <script type="text/javascript">
-
+  $('document').on('ready ajax:end', function(e) {
+    $('.bar-text-color').minicolors({
+      theme: 'bootstrap',
+      defaultValue: $(".bar-text-color").attr("value") || "#000000",
+      change: function(value) {
+        $('.bar-text-color').attr("value", value)
+      }
+    });
+  });
 
 </script>
 
