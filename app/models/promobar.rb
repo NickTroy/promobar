@@ -28,7 +28,7 @@ class Promobar < ActiveRecord::Base
     def script_cleanup
       scripts = ShopifyAPI::ScriptTag.all
 
-      unless scripts.any?
+      if scripts.any?
         scripts.each do |script|
           script.destroy
         end
