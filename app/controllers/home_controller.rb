@@ -6,13 +6,16 @@ class HomeController < AuthenticatedController
 
     scripts = ShopifyAPI::ScriptTag.all
     @counter = scripts.count
-    unless scripts.any?
-      script = ShopifyAPI::ScriptTag.new
-      script.event = "onload"
-      script.src = script_promobars_url
-      script.save
-      
-      @counter = '1'
+
+    if @promobars.any?
+      unless scripts.any?
+        script = ShopifyAPI::ScriptTag.new
+        script.event = "onload"
+        script.src = script_promobars_url
+        script.save
+
+        @counter = '1'
+      end
     end
 
 
