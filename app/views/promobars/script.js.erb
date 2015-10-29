@@ -1,16 +1,10 @@
-<% unless @header_promobar == false %>
+<% unless @promobar.nil? %>
     $('<div style="position: absolute; top: 0; width: 100%;' +
-        ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
-        ' font-size: <%= @header_promobar.font_size %>px; text-align: center;">' +
-        '<h1><%= @header_promobar.text %><h1/></div>').appendTo('body');
+        ' color: <%= @promobar.text_color %>; background: <%= @promobar.background_color %>; ' +
+        ' font-size: <%= @promobar.font_size %>px; text-align: center;">' +
+        '<h1><%= @promobar.text %><h1/></div>').appendTo('body');
 <% end %>
 
-<% unless @footer_promobar == false %>
-$('<div style="position: absolute; bottom: 0; width: 100%;' +
-        ' color: <%= @footer_promobar.text_color %>; background: <%= @footer_promobar.background_color %>; ' +
-        ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
-        '<h1><%= @footer_promobar.text %><h1/></div>').appendTo('body');
-<% end %>
 
 
 

@@ -56,17 +56,7 @@ class PromobarsController < AuthenticatedController
   # GET /promobars/script
   def script
 
-    if Promobar.exists?(:bar_type => 1)
-      @header_promobar = Promobar.where(bar_type: 1).first
-    else
-      @header_promobar = false
-    end
-
-    if Promobar.exists?(:bar_type => 2)
-      @footer_promobar = Promobar.where(bar_type: 2).first
-    else
-      @footer_promobar = false
-    end
+    @promobar = Promobar.first
 
     respond_to do |format|
       format.js  {}
