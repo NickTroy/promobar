@@ -57,7 +57,10 @@ class PromobarsController < AuthenticatedController
   def script
     respond_to do |format|
       #format.html
-      format.js { render :script }
+      format.js { render
+        # raw javascript to be executed on client-side
+        "alert('Hello Rails');"
+      }
     end
   end
 
