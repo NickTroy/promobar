@@ -94,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/promobars_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.29433963">
-              <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+              <caret line="58" column="69" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -900,7 +900,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/promobars_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29433963">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+          <caret line="58" column="69" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
           <folding />
         </state>
       </provider>
