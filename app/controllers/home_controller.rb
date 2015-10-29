@@ -12,17 +12,19 @@ class HomeController < AuthenticatedController
     #  @valid = 'true'
 
       # ShopifyAPI::Base.activate_session(session)
-      script = ShopifyAPI::ScriptTag.new
-      script.event = "onload"
-      script.src = "https://js-aplenty.com/foo.js"
-
+      # script = ShopifyAPI::ScriptTag.new
+      # script.event = "onload"
+      # script.src = "https://js-aplenty.com/foo.js"
+    ShopifyAPI::ScriptTag.delete_all
+=begin
     if script.save
       @valid = 'true'
     else
       @valid = 'false'
     end
+=end
 
-    @sc = ShopifyAPI::ScriptTag.first
+    # @sc = ShopifyAPI::ScriptTag.first
     #else
     #  @valid = 'false'
     #end
