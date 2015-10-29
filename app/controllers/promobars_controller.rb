@@ -56,8 +56,8 @@ class PromobarsController < AuthenticatedController
   # GET /promobars/script
   def script
     respond_to do |format|
-      # format.js   { render :partial => 'script', :content_type => 'text/javascript' }
-      # format.html { render :nothing => true }
+      format.html { render :text => 'this is html' }
+      format.js  { render :text => 'this is js' }
     end
 
   end
