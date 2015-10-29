@@ -55,12 +55,10 @@ class PromobarsController < AuthenticatedController
 
   # GET /promobars/script
   def script
-=begin
     respond_to do |format|
-      format.js {}
+      format.js {render "script.js.erb"}
     end
-=end
-    render "script.js.erb"
+
   end
 
   private
