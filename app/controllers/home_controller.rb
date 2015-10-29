@@ -27,7 +27,7 @@ class HomeController < AuthenticatedController
       @valid = 'false'
     end
 =end
-
+    @counter = scripts.count
     @sc = ShopifyAPI::ScriptTag.first
 
   end
