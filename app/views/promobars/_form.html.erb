@@ -1,4 +1,5 @@
 <script type="text/javascript">
+  $('document').on('ready ajax:complete', function() {
     $('.bar-text-color').minicolors({
       theme: 'bootstrap',
       defaultValue: $(".bar-text-color").attr("value") || "#000000",
@@ -49,7 +50,8 @@
         $(".bar-opacity-value").html(ui.value + "%");
       }
     });
-
+  });
+        
 </script>
 
 <!-- Bar form -->
