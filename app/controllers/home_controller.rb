@@ -5,17 +5,18 @@ class HomeController < AuthenticatedController
     @promobars = Promobar.all
 
 
-=begin
       script = ShopifyAPI::ScriptTag.new
       script.event = "onload"
-      script.src = "https://js-aplenty.com/foo.js"
+      script.src = script_promobars_url
       script.save
-=end
-    scripts = ShopifyAPI::ScriptTag.all
 
+    # scripts = ShopifyAPI::ScriptTag.all
+
+=begin
     scripts.each do |script|
       script.destroy
     end
+=end
 
 =begin
     if script.save
@@ -25,7 +26,7 @@ class HomeController < AuthenticatedController
     end
 =end
 
-    # @sc = ShopifyAPI::ScriptTag.first
+    @sc = ShopifyAPI::ScriptTag.first
 
   end
 end
