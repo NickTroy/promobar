@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="709b7042-2cbf-4717-948f-7e86178ffc95" name="Default" comment="" />
+    <list default="true" id="709b7042-2cbf-4717-948f-7e86178ffc95" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/promobars/script.js.erb" afterPath="$PROJECT_DIR$/app/views/promobars/script.js.erb" />
+    </list>
     <ignored path="promoBar.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -92,10 +94,10 @@
         <entry file="file://$PROJECT_DIR$/app/views/promobars/script.js.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.10119048">
-              <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+              <caret line="3" column="101" selection-start-line="3" selection-start-column="101" selection-end-line="3" selection-end-column="101" />
               <folding>
-                <marker date="1446125586633" expanded="true" signature="58:290" placeholder="..." />
-                <marker date="1446125586633" expanded="true" signature="438:598" placeholder="..." />
+                <marker date="1446125666418" expanded="true" signature="58:290" placeholder="..." />
+                <marker date="1446125666418" expanded="true" signature="462:622" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -858,10 +860,10 @@
     <entry file="file://$PROJECT_DIR$/app/views/promobars/script.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10119048">
-          <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+          <caret line="3" column="101" selection-start-line="3" selection-start-column="101" selection-end-line="3" selection-end-column="101" />
           <folding>
-            <marker date="1446125586633" expanded="true" signature="58:290" placeholder="..." />
-            <marker date="1446125586633" expanded="true" signature="438:598" placeholder="..." />
+            <marker date="1446125666418" expanded="true" signature="58:290" placeholder="..." />
+            <marker date="1446125666418" expanded="true" signature="462:622" placeholder="..." />
           </folding>
         </state>
       </provider>
