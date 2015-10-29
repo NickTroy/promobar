@@ -1,6 +1,10 @@
-alert("<%= @promobar.name %>");
+<% unless @header_promobar.nil? %>
+    console.log("header banner presists")
+<% end %>
 
-
+<% unless @header_promobar.nil? %>
+console.log("footer banner presists")
+<% end %>
 
 
 

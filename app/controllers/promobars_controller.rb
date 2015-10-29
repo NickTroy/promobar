@@ -55,8 +55,8 @@ class PromobarsController < AuthenticatedController
 
   # GET /promobars/script
   def script
-    @promobar = Promobar.first
-
+    @header_promobar = Promobar.where(bar_type: 1) || nil
+    @footer_promobar = Promobar.where(bar_type: 2) || nil
 
     respond_to do |format|
       format.js  {}
