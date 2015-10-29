@@ -56,7 +56,7 @@ class PromobarsController < AuthenticatedController
   # GET /promobars/script
   def script
     offset = rand(Promobar.count)
-    @header_promobar = Promobar.offset(offset).first
+    @header_promobar = Promobar.where(bar_type: 1).offset(offset).first
 
     respond_to do |format|
       format.js  {}
