@@ -15,7 +15,11 @@ class HomeController < AuthenticatedController
       # script = ShopifyAPI::ScriptTag.new
       # script.event = "onload"
       # script.src = "https://js-aplenty.com/foo.js"
-    ShopifyAPI::ScriptTag.delete_all
+    scripts = ShopifyAPI::ScriptTag.all
+
+    scripts.each do |script|
+      script.delete
+    end
 =begin
     if script.save
       @valid = 'true'
