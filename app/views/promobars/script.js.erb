@@ -1,7 +1,7 @@
 <% unless @header_promobar == false %>
     $('<div style="position: absolute; top: 0; width: 100%;' +
         ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
-        ' opacity: <%= @header_promobar.background_opacity %>; text-align: center;">' +
+        ' background-opacity: <%= @header_promobar.background_opacity %>; text-align: center;">' +
         '<h1><%= @header_promobar.text %><h1/></div>').appendTo('body');
 <% end %>
 
