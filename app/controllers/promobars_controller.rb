@@ -56,7 +56,7 @@ class PromobarsController < AuthenticatedController
   # GET /promobars/script
   def script
     respond_to do |format|
-      format.js { render :text => 'alert("test")' }
+      format.js   { render :nothing => true }
     end
 
   end
