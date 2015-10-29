@@ -18,7 +18,7 @@ class PromobarsController < AuthenticatedController
 
     respond_to do |format|
       if @promobar.save
-        format.html { redirect_to edit_promobar_url(@promobar), notice: 'Promobar was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Promobar was successfully created.' }
         format.json { render :show, status: :created, location: @promobar }
       else
         flash[:error] = @promobar.errors.full_messages
