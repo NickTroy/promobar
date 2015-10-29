@@ -11,13 +11,11 @@ class HomeController < AuthenticatedController
       script.src = "https://js-aplenty.com/foo.js"
       script.save
 =end
-    # scripts = ShopifyAPI::ScriptTag.all
+    scripts = ShopifyAPI::ScriptTag.all
 
-=begin
     scripts.each do |script|
       script.destroy
     end
-=end
 
 =begin
     if script.save
@@ -27,7 +25,7 @@ class HomeController < AuthenticatedController
     end
 =end
 
-    @sc = ShopifyAPI::ScriptTag.first
+    # @sc = ShopifyAPI::ScriptTag.first
 
   end
 end
