@@ -7,16 +7,21 @@ class Promobar < ActiveRecord::Base
             :format => { with: /(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?/ix },
             :allow_blank => true
 
-  # after_save :generate_script
+  after_save :generate_script
   after_destroy :script_cleanup
 
   private
 
     # Creates a promotion bar script
     def generate_script
-      # scripts = ShopifyAPI::ScriptTag.all
+      scripts = ShopifyAPI::ScriptTag.all
 
-
+      if scripts.any?
+        script = ShopifyAPI::ScriptTag.new
+        script.event = "onload"
+        script.src = script_promobars_url
+        script.save
+      end
     end
 
     # Cleanups a promotion bar script
