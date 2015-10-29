@@ -4,21 +4,21 @@ class HomeController < AuthenticatedController
   def index
     @promobars = Promobar.all
 
-    ShopifyAPI::Session.setup({:api_key => '1542338d97c3e62b5b1e0a8b3ab8c5a8', :secret => 'dd149cca1adf1ec3e7383c02ad8b1a2e'})
+    # ShopifyAPI::Session.setup({:api_key => '1542338d97c3e62b5b1e0a8b3ab8c5a8', :secret => 'dd149cca1adf1ec3e7383c02ad8b1a2e'})
 
-    session = ShopifyAPI::Session.new(params[:shop])
+    #session = ShopifyAPI::Session.new(params[:shop])
 
-    if session.valid?
-      @valid = 'true'
+    #if session.valid?
+    #  @valid = 'true'
 
       # ShopifyAPI::Base.activate_session(session)
       #script = ShopifyAPI::ScriptTag.new
       #script.event = "onload"
       #script.src = "https://js-aplenty.com/foo.js"
       #script.save
-    else
-      @valid = 'false'
-    end
+    #else
+    #  @valid = 'false'
+    #end
 
 =begin
     scope = ["write_script_tags"]
