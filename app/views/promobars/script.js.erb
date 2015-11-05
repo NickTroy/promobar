@@ -7,7 +7,15 @@
         ' font-style: <%= @header_promobar.italic %>; ' +
         ' opacity: <%= (100 - @header_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @header_promobar.font_size %>px; text-align: center;">' +
-        '<h1><%= @header_promobar.text %><h1/></div>').appendTo('body');
+        '<h1><%= @header_promobar.text %><h1/><button id="header-promobar-button"' +
+        ' style="border-radius=50%; float: right;" type="button">X</button></div>').appendTo('body');
+    $('<script type="text/javascript"> ' + 
+        '$(document).ready(function () { ' +
+          '$("#header-promobar-button").click(function () { ' +
+             '$(".header-promo-bar").hide(); ' + 
+          '});   ' +
+        '}); ' +
+    '</script>').appendTo('head');
 <% end %>
 
 <% unless @footer_promobar.nil? %>
