@@ -32,8 +32,8 @@ class PromobarsController < AuthenticatedController
   # PATCH/PUT /promobars/1.json
   def update
     respond_to do |format|
-      if @promobar.update(promobar_params)
-        format.html { redirect_to edit_promobar_url(@promobar), notice: 'Promobar was successfully updated.' }
+      if @promobar.update_attributes(promobar_params)
+        format.html { redirect_to root_url, notice: 'Promobar was successfully updated.' }
         format.json { render :show, status: :ok, location: @promobar }
       else
         flash[:error] = @promobar.errors.full_messages
