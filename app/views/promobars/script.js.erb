@@ -8,7 +8,7 @@
 <% unless @footer_promobar.nil? %>
 $('<div class= "footer-promo-bar" style="position: fixed; bottom: 0; width: 100%;' +
         ' color: <%= @footer_promobar.text_color %>; background: <%= @footer_promobar.background_color %>; ' +
-        ' font: <%= @footer_promobar.font %>; ' +  
+        ' font-family: <%= @footer_promobar.font %>; ' +  
         ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
         '<h1><%= @footer_promobar.text %><h1/></div>').appendTo('body');
 <% end %>
