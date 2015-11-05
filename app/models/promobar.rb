@@ -12,7 +12,7 @@ class Promobar < ActiveRecord::Base
   after_destroy :script_cleanup
 
   def font_family font
-    { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }.key(font)
+    { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }.key(font.to_i)
   end
 
   private
