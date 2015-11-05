@@ -131,7 +131,7 @@
     <div class="col-md-2">
       <div class="form-group">
         <%= label_tag 'promobar[font_size]', "SIZE" %>
-        <%= promobar.font_size.nil? ? font_size = promobar.font_size : font_size = 5 %>
+        <%= @promobar.font_size.nil? ? font_size = @promobar.font_size : font_size = 5 %>
         <%= f.number_field :font_size, value: font_size, within: 5..50, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
