@@ -28,7 +28,7 @@
         ' opacity: <%= (100 - @footer_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
         '<h1 style="display: inline-block;"><%= @footer_promobar.text %></h1>' + 
-        ' <input type="button" onclick="location.href='http:\/\/google.com'" value="google" />'
+        ' <a href="http://google.com" class="button btn-sm btn-primary">Go to Google</a>'
         ' <button id="footer-promobar-button"' +
         ' style="border-radius=50%; display: block; float: right;"' + 
         ' type="button">X</button></div>').appendTo('body');
