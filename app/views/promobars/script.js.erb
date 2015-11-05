@@ -3,7 +3,7 @@
     $('<div class= "header-promo-bar" style="position: fixed; top: 0; width: 100%; line-height: 100%;' +
         ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
         ' font-family: <%= @header_promobar.font_family(@header_promobar.font) %>; ' + 
-        ' font-weight: <%= @header_promobar.font_bold %>; ' + 
+        ' font-weight: <%= @header_promobar.font_weight %>; ' + 
         ' font-style: <%= @header_promobar.italic %>; ' +
         ' font-size: <%= @header_promobar.font_size %>px; text-align: center;">' +
         '<h1><%= @header_promobar.text %><h1/></div>').appendTo('body');
@@ -13,7 +13,7 @@
     $('<div class= "footer-promo-bar" style="position: fixed; bottom: 0; width: 100%;' +
         ' color: <%= @footer_promobar.text_color %>; background: <%= @footer_promobar.background_color %>; ' +
         ' font-family: <%= @footer_promobar.font_family(@footer_promobar.font) %>; ' + 
-        ' font-weight: <%= @footer_promobar.font_bold %>; ' + 
+        ' font-weight: <%= @footer_promobar.font_weight %>; ' + 
         ' font-style: <%= @footer_promobar.italic %>; ' +
         ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
         '<h1><%= @footer_promobar.text %></h1></div>').appendTo('body');
