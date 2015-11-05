@@ -38,5 +38,7 @@ class Promobar < ActiveRecord::Base
       end
     end
 
-
+    def font_family font
+      { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }.key(font)
+    end
 end
