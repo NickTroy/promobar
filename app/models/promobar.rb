@@ -15,6 +15,14 @@ class Promobar < ActiveRecord::Base
     { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }.key(font.to_i)
   end
 
+  def font_weight
+    self.font_bold ? 'bold' : 'normal'  
+  end
+
+  def font_italic
+    self.font_italic ? 'italic' : 'normal'  
+  end
+
   private
 
 =begin
