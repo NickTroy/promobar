@@ -11,6 +11,10 @@ class Promobar < ActiveRecord::Base
   # before_save :generate_script
   after_destroy :script_cleanup
 
+  def font_family font
+    { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }.key(font)
+  end
+
   private
 
 =begin
@@ -38,7 +42,5 @@ class Promobar < ActiveRecord::Base
       end
     end
 
-    def font_family font
-      { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }.key(font)
-    end
+
 end
