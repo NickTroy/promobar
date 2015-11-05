@@ -8,7 +8,8 @@
         ' opacity: <%= (100 - @header_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @header_promobar.font_size %>px; text-align: center;">' +
         '<h1><%= @header_promobar.text %><h1/><button id="header-promobar-button"' +
-        ' style="border-radius=50%; float: right;" type="button">X</button></div>').appendTo('body');
+        ' style="border-radius=50%; display: inline-block; float: right;"' + 
+        ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
           '$("#header-promobar-button").click(function () { ' +
@@ -27,7 +28,8 @@
         ' opacity: <%= (100 - @footer_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
         '<h1><%= @footer_promobar.text %></h1><button id="footer-promobar-button"' +
-        ' style="border-radius=50%; float: right;" type="button">X</button></div>').appendTo('body');
+        ' style="border-radius=50%; display: inline-block; float: right;"' + 
+        ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
           '$("#footer-promobar-button").click(function () { ' +
