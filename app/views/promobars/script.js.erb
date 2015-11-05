@@ -8,9 +8,9 @@
         ' opacity: <%= (100 - @header_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @header_promobar.font_size %>px; text-align: center;">' +
         ' <h1  style="display: inline-block;"><%= @header_promobar.text %></h1>' +
-        ' <a href="' + '<%= @header_promobar.url_link %>' + 
+        ' <a href="' + '<%= @header_promobar.url_link %>' + '"' +  
         ' style="color: <%= @header_promobar.button_color %>"' +
-        '" class="button"><%= @header_promobar.button_text %></a>' +
+        ' class="button"><%= @header_promobar.button_text %></a>' +
         ' <button id="header-promobar-x-button"' +
         ' style="display: block; float: right;"' + 
         ' type="button">X</button></div>').appendTo('body');
@@ -32,9 +32,9 @@
         ' opacity: <%= (100 - @footer_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
         ' <h1 style="display: inline-block;"><%= @footer_promobar.text %></h1>' + 
-        ' <a href=<"' + '<%= @footer_promobar.url_link %>' +
+        ' <a href=<"' + '<%= @footer_promobar.url_link %>' + '"' + 
         ' style="color: <%= @footer_promobar.button_color %>"' + 
-        '" class="button"><%= @footer_promobar.button_text %></a>' +
+        ' class="button"><%= @footer_promobar.button_text %></a>' +
         ' <button id="footer-promobar-x-button"' +
         ' style="display: block; float: right;"' + 
         ' type="button">X</button></div>').appendTo('body');
