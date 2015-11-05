@@ -19,7 +19,7 @@ class Promobar < ActiveRecord::Base
     self.font_bold ? 'bold' : 'normal'  
   end
 
-  def font_italic
+  def italic
     self.font_italic ? 'italic' : 'normal'  
   end
 
