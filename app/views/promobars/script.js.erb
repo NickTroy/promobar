@@ -18,10 +18,10 @@
         ' font-style: <%= @footer_promobar.italic %>; ' +
         ' opacity: <%= (100 - @footer_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
-        '<span><%= @footer_promobar.text %></span><button id="footer-promobar-button"' +
-        ' style="border-radius=50%;" type="button">X</button></div>').appendTo('body');
+        '<h1><%= @footer_promobar.text %></h1><button id="footer-promobar-button"' +
+        ' style="border-radius=50%; float: right;" type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
-        '$(document).ready(function { ' +
+        '$(document).ready(function () { ' +
           '$("#footer-promobar-button").click(function () { ' +
              '$(".footer-promo-bar").hide(); ' + 
           '});   ' +
