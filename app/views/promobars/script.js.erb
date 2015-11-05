@@ -8,7 +8,7 @@
         ' opacity: <%= (100 - @header_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @header_promobar.font_size %>px; text-align: center;">' +
         '<h1  style="display: inline-block;"><%= @header_promobar.text %></h1><button id="header-promobar-button"' +
-        ' style="border-radius=50%; display: block; float: right;"' + 
+        ' padding-left: 20px; float: right;" margin-right: 40px;' + 
         ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
@@ -27,7 +27,9 @@
         ' font-style: <%= @footer_promobar.italic %>; ' +
         ' opacity: <%= (100 - @footer_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @footer_promobar.font_size %>px; text-align: center;">' +
-        '<h1 style="display: inline-block;"><%= @footer_promobar.text %></h1><button id="footer-promobar-button"' +
+        '<h1 style="display: inline-block;"><%= @footer_promobar.text %></h1>' + 
+        ' <input type="button" onclick="location.href='http:\/\/google.com';"></>'
+        ' <button id="footer-promobar-button"' +
         ' style="border-radius=50%; display: block; float: right;"' + 
         ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
