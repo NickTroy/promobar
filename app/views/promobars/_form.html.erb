@@ -95,16 +95,15 @@
 
   <div class="row" style="margin-bottom: 25px;">
 
-    <div class="col-md-4">
-      <div class="form-group col-md-6">
-        <div class="col-md-4">
-          <%= label_tag 'promobar[bar_type]', 'SELECT BANNER TYPE:' %>  
-        </div>
-        <div class="col-md-4">
-          <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>  
-        </div>
+    <div class="form-group col-md-6">
+      <div class="col-md-4">
+        <%= label_tag 'promobar[bar_type]', 'SELECT BANNER TYPE:' %>  
+      </div>
+      <div class="col-md-4">
+        <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>  
       </div>
     </div>
+
 
     <% unless @promobar.id.nil? %>
       <div class="col-md-2">
