@@ -11,8 +11,8 @@
         ' <a href="' + '<%= @header_promobar.url_link %>' + '"' +  
         ' style="display: inline-block; background: <%= @header_promobar.button_color %>;' +
         ' color: <%= @header_promobar.button_text_color%>;"' + 
-        ' class="button"><%= @header_promobar.button_text %></a>' +
-        ' <button id="header-promobar-x-button" class="btn"' +
+        ' class="btn btn-sm"><%= @header_promobar.button_text %></a>' +
+        ' <button id="header-promobar-x-button" class="btn btn-sm btn-primary"' +
         ' style="display: block; float: right; border-radius: 5px;"' + 
         ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
@@ -36,8 +36,8 @@
         ' <a href="' + '<%= @footer_promobar.url_link %>' + '"' + 
         ' style="display: inline-block; background: <%= @footer_promobar.button_color %>;' +
         ' color: <%= @footer_promobar.button_text_color%>;"' + 
-        ' class="button"><%= @footer_promobar.button_text %></a>' +
-        ' <button id="footer-promobar-x-button class="btn"' +
+        ' class="btn btn-sm"><%= @footer_promobar.button_text %></a>' +
+        ' <button id="footer-promobar-x-button" class="btn btn-sm btn-primary"' +
         ' style="display: block; float: right; border-radius: 5px;"' + 
         ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
@@ -48,7 +48,3 @@
         '}); ' +
     '</script>').appendTo('head');
 <% end %>
-
-
-
-
