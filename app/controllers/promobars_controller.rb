@@ -74,7 +74,7 @@ class PromobarsController < AuthenticatedController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promobar_params
-      params.require(:promobar).permit(:bar_type,:name, :text, :font, :font_size, :tracking, :leading, :font_bold,
+      params.require(:promobar).permit(:bar_type,:name, :text, :font, :font_size, :tracking, :leading, :font_bold, :font_underlined,
                                        :font_italic, :text_color, :background_color, :background_opacity, :button_text,
                                        :button_shape, :button_color, :button_hover, :button_font, :button_font_size,
                                        :button_tracking, :button_leading, :button_font_regular, :button_font_bold, :button_font_italic,
