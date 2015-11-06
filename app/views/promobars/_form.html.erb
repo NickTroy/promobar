@@ -97,11 +97,13 @@
           <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>
         </div>
       </div>
-
-      <div class="col-md-6">
-        <%= link_to 'Destroy', promobar_url(@promobar), method: :delete, 
-                               data: { confirm: 'Are you sure, you want to delete this promo bar?' } %>  
-      </div>
+      
+      <% unless @promobar.id.nil? %>
+        <div class="col-md-6">
+          <%= link_to 'Destroy', promobar_url(@promobar), method: :delete, 
+                                 data: { confirm: 'Are you sure, you want to delete this promo bar?' } %>  
+        </div>
+      <% end %>
 
       <div class="col-md-6" style="padding-left: 30%;">
         <div class="actions">
