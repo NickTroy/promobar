@@ -45,7 +45,7 @@ gem 'pry'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # Use shopify app generator
-gem 'shopify_app', '6.3.0'
+gem 'shopify_app', '6.2.0'
 
 #Use bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
