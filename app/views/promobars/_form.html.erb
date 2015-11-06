@@ -125,10 +125,11 @@
 
 
     <div class="row">
+
       <div class="col-md-12">
         <div class="form-group">
           <%= label_tag 'promobar[name]', "BANNER TITLE:" %><br>
-          <%= f.text_field :name, class: "form-control" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "ENTER TEXT HERE" %>
         </div>
       </div>
 
@@ -139,14 +140,19 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="row">
+
       <div class="col-md-3">
         <div class="form-group">
-          <%= label_tag "OPACITY" %>
+          <%= label_tag "OPACITY", "OPACITY" %>
           <div class="bar-opacity-slider" style="margin-top: 35px;"></div>
           <span class="bar-opacity-value" style="display:block; text-align:center; font-weight:bold;"><%= @promobar.background_opacity %>%</span>
           <%= f.hidden_field :background_opacity, class: "form-control bar-opacity-switcher" %>
         </div>
       </div>
+
     </div>
     
 
@@ -156,10 +162,10 @@
       <div class="col-md-12">
         <div class="form-group">
           <%= label_tag 'promobar[text]', "BANNER TEXT:" %><br>
-          <%= f.text_field :text, class: "form-control" %>
+          <%= f.text_field :text, class: "form-control", placeholder: "ENTER TEXT HERE" %>
         </div>
       </div>
-      
+
       <div class="col-md-2">
         <div class="form-group">
           <%= label_tag 'promobar[font]', "FONT" %>
@@ -174,14 +180,14 @@
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-1">
         <div class="form-group">
           <%= label_tag 'promobar[tracking]', "TRACKING" %>
           <%= f.number_field :tracking, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-1">
         <div class="form-group">
           <%= label_tag 'promobar[leading]', "LEADING" %>
           <%= f.number_field :leading, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
@@ -229,7 +235,7 @@
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[button_text]', "BUTTON TEXT" %><br>
-        <%= f.text_field :button_text, class: "form-control" %>
+        <%= f.text_field :button_text, class: "form-control", placeholder: "ENTER TEXT HERE"  %>
       </div>
     </div>
 
