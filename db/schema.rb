@@ -11,32 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028120519) do
-
-  create_table "buttons", force: true do |t|
-    t.string   "text"
-    t.integer  "shape"
-    t.string   "color"
-    t.string   "hover"
-    t.integer  "font"
-    t.integer  "size"
-    t.integer  "tracking"
-    t.integer  "leading"
-    t.integer  "font_regular"
-    t.integer  "font_bold"
-    t.integer  "font_italic"
-    t.string   "text_color"
-    t.integer  "text_animation"
-    t.integer  "bar_size"
-    t.integer  "bar_position"
-    t.integer  "bar_aligment"
-    t.integer  "display_delay"
-    t.string   "url_link"
-    t.integer  "blank"
-    t.integer  "enable_on_mobile"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20151106104013) do
 
   create_table "promobars", force: true do |t|
     t.integer  "bar_type"
@@ -66,7 +41,7 @@ ActiveRecord::Schema.define(version: 20151028120519) do
     t.integer  "button_font_bold"
     t.integer  "button_font_italic"
     t.string   "button_text_color"
-    t.integer  "button_text_animation"
+    t.integer  "text_animation"
     t.integer  "size"
     t.integer  "alignment"
     t.integer  "display_delay"
@@ -74,6 +49,8 @@ ActiveRecord::Schema.define(version: 20151028120519) do
     t.integer  "url_link_blank"
     t.integer  "enable_on_mobile"
     t.string   "button_shape"
+    t.integer  "position"
+    t.integer  "font_underlined"
   end
 
   create_table "shops", force: true do |t|
