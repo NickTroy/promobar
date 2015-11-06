@@ -172,7 +172,7 @@
 
     <div class="col-md-1">
       <div class="form-group">
-        <%= labeltag 'promobar[font_size]', "SIZE" %>
+        <%= label_tag 'promobar[font_size]', "SIZE" %>
         <%= f.number_field :font_size, value: @promobar.font_size, within: 5..50, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
@@ -227,7 +227,7 @@
         <%= f.text_field :button_text, class: "form-control", placeholder: "ENTER TEXT HERE" %>
       </div>
     </div>
-    
+
   </div>
 
   <div class="row">
