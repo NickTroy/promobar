@@ -178,19 +178,21 @@
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-3">
         <div class="form-group">
           <%= label_tag nil, "FORMATTING" %>
           <!-- <%= f.check_box :font_regular %>
           <span>REGULAR</span>-->
           <%= f.check_box :font_bold %>
-          <span>BOLD</span>
+          <span><strong>BOLD</strong></span>
           <%= f.check_box :font_italic %>
-          <span>ITALIC</span>
+          <span><em>ITALIC</em></span>
+          <%= f.check_box :font_underline %>
+          <span><u>UNDERLINE</u></span>
         </div>
       </div><br>
 
-      <div class="col-md-2">
+      <div class="col-md-1">
         <div class="form-group">
           <%= label_tag 'promobar[text_color]', "TEXT COLOR" %>
           <%= f.text_field :text_color, class: "form-control bar-text-color" %>
