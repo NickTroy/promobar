@@ -103,8 +103,8 @@
       </div>
 
       <% unless @promobar.id.nil? %>
-        <div class="col-md-2" style="width: 80%;">
-          <%= link_to 'Destroy', promobar_url(@promobar), method: :delete, class: "btn btn-danger", 
+        <div class="col-md-2">
+          <%= link_to 'Destroy', promobar_url(@promobar), method: :delete, class: "btn btn-danger", style: "width: 80%;",
                                  data: { confirm: 'Are you sure, you want to delete this promo bar?' } %>  
         </div>
       <% end %>
@@ -126,8 +126,15 @@
 
     <div class="col-md-12">
       <div class="form-group">
-        <%= label_tag 'promobar[name]', "BAR TITLE:" %><br>
+        <%= label_tag 'promobar[name]', "BANNER TITLE:" %><br>
         <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= label_tag 'promobar[background_color]', "BACKGROUND COLOR" %>
+        <%= f.text_field :background_color, class: "form-control bar-background-color" %>
       </div>
     </div>
 
@@ -138,12 +145,7 @@
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= label_tag 'promobar[background_color]', "BACKGROUND COLOR" %>
-        <%= f.text_field :background_color, class: "form-control bar-background-color" %>
-      </div>
-    </div>
+    
 
     <div class="col-md-6">
       <div class="form-group">
