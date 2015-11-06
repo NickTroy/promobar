@@ -66,7 +66,7 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
-    jwt (1.5.1)
+    jwt (1.5.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
@@ -135,7 +135,7 @@ GEM
     shopify_api (4.0.6)
       activeresource
       rack
-    shopify_app (6.2.0)
+    shopify_app (6.3.0)
       omniauth-shopify-oauth2 (~> 1.1.10)
       rails (>= 3.1, < 5.0)
       shopify_api (~> 4.0.2)
@@ -182,7 +182,7 @@ DEPENDENCIES
   rails_12factor (= 0.0.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
-  shopify_app
+  shopify_app (= 6.3.0)
   sqlite3
   turbolinks
   tzinfo-data
