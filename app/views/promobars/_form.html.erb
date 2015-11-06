@@ -97,7 +97,7 @@
 
       <div class="col-md-4">
         <div class="form-group">
-          <%= label_tag 'promobar[bar_type]', 'SELECT BANNER TYPE:' %>
+          <%= label_tag 'promobar[bar_type]', 'SELECT BANNER TYPE:', style: "display: inline-block;" %>
           <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>
         </div>
       </div>
@@ -124,77 +124,84 @@
     </div>
 
 
-    <div class="col-md-12">
-      <div class="form-group">
-        <%= label_tag 'promobar[name]', "BANNER TITLE:" %><br>
-        <%= f.text_field :name, class: "form-control" %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= label_tag 'promobar[name]', "BANNER TITLE:" %><br>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= label_tag 'promobar[background_color]', "BACKGROUND COLOR" %>
+          <%= f.text_field :background_color, class: "form-control bar-background-color" %>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= label_tag 'promobar[text]', "BANNER TEXT:" %><br>
+          <%= f.text_field :text, class: "form-control" %>
+        </div>
       </div>
     </div>
-
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= label_tag 'promobar[background_color]', "BACKGROUND COLOR" %>
-        <%= f.text_field :background_color, class: "form-control bar-background-color" %>
-      </div>
-    </div>
-
-    <div class="col-md-12">
-      <div class="form-group">
-        <%= label_tag 'promobar[text]', "BANNER TEXT:" %><br>
-        <%= f.text_field :text, class: "form-control" %>
-      </div>
-    </div>
-
     
 
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= label_tag 'promobar[font]', "FONT" %>
-        <%= f.select :font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control" } %>
+    
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <%= label_tag 'promobar[font]', "FONT" %>
+          <%= f.select :font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control" } %>
+        </div>
       </div>
-    </div>
 
-    <div class="col-md-2">
-      <div class="form-group">
-        <%= label_tag 'promobar[font_size]', "SIZE" %>
-        <%= f.number_field :font_size, value: @promobar.font_size, within: 5..50, class: "form-control", style: "width 70%;" %>
+      <div class="col-md-2">
+        <div class="form-group">
+          <%= label_tag 'promobar[font_size]', "SIZE" %>
+          <%= f.number_field :font_size, value: @promobar.font_size, within: 5..50, class: "form-control", style: "width 70%;" %>
+        </div>
       </div>
-    </div>
 
-    <div class="col-md-2">
-      <div class="form-group">
-        <%= label_tag 'promobar[tracking]', "TRACKING" %>
-        <%= f.number_field :tracking, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+      <div class="col-md-2">
+        <div class="form-group">
+          <%= label_tag 'promobar[tracking]', "TRACKING" %>
+          <%= f.number_field :tracking, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+        </div>
       </div>
-    </div>
 
-    <div class="col-md-2">
-      <div class="form-group">
-        <%= label_tag 'promobar[leading]', "LEADING" %>
-        <%= f.number_field :leading, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+      <div class="col-md-2">
+        <div class="form-group">
+          <%= label_tag 'promobar[leading]', "LEADING" %>
+          <%= f.number_field :leading, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+        </div>
       </div>
-    </div>
 
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= label_tag nil, "FORMATTING" %>
-        <!-- <%= f.check_box :font_regular %>
-        <span>REGULAR</span>-->
-        <%= f.check_box :font_bold %>
-        <span>BOLD</span>
-        <%= f.check_box :font_italic %>
-        <span>ITALIC</span>
-      </div>
-    </div><br>
+      <div class="col-md-2">
+        <div class="form-group">
+          <%= label_tag nil, "FORMATTING" %>
+          <!-- <%= f.check_box :font_regular %>
+          <span>REGULAR</span>-->
+          <%= f.check_box :font_bold %>
+          <span>BOLD</span>
+          <%= f.check_box :font_italic %>
+          <span>ITALIC</span>
+        </div>
+      </div><br>
 
-    <div class="col-md-12" style="padding-left: 0;">
-      <div class="col-md-3">
+      <div class="col-md-2">
         <div class="form-group">
           <%= label_tag 'promobar[text_color]', "TEXT COLOR" %>
           <%= f.text_field :text_color, class: "form-control bar-text-color" %>
         </div>
       </div>
     </div>
+    
+
+    
+
+    
 
     
 
