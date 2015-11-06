@@ -96,9 +96,13 @@
   <div class="row" style="margin-bottom: 25px;">
 
     <div class="col-md-4">
-      <div class="form-group">
-        <%= label_tag 'promobar[bar_type]', 'SELECT BANNER TYPE:', style: "display: inline-block;" %>
-        <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>
+      <div class="form-group col-md-6">
+        <div class="col-md-4">
+          <%= label_tag 'promobar[bar_type]', 'SELECT BANNER TYPE:' %>  
+        </div>
+        <div class="col-md-4">
+          <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>  
+        </div>
       </div>
     </div>
 
@@ -184,7 +188,7 @@
       </div>
     </div>
         
-    <div class="col-md-3" , style="padding-top: 10px;">
+    <div class="col-md-3" , style="margin-top:5%;">
       <div class="form-group">
         <!-- <%= f.check_box :font_regular %>
         <span>REGULAR</span>-->
