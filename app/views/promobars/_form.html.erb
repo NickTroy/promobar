@@ -97,23 +97,23 @@
           <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>
         </div>
       </div>
-      
+
       <% unless @promobar.id.nil? %>
         <div class="col-md-6">
-          <%= link_to 'Destroy', promobar_url(@promobar), method: :delete, 
+          <%= link_to 'Destroy', promobar_url(@promobar), method: :delete, class: "btn btn-success" 
                                  data: { confirm: 'Are you sure, you want to delete this promo bar?' } %>  
         </div>
       <% end %>
 
       <div class="col-md-6" style="padding-left: 30%;">
         <div class="actions">
-          <%= f.submit "Hide", class: "btn btn-success pull-right", style: "width:40%;" %>
+          <%= f.submit "Hide", class: "btn btn-success" %>
         </div>
       </div>
       
       <div class="col-md-6" style="padding-left: 30%;">
         <div class="actions">
-          <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:40%;" %>
+          <%= f.submit "Save", class: "btn btn-success"%>
         </div>
       </div>
 
