@@ -176,8 +176,14 @@
         <%= f.number_field :font_size, value: @promobar.font_size, within: 5..50, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
-
     
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= label_tag 'promobar[text_color]', "TEXT COLOR" %>
+        <%= f.text_field :text_color, class: "form-control bar-text-color" %>
+      </div>
+    </div>
+        
     <div class="col-md-3" , style="padding-top: 10px;">
       <div class="form-group">
         <!-- <%= f.check_box :font_regular %>
@@ -188,13 +194,6 @@
         <span><em>ITALIC</em></span>
         <%= f.check_box :font_underlined %>
         <span><u>UNDERLINE</u></span>
-      </div>
-    </div>
-
-    <div class="col-md-2">
-      <div class="form-group">
-        <%= label_tag 'promobar[text_color]', "TEXT COLOR" %>
-        <%= f.text_field :text_color, class: "form-control bar-text-color" %>
       </div>
     </div>
 
@@ -214,7 +213,7 @@
 
   </div>
 
-</div>
+
 
   <div class="row">
     
@@ -258,23 +257,40 @@
 
   </div>
 
-    
+  <div class="row">
 
-    
-
-    
-
-    <div class="col-md-6">
+    <div class="col-md-2">
       <div class="form-group">
         <%= label_tag 'promobar[button_font]', "FONT" %>
         <%= f.select :button_font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control" } %>
       </div>
     </div>
 
-    <div class="col-md-2">
+    <div class="col-md-1">
       <div class="form-group">
         <%= label_tag 'promobar[button_font_size]', "SIZE" %>
         <%= f.number_field :button_font_size, value: 5, within: 5..50, class: "form-control", style: "width 70%;" %>
+      </div>
+    </div>
+
+    <div class="col-md-12" style="padding-left: 0; border-bottom: 3px solid #000;margin-bottom: 30px;">
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= label_tag 'promobar[button_text_color]', "TEXT COLOR" %>
+          <%= f.text_field :button_text_color, class: "form-control button-text-color" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= label_tag nil, "FORMATTING" %>
+        <%= f.check_box :button_font_regular %>
+        <span>REGULAR</span>
+        <%= f.check_box :button_font_bold %>
+        <span>BOLD</span>
+        <%= f.check_box :button_font_italic %>
+        <span>ITALIC</span>
       </div>
     </div>
 
@@ -292,26 +308,16 @@
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= label_tag nil, "FORMATTING" %>
-        <%= f.check_box :button_font_regular %>
-        <span>REGULAR</span>
-        <%= f.check_box :button_font_bold %>
-        <span>BOLD</span>
-        <%= f.check_box :button_font_italic %>
-        <span>ITALIC</span>
-      </div>
-    </div><br>
+  </div>  
+    
 
-    <div class="col-md-12" style="padding-left: 0; border-bottom: 3px solid #000;margin-bottom: 30px;">
-      <div class="col-md-3">
-        <div class="form-group">
-          <%= label_tag 'promobar[button_text_color]', "TEXT COLOR" %>
-          <%= f.text_field :button_text_color, class: "form-control button-text-color" %>
-        </div>
-      </div>
-    </div>
+    
+
+    
+
+    
+
+    
     
  
     
@@ -357,6 +363,7 @@
         <%= f.check_box :enable_on_mobile %>
       </div>
     </div>
+  </div>
 
 <% end %>
 <!-- Bar form end -->
