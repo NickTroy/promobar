@@ -83,29 +83,38 @@
         </div>
     <% end %>
 
-    <div class="col-md-12" style="padding-left: 0; margin-bottom: 25px;">
-      <div class="col-md-6">
-        <div class="actions">
-          <%= link_to 'Back', root_url, class: "btn btn-primary", style: "width:20%;" %>
-        </div>
-      </div>
-
-      <div class="col-md-6" style="padding-left: 30%;">
-        <div class="actions">
-          <%= f.submit "Refresh", :type => "reset", class: "btn btn-primary pull-left", style: "width:40%;" %>
-          <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:40%;" %>
-        </div>
+    <div class="col-md-6">
+      <div class="actions">
+        <%= link_to 'Back', root_url, class: "btn btn-primary", style: "width:20%;" %>
       </div>
     </div>
 
-    <div class="col-md-12">
-      <div class="col-md-2" style="padding-left: 0;">
+    <div class="row" style="padding-left: 0; margin-bottom: 25px;">
+
+      <div class="col-md-4" style="padding-left: 0;">
         <div class="form-group">
           <%= label_tag 'promobar[bar_type]', 'SELECT BAR' %><br>
           <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>
         </div>
       </div>
-    </div>
+
+      <div class="col-md-6">
+        <%= link_to 'Destroy', promobar_url(bar), method: :delete, 
+                               data: { confirm: 'Are you sure, you want to delete this promo bar?' } %>  
+      </div>
+
+      <div class="col-md-6" style="padding-left: 30%;">
+        <div class="actions">
+          <%= f.submit "Hide", class: "btn btn-success pull-right", style: "width:40%;" %>
+        </div>
+      </div>
+      
+      <div class="col-md-6" style="padding-left: 30%;">
+        <div class="actions">
+          <%= f.submit "Save", class: "btn btn-success pull-right", style: "width:40%;" %>
+        </div>
+      </div>
+
 
     <div class="col-md-12">
       <div class="form-group">
