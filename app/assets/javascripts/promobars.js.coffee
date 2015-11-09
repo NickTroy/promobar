@@ -20,4 +20,4 @@ $ -> $('.button-text-color').minicolors theme: 'bootstrap', defaultValue: $(".bu
 $ -> $( ".bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(".bar-opacity-switcher").attr("value"), slide: (event, ui) ->
   $(".bar-opacity-switcher").attr("value", ui.value)
   $(".bar-opacity-value").html(ui.value + "%")
-
+  

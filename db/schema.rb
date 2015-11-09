@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106155337) do
+ActiveRecord::Schema.define(version: 20151109094508) do
 
   create_table "promobars", force: true do |t|
     t.integer  "bar_type"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151106155337) do
     t.integer  "font_underlined"
     t.boolean  "button_on"
     t.boolean  "promobar_show"
+    t.boolean  "display_bar"
   end
 
   create_table "shops", force: true do |t|
