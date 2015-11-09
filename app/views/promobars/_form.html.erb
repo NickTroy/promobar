@@ -104,8 +104,8 @@
       </div>
     </div>
 
-    <%= f.hidden_field :promobar_show, defaultValue: @promobar.promobar_show, id: "promobar_show" %>
-    <%= f.hidden_field :button_on, defaultValue: @promobar.button_on, id: "button_on" %> 
+    <%= f.hidden_field :promobar_show, defaultValue: false, id: "promobar_show" %>
+    <%= f.hidden_field :button_on, defaultValue: false, id: "button_on" %> 
     
     <% unless @promobar.promobar_show == "true" %>
       <div class="col-md-2">
