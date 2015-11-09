@@ -51,8 +51,6 @@
       }
     });
 
-    alert(@promobar.promobr_show);
-    alert(@promobar.button_on);
 </script>
 
 <!-- Bar form -->
@@ -235,7 +233,7 @@
       <div class="form-group">
         <label for="button_text" style="display:inline-block; width:100%;">BUTTON TITLE:
           <div class="actions pull-right">
-            <%= f.submit @promobar.button_on ? "BUTTON ON": "BUTTON OFF", class: "btn btn-primary pull-right", id:"button_switcher" %>
+            <%= f.submit @promobar.button_on ? "BUTTON OFF": "BUTTON ON", class: "btn btn-primary pull-right", id:"button_switcher" %>
           </div>
         </label>
         <%= f.text_field :button_text, class: "form-control", placeholder: "ENTER TEXT HERE" %>
