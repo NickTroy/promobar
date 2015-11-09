@@ -22,6 +22,10 @@ class Promobar < ActiveRecord::Base
   def italic
     self.font_italic == 1 ? 'italic' : 'normal'  
   end
+  
+  def underline
+    self.font_italic == 1 ? 'underline' : 'none'  
+  end
 
   private
 
