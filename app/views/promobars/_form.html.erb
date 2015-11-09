@@ -51,16 +51,19 @@
       }
     });
 
-    $('#display_bar_button').click(function () {
-      var promobar_show = $('#promobar_show').value;
-      alert(promobar_show);
-      promobar_show = !promobar_show; 
-    });
+    $(document).ready(function (){
+      $('#display_bar_button').click(function () {
+        var promobar_show = $('#promobar_show').attr("value")
+        alert(promobar_show);
+        promobar_show = !promobar_show; 
+      });
 
-    $('#hide_bar_button').click(function () {
-      var promobar_show = $('#promobar_show').value;
-      promobar_show = !promobar_show; 
+      $('#hide_bar_button').click(function () {
+        var promobar_show = $('#promobar_show').value;
+        promobar_show = !promobar_show; 
+      });
     });
+    
 
 </script>
 
