@@ -112,7 +112,7 @@
       </div>
     </div>
     
-    <% unless @promobar.promobar_show %>
+    <% unless @promobar.promobar_show == "true" %>
       <div class="col-md-2">
         <div class="actions">
           <%= f.submit "Display", class: "btn btn-primary", id: "display_bar_button", style: "width: 80%;" %>
@@ -120,7 +120,7 @@
       </div>
     <% end %>
     
-    <% if @promobar.promobar_show %>
+    <% if @promobar.promobar_show == "true" %>
       <div class="col-md-2">
         <div class="actions">
           <%= f.submit "Hide", class: "btn btn-warning", id: "hide_bar_button", style: "width: 80%;" %>
