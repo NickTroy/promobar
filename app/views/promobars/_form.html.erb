@@ -215,7 +215,7 @@
     <div class="col-md-1">
       <div class="form-group">
         <%= label_tag 'promobar[leading]', "LEADING" %>
-        <%= f.number_field :leading, value: promobar:leading, within: -2..2, class: "form-control", style: "width 70%;" %>
+        <%= f.number_field :leading, value: @promobar.leading, within: -2..2, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
 
