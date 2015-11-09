@@ -47,4 +47,9 @@
           '});   ' +
         '}); ' +
     '</script>').appendTo('head');
+    $('<style> ' + 
+      '.footer-promo-bar a:hover { ' +
+      ' background-color: <%= @footer_promobar.button_hover %>;' +
+      '}' + 
+    '</style>').prependTo('head');
 <% end %>
