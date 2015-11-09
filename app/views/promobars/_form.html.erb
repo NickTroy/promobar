@@ -51,6 +51,16 @@
       }
     });
 
+    $('#display_bar_button').click(function {
+      var promobar_show = $('#promobar_show').value;
+      promobar_show = !promobar_show; 
+    });
+
+    $('#hide_bar_button').click(function {
+      var promobar_show = $('#promobar_show').value;
+      promobar_show = !promobar_show; 
+    });
+
 </script>
 
 <!-- Bar form -->
@@ -113,7 +123,7 @@
     </div>
     
     
-    <% unless @promobar.promobar_show == "true" %>
+    <% if @promobar.promobar_show %>
       <div class="col-md-2">
         <div class="actions">
           <%= f.submit "Display", class: "btn btn-primary", id: "display_bar_button", style: "width: 80%;" %>
@@ -121,7 +131,7 @@
       </div>
     <% end %>
     
-    <% if @promobar.promobar_show == "false" %>
+    <% if @promobar.promobar_show %>
       <div class="col-md-2">
         <div class="actions">
           <%= f.submit "Hide", class: "btn btn-warning", id: "hide_bar_button", style: "width: 80%;" %>
