@@ -107,7 +107,7 @@
     <% unless @promobar.promobar_show %>
       <div class="col-md-2">
         <div class="actions">
-          <%= f.submit "Display", class: "btn btn-primary", style: "width: 80%;" %>
+          <%= f.submit "Display", class: "btn btn-primary", id: "display_bar_button", style: "width: 80%;" %>
         </div>
       </div>
     <% end %>
@@ -115,7 +115,7 @@
     <% if @promobar.promobar_show %>
       <div class="col-md-2">
         <div class="actions">
-          <%= f.submit "Hide", class: "btn btn-warning", style: "width: 80%;" %>
+          <%= f.submit "Hide", class: "btn btn-warning", id: "hide_bar_button", style: "width: 80%;" %>
         </div>
       </div>
     <% end %>
@@ -233,7 +233,7 @@
       <div class="form-group">
         <label for="button_text" style="display:inline-block; width:100%;">BUTTON TITLE:
           <div class="actions pull-right">
-            <%= f.submit @promobar.button_on ? "BUTTON ON": "BUTTON OFF", class: "btn btn-primary pull-right"%>
+            <%= f.submit @promobar.button_on ? "BUTTON ON": "BUTTON OFF", class: "btn btn-primary pull-right", id:"button_switcher" %>
           </div>
         </label>
         <%= f.text_field :button_text, class: "form-control", placeholder: "ENTER TEXT HERE" %>
