@@ -52,11 +52,11 @@
     });
 
     $(document).ready(function() {
-      $(document).getElementById("prmobar_show").defaultValue = true;
+      $(document).getElementById("prmobar_show").defaultValue = "true";
     });
 
     $(document).ready(function() {
-      $(document).getElementById("prmobar_show").defaultValue = true;
+      $(document).getElementById("button_on").defaultValue = "true";
     });
 
 </script>
@@ -111,6 +111,9 @@
         <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>  
       </div>
     </div>
+
+    <%= f.hidden_field :promobar_show, value: @promobar.promobar_show, id: "promobar_show" %>
+    <%= f.hidden_field :button_on, value: @promobar.button_on, id: "button_on" %> 
     
     <% unless @promobar.promobar_show == "true" %>
       <div class="col-md-2">
@@ -382,8 +385,6 @@
     </div>
   </div>
 
-  <%= f.hidden_field :promobar_show, value: @promobar.promobar_show, id: "promobar_show" %>
-  <%= f.hidden_field :button_on, value: @promobar.button_on, id: "button_on" %> 
 
 <% end %>
 <!-- Bar form end -->
