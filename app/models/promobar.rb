@@ -39,6 +39,10 @@ class Promobar < ActiveRecord::Base
     self.button_font_underlined == 1 ? 'underline' : 'none'  
   end
 
+  def text_align align
+    { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }.key(align.to_i)
+  end
+
   private
 
 =begin
