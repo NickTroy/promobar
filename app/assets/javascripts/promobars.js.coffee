@@ -17,6 +17,6 @@ $ -> $('.button-hover').minicolors theme: 'bootstrap', defaultValue: $(".button-
 $ -> $('.button-text-color').minicolors theme: 'bootstrap', defaultValue: $(".button-text-color").attr("value") || "#000000", change: (value) ->
   $('.button-text-color').attr("value", value)
 
-$ -> $( ".bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(".bar-opacity-switcher").attr("value"), slide: (event, ui) ->  $(".bar-opacity-switcher").attr("value", ui.value)
+$ -> $( ".bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(".bar-opacity-switcher").attr("value"), slide: (event, ui) ->  
+  $(".bar-opacity-switcher").attr("value", ui.value)
   $(".bar-opacity-value").html(ui.value + "%")
-
