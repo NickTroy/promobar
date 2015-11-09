@@ -22,6 +22,11 @@
           '});   ' +
         '}); ' +
     '</script>').appendTo('head');
+    $('<style> ' + 
+      '.header-promo-bar a:hover { ' +
+      ' background-color: <%= @header_promobar.button_hover %> !important;' +
+      '}' + 
+    '</style>').appendTo('head');
 <% end %>
 
 <% unless @footer_promobar.nil? %>
@@ -49,7 +54,7 @@
     '</script>').appendTo('head');
     $('<style> ' + 
       '.footer-promo-bar a:hover { ' +
-      ' background-color: <%= @footer_promobar.button_hover %>;' +
+      ' background-color: <%= @footer_promobar.button_hover %> !important;' +
       '}' + 
-    '</style>').prependTo('head');
+    '</style>').appendTo('head');
 <% end %>
