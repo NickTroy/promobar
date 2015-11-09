@@ -21,7 +21,9 @@ $ -> $( ".bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(
   $(".bar-opacity-switcher").attr("value", ui.value)
   $(".bar-opacity-value").html(ui.value + "%")
 
-$( document ).ready -> 
-  $(document).getElementById("prmobar_show").defaultValue = true
-$( document ).ready -> 
-  $(document).getElementById("prmobar_show").defaultValue = true
+$ -> 
+  $( document ).ready -> 
+    $(document).getElementById("prmobar_show").defaultValue = true
+$ ->
+  $( document ).ready -> 
+    $(document).getElementById("prmobar_show").defaultValue = true
