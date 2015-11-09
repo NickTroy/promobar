@@ -32,7 +32,7 @@
 <% unless @footer_promobar.nil? %>
     $('<div class="footer-promo-bar" style="position: fixed; bottom: 0; width: 100%;' +
         ' color: <%= @footer_promobar.text_color %>; background: <%= @footer_promobar.background_color %>; ' +
-        ' font-family: <%= @footer_promobar.font_family(@footer_promobar.font) %>; text-decoration: <%= @footer_promobar.font_underline(@footer_promobar.font_underlined)%>' + 
+        ' font-family: <%= @footer_promobar.font_family(@footer_promobar.font) %>; text-decoration: <%= @footer_promobar.underlined(@footer_promobar.font_underlined)%>' + 
         ' font-weight: <%= @footer_promobar.font_weight %>; letter-spacing: <%= @footer_promobar.leading %>px;' + 
         ' font-style: <%= @footer_promobar.italic %>; line-height: <%= @footer_promobar.tracking %>px; ' +
         ' opacity: <%= (100 - @footer_promobar.background_opacity) / 100.0 %>; ' +
