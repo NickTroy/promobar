@@ -27,6 +27,18 @@ class Promobar < ActiveRecord::Base
     self.font_underlined == 1 ? 'underline' : 'none'  
   end
 
+  def button_font_weight
+    self.button_font_bold == 1 ? 'bold' : 'normal'  
+  end
+
+  def button_italic
+    self.button_font_italic == 1 ? 'italic' : 'normal'  
+  end
+  
+  def button_underlined
+    self.button_font_underlined == 1 ? 'underline' : 'none'  
+  end
+
   private
 
 =begin

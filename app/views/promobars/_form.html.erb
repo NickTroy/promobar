@@ -302,7 +302,7 @@
     <div class="col-md-1">
       <div class="form-group">
         <%= label_tag 'promobar[button_font_size]', "SIZE" %>
-        <%= f.number_field :button_font_size, value: 5, within: 5..50, class: "form-control", style: "width 70%;" %>
+        <%= f.number_field :button_font_size, value: @promobar.button_font_size, within: 5..50, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
 
