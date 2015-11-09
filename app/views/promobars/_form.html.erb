@@ -103,9 +103,15 @@
         <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>  
       </div>
     </div>
-
-    <%= f.hidden_field :promobar_show, defaultValue: false, id: "promobar_show" %>
-    <%= f.hidden_field :button_on, defaultValue: false, id: "button_on" %> 
+    
+    <div class="form-group">
+      <%= f.hidden_field :promobar_show, defaultValue: false, id: "promobar_show", class : "form-control" %>  
+    </div>
+    
+    <div class="form-group">
+      <%= f.hidden_field :button_on, defaultValue: false, id: "button_on", class: "form-group" %>   
+    </div>
+    
     
     <% unless @promobar.promobar_show == "true" %>
       <div class="col-md-2">
