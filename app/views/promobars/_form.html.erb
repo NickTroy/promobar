@@ -329,14 +329,14 @@
     <div class="col-md-1">
       <div class="form-group">
         <%= label_tag 'promobar[button_tracking]', "TRACKING" %>
-        <%= f.number_field :button_tracking, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+        <%= f.number_field :button_tracking, value: @promobar.button_tracking, within: 10..30, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
 
     <div class="col-md-1">
       <div class="form-group">
         <%= label_tag 'promobar[button_leading]', "LEADING" %>
-        <%= f.number_field :button_leading, value: 1, within: 1..100, class: "form-control", style: "width 70%;" %>
+        <%= f.number_field :button_leading, value: @promobar.button_leading, within: -2..2, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
 
