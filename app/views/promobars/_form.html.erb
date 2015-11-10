@@ -71,6 +71,12 @@
       $('.font-underlined').attr('checked', false);
     });
 
+    $('.button-font-regular').click( function () {
+      $('.button-font-bold').attr('checked', false);
+      $('.button-font-italic').attr('checked', false);
+      $('.button-font-underlined').attr('checked', false);
+    });
+
     
 
 </script>
@@ -313,11 +319,11 @@
     <div class="col-md-4" style="margin-top:2%;">
       <div class="form-group">
         <input class="btn btn-primary button-font-regular" name="commit" type="button" value="REGULAR"/>
-        <%= f.check_box :button_font_bold %>
+        <%= f.check_box :button_font_bold, class: "button-font-bold" %>
         <span><strong>BOLD</strong></span>
-        <%= f.check_box :button_font_italic %>
+        <%= f.check_box :button_font_italic, class: "button-font-italic" %>
         <span><em>ITALIC</em></span>
-        <%= f.check_box :button_font_underlined %>
+        <%= f.check_box :button_font_underlined, class: "button-font-italic" %>
         <span><u>UNDERLINE</u></span>
       </div>
     </div>
