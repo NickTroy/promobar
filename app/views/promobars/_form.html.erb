@@ -254,7 +254,7 @@
     
     <div class="col-md-12">
       <div class="form-group">
-        <label for="button_text" style="display:inline-block; width:100%;">BUTTON TITLE:
+        <label for="button_text" style="display:inline-block; width:100%;">BUTTON TEXT:
           <div class="form-group pull-right">
             <input class="btn btn-primary pull-right button_switcher" name="commit" 
                    type="button" value="<%= @promobar.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
@@ -363,12 +363,12 @@
       </div>
     </div>
 
-    <div class="col-md-12">
+    <!-- <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[text_animation]', "TEXT POSITION" %><br>
         <%= f.select :position, { 'TOP OF PAGE' => 1, 'OTHER POSITION' =>  2 }, {}, { :class => "form-control" } %>
       </div>
-    </div>
+    </div> -->
 
     <div class="col-md-12">
       <div class="form-group">
