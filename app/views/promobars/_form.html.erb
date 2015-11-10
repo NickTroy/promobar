@@ -59,7 +59,8 @@
         $('.button_switcher').attr("value", "BUTTON ON");
       }
       alert($('.button_switcher').attr("value"));
-      alert($('.button_on').attr("value"));
+      alert(!($('.button_on').attr("value")));
+      alert($('.button_on').value);
       $(".button_on").attr("value", (!($(".button_on").attr("value") )) );
       /*var button_on = $(".button_on");
       alert(button_on);
