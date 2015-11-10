@@ -54,8 +54,8 @@
     $('#button_switcher').bind('click', function() {
       alert('User clicked on button');
       /*var button_on = $('#promobar_button_on').value;*/
-      $(this).value = "Button off";
-      alert('after this');
+      $(this).val("Button off");
+      alert($(".bar-opacity-switcher").attr("value"));
       /*button_on = !button_on;
       $('this').value = this;
       alert(this);
