@@ -5,7 +5,6 @@ class PromobarsController < AuthenticatedController
   def new
     @promobar = Promobar.new
     @promobar.background_opacity = 1
-    @promobar.promobar_show = true
   end
 
   # GET /promobars/edit
