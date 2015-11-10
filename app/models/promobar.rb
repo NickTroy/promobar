@@ -47,6 +47,10 @@ class Promobar < ActiveRecord::Base
     self.promobar_show ? 'block' : 'none'
   end
 
+  def display_button
+    self.button_on ? 'inline-block' : 'none'
+  end
+
   private
 
 =begin

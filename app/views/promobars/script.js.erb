@@ -11,7 +11,7 @@
         ' font-size: <%= @header_promobar.font_size %>px;">' +
         ' <h1  style="display: inline-block; text-decoration: <%= @header_promobar.underlined%>;"><%= @header_promobar.text %></h1>' +
         ' <a href="' + '<%= @header_promobar.url_link %>' + '"' +  
-        ' style="display: inline-block; background: <%= @header_promobar.button_color %>;' +
+        ' style="display: <%= @header_promobar.display_button %>; background: <%= @header_promobar.button_color %>;' +
         ' color: <%= @header_promobar.button_text_color%>; border-radius: 5px;' + 
         ' font-family: <%= @header_promobar.font_family(@header_promobar.button_font) %>; text-decoration: <%= @header_promobar.button_underlined%>;' +
         ' font-weight: <%= @header_promobar.button_font_weight %>; letter-spacing: <%= @header_promobar.button_leading %>px;' + 
@@ -47,7 +47,7 @@
         ' font-size: <%= @footer_promobar.font_size %>px;">' +
         ' <h1 style="display: inline-block; text-decoration: <%= @footer_promobar.underlined%>;"><%= @footer_promobar.text %></h1>' + 
         ' <a href="' + '<%= @footer_promobar.url_link %>' + '"' + 
-        ' style="display: inline-block; background: <%= @footer_promobar.button_color %>;' +
+        ' style="display: <%= @footer_promobar.display_button %>; background: <%= @footer_promobar.button_color %>;' +
         ' color: <%= @footer_promobar.button_text_color%>; border-radius: 5px;' +
         ' font-family: <%= @footer_promobar.font_family(@footer_promobar.button_font) %>; text-decoration: <%= @footer_promobar.button_underlined%>;' + 
         ' font-weight: <%= @footer_promobar.button_font_weight %>; letter-spacing: <%= @footer_promobar.button_leading %>px;' + 
