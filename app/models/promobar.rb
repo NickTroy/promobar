@@ -43,6 +43,10 @@ class Promobar < ActiveRecord::Base
     { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }.key(align.to_i)
   end
 
+  def display_bar
+    self.promobar_show ? 'block' : 'none'
+  end
+
   private
 
 =begin
