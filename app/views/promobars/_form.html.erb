@@ -51,7 +51,7 @@
       }
     });
 
-    $(document).ready(function (){
+/*    $(document).ready(function (){
       $('#display_bar_button').click(function () {
         var promobar_show = $('#promobar_promobar_show').value;
         alert(promobar_show);
@@ -62,7 +62,7 @@
         var promobar_show = $('#promobar_promobar_show').value;
         promobar_show = !promobar_show; 
       });
-    });
+    });*/
     
 
 </script>
@@ -118,20 +118,18 @@
       </div>
     </div>
     
-    <div class="form-group">
-      <%= f.hidden_field :promobar_show, value: @promobar.promobar_show, class: "form-control" %>  
-    </div>
+<!--     <div class="form-group">
+  <%= f.hidden_field :promobar_show, value: @promobar.promobar_show, class: "form-control" %>  
+</div>
 
-    <div class="form-group">
-      <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control" %>   
-    </div>
+<div class="form-group">
+  <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control" %>   
+</div> -->
     
     
     <% unless @promobar.promobar_show %>
       <div class="col-md-2">
-        <div class="actions">
-          <%= f.submit "Display", class: "btn btn-primary", id: "display_bar_button", style: "width: 80%;" %>
-        </div>
+        <%= f.submit "Display", class: "btn btn-primary", id: "display_bar_button", style: "width: 80%;" %>
       </div>
     <% end %>
     

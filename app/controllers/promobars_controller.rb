@@ -5,6 +5,7 @@ class PromobarsController < AuthenticatedController
   def new
     @promobar = Promobar.new
     @promobar.background_opacity = 1
+    @promobar.promobar_show = true
   end
 
   # GET /promobars/edit
@@ -32,6 +33,12 @@ class PromobarsController < AuthenticatedController
   # PATCH/PUT /promobars/1.json
   def update
     respond_to do |format|
+      if promobar_params[:commit] == 'Display'
+        @promobar.promobar_show = true
+      elsif promobar_params[:commit] == 'Hide'
+        @promobar.promobar_show = false
+      end
+
       if @promobar.update_attributes(promobar_params)
         format.html { redirect_to root_url, notice: 'Promobar was successfully updated.' }
         format.json { render :show, status: :ok, location: @promobar }
