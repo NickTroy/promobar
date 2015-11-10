@@ -51,11 +51,11 @@
       }
     });
 
-    $('#button_switcher').bind('click', function() {
+    $('.button_switcher').bind('click', function() {
       alert('User clicked on button');
       /*var button_on = $('#promobar_button_on').value;*/
-      $(this).val("Button off");
-      alert($(".bar-opacity-switcher").attr("value"));
+      $('.button_switcher').attr("value", "Button off");
+      alert($(".button_on").attr("value"));
       /*button_on = !button_on;
       $('this').value = this;
       alert(this);
@@ -257,9 +257,9 @@
       <div class="form-group">
         <label for="button_text" style="display:inline-block; width:100%;">BUTTON TITLE:
           <div class="form-group pull-right">
-            <input class="btn btn-primary pull-right" id="button_switcher" name="commit" 
+            <input class="btn btn-primary pull-right button_switcher" name="commit" 
                    type="button" value="<%= @promobar.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
-            <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control" %>
+            <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control button_on" %>
           </div>
         </label>
         <%= f.text_field :button_text, class: "form-control", placeholder: "ENTER TEXT HERE" %>
