@@ -221,8 +221,7 @@
         
     <div class="col-md-4" style="margin-top:2%;">
       <div class="form-group">
-        <%= f.check_box :font_regular %>
-        <span>REGULAR</span>
+        <input class="btn btn-primary pull-right font_regular" name="commit" type="button" value="REGULAR"/>
         <%= f.check_box :font_bold %>
         <span><strong>BOLD</strong></span>
         <%= f.check_box :font_italic %>
@@ -256,8 +255,7 @@
       <div class="form-group">
         <label for="button_text" style="display:inline-block; width:100%;">BUTTON TEXT:
           <div class="form-group pull-right">
-            <input class="btn btn-primary pull-right button_switcher" name="commit" 
-                   type="button" value="<%= @promobar.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
+            <input class="btn btn-primary pull-right button_switcher" name="commit" type="button" value="<%= @promobar.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
             <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control button_on" %>
           </div>
         </label>
@@ -317,8 +315,7 @@
     
     <div class="col-md-4" style="margin-top:2%;">
       <div class="form-group">
-        <%= f.check_box :button_font_regular %>
-        <span>REGULAR</span>
+        <input class="btn btn-primary pull-right button_font_regular" name="commit" type="button" value="REGULAR"/>
         <%= f.check_box :button_font_bold %>
         <span><strong>BOLD</strong></span>
         <%= f.check_box :button_font_italic %>
