@@ -16,6 +16,7 @@ class PromobarsController < AuthenticatedController
   # POST /promobars.json
   def create
     @promobar = Promobar.new(promobar_params)
+    @promobar.promobar_show = true
 
     respond_to do |format|
       if @promobar.save
@@ -33,9 +34,9 @@ class PromobarsController < AuthenticatedController
   # PATCH/PUT /promobars/1.json
   def update
     respond_to do |format|
-      if promobar_params[:commit] == 'Display'
+      if params[:commit] == 'Display'
         @promobar.promobar_show = true
-      elsif promobar_params[:commit] == 'Hide'
+      elsif params[:commit] == 'Hide'
         @promobar.promobar_show = false
       end
 
