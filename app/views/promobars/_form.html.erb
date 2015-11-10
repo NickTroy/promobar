@@ -51,7 +51,7 @@
       }
     });
 
-    $('#button_switcher').click(function () {
+    /*$('#button_switcher').click(function () {
       var button_on = $('#promobar_button_on').value;
       button_on = !button_on;
       $('this').value = this;
@@ -61,6 +61,10 @@
         this = "BUTTON ON"
       }
 
+    });*/
+
+    $('#button_switcher').bind('click', function() {
+      alert('User clicked on button');
     });
 
     
