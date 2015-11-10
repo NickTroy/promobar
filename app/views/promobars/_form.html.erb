@@ -65,6 +65,12 @@
       }
     });
 
+    $('.font-regular').click( function () {
+      $('.font-bold').attr('checked', false);
+      $('.font-italic').attr('checked', false);
+      $('.font-underlined').attr('checked', false);
+    });
+
     
 
 </script>
@@ -119,15 +125,6 @@
         <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>  
       </div>
     </div>
-    
-<!--     <div class="form-group">
-  <%= f.hidden_field :promobar_show, value: @promobar.promobar_show, class: "form-control" %>  
-</div>
-
-<div class="form-group">
-  <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control" %>   
-</div> -->
-    
     
     <% unless @promobar.promobar_show %>
       <div class="col-md-2">
@@ -221,12 +218,12 @@
         
     <div class="col-md-4" style="margin-top:2%;">
       <div class="form-group">
-        <input class="btn btn-primary pull-right font_regular" name="commit" type="button" value="REGULAR"/>
-        <%= f.check_box :font_bold %>
+        <input class="btn btn-primary font-regular" name="commit" type="button" value="REGULAR"/>
+        <%= f.check_box :font_bold, class: "font-bold" %>
         <span><strong>BOLD</strong></span>
-        <%= f.check_box :font_italic %>
+        <%= f.check_box :font_italic, class: "font-italic" %>
         <span><em>ITALIC</em></span>
-        <%= f.check_box :font_underlined %>
+        <%= f.check_box :font_underlined, class: "font-underlined"  %>
         <span><u>UNDERLINE</u></span>
       </div>
     </div>
@@ -315,7 +312,7 @@
     
     <div class="col-md-4" style="margin-top:2%;">
       <div class="form-group">
-        <input class="btn btn-primary pull-right button_font_regular" name="commit" type="button" value="REGULAR"/>
+        <input class="btn btn-primary button-font-regular" name="commit" type="button" value="REGULAR"/>
         <%= f.check_box :button_font_bold %>
         <span><strong>BOLD</strong></span>
         <%= f.check_box :button_font_italic %>
