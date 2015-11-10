@@ -51,18 +51,18 @@
       }
     });
 
-/*    $(document).ready(function (){
-      $('#display_bar_button').click(function () {
-        var promobar_show = $('#promobar_promobar_show').value;
-        alert(promobar_show);
-        promobar_show = !promobar_show; 
-      });
+    $('#button_switcher').click(function () {
+      var button_on = $('#promobar_button_on').value;
+      button_on = !button_on;
+      $('this').value = this;
+      if this === "BUTTON ON" {
+        then this = "BUTTON OFF"
+      } else {
+        this = "BUTTON ON"
+      }
 
-      $('#hide_bar_button').click(function () {
-        var promobar_show = $('#promobar_promobar_show').value;
-        promobar_show = !promobar_show; 
-      });
-    });*/
+    });
+
     
 
 </script>
@@ -253,8 +253,10 @@
     <div class="col-md-12">
       <div class="form-group">
         <label for="button_text" style="display:inline-block; width:100%;">BUTTON TITLE:
-          <div class="actions pull-right">
-            <%= f.submit @promobar.button_on ? "BUTTON OFF": "BUTTON ON", class: "btn btn-primary pull-right", id:"button_switcher" %>
+          <div class="form-group pull-right">
+            <input class="btn btn-primary pull-right" id="button_switcher" name="commit" 
+                   type="button" value="<%= @promobar.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
+            <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control bar-opacity-switcher" %>
           </div>
         </label>
         <%= f.text_field :button_text, class: "form-control", placeholder: "ENTER TEXT HERE" %>
