@@ -38,6 +38,13 @@ $('<link href="https://www.vusive.com/v2/plugins/textillate/animate.css" rel="st
       ' background-color: <%= @header_promobar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
+    $('<script type="text/javascript"> ' + 
+        '$(document).ready(function () { ' +
+          '$(".header-promo-bar h1").textillate({ in: { effect: "rollIn" } }); ' +
+        '}); ' +
+    '</script>').appendTo('head');
+
+
 <% end %>
 
 <% unless @footer_promobar.nil? %>
