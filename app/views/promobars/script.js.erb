@@ -1,6 +1,6 @@
-$('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>').appendTo('head');
-$('<script src="https://raw.githubusercontent.com/davatron5000/Lettering.js/master/jquery.lettering.js"></script>').appendTo('head');
-$('<script src="http://jschr.github.io/textillate/jquery.textillate.js"></script>').appendTo('head');
+$('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>').appendTo('body');
+$('<script type="text/javascript" src="https://raw.githubusercontent.com/davatron5000/Lettering.js/master/jquery.lettering.js"></script>').appendTo('body');
+$('<script type="text/javascript" src="http://jschr.github.io/textillate/jquery.textillate.js"></script>').appendTo('body');
 $('<link href="https://raw.githubusercontent.com/jschr/textillate/master/assets/animate.css"/>').appendTo('head');
 
 <% unless @header_promobar.nil? %>
@@ -40,7 +40,9 @@ $('<link href="https://raw.githubusercontent.com/jschr/textillate/master/assets/
     '</style>').appendTo('head');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
-          '$(".header-promo-bar h1").textillate({ in: { effect: "rollIn" } }); ' +
+          '$(".header-promo-bar h1").textillate({ ' +
+            'in: { effect: "rollIn" }  ' +
+          '}); ' +
         '}); ' +
     '</script>').appendTo('head');
 
