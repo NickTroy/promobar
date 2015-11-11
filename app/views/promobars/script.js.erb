@@ -5,7 +5,7 @@ $('<link href="https://raw.githubusercontent.com/jschr/textillate/master/assets/
 
 <% unless @header_promobar.nil? %>
 
-    $('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
+    $('<div class="header-promo-bar" data-in-effect="flash" style="position: fixed; top: 0; width: 100%; ' +
         ' display: <%= @header_promobar.display_bar %>; ' +
         ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
         ' font-family: <%= @header_promobar.font_family(@header_promobar.font) %>; ' + 
@@ -38,13 +38,13 @@ $('<link href="https://raw.githubusercontent.com/jschr/textillate/master/assets/
       ' background-color: <%= @header_promobar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
-    $('<script type="text/javascript"> ' + 
+/*    $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
           '$(".header-promo-bar h1").textillate({ ' +
             'in: { effect: "rollIn" }  ' +
           '}); ' +
         '}); ' +
-    '</script>').appendTo('head');
+    '</script>').appendTo('head');*/
 
 
 <% end %>
