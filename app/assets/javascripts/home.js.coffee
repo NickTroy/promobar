@@ -11,6 +11,6 @@ $ ->
       type: 'PUT'
       dataType: 'json'
       data: 
-        "promobar_show" : promobar_show
+        "promobar[promobar_show]": promobar_show
       success: () ->
         alert("success")
