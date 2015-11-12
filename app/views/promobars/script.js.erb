@@ -61,18 +61,19 @@ $('<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery
        
           'script.src = url; ' + 
           'document.getElementsByTagName("head")[0].appendChild(script); ' + 
-        '}; ' + 
+        '} ' + 
 
         'loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js", function(){ ' + 
           'jQuery191 = jQuery.noConflict(true); ' + 
           'animation_script(jQuery191); ' + 
         '}); ' + 
 
-        'var animation_script = function($) { $(function() { ' +
-          '$(".header-promo-bar h1").textillate({ ' +
-            '"in": { effect: "bounce" }  ' +
+        'var animation_script = function($) { ' +
+          '$(function() { ' +
+            '$(".header-promo-bar h1").textillate({ ' +
+              '"in": { effect: "bounce" }  ' +
+            '}); ' +
           '}); ' +
-        '}); ' +
         '}; ' +
     '</script>').appendTo('head');
 
