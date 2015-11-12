@@ -28,22 +28,30 @@
     <table class="table table-bordered table-striped table-hover">
       <thead>
       <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Date</th>
-        <th colspan="3"></th>
+        <th>ORDER</th>
+        <th>BAR TITLE</th>
+        <th>BAR TEXT</th>
+        <th>BUTTON</th>
+        <th>SUB-HEADER</th>
+        <th>DATE</th>
+        <th>ON/OFF</th>
       </tr>
       </thead>
 
       <tbody>
       <% @promobars.each do |bar| %>
-          <tr>
-            <td style="width: 50%;"><%= bar.name %></td>
-            <td style="width: 20%;"><%= bar.bar_type == 1? "HEADER BAR": "FOOTER BAR" %></td>
-            <td style="width: 20%;"><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
-            <td style="width: 5%;"><%= link_to 'Edit', edit_promobar_path(bar) %></td>
-            
-          </tr>
+          <% if bar.type == 1 %>
+            <tr>
+              <td><%= bar.id %></td>
+              <td><%= bar.name %></td>
+              <td><%= bar.text %></td>
+              <td><%= bar.button_on? "YES" : "NO"%></td>
+              <td>NO</td> 
+              <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+              <td style="width: 5%;"><%= link_to 'Edit', edit_promobar_path(bar) %></td>
+              <td><%= bar.promobar_show? "YES" : "NO" %></td>
+            </tr>
+          <% end %>
       <% end %>
 
       <% unless @promobars.any? %>
