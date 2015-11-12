@@ -16,5 +16,6 @@
 //= require jquery-ui
 //= require turbolinks
 //= require jquery.minicolors
+//= require bootstrap-switch
 //= require_tree .
 

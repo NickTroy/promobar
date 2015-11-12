@@ -51,6 +51,7 @@ gem 'shopify_app', '6.2.0'
 
 #Use bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
+gem "bootstrap-switch-rails"
 
 # Use for heroku
 group :production do
