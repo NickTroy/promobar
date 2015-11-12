@@ -8,7 +8,7 @@ $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jq
 
 <% unless @header_promobar.nil? %>
 
-    $('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
+    j('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
         ' display: <%= @header_promobar.display_bar %>; ' +
         ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
         ' font-family: <%= @header_promobar.font_family(@header_promobar.font) %>; ' + 
@@ -29,19 +29,19 @@ $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jq
         ' <button id="header-promobar-x-button" class="btn btn-sm btn-primary"' +
         ' style="display: block; float: right; border-radius: 5px;"' + 
         ' type="button">X</button></div>').appendTo('body');
-    $('<script type="text/javascript"> ' + 
+    j('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
           '$("#header-promobar-x-button").click(function () { ' +
              '$(".header-promo-bar").hide(); ' + 
           '});   ' +
         '}); ' +
     '</script>').appendTo('head');
-    $('<style> ' + 
+    j('<style> ' + 
       '.header-promo-bar a:hover { ' +
       ' background-color: <%= @header_promobar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
-    $('<script type="text/javascript"> ' + 
+    j('<script type="text/javascript"> ' + 
 
         /*'function loadScript(url, callback){ ' + 
           'var script = document.createElement("script"); ' + 
@@ -70,7 +70,7 @@ $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jq
         '}); ' + 
 
         'var animation_script = function($) { ' +*/
-        '$("body").append("<p>Your app is using jQuery version "+j.fn.jquery+"</p>"); ' +
+        'j("body").append("<p>Your app is using jQuery version "+j.fn.jquery+"</p>"); ' +
           'j(function() { ' +
             'j(".header-promo-bar h1").textillate({ ' +
               '"in": { effect: "bounce" }  ' +
