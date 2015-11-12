@@ -1,6 +1,6 @@
 
-$('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">').appendTo('head');
 $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>').prependTo('head');
+$('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">').appendTo('head');
 $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>').appendTo('head');
 $('<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery.textillate.js"></script>').appendTo('head');
 
@@ -42,7 +42,7 @@ $('<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery
     '</style>').appendTo('head');
     $('<script type="text/javascript"> ' + 
 
-        'function loadScript(url, callback){ ' + 
+        /*'function loadScript(url, callback){ ' + 
           'var script = document.createElement("script"); ' + 
           'script.type = "text/javascript"; ' + 
         
@@ -68,7 +68,7 @@ $('<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery
           'animation_script(jQueryCDN); ' + 
         '}); ' + 
 
-        'var animation_script = function($) { ' +
+        'var animation_script = function($) { ' +*/
           '$(function() { ' +
             '$(".header-promo-bar h1").textillate({ ' +
               '"in": { effect: "bounce" }  ' +
