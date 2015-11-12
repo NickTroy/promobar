@@ -74,7 +74,7 @@ $('<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery
               '"in": { effect: "bounce" }  ' +
             '}); ' +
           '}); ' +
-        '}; ' +
+        '$("body").append("<p>Your app is using jQuery version "+$.fn.jquery+"</p>"); }; ' +
     '</script>').appendTo('head');
 
 
