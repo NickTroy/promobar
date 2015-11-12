@@ -1,4 +1,5 @@
 $ ->
+  $('.promobar_switcher').bootstrapSwitch()
   $('.promobar_switcher').click ->
     if $(this).attr("value") == "BANNER ON" 
       promobar_show = false
