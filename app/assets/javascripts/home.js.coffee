@@ -8,9 +8,10 @@ $ ->
       promobar_show = true
     id = $(this).attr("id")
     $.ajax "/promobars/#{id}.json",
-      type: 'PUT'
+      type: 'POST'
       dataType: 'json'
       data: 
+        _method: 'PUT'
         "promobar[promobar_show]": promobar_show
       success: () ->
         alert("success")
