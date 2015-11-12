@@ -1,12 +1,7 @@
 $ ->
   $('.promobar_switcher').bootstrapSwitch()
   $('.promobar_switcher').click ->
-    if $(this).attr("value") == "BANNER ON" 
-      promobar_show = false
-      $(this).attr("value", "BANNER OFF")
-    else
-      $(this).attr("value", "BANNER ON")
-      promobar_show = true
+    promobar_show = $(this).attr("data-state")
     id = $(this).attr("id")
     $.ajax "/promobars/#{id}.json",
       type: 'POST'
@@ -16,3 +11,4 @@ $ ->
         "promobar[promobar_show]": promobar_show
       success: () ->
         alert("success")
+    $(this).toggleState()
