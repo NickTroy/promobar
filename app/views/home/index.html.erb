@@ -41,10 +41,10 @@
       </thead>
 
       <tbody>
-      <% @promobars.each do |bar| %>
+      <% @promobars.each_with_index do |bar, i| %>
           <% if bar.bar_type == 1 %>
             <tr>
-              <td><%= bar.id %></td>
+              <td><%= i %></td>
               <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
               <td><%= bar.text %></td>
               <td><%= bar.button_on ? "YES" : "NO"%></td>
@@ -81,10 +81,10 @@
       </thead>
 
       <tbody>
-      <% @promobars.each do |bar| %>
+      <% @promobars.each_with_index do |bar, i| %>
           <% if bar.bar_type == 2 %>
             <tr>
-              <td><%= bar.id %></td>
+              <td><%= i %></td>
               <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
               <td><%= bar.text %></td>
               <td><%= bar.button_on ? "YES" : "NO"%></td>
