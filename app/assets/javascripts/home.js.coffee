@@ -1,7 +1,7 @@
 $ ->
   $('.promobar_switcher').bootstrapSwitch()
-  $('.promobar_switcher').click ->
-    promobar_show = $(this).attr("data-state")
+  $('.promobar_switcher').on 'switchChange.bootstrapSwitch', (event, state) -> 
+    promobar_show = state
     id = $(this).attr("id")
     $.ajax "/promobars/#{id}.json",
       type: 'POST'
@@ -11,4 +11,3 @@ $ ->
         "promobar[promobar_show]": promobar_show
       success: () ->
         alert("success")
-    $(this).toggleState()
