@@ -52,11 +52,10 @@ $('<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery
                 'script.onreadystatechange = null; ' + 
                 'callback(); ' + 
               '} ' + 
+          '} else {  //Others ' + 
+            'script.onload = function(){ ' + 
+              'callback(); ' + 
             '}; ' + 
-              '} else {  //Others ' + 
-                'script.onload = function(){ ' + 
-                  'callback(); ' + 
-                '}; ' + 
           '} ' + 
        
           'script.src = url; ' + 
