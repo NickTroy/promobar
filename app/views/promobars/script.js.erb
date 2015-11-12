@@ -1,6 +1,5 @@
 
 $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script> ' +
-  '<script>var j = jQuery.noConflict( true );</script>' +
   '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css"> ' +
   '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script> ' +
   '<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery.textillate.js"></script>').appendTo('head');
@@ -8,7 +7,7 @@ $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jq
 
 <% unless @header_promobar.nil? %>
 
-    j('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
+    $('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
         ' display: <%= @header_promobar.display_bar %>; ' +
         ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
         ' font-family: <%= @header_promobar.font_family(@header_promobar.font) %>; ' + 
@@ -29,21 +28,21 @@ $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jq
         ' <button id="header-promobar-x-button" class="btn btn-sm btn-primary"' +
         ' style="display: block; float: right; border-radius: 5px;"' + 
         ' type="button">X</button></div>').appendTo('body');
-    j('<script type="text/javascript"> ' + 
+    $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
           '$("#header-promobar-x-button").click(function () { ' +
              '$(".header-promo-bar").hide(); ' + 
           '});   ' +
         '}); ' +
     '</script>').appendTo('head');
-    j('<style> ' + 
+    $('<style> ' + 
       '.header-promo-bar a:hover { ' +
       ' background-color: <%= @header_promobar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
-    j('<script type="text/javascript"> ' + 
+    $('<script type="text/javascript"> ' + 
 
-        /*'function loadScript(url, callback){ ' + 
+        'function loadScript(url, callback){ ' + 
           'var script = document.createElement("script"); ' + 
           'script.type = "text/javascript"; ' + 
         
@@ -69,14 +68,14 @@ $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jq
           'animation_script(jQueryCDN); ' + 
         '}); ' + 
 
-        'var animation_script = function($) { ' +*/
-        'j("body").append("<p>Your app is using jQuery version "+j.fn.jquery+"</p>"); ' +
+        'var animation_script = function($) { ' +
+          'j("body").append("<p>Your app is using jQuery version "+j.fn.jquery+"</p>"); ' +
           'j(function() { ' +
             'j(".header-promo-bar h1").textillate({ ' +
               '"in": { effect: "bounce" }  ' +
             '}); ' +
           '}); ' +
-        
+        '};'
     '</script>').appendTo('head');
 
 
