@@ -7,7 +7,7 @@ $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jq
 
 <% unless @header_promobar.nil? %>
 
-    j('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
+    $('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
         ' display: <%= @header_promobar.display_bar %>; ' +
         ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
         ' font-family: <%= @header_promobar.font_family(@header_promobar.font) %>; ' + 
