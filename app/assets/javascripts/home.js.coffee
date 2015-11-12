@@ -7,7 +7,7 @@ $ ->
       $(this).attr("value", "BANNER ON")
       promobar_show = true
     id = $(this).attr("id")
-    $.ajax "/promobars/#{id}",
+    $.ajax "/promobars/#{id}.json",
       type: 'PUT'
       dataType: 'json'
       data: 
