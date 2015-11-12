@@ -1,6 +1,16 @@
 $ ->
   $('.promobar_switcher').click ->
-    if $('.promobar_switcher').attr("value") == "BANNER ON" 
-      $('.promobar_switcher').attr("value", "BANNER OFF")
+    if $(this).attr("value") == "BANNER ON" 
+      promobar_show = false
+      $(this).attr("value", "BANNER OFF")
     else
-      $('.promobar_switcher').attr("value", "BANNER ON")
+      $(this).attr("value", "BANNER ON")
+      promobar_show = true
+    id = $(this).attr("id")
+    $.ajax '/promobars/#{id}',
+      type: 'PUT'
+      dataType: 'json'
+      data: 
+        "promobar_show" : promobar_show
+      success: () ->
+        alert("success")
