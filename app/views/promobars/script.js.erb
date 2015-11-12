@@ -63,9 +63,9 @@ $('<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery
           'document.getElementsByTagName("head")[0].appendChild(script); ' + 
         '} ' + 
 
-        /*'loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js", function(){ ' + 
-          'jQuery191 = jQuery.noConflict(true); ' + 
-          'animation_script(jQuery191); ' + 
+        'loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js", function(){ ' + 
+          'jQueryCDN = jQuery.noConflict(true); ' + 
+          'animation_script(jQueryCDN); ' + 
         '}); ' + 
 
         'var animation_script = function($) { ' +
@@ -74,7 +74,7 @@ $('<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery
               '"in": { effect: "bounce" }  ' +
             '}); ' +
           '}); ' +
-        '}; ' +*/
+        '}; ' +
     '</script>').appendTo('head');
 
 
