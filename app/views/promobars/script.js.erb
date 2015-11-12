@@ -1,5 +1,6 @@
 
 $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script> ' +
+  '<script>var j = jQuery.noConflict( true );</script>' +
   '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css"> ' +
   '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script> ' +
   '<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery.textillate.js"></script>').appendTo('head');
@@ -69,9 +70,9 @@ $('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jq
         '}); ' + 
 
         'var animation_script = function($) { ' +*/
-        '$("body").append("<p>Your app is using jQuery version "+$.fn.jquery+"</p>"); ' +
-          '$(function() { ' +
-            'jQuery(".header-promo-bar h1").textillate({ ' +
+        '$("body").append("<p>Your app is using jQuery version "+j.fn.jquery+"</p>"); ' +
+          'j(function() { ' +
+            'j(".header-promo-bar h1").textillate({ ' +
               '"in": { effect: "bounce" }  ' +
             '}); ' +
           '}); ' +
