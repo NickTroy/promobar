@@ -11,11 +11,10 @@
     <h3 class="panel-title">Promo bars</h3>
   </div>
   <div class="panel-body">
-    <%= link_to 'Add promo bar', new_promobar_path, class: 'btn btn-primary' %><br/><br/>
     <% if notice %>
-        <div class="alert alert-success" role="alert">
-          <%= notice %>
-        </div>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
     <% end %>
     <!--<p>Script counter: <%#= @counter %></p>-->
 
@@ -25,7 +24,7 @@
       <!--<p>Script attributes: <%#= @sc.attributes.inspect %></p>-->
     <%# end %>
 
-    <table class="table table-bordered table-striped table-hover">
+    <table class="table table-bordered table-striped table-hover" style="text-align:center;">
       <caption>
         HEADER BANNERS
       </caption>
@@ -65,7 +64,7 @@
       </tbody>
     </table>
 
-    <table class="table table-bordered table-striped table-hover">
+    <table class="table table-bordered table-striped table-hover" style="text-align:center;">
       <caption>
         FOOTER BANNERS
       </caption>
@@ -104,5 +103,8 @@
 
       </tbody>
     </table>
+
+    <%= link_to 'Add promo bar', new_promobar_path, class: 'btn btn-primary' %>
+
   </div>
 </div>
