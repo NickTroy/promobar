@@ -26,6 +26,9 @@
     <%# end %>
 
     <table class="table table-bordered table-striped table-hover">
+      <caption>
+        HEADER BANNERS
+      </caption>
       <thead>
       <tr>
         <th>ORDER</th>
@@ -43,12 +46,11 @@
           <% if bar.bar_type == 1 %>
             <tr>
               <td><%= bar.id %></td>
-              <td><%= bar.name %></td>
+              <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
               <td><%= bar.text %></td>
               <td><%= bar.button_on ? "YES" : "NO"%></td>
               <td>NO</td> 
               <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
-              <td style="width: 5%;"><%= link_to 'Edit', edit_promobar_path(bar) %></td>
               <td><%= bar.promobar_show ? "YES" : "NO" %></td>
             </tr>
           <% end %>
@@ -56,7 +58,47 @@
 
       <% unless @promobars.any? %>
           <tr>
-            <td colspan="4">No promo bars found.</td>
+            <td colspan="7">No header banners found.</td>
+          </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+
+    <table class="table table-bordered table-striped table-hover">
+      <caption>
+        FOOTER BANNERS
+      </caption>
+      <thead>
+      <tr>
+        <th>ORDER</th>
+        <th>BAR TITLE</th>
+        <th>BAR TEXT</th>
+        <th>BUTTON</th>
+        <th>SUB-HEADER</th>
+        <th>DATE</th>
+        <th>ON/OFF</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @promobars.each do |bar| %>
+          <% if bar.bar_type == 2 %>
+            <tr>
+              <td><%= bar.id %></td>
+              <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
+              <td><%= bar.text %></td>
+              <td><%= bar.button_on ? "YES" : "NO"%></td>
+              <td>NO</td> 
+              <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+              <td><%= bar.promobar_show ? "YES" : "NO" %></td>
+            </tr>
+          <% end %>
+      <% end %>
+
+      <% unless @promobars.any? %>
+          <tr>
+            <td colspan="7">No footer banners found.</td>
           </tr>
       <% end %>
 
