@@ -1,12 +1,8 @@
 
-$('<script type="text/javascript"> ' +
-    ' _jQuery = undefined;' +
-    ' _$ = undefined; ' +
-  ' </script> ' +
-  '<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> ' +
+$('<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> ' +
   '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css"> ' +
   '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script> ' +
-  '<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery.textillate.js"></script>').appendTo('head');
+  '<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery.textillate.js"></script>').prependTo('head');
 
 
 <% unless @header_promobar.nil? %>
@@ -75,6 +71,7 @@ $('<script type="text/javascript"> ' +
         //'var animation_script = function($) { ' +
           
           ' $("body").append("<p>Your app is using jQuery version "+$.fn.jquery+"</p>"); ' +
+          'jQuery.noConflict(true); ' +
           '$(function() { ' +
             '$(".header-promo-bar h1").textillate({ ' +
               '"in": { effect: "bounce" }  ' +
