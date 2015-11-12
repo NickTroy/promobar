@@ -92,7 +92,9 @@
               <td><%= bar.button_on ? "YES" : "NO"%></td>
               <td>NO</td> 
               <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+              <td>
               <input class="btn btn-primary promobar_switcher" id=<%="#{bar.id}"%> name="commit" type="button" value="<%= bar.promobar_show ? "BANNER ON": "BANNER OFF" %>" />
+              </td>
             </tr>
           <% end %>
       <% end %>
