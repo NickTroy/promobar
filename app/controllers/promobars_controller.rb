@@ -41,7 +41,7 @@ class PromobarsController < AuthenticatedController
 
       if @promobar.update_attributes(promobar_params)
         format.html { redirect_to root_url, notice: 'Promobar was successfully updated.' }
-        format.json { render :show, status: :ok, location: @promobar }
+        format.json { render root_url, status: :ok, location: @promobar }
       else
         flash[:error] = @promobar.errors.full_messages
         format.html { redirect_to :back }
