@@ -41,20 +41,18 @@
       </thead>
 
       <tbody>
-      <% @promobars.each_with_index do |bar, i| %>
-          <% if bar.bar_type == 1 %>
-            <tr>
-              <td><%= i+1 %></td>
-              <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
-              <td><%= bar.text %></td>
-              <td><%= bar.button_on ? "YES" : "NO"%></td>
-              <td>NO</td> 
-              <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
-              <td>
-              <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" <%= bar.promobar_show ? "" : "checked" %> />
-              </td>
-            </tr>
-          <% end %>
+      <% @promobars.where(bar_type: 1).each_with_index do |bar, i| %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
+            <td><%= bar.text %></td>
+            <td><%= bar.button_on ? "YES" : "NO"%></td>
+            <td>NO</td> 
+            <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+            <td>
+            <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" <%= bar.promobar_show ? "" : "checked" %> />
+            </td>
+          </tr>
       <% end %>
 
       <% unless @promobars.any? %>
@@ -83,20 +81,18 @@
       </thead>
 
       <tbody>
-      <% @promobars.each_with_index do |bar, i| %>
-          <% if bar.bar_type == 2 %>
-            <tr>
-              <td><%= i+1 %></td>
-              <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
-              <td><%= bar.text %></td>
-              <td><%= bar.button_on ? "YES" : "NO"%></td>
-              <td>NO</td> 
-              <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
-              <td>
-              <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" <%= bar.promobar_show ? "" : "checked" %> />
-              </td>
-            </tr>
-          <% end %>
+      <% @promobars.where(bar_type: 1).each_with_index do |bar, i| %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
+            <td><%= bar.text %></td>
+            <td><%= bar.button_on ? "YES" : "NO"%></td>
+            <td>NO</td> 
+            <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+            <td>
+            <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" <%= bar.promobar_show ? "" : "checked" %> />
+            </td>
+          </tr>
       <% end %>
 
       <% unless @promobars.any? %>
