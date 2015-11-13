@@ -3,9 +3,9 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
 
 
 <% unless @header_promobars.empty? %>
-  <% @header_promobars.each do |bar| %>
+  <% @header_promobars.each_with_index do |bar, index| %>
 
-    $('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
+    $('<div class="header-promo-bar<%= index %>" style="position: fixed; top: 0; width: 100%; ' +
       ' display: <%= bar.display_bar %>; ' +
       ' color: <%= bar.text_color %>; background: <%= bar.background_color %>; ' +
       ' font-family: <%= bar.font_family(bar.font) %>; ' + 
@@ -24,18 +24,18 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' font-style: <%= bar.button_italic %>; line-height: <%= bar.button_tracking %>px;' + 
       ' font-size: <%= bar.button_font_size %>px; "' +
       ' class="btn btn-sm btn-primary"><%= bar.button_text %></a>' +
-      ' <button id="header-promobar-x-button" class="btn btn-sm btn-primary"' +
+      ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: block; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
-          '$("#header-promobar-x-button").click(function () { ' +
-             '$(".header-promo-bar").hide(); ' + 
+          '$("#header-promobar-x-button<%= index %>").click(function () { ' +
+             '$(".header-promo-bar<%= index %>").hide(); ' + 
           '});   ' +
         '}); ' +
     '</script>').appendTo('head');
     $('<style> ' + 
-      '.header-promo-bar a:hover { ' +
+      '.header-promo-bar<%= index %> a:hover { ' +
       ' background-color: <%= bar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
@@ -44,9 +44,9 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
 <% end %>
 
 <% unless @footer_promobars.nil? %>
-  <% @footer_promobars.each do |bar| %>
+  <% @footer_promobars.each_with_index do |bar| %>
 
-    $('<div class="footer-promo-bar" style="position: fixed; bottom: 0; width: 100%;' +
+    $('<div class="footer-promo-bar<%= index %>" style="position: fixed; bottom: 0; width: 100%;' +
       ' display: <%= bar.display_bar %>; ' +
       ' color: <%= bar.text_color %>; background: <%= bar.background_color %>; ' +
       ' font-family: <%= bar.font_family(bar.font) %>; ' + 
@@ -65,18 +65,18 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' font-style: <%= bar.button_italic %>; line-height: <%= bar.button_tracking %>px;' + 
       ' font-size: <%= bar.button_font_size %>px;"' +
       ' class="btn btn-sm btn-primary"><%= bar.button_text %></a>' +
-      ' <button id="footer-promobar-x-button" class="btn btn-sm btn-primary"' +
+      ' <button id="footer-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: block; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
-          '$("#footer-promobar-x-button").click(function () { ' +
-             '$(".footer-promo-bar").hide(); ' + 
+          '$("#footer-promobar-x-button<%= index %>").click(function () { ' +
+             '$(".footer-promo-bar<%= index %>").hide(); ' + 
           '});   ' +
         '}); ' +
     '</script>').appendTo('head');
     $('<style> ' + 
-      '.footer-promo-bar a:hover { ' +
+      '.footer-promo-bar<%= index %> a:hover { ' +
       ' background-color: <%= bar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
