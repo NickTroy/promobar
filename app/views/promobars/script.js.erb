@@ -41,19 +41,6 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     '</style>').appendTo('head');
 
   <% end %>
-  $('<script type="text/javascript"> ' + 
-    'var divs = $(\'div[class^="header-promo-bar"]\'); ' +
-    'divs.hide(); ' +
-    'var i = 0; ' +
-    'function cycle() { ' +
-      'divs.eq(i).fadeIn(400) ' +
-                '.delay(5000) ' +
-                '.fadeOut(400); ' +
-      'i = i + 1; ' + 
-      'i = i % divs.length; ' +
-      '} ' +
-    'var interval = self.setInterval(function(){cycle()}, 5800); ' +
-  '</script>').appendTo('head');
 <% end %>
 
 <% unless @footer_promobars.nil? %>
@@ -95,17 +82,4 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     '</style>').appendTo('head');
 
   <% end %>
-  $('<script type="text/javascript"> ' + 
-    'var divs = $(\'div[class^="footer-promo-bar"]\');' +
-    'divs.hide(); ' +
-    'var i = 0; ' +
-    'function cycle() { ' +
-      'divs.eq(i).fadeIn(400) ' +
-                '.delay(5000) ' +
-                '.fadeOut(400); ' +
-      'i = i + 1; ' + 
-      'i = i % divs.length; ' +
-      '} ' +
-    'var interval = self.setInterval(function(){cycle()}, 5800); ' +
-  '</script>').appendTo('head');
 <% end %>
