@@ -34,9 +34,9 @@ class PromobarsController < AuthenticatedController
   def update
     respond_to do |format|
       if params[:commit] == 'Display'
-        @promobar.promobar_show = true
+        @promobar.update_attribute("promobar_show", true)
       elsif params[:commit] == 'Hide'
-        @promobar.promobar_show = false
+        @promobar.update_attribute("promobar_show", false)
       end
 
       if @promobar.update_attributes(promobar_params)
