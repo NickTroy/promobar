@@ -50,7 +50,8 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       'divs.eq(i).fadeIn(400) ' +
                 '.delay(5000) ' +
                 '.fadeOut(400, cycle); ' +
-    ' })(); ' +
+    ' } ' +
+    'var interval = self.setInterval(function(){cycle()}, 5800); ' +
   '</script>').appendTo('head');
 <% end %>
 
@@ -97,11 +98,12 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     'var divs = $(\'div[class^="footer-promo-bar"]\');' +
     'divs.hide(); ' +
     'var i = -1; ' +
-    '(function cycle() { ' +
+    'function cycle() { ' +
       'i = ++i % divs.length; ' +
       'divs.eq(i).fadeIn(400) ' +
                 '.delay(5000) ' +
-                '.fadeOut(400, cycle); ' +
-    ' })(); ' +
+                '.fadeOut(400); ' +
+    ' } ' +
+    'var interval = self.setInterval(function(){cycle()}, 5800); ' +
   '</script>').appendTo('head');
 <% end %>
