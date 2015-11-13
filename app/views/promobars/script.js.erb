@@ -45,7 +45,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     'var divs = $(\'div[class^="header-promo-bar"]\'); ' +
     'divs.hide(); ' +
     'var i = -1; ' +
-    '(function cycle() { ' +
+    'function cycle() { ' +
       'i = ++i % divs.length; ' +
       'divs.eq(i).fadeIn(400) ' +
                 '.delay(5000) ' +
