@@ -1,5 +1,6 @@
 $ ->
-  $('.promobar_switcher').bootstrapSwitch()
+  switch_state = $('.promobar_switch').attr("data-state")
+  $('.promobar_switcher').bootstrapSwitch('setState', switch_state)
   $('.promobar_switcher').on 'switchChange.bootstrapSwitch', (event, state) -> 
     promobar_show = !state
     id = $(this).attr("id")
