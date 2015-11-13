@@ -82,6 +82,14 @@
 </script>
 
 <!-- Bar form -->
+<div class="row">
+  <div class="col-md-2">
+    <div class="actions">
+      <%= link_to 'Back', shopify_app_url, class: "btn btn-primary btn-default", style: "margin-bottom: 25px; width: 50%;" %>
+    </div>
+  </div>    
+</div>
+
 <%= form_for(@promobar, class: "bar-form") do |f| %>
 
   <div class="col-md-12" style="border-bottom: 3px solid #000;margin-bottom: 30px;">
@@ -112,13 +120,7 @@
     <% end %>
   </div>
 
-  <div class="row">
-    <div class="col-md-2">
-      <div class="actions">
-        <%= link_to 'Back', shopify_app_url, class: "btn btn-primary btn-default", style: "margin-bottom: 25px; width: 50%;" %>
-      </div>
-    </div>    
-  </div>
+  
   
 
   <div class="row" style="margin-bottom: 25px;">
