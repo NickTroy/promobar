@@ -25,7 +25,7 @@
     <%# end %>
 
     <table class="table table-bordered table-striped table-hover" style="text-align:center;">
-      <caption>
+      <caption style="text-align:center;">
         HEADER BANNERS
       </caption>
       <thead>
@@ -55,7 +55,7 @@
           </tr>
       <% end %>
 
-      <% unless @promobars.any? %>
+      <% unless @promobars.where(bar_type: 1).any? %>
           <tr>
             <td colspan="7">No header banners found.</td>
           </tr>
@@ -65,7 +65,7 @@
     </table>
 
     <table class="table table-bordered table-striped table-hover" style="text-align:center;">
-      <caption>
+      <caption style="text-align:center;">
         FOOTER BANNERS
       </caption>
       <thead>
@@ -81,7 +81,7 @@
       </thead>
 
       <tbody>
-      <% @promobars.where(bar_type: 1).each_with_index do |bar, i| %>
+      <% @promobars.where(bar_type: 2).each_with_index do |bar, i| %>
           <tr>
             <td><%= i+1 %></td>
             <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
@@ -95,7 +95,7 @@
           </tr>
       <% end %>
 
-      <% unless @promobars.any? %>
+      <% unless @promobars.where(bar_type: 2).any? %>
           <tr>
             <td colspan="7">No footer banners found.</td>
           </tr>
@@ -104,7 +104,7 @@
       </tbody>
     </table>
 
-    <%= link_to 'Add promo bar', new_promobar_path, class: 'btn btn-primary' %>
+    <%= link_to 'ADD ANOTHER BANNER', new_promobar_path, class: 'btn btn-primary' %>
 
   </div>
 </div>
