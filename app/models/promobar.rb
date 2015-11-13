@@ -16,7 +16,7 @@ class Promobar < ActiveRecord::Base
   end
 
   def animation animation_number
-    "animated infinite " + { 'bounceInLeft' => 1, 'fadeIn' =>  2, 'bounce' => 3 }.key(animation_number.to_i)
+    "animated infinite #{{ 'bounceInLeft' => 1, 'fadeIn' =>  2, 'bounce' => 3 }.key(animation_number.to_i)}"
   end
 
   def font_weight
