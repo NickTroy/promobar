@@ -2,29 +2,31 @@
 $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">').prependTo('head');
 
 
-<% unless @header_promobar.nil? %>
+<% unless @header_promobars.empty? %>
+  <% @header_promobars.each do |bar| %>
+
     $('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
-        ' display: <%= @header_promobar.display_bar %>; ' +
-        ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
-        ' font-family: <%= @header_promobar.font_family(@header_promobar.font) %>; ' + 
-        ' font-weight: <%= @header_promobar.font_weight %>; letter-spacing: <%= @header_promobar.leading %>px;' + 
-        ' font-style: <%= @header_promobar.italic %>; line-height: <%= @header_promobar.tracking %>px;' +
-        ' text-align: <%= @header_promobar.text_align(@header_promobar.alignment)%>; ' +
-        ' opacity: <%= (100 - @header_promobar.background_opacity) / 100.0 %>; ' +
-        ' font-size: <%= @header_promobar.font_size %>px;">' +
-        ' <h1 class="<%= @header_promobar.animation(@header_promobar.text_animation) %>" ' +
-        ' style="display: inline-block; text-decoration: <%= @header_promobar.underlined%>;"><%= @header_promobar.text %></h1>' +
-        ' <a href="' + '<%= @header_promobar.url_link %>' + '"' +  
-        ' style="display: <%= @header_promobar.display_button %>; background: <%= @header_promobar.button_color %>;' +
-        ' color: <%= @header_promobar.button_text_color%>; border-radius: 5px;' + 
-        ' font-family: <%= @header_promobar.font_family(@header_promobar.button_font) %>; text-decoration: <%= @header_promobar.button_underlined%>;' +
-        ' font-weight: <%= @header_promobar.button_font_weight %>; letter-spacing: <%= @header_promobar.button_leading %>px;' + 
-        ' font-style: <%= @header_promobar.button_italic %>; line-height: <%= @header_promobar.button_tracking %>px;' + 
-        ' font-size: <%= @footer_promobar.button_font_size %>px; "' +
-        ' class="btn btn-sm btn-primary"><%= @header_promobar.button_text %></a>' +
-        ' <button id="header-promobar-x-button" class="btn btn-sm btn-primary"' +
-        ' style="display: block; float: right; border-radius: 5px;"' + 
-        ' type="button">X</button></div>').appendTo('body');
+      ' display: <%= bar.display_bar %>; ' +
+      ' color: <%= bar.text_color %>; background: <%= bar.background_color %>; ' +
+      ' font-family: <%= bar.font_family(bar.font) %>; ' + 
+      ' font-weight: <%= bar.font_weight %>; letter-spacing: <%= bar.leading %>px;' + 
+      ' font-style: <%= bar.italic %>; line-height: <%= bar.tracking %>px;' +
+      ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
+      ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>; ' +
+      ' font-size: <%= bar.font_size %>px;">' +
+      ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
+      ' style="display: inline-block; text-decoration: <%= bar.underlined%>;"><%= bar.text %></h1>' +
+      ' <a href="' + '<%= bar.url_link %>' + '"' +  
+      ' style="display: <%= bar.display_button %>; background: <%= bar.button_color %>;' +
+      ' color: <%= bar.button_text_color%>; border-radius: 5px;' + 
+      ' font-family: <%= bar.font_family(bar.button_font) %>; text-decoration: <%= bar.button_underlined%>;' +
+      ' font-weight: <%= bar.button_font_weight %>; letter-spacing: <%= bar.button_leading %>px;' + 
+      ' font-style: <%= bar.button_italic %>; line-height: <%= bar.button_tracking %>px;' + 
+      ' font-size: <%= bar.button_font_size %>px; "' +
+      ' class="btn btn-sm btn-primary"><%= bar.button_text %></a>' +
+      ' <button id="header-promobar-x-button" class="btn btn-sm btn-primary"' +
+      ' style="display: block; float: right; border-radius: 5px;"' + 
+      ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
           '$("#header-promobar-x-button").click(function () { ' +
@@ -34,36 +36,38 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     '</script>').appendTo('head');
     $('<style> ' + 
       '.header-promo-bar a:hover { ' +
-      ' background-color: <%= @header_promobar.button_hover %> !important;' +
+      ' background-color: <%= bar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
-    
 
+  <% end %>
 <% end %>
 
-<% unless @footer_promobar.nil? %>
+<% unless @footer_promobars.nil? %>
+  <% @footer_promobars.each do |bar| %>
+
     $('<div class="footer-promo-bar" style="position: fixed; bottom: 0; width: 100%;' +
-        ' display: <%= @footer_promobar.display_bar %>; ' +
-        ' color: <%= @footer_promobar.text_color %>; background: <%= @footer_promobar.background_color %>; ' +
-        ' font-family: <%= @footer_promobar.font_family(@footer_promobar.font) %>; ' + 
-        ' font-weight: <%= @footer_promobar.font_weight %>; letter-spacing: <%= @footer_promobar.leading %>px;' + 
-        ' font-style: <%= @footer_promobar.italic %>; line-height: <%= @footer_promobar.tracking %>px; ' +
-        ' text-align: <%= @footer_promobar.text_align(@footer_promobar.alignment)%>; ' +
-        ' opacity: <%= (100 - @footer_promobar.background_opacity) / 100.0 %>; ' +
-        ' font-size: <%= @footer_promobar.font_size %>px;">' +
-        ' <h1 class="<%= @footer_promobar.animation(@footer_promobar.text_animation) %>" ' +
-        ' style="display: inline-block; text-decoration: <%= @footer_promobar.underlined%>;"><%= @footer_promobar.text %></h1>' + 
-        ' <a href="' + '<%= @footer_promobar.url_link %>' + '"' + 
-        ' style="display: <%= @footer_promobar.display_button %>; background: <%= @footer_promobar.button_color %>;' +
-        ' color: <%= @footer_promobar.button_text_color%>; border-radius: 5px;' +
-        ' font-family: <%= @footer_promobar.font_family(@footer_promobar.button_font) %>; text-decoration: <%= @footer_promobar.button_underlined%>;' + 
-        ' font-weight: <%= @footer_promobar.button_font_weight %>; letter-spacing: <%= @footer_promobar.button_leading %>px;' + 
-        ' font-style: <%= @footer_promobar.button_italic %>; line-height: <%= @footer_promobar.button_tracking %>px;' + 
-        ' font-size: <%= @footer_promobar.button_font_size %>px;"' +
-        ' class="btn btn-sm btn-primary"><%= @footer_promobar.button_text %></a>' +
-        ' <button id="footer-promobar-x-button" class="btn btn-sm btn-primary"' +
-        ' style="display: block; float: right; border-radius: 5px;"' + 
-        ' type="button">X</button></div>').appendTo('body');
+      ' display: <%= bar.display_bar %>; ' +
+      ' color: <%= bar.text_color %>; background: <%= bar.background_color %>; ' +
+      ' font-family: <%= bar.font_family(bar.font) %>; ' + 
+      ' font-weight: <%= bar.font_weight %>; letter-spacing: <%= bar.leading %>px;' + 
+      ' font-style: <%= bar.italic %>; line-height: <%= bar.tracking %>px; ' +
+      ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
+      ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>; ' +
+      ' font-size: <%= bar.font_size %>px;">' +
+      ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
+      ' style="display: inline-block; text-decoration: <%= bar.underlined%>;"><%= bar.text %></h1>' + 
+      ' <a href="' + '<%= bar.url_link %>' + '"' + 
+      ' style="display: <%= bar.display_button %>; background: <%= bar.button_color %>;' +
+      ' color: <%= bar.button_text_color%>; border-radius: 5px;' +
+      ' font-family: <%= bar.font_family(bar.button_font) %>; text-decoration: <%= bar.button_underlined%>;' + 
+      ' font-weight: <%= bar.button_font_weight %>; letter-spacing: <%= bar.button_leading %>px;' + 
+      ' font-style: <%= bar.button_italic %>; line-height: <%= bar.button_tracking %>px;' + 
+      ' font-size: <%= bar.button_font_size %>px;"' +
+      ' class="btn btn-sm btn-primary"><%= bar.button_text %></a>' +
+      ' <button id="footer-promobar-x-button" class="btn btn-sm btn-primary"' +
+      ' style="display: block; float: right; border-radius: 5px;"' + 
+      ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
           '$("#footer-promobar-x-button").click(function () { ' +
@@ -73,7 +77,9 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     '</script>').appendTo('head');
     $('<style> ' + 
       '.footer-promo-bar a:hover { ' +
-      ' background-color: <%= @footer_promobar.button_hover %> !important;' +
+      ' background-color: <%= bar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
+
+  <% end %>
 <% end %>
