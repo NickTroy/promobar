@@ -44,7 +44,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
 <% end %>
 
 <% unless @footer_promobars.nil? %>
-  <% @footer_promobars.each_with_index do |bar| %>
+  <% @footer_promobars.each_with_index do |bar, index| %>
 
     $('<div class="footer-promo-bar<%= index %>" style="position: fixed; bottom: 0; width: 100%;' +
       ' display: <%= bar.display_bar %>; ' +
