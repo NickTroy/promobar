@@ -44,12 +44,13 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
   $('<script type="text/javascript"> ' + 
     'var divs = $(\'div[class^="header-promo-bar"]\'); ' +
     'divs.hide(); ' +
-    'var i = -1; ' +
+    'var i = 0; ' +
     'function cycle() { ' +
-      'i = ++i % divs.length; ' +
+      
       'divs.eq(i).fadeIn(400) ' +
                 '.delay(5000) ' +
-                '.fadeOut(400, cycle); ' +
+                '.fadeOut(400); ' +
+      'i = ++i % divs.length; ' +
     ' } ' +
     'var interval = self.setInterval(function(){cycle()}, 5800); ' +
   '</script>').appendTo('head');
@@ -97,12 +98,13 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
   $('<script type="text/javascript"> ' + 
     'var divs = $(\'div[class^="footer-promo-bar"]\');' +
     'divs.hide(); ' +
-    'var i = -1; ' +
+    'var i = 0; ' +
     'function cycle() { ' +
       'i = ++i % divs.length; ' +
       'divs.eq(i).fadeIn(400) ' +
                 '.delay(5000) ' +
                 '.fadeOut(400); ' +
+      'i = ++i % divs.length; ' +
     ' } ' +
     'var interval = self.setInterval(function(){cycle()}, 5800); ' +
   '</script>').appendTo('head');
