@@ -37,7 +37,7 @@ class PromobarsController < AuthenticatedController
         @promobar.update_attribute("promobar_show", true)
       elsif params[:commit] == 'Hide'
         @promobar.update_attribute("promobar_show", false)
-      elsif parmas[:commit] == 'Back'
+      elsif params[:commit] == 'Back'
         format.html { redirect_to root_url }
       end
 
