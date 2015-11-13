@@ -51,7 +51,7 @@
               <td>NO</td> 
               <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
               <td>
-              <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" data-state=<%= bar.promobar_show %> />
+              <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" />
               </td>
             </tr>
           <% end %>
@@ -93,7 +93,7 @@
               <td>NO</td> 
               <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
               <td>
-              <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" data-state=<%= bar.promobar_show %> />
+              <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" />
               </td>
             </tr>
           <% end %>
