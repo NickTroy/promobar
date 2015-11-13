@@ -1,12 +1,8 @@
 
-$('<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> ' +
-  '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css"> ' +
-  '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script> ' +
-  '<script src="https://raw.githubusercontent.com/jschr/textillate/master/jquery.textillate.js"></script>').prependTo('head');
+$('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">').prependTo('head');
 
 
 <% unless @header_promobar.nil? %>
-    animation_class = "animated infinite #{@header_promobar.animation(@header_promobar.text_animation}"
     $('<div class="header-promo-bar" style="position: fixed; top: 0; width: 100%; ' +
         ' display: <%= @header_promobar.display_bar %>; ' +
         ' color: <%= @header_promobar.text_color %>; background: <%= @header_promobar.background_color %>; ' +
@@ -41,46 +37,7 @@ $('<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min
       ' background-color: <%= @header_promobar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
-    $('<script type="text/javascript"> ' + 
-
-        /*'function loadScript(url, callback){ ' + 
-          'var script = document.createElement("script"); ' + 
-          'script.type = "text/javascript"; ' + 
-        
-          'if (script.readyState){ ' + 
-            'script.onreadystatechange = function(){ ' + 
-              'if (script.readyState == "loaded" || script.readyState == "complete"){ ' + 
-                'script.onreadystatechange = null; ' + 
-                'callback(); ' + 
-              '} ' + 
-            '};' +
-          '} else { ' + 
-            'script.onload = function(){ ' + 
-              'callback(); ' + 
-            '}; ' + 
-          '} ' + 
-       
-          'script.src = url; ' + 
-          'document.getElementsByTagName("head")[0].appendChild(script); ' + 
-        '} ' + 
-
-        'loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js", function(){ ' + 
-          'jQueryCDN = jQuery.noConflict(true); ' + 
-          'animation_script(jQueryCDN); ' + 
-        '}); ' + */
-
-        //'var animation_script = function($) { ' +
-          
-          /*' $("body").append("<p>Your app is using jQuery version "+$.fn.jquery+"</p>"); ' +
-          'jQuery.noConflict(true); ' +
-          '$(function() { ' +
-            '$(".header-promo-bar h1").textillate({ ' +
-              '"in": { effect: "bounce" }  ' +
-            '}); ' +
-          '}); ' +*/
-        //'}; ' +
-    '</script>').appendTo('body');
-
+    
 
 <% end %>
 
