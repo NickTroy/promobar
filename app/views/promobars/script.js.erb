@@ -16,7 +16,8 @@ $('<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min
         ' text-align: <%= @header_promobar.text_align(@header_promobar.alignment)%>; ' +
         ' opacity: <%= (100 - @header_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @header_promobar.font_size %>px;">' +
-        ' <h1 class="animated infinite bounce" style="display: inline-block; text-decoration: <%= @header_promobar.underlined%>;"><%= @header_promobar.text %></h1>' +
+        ' <h1 class=<%= @header_promobar.animation(@header_promobar.text_animtion)%> ' +
+        ' style="display: inline-block; text-decoration: <%= @header_promobar.underlined%>;"><%= @header_promobar.text %></h1>' +
         ' <a href="' + '<%= @header_promobar.url_link %>' + '"' +  
         ' style="display: <%= @header_promobar.display_button %>; background: <%= @header_promobar.button_color %>;' +
         ' color: <%= @header_promobar.button_text_color%>; border-radius: 5px;' + 
@@ -93,7 +94,8 @@ $('<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min
         ' text-align: <%= @footer_promobar.text_align(@footer_promobar.alignment)%>; ' +
         ' opacity: <%= (100 - @footer_promobar.background_opacity) / 100.0 %>; ' +
         ' font-size: <%= @footer_promobar.font_size %>px;">' +
-        ' <h1 style="display: inline-block; text-decoration: <%= @footer_promobar.underlined%>;"><%= @footer_promobar.text %></h1>' + 
+        ' <h1 class=<%= @header_promobar.animation(@header_promobar.text_animtion)%> ' +
+        ' style="display: inline-block; text-decoration: <%= @footer_promobar.underlined%>;"><%= @footer_promobar.text %></h1>' + 
         ' <a href="' + '<%= @footer_promobar.url_link %>' + '"' + 
         ' style="display: <%= @footer_promobar.display_button %>; background: <%= @footer_promobar.button_color %>;' +
         ' color: <%= @footer_promobar.button_text_color%>; border-radius: 5px;' +

@@ -11,8 +11,12 @@ class Promobar < ActiveRecord::Base
   # before_save :generate_script
   after_destroy :script_cleanup
 
-  def font_family font
-    { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }.key(font.to_i)
+  def font_family font_number
+    { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }.key(font_number.to_i)
+  end
+
+  def animation animation_number
+    { 'bounceInLeft' => 1, 'fadeIn' =>  2, 'bounce' => 3 }.key(animation_number.to_i)
   end
 
   def font_weight
