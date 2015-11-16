@@ -17,5 +17,6 @@
 //= require turbolinks
 //= require jquery.minicolors
 //= require bootstrap-switch
+//= require tinymce-jquery
 //= require_tree .
 

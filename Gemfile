@@ -34,6 +34,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 
+gem 'tinymce-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
