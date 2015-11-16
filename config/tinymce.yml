@@ -1,7 +1,7 @@
+statusbar: false
 menubar: false
+theme: 'modern'
 toolbar:
-  -  undo redo | bold italic | forecolor backcolor
+  -  undo redo | bold italic | sizeselect | forecolor backcolor
 plugins:
-  - image
-  - link
   - textcolor
