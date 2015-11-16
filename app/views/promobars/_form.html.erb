@@ -399,7 +399,7 @@
     </div>
 
     <div class="row">
-      <% unless parmas[:action] == 'new' %>
+      <% unless params[:action] == 'new' %>
         <%= link_to 'ADD ANOTHER BANNER', new_promobar_path, class: 'btn btn-primary' %>
       <% end %>
       <% unless @promobar.promobar_show %>
