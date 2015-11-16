@@ -55,6 +55,10 @@ class Promobar < ActiveRecord::Base
     self.button_on ? 'inline-block' : 'none'
   end
 
+  def link_blank
+    self.url_link_blank == 1 ? '_blank' : '_self'
+  end
+
   private
 
 =begin
