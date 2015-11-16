@@ -123,11 +123,11 @@
 
   <div class="row" style="margin-bottom: 25px;">
 
-    <div class="form-group col-md-6">
-      <div class="col-md-4" style="widht:50%;">
+    <div class="form-group col-md-4">
+      <div class="col-md-4">
         <%= label_tag 'promobar[bar_type]', 'SELECT BANNER TYPE:' %>  
       </div>
-      <div class="col-md-4" style="widht:50%;">
+      <div class="col-md-4">
         <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>  
       </div>
     </div>
@@ -399,9 +399,12 @@
     </div>
 
     <div class="row">
-      <% unless params[:action] == 'new' %>
-        <%= link_to 'ADD ANOTHER BANNER', new_promobar_path, class: 'btn btn-primary' %>
-      <% end %>
+      <div class="col-md-2">
+        <% unless params[:action] == 'new' %>
+          <%= link_to 'ADD ANOTHER BANNER', new_promobar_path, class: 'btn btn-primary' %>
+        <% end %>  
+      </div>
+      
       <% unless @promobar.promobar_show %>
         <div class="col-md-2">
           <%= f.submit "Display", class: "btn btn-primary", id: "display_bar_button", style: "width: 80%;" %>
