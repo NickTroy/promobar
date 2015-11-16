@@ -41,6 +41,20 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     '</style>').appendTo('head');
 
   <% end %>
+  $('<script type="text/javascript"> ' + 
+      '$(document).ready(function () { ' +
+        'var divs = $(\'div[class^="header-promo-bar"]\'); ' +
+        'divs.hide(); ' +
+        'var i; ' +
+        'i = 0; ' +
+        '(function cycle() { ' +
+          'divs.eq(i).fadeIn(400) ' +
+                    '.delay(2000) ' +
+                    '.fadeOut(400, cycle); ' +
+          'i = ++i % divs.length; '  +
+        '})(); ' +
+      '}); ' +
+    '</script>').appendTo('head');
 <% end %>
 
 <% unless @footer_promobars.nil? %>
