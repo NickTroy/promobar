@@ -15,7 +15,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>; ' +
       ' font-size: <%= bar.font_size %>px;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; text-decoration: <%= bar.underlined%>;"><%= bar.text %></h1>' +
+      ' style="display: inline-block; text-decoration: <%= bar.underlined%>;"><%= render html: bar.text.html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>; background: <%= bar.button_color %>;' +
       ' color: <%= bar.button_text_color%>; border-radius: 5px;' + 
