@@ -1,6 +1,6 @@
+menubar: false
 toolbar:
-  - styleselect | bold italic | undo redo | forecolor backcolor
-  - image | link
+  -  undo redo | bold italic | forecolor backcolor
 plugins:
   - image
   - link
