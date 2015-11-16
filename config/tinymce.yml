@@ -1,7 +1,9 @@
 statusbar: false
 menubar: false
+resize: false
 theme: 'modern'
+fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt"
 toolbar:
-  -  undo redo | bold italic | sizeselect | forecolor backcolor
+  -  undo redo | bold italic | fontsizeselect | forecolor backcolor
 plugins:
   - textcolor
