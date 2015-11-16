@@ -34,7 +34,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
           '}); ' +
           'if (!<%= bar.enabled_on_mobile? %>) { ' +
             'if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { ' +
-              '$("header-promo-bar<%= index %>").hide(); ' +
+              '$("header-promo-bar<%= index %>").css("visibility", "hidden"); ' +
             '} ' +
           '} ' +
         '}); ' +
@@ -90,11 +90,11 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
           '$("#footer-promobar-x-button<%= index %>").click(function () { ' +
-             '$(".footer-promo-bar<%= index %>").css("visibility", "hidden"); ' + 
+             '$(".footer-promo-bar<%= index %>").hide(); ' + 
           '});   ' +
           'if (!<%= bar.enabled_on_mobile? %>) { ' +
             'if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { ' +
-              '$("footer-promo-bar<%= index %>").hide(); ' +
+              '$("footer-promo-bar<%= index %>").css("visibility", "hidden"); ' +
             '} ' +
           '} ' +
         '}); ' +
