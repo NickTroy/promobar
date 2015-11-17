@@ -11,36 +11,8 @@ class Promobar < ActiveRecord::Base
   # before_save :generate_script
   after_destroy :script_cleanup
 
-  def font_family font_number
-    { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }.key(font_number.to_i)
-  end
-
   def animation animation_number
     "animated infinite #{{ 'bounceInLeft' => 1, 'fadeIn' =>  2, 'bounce' => 3 }.key(animation_number.to_i)}"
-  end
-
-  def font_weight
-    self.font_bold == 1 ? 'bold' : 'normal'  
-  end
-
-  def italic
-    self.font_italic == 1 ? 'italic' : 'normal'  
-  end
-  
-  def underlined
-    self.font_underlined == 1 ? 'underline' : 'none'  
-  end
-
-  def button_font_weight
-    self.button_font_bold == 1 ? 'bold' : 'normal'  
-  end
-
-  def button_italic
-    self.button_font_italic == 1 ? 'italic' : 'normal'  
-  end
-  
-  def button_underlined
-    self.button_font_underlined == 1 ? 'underline' : 'none'  
   end
 
   def text_align align
