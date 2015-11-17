@@ -203,9 +203,14 @@
     });
   });
 </script>
+<script type="text/javascript">
+  function saveButtonText() {
+    $('#promobar_button_text').tinymce().save();
+  }
+</script>
 
 <!-- Bar form -->
-<%= form_for(@promobar, class: "bar-form", :html => {:onsubmit => $('#promobar_button_text').tinymce().save();} ) do |f| %>
+<%= form_for(@promobar, class: "bar-form", :html => {:onsubmit => "saveButtonText()"}) do |f| %>
 
   <div class="col-md-12" style="border-bottom: 3px solid #000;margin-bottom: 30px;">
     <% if notice %>
