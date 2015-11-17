@@ -90,9 +90,10 @@
       menu: [
         {
           text: 'Menu item 1', onclick: function() {
-            tinymce.activeEditor.dom.setStyles(tinymce.activeEditor.selection, {'letter-spacing' : '5px'});
-          }
-        },
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              styles : { 'letter-spacing' : '5px'}
+            });
+          },
         {
           text: 'Menu item 2', onclick: function() {
             editor.insertContent('Menu item 2');
