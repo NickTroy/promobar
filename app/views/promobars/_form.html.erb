@@ -90,7 +90,7 @@
       menu: [
         {
           text: 'Menu item 1', onclick: function() {
-            alert(tinymce.activeEditor.selection.getContent());
+            tinymce.activeEditor.dom.setStyles(tinymce.activeEditor.selection, {'line-height' : '40px'});
           }
         },
         {
