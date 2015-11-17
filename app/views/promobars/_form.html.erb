@@ -198,7 +198,6 @@
       <div class="form-group">
         <%= label_tag 'promobar[text]', "BANNER TEXT:" %><br>
         <%= f.text_area :text, :class => "tinymce form-control", placeholder: "ENTER TEXT HERE" %>
-        <%= tinymce %>
         <script type="text/javascript">
           tinymce.init({
               selector: "text",
@@ -216,6 +215,8 @@
               }
           });
         </script>
+        <%= tinymce %>
+        
 
       </div>
     </div>
