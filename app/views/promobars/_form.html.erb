@@ -377,12 +377,12 @@
 
   <div class="row">
 
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
       <div class="form-group">
         <%= label_tag 'promobar[button_shape]', "BUTTON SHAPE" %>
         <%= f.select :button_shape, { 'RECTANGLE' => 1, 'SQUARE' =>  2 }, {}, { :class => "form-control" } %>
       </div>
-    </div>
+    </div> -->
 
     <div class="col-md-4">
       <div class="form-group">
@@ -400,22 +400,22 @@
 
   </div>
 
-  <div class="row">
-
+  <!-- <div class="row">
+  
     <div class="col-md-2">
       <div class="form-group">
         <%= label_tag 'promobar[button_font]', "FONT" %>
         <%= f.select :button_font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control" } %>
       </div>
     </div>
-
+  
     <div class="col-md-1">
       <div class="form-group">
         <%= label_tag 'promobar[button_font_size]', "SIZE" %>
         <%= f.number_field :button_font_size, value: @promobar.button_font_size, within: 5..50, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
-
+  
     <div class="col-md-3">
       <div class="form-group">
         <%= label_tag 'promobar[button_text_color]', "TEXT COLOR" %>
@@ -434,22 +434,22 @@
         <span><u>UNDERLINE</u></span>
       </div>
     </div>
-
+  
     <div class="col-md-1">
       <div class="form-group">
         <%= label_tag 'promobar[button_tracking]', "TRACKING" %>
         <%= f.number_field :button_tracking, value: @promobar.button_tracking, within: 10..30, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
-
+  
     <div class="col-md-1">
       <div class="form-group">
         <%= label_tag 'promobar[button_leading]', "LEADING" %>
         <%= f.number_field :button_leading, value: @promobar.button_leading, within: -2..2, class: "form-control", style: "width 70%;" %>
       </div>
     </div>
-
-  </div>  
+  
+  </div>   -->
     
 
     
