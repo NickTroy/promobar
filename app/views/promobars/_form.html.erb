@@ -328,53 +328,6 @@
       </div>
     </div>
 
-    <!-- <div class="col-md-2">
-      <div class="form-group">
-        <%= label_tag 'promobar[font]', "FONT" %>
-        <%= f.select :font, { 'TIMES NEW ROMAN' => 1, 'ARIAL' =>  2 }, {}, { :class => "form-control" } %>
-      </div>
-    </div>
-    
-    <div class="col-md-1">
-      <div class="form-group">
-        <%= label_tag 'promobar[font_size]', "SIZE" %>
-        <%= f.number_field :font_size, value: @promobar.font_size, within: 5..50, class: "form-control", style: "width 70%;" %>
-      </div>
-    </div>
-    
-    <div class="col-md-2">
-      <div class="form-group">
-        <%= label_tag 'promobar[text_color]', "TEXT COLOR" %>
-        <%= f.text_field :text_color, class: "form-control bar-text-color" %>
-      </div>
-    </div>
-        
-    <div class="col-md-4" style="margin-top:2%;">
-      <div class="form-group">
-        <input class="btn btn-primary font-regular" name="commit" type="button" value="REGULAR"/>
-        <%= f.check_box :font_bold, class: "font-bold" %>
-        <span><strong>BOLD</strong></span>
-        <%= f.check_box :font_italic, class: "font-italic" %>
-        <span><em>ITALIC</em></span>
-        <%= f.check_box :font_underlined, class: "font-underlined"  %>
-        <span><u>UNDERLINE</u></span>
-      </div>
-    </div> -->
-
-    <!-- <div class="col-md-1">
-      <div class="form-group">
-        <%= label_tag 'promobar[tracking]', "TRACKING" %>
-        <%= f.number_field :tracking, value: @promobar.tracking, within: 10..30, class: "form-control", style: "width 70%;" %>
-      </div>
-    </div>
-    
-    <div class="col-md-1">
-      <div class="form-group">
-        <%= label_tag 'promobar[leading]', "LEADING" %>
-        <%= f.number_field :leading, value: @promobar.leading, within: -2..2, class: "form-control", style: "width 70%;" %>
-      </div>
-    </div> -->
-
   </div>
 
 
@@ -389,7 +342,8 @@
             <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control button_on" %>
           </div>
         </label>
-        <%= f.text_field :button_text, class: "form-control", placeholder: "ENTER TEXT HERE" %>
+        <%= f.text_area :button_text, :class => "tinymce form-control", placeholder: "ENTER TEXT HERE" %>
+        <%= tinymce %>
       </div>
     </div>
 
