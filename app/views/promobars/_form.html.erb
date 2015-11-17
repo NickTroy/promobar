@@ -114,6 +114,80 @@
             });
             tinymce.activeEditor.formatter.apply('mycustomformat');
           }
+        },
+        {
+          text: '4px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
+              styles : { 'letter-spacing' : '3px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
+          }
+        },
+        {
+          text: '5px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
+              styles : { 'letter-spacing' : '3px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
+          }
+        }
+      ]
+
+    });
+  });
+
+  tinymce.PluginManager.add('lineheight', function(editor, url) {
+    editor.addButton('lineheight', {
+      text: 'Line Height',
+      type: 'menubutton',
+      icon: false,
+      menu: [
+        {
+          text: '10px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
+              styles : { 'line-height' : '10px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
+          }
+        },
+        {
+          text: '15px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
+              styles : { 'line-height' : '15px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
+          }
+        },
+        {
+          text: '20px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
+              styles : { 'line-height' : '20px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
+          }
+        },
+        {
+          text: '25px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
+              styles : { 'line-height' : '25px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
+          }
+        },
+        {
+          text: '30px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
+              styles : { 'line-height' : '30px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
+          }
         }
       ]
 
