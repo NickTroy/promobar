@@ -81,6 +81,29 @@
 
 </script>
 
+<script type="text/javascript">
+  tinymce.PluginManager.add('example', function(editor, url) {
+    // Add a button that opens a window
+    editor.addButton('example', {
+      text: 'My button',
+      icon: false,
+      onclick: function() {
+        // Open window
+        editor.windowManager.open({
+          title: 'Example plugin',
+          body: [
+            {type: 'textbox', name: 'title', label: 'Title'}
+          ],
+          onsubmit: function(e) {
+            // Insert content when the window form is submitted
+            editor.insertContent('Title: ' + e.data.title);
+          }
+        });
+      }
+    });
+  });
+</script>
+
 <!-- Bar form -->
 <%= form_for(@promobar, class: "bar-form") do |f| %>
 
@@ -199,28 +222,7 @@
         <%= label_tag 'promobar[text]', "BANNER TEXT:" %><br>
         <%= f.text_area :text, :class => "tinymce form-control", placeholder: "ENTER TEXT HERE" %>
         <%= tinymce %>
-        <script type="text/javascript">
-          tinymce.PluginManager.add('example', function(editor, url) {
-            // Add a button that opens a window
-            editor.addButton('example', {
-              text: 'My button',
-              icon: false,
-              onclick: function() {
-                // Open window
-                editor.windowManager.open({
-                  title: 'Example plugin',
-                  body: [
-                    {type: 'textbox', name: 'title', label: 'Title'}
-                  ],
-                  onsubmit: function(e) {
-                    // Insert content when the window form is submitted
-                    editor.insertContent('Title: ' + e.data.title);
-                  }
-                });
-              }
-            });
-          });
-        </script>
+        
         
 
       </div>
