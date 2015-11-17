@@ -89,17 +89,30 @@
       icon: false,
       menu: [
         {
-          text: 'Menu item 1', onclick: function() {
+          text: '0px', onclick: function() {
             tinymce.activeEditor.formatter.register('mycustomformat', {
               inline : 'span',
-              styles : { 'letter-spacing' : '5px'}
+              styles : { 'letter-spacing' : '0px'}
             });
             tinymce.activeEditor.formatter.apply('mycustomformat');
           }
         },
         {
-          text: 'Menu item 2', onclick: function() {
-            editor.insertContent('Menu item 2');
+          text: '1px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
+              styles : { 'letter-spacing' : '2px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
+          }
+        },
+        {
+          text: '3px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
+              styles : { 'letter-spacing' : '3px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
           }
         }
       ]
