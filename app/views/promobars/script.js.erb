@@ -14,11 +14,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' style="display: inline-block; "><%= render html: bar.text.html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>; ' +
-      ' border-radius: 5px;' + 
-      ' ' +
-      ' ' + 
-      ' ' + 
-      ' "' +
+      ' border-radius: 5px;"' +
       ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe %></a>' +
       ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: block; float: right; border-radius: 5px;"' + 
@@ -63,24 +59,16 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
 
     $('<div class="footer-promo-bar<%= index %>" style="position: fixed; bottom: 0; width: 100%;' +
       ' display: <%= bar.display_bar %>; ' +
-      ' color: <%= bar.text_color %>; background: <%= bar.background_color %>; ' +
-      ' font-family: <%= bar.font_family(bar.font) %>; ' + 
-      ' font-weight: <%= bar.font_weight %>; letter-spacing: <%= bar.leading %>px;' + 
-      ' font-style: <%= bar.italic %>; line-height: <%= bar.tracking %>px; ' +
+      ' background: <%= bar.background_color %>; ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
-      ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>; ' +
-      ' font-size: <%= bar.font_size %>px;">' +
+      ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; text-decoration: <%= bar.underlined%>;"><%= render html: bar.text.html_safe %></h1>' + 
-      ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +
-      ' style="display: <%= bar.display_button %>; background: <%= bar.button_color %>;' +
-      ' color: <%= bar.button_text_color%>; border-radius: 5px;' +
-      ' font-family: <%= bar.font_family(bar.button_font) %>; text-decoration: <%= bar.button_underlined%>;' + 
-      ' font-weight: <%= bar.button_font_weight %>; letter-spacing: <%= bar.button_leading %>px;' + 
-      ' font-style: <%= bar.button_italic %>; line-height: <%= bar.button_tracking %>px;' + 
-      ' font-size: <%= bar.button_font_size %>px;"' +
-      ' class="btn btn-sm btn-primary"><%= bar.button_text %></a>' +
-      ' <button id="footer-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
+      ' style="display: inline-block; "><%= render html: bar.text.html_safe %></h1>' +
+      ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
+      ' style="display: <%= bar.display_button %>; ' +
+      ' border-radius: 5px;"' +
+      ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe %></a>' +
+      ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: block; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
