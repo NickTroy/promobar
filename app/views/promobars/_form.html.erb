@@ -336,12 +336,13 @@
     
     <div class="col-md-12">
       <div class="form-group">
-        <label for="promobar_button_text" style="display:inline-block; width:100%;">BUTTON TEXT:
-          <!-- <div class="form-group pull-right">
+        <!-- <label for="button_text" style="display:inline-block; width:100%;">BUTTON TEXT:
+          <div class="form-group pull-right">
             <input class="btn btn-primary pull-right button_switcher" name="commit" type="button" value="<%= @promobar.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
             <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control button_on" %>
-          </div> -->
-        </label>
+          </div>
+        </label> -->
+        <%= label_tag 'promobar[button_text]', "BUTTON TEXT:" %>
         <%= f.text_area :button_text, :class => "tinymce form-control", placeholder: "ENTER TEXT HERE" %>
         <%= tinymce %>
       </div>
