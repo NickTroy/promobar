@@ -15,7 +15,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>; ' +
       ' border-radius: 5px;"' +
-      ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe %></a>' +
+      ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: block; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').appendTo('body');
@@ -67,7 +67,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>; ' +
       ' border-radius: 5px;"' +
-      ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe %></a>' +
+      ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: block; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').appendTo('body');
