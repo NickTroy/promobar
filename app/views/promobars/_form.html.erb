@@ -91,6 +91,7 @@
         {
           text: 'Menu item 1', onclick: function() {
             tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
               styles : { 'letter-spacing' : '5px'}
             });
           }
