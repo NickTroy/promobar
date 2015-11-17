@@ -11,28 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117110621) do
+ActiveRecord::Schema.define(version: 20151117111728) do
 
   create_table "promobars", force: true do |t|
     t.integer  "bar_type"
     t.string   "text"
-    t.string   "text_color"
     t.string   "background_color"
     t.integer  "background_opacity"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "button_text"
     t.string   "button_color"
     t.string   "button_hover"
-    t.string   "button_font"
-    t.integer  "button_font_size"
-    t.integer  "button_tracking"
-    t.integer  "button_leading"
-    t.integer  "button_font_regular"
-    t.integer  "button_font_bold"
-    t.integer  "button_font_italic"
-    t.string   "button_text_color"
     t.integer  "text_animation"
     t.integer  "size"
     t.integer  "alignment"
