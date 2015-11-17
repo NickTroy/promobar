@@ -82,15 +82,15 @@
 </script>
 
 <script type="text/javascript">
-  tinymce.PluginManager.add('linespacing', function(editor, url) {
-    editor.addButton('linespacing', {
-      text: 'Line Spacing',
+  tinymce.PluginManager.add('letterspacing', function(editor, url) {
+    editor.addButton('letterspacing', {
+      text: 'Letter Spacing',
       type: 'menubutton',
       icon: false,
       menu: [
         {
           text: 'Menu item 1', onclick: function() {
-            tinymce.activeEditor.dom.setStyles(tinymce.activeEditor.selection, {'line-height' : '40px'});
+            tinymce.activeEditor.dom.setStyles(tinymce.activeEditor.selection, {'letter-spacing' : '5px'});
           }
         },
         {
