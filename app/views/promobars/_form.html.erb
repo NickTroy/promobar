@@ -200,20 +200,25 @@
         <%= f.text_area :text, :class => "tinymce form-control", placeholder: "ENTER TEXT HERE" %>
         <%= tinymce %>
         <script type="text/javascript">
-          tinymce.init({
-              selector: "#promobar_text",
-              toolbar: "mybutton",
-              setup: function(editor) {
-                  editor.addButton('mybutton', {
-                      type: 'menubutton',
-                      text: 'My button',
-                      icon: false,
-                      menu: [
-                          {text: 'Menu item 1', onclick: function() {editor.insertContent('Menu item 1');}},
-                          {text: 'Menu item 2', onclick: function() {editor.insertContent('Menu item 2');}}
-                      ]
-                  });
+          tinymce.PluginManager.add('example', function(editor, url) {
+            // Add a button that opens a window
+            editor.addButton('example', {
+              text: 'My button',
+              icon: false,
+              onclick: function() {
+                // Open window
+                editor.windowManager.open({
+                  title: 'Example plugin',
+                  body: [
+                    {type: 'textbox', name: 'title', label: 'Title'}
+                  ],
+                  onsubmit: function(e) {
+                    // Insert content when the window form is submitted
+                    editor.insertContent('Title: ' + e.data.title);
+                  }
+                });
               }
+            });
           });
         </script>
         
