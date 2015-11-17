@@ -88,8 +88,16 @@
       type: 'menubutton',
       icon: false,
       menu: [
-        {text: 'Menu item 1', onclick: function() {editor.insertContent('Menu item 1');}},
-        {text: 'Menu item 2', onclick: function() {editor.insertContent('Menu item 2');}}
+        {
+          text: 'Menu item 1', onclick: function() {
+            alert(tinymce.activeEditor.selection.getContent());
+          }
+        },
+        {
+          text: 'Menu item 2', onclick: function() {
+            editor.insertContent('Menu item 2');
+          }
+        }
       ]
 
     });
