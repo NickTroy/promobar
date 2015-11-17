@@ -101,6 +101,15 @@
           text: '1px', onclick: function() {
             tinymce.activeEditor.formatter.register('mycustomformat', {
               inline : 'span',
+              styles : { 'letter-spacing' : '1px'}
+            });
+            tinymce.activeEditor.formatter.apply('mycustomformat');
+          }
+        },
+        {
+          text: '2px', onclick: function() {
+            tinymce.activeEditor.formatter.register('mycustomformat', {
+              inline : 'span',
               styles : { 'letter-spacing' : '2px'}
             });
             tinymce.activeEditor.formatter.apply('mycustomformat');
