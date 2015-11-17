@@ -348,13 +348,13 @@
           </div>
         </label> -->
         <%= label_tag 'promobar[button_text]', "BUTTON TEXT:" %>
-        <%= f.text_area :button_text, :class => "tinymce form-control", placeholder: "ENTER TEXT HERE" %>
+        <%= f.text_area :button_text, :class => "tinymce_button form-control", placeholder: "ENTER TEXT HERE" %>
         <script>
           //<![CDATA[
           (function() {
             if (typeof tinyMCE != 'undefined') {
               tinyMCE.init({
-                selector: "textarea#promobar_button_text",
+                selector: "textarea.tinymce_button",
                 statusbar: false,
                 menubar: false,
                 resize: false,
