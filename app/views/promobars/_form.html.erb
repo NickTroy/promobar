@@ -82,6 +82,18 @@
 </script>
 
 <script type="text/javascript">
+
+    $('.subheader-background-color').minicolors({
+      theme: 'bootstrap',
+      defaultValue: $(".subheader-background-color").attr("value") || "#000000",
+      change: function(value) {
+        $('.subheader-background-color').attr("value", value)
+      }
+    });
+    
+</script>
+
+<script type="text/javascript">
   tinymce.PluginManager.add('letterspacing', function(editor, url) {
     editor.addButton('letterspacing', {
       text: 'Letter Spacing',
