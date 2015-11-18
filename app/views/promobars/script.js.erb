@@ -38,13 +38,13 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     '</style>').appendTo('head');
     <% unless bar.subheader.nil? %>
       $('.site-header').after($('<div class="subheader-promo-bar<%= index %>" ' +
-        ' style="width:100%; ' +
+        ' style="width:100%; display: inline-block;' +
         ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
         ' <a href="' + '<%= bar.subheader.url_link %>' + '"' +  
         ' style="display: inline-block; ' +
         ' border-radius: 5px;"' +
-        ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe unless bar.button_text.nil? %></a>' +
+        ' class="btn btn-sm btn-primary"><%= render html: bar.subheader.button_text.html_safe unless bar.subheader.button_text.nil? %></a>' +
         '<h2><%= render html: bar.subheader.text.html_safe unless bar.subheader.text.nil? %></h2></div>'));
     <% end %>
   <% end %>
