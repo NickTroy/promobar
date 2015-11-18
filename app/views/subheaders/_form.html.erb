@@ -34,14 +34,35 @@
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'subheader[text]', "BANNER TEXT:" %>
-        <%= f.text_area :text, :class => "tinymce form-control", placeholder: "ENTER TEXT HERE" %>
-        <%= tinymce %>
+        <%= f.text_area :text, :class => "subheader_text form-control", placeholder: "ENTER TEXT HERE" %>
+        <script>
+          //<![CDATA[
+          (function() {
+            if (typeof tinyMCE != 'undefined') {
+              tinyMCE.init({
+                selector: "textarea.subheader_text",
+                statusbar: false,
+                menubar: false,
+                resize: false,
+                theme: "modern",
+                fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+                theme_advanced_fonts: "Arial=arial,Times New Roman=times new roman,times;",
+                toolbar: ["undo redo | removeformat bold italic underline | fontsizeselect | forecolor backcolor | fontselect | letterspacing | lineheight"],
+                plugins: "textcolor,letterspacing,lineheight"
+              });
+            } else {
+              setTimeout(arguments.callee, 50);
+            }
+          })();
+
+          //]]>
+        </script>
         
         
 
       </div>
     </div>
-    
+
     <div class="col-md-2">
       <div class="actions">
         <%= f.submit "Save", class: "btn btn-success", style: "width: 80%;"%>
