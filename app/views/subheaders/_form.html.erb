@@ -1,4 +1,4 @@
-<%= form_for(@subheader, class: "bar-form") do |f| %>
+<%= form_for([@promobar, @subheader], class: "bar-form") do |f| %>
 
   <div class="col-md-12" style="border-bottom: 3px solid #000;margin-bottom: 30px;">
     <% if notice %>
