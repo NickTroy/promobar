@@ -17,6 +17,7 @@ class SubheadersController < ApplicationController
   end
 
   def update
+    @subheader = @promobar.subheader
     @subheader.update_attributes(subheader_params)
     @subheader.save
   end
