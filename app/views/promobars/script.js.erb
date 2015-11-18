@@ -37,8 +37,8 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       '}' + 
     '</style>').appendTo('head');
     $('.site-header').after($('<div class="subheader-promo-bar<%= index %>" ' +
-      ' style="width:100%; background: <%= bar.background_color %>; ' +
-      ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
+      ' style="width:100%; background: <%= bar.subheader.background_color %>; ' +
+      ' opacity: <%= (100 - bar.subheader.background_opacity) / 100.0 %>;">' +
       '<h2><%= render html: bar.subheader.text.html_safe unless (bar.subheader.nil? or bar.subheader.text.nil?) %></h2></div>'));
 
   <% end %>
