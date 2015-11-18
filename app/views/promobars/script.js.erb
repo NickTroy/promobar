@@ -41,7 +41,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
         ' style="width:100%; ' +
         ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
-        ' <a href="' + '<%= bar.subheader.url_link %>' + '" target=<%= bar.subheader.link_blank %>' +  
+        ' <a href="' + '<%= bar.subheader.url_link %>' + '"' +  
         ' style="display: <%= bar.subheader.display_button %>; ' +
         ' border-radius: 5px;"' +
         ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe unless bar.button_text.nil? %></a>' +
