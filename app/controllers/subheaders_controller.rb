@@ -10,13 +10,15 @@ class SubheadersController < ApplicationController
   end
 
   def create
-    @subheader = @promobar.create_subheader(params[:subheader])
+    @subheader = @promobar.create_subheader(subheader_params)
     if @subheader.save
       render 'promobar/edit'
     end
   end
 
   def update
+    @subheader.update_attributes(subheader_params)
+    @subheader.save
   end
 
   private
