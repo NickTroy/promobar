@@ -1,12 +1,5 @@
 <script type="text/javascript">
 
-    $('.bar-text-color').minicolors({
-      theme: 'bootstrap',
-      defaultValue: $(".bar-text-color").attr("value") || "#000000",
-      change: function(value) {
-        $('.bar-text-color').attr("value", value)
-      }
-    });
 
     $('.bar-background-color').minicolors({
       theme: 'bootstrap',
@@ -32,13 +25,7 @@
       }
     });
 
-    $('.button-text-color').minicolors({
-      theme: 'bootstrap',
-      defaultValue: $(".button-text-color").attr("value") || "#000000",
-      change: function(value) {
-        $('.button-text-color').attr("value", value)
-      }
-    });
+
 
     $( ".bar-opacity-slider" ).slider({
       range: "max",
@@ -105,6 +92,23 @@
         $(".subheader-opacity-value").html(ui.value + "%");
       }
     });
+
+    $('.subheader-button-background-color').minicolors({
+      theme: 'bootstrap',
+      defaultValue: $(".subheader-button-background-color").attr("value") || "#ffffff",
+      change: function(value) {
+        $('.subheader-button-background-color').attr("value", value)
+      }
+    });
+
+    $('.subheader-button-hover').minicolors({
+      theme: 'bootstrap',
+      defaultValue: $(".subheader-button-hover").attr("value") || "#000000",
+      change: function(value) {
+        $('.subheader-button-hover').attr("value", value)
+      }
+    });
+
     
 </script>
 
