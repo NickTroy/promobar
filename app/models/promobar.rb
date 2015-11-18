@@ -10,6 +10,7 @@ class Promobar < ActiveRecord::Base
 
   # before_save :generate_script
   after_destroy :script_cleanup
+  has_one :subheader
 
   def animation animation_number
     "animated infinite #{{ 'bounceInLeft' => 1, 'fadeIn' =>  2, 'bounce' => 3 }.key(animation_number.to_i)}"

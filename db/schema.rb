@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117114016) do
+ActiveRecord::Schema.define(version: 20151117123318) do
 
   create_table "promobars", force: true do |t|
     t.integer  "bar_type"
@@ -42,5 +42,15 @@ ActiveRecord::Schema.define(version: 20151117114016) do
   end
 
   add_index "shops", ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
+
+  create_table "subheaders", force: true do |t|
+    t.string   "text"
+    t.string   "background_color"
+    t.integer  "promobar_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subheaders", ["promobar_id"], name: "index_subheaders_on_promobar_id"
 
 end
