@@ -25,11 +25,12 @@ $ ->
   $('.add_subheader').on 'switchChange.bootstrapSwitch', (event, state) -> 
     promobar_show = !state
     id = $(this).attr("id")
-    ###$.ajax "/promobars/#{id}/subheader.json",
+    $('form[id^="edit_subheader_"]').toggle()
+    $.ajax "/promobars/#{id}/subheader.json",
       type: 'POST'
       dataType: 'json'
       data: 
         _method: 'PUT'
         "subheader[promobar_show]": promobar_show
       success: () ->
-        alert("success")###
+        alert("success")
