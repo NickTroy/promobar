@@ -1,6 +1,6 @@
 
 
-<%= form_for([@promobar, @subheader], class: "subheader-form", style: "display: @subheader.display_bar;") do |f| %>
+<%= form_for([@promobar, @subheader], class: "subheader-form") do |f| %>
   <div class="form-group">
     <%= f.hidden_field :promobar_show, value: @subheader.promobar_show, class: "form-control subheader_promobar_show" %>  
   </div> 
