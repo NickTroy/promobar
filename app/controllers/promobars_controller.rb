@@ -9,6 +9,7 @@ class PromobarsController < AuthenticatedController
 
   # GET /promobars/edit
   def edit
+    @subheader = @promobar.subheader
   end
 
   # POST /promobars
