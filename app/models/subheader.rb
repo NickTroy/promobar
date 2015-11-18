@@ -4,4 +4,8 @@ class Subheader < ActiveRecord::Base
   def animation animation_number
     "animated infinite #{{ 'bounceInLeft' => 1, 'fadeIn' =>  2, 'bounce' => 3 }.key(animation_number.to_i)}"
   end
+
+  def text_align align
+    { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }.key(align.to_i)
+  end
 end
