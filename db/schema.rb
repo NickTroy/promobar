@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117123318) do
+ActiveRecord::Schema.define(version: 20151118094226) do
 
   create_table "promobars", force: true do |t|
     t.integer  "bar_type"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 20151117123318) do
     t.integer  "promobar_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "background_opacity"
+    t.string   "button_color"
+    t.string   "button_hover"
+    t.integer  "text_animation"
+    t.integer  "alignment"
+    t.string   "url_link"
+    t.integer  "url_link_blank"
+    t.integer  "enable_on_mobile"
+    t.boolean  "button_on"
+    t.boolean  "promobar_show"
+    t.string   "button_text"
   end
 
   add_index "subheaders", ["promobar_id"], name: "index_subheaders_on_promobar_id"
