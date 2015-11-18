@@ -122,7 +122,7 @@
     });
 
     $(document).ready(function (){
-      if (@subheader.promobar_show) {
+      if (<%= @subheader.promobar_show %>) {
         $('.add_subheader').attr("value", "DELETE SUBHEADER");
         $('.subheader_promobar_show').attr("value", "true");
         $('form[id^="edit_subheader_"]').show();
