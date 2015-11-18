@@ -47,7 +47,7 @@
             <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
             <td><%= render html: bar.text.html_safe %></td>
             <td><%= bar.button_on ? "YES" : "NO"%></td>
-            <td>NO</td> 
+            <td><%= bar.subheader.promobar_show ? "YES" : "NO" %></td> 
             <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
             <td>
             <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" <%= bar.promobar_show ? "" : "checked" %> />
@@ -87,7 +87,7 @@
             <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
             <td><%= render html: bar.text.html_safe %></td>
             <td><%= bar.button_on ? "YES" : "NO"%></td>
-            <td>NO</td> 
+            <td><%= bar.subheader.promobar_show ? "YES" : "NO" %></td> 
             <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
             <td>
             <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" <%= bar.promobar_show ? "" : "checked" %> />
