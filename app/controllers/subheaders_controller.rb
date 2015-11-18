@@ -12,7 +12,7 @@ class SubheadersController < ApplicationController
   def create
     @subheader = @promobar.create_subheader(subheader_params)
     if @subheader.save
-      render 'promobars/edit'
+      redirect_to root_url
     end
   end
 
