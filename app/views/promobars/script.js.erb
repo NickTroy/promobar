@@ -41,12 +41,15 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
         ' style="width:100%; display: inline-block;' +
         ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
+        ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
+        ' style="display:inline-block; text-align: center;"> ' + 
+        ' <%= render html: bar.subheader.text.html_safe unless bar.subheader.text.nil? %></h2> ' +
         ' <a href="' + '<%= bar.subheader.url_link %>' + '"' +  
         ' style="display: inline-block; ' +
         ' background-color: <%= bar.subheader.button_color %>; ' +
         ' border-radius: 5px;"' +
         ' class="btn btn-sm btn-primary"><%= render html: bar.subheader.button_text.html_safe unless bar.subheader.button_text.nil? %></a>' +
-        '<h2 style="display:inline-block;"><%= render html: bar.subheader.text.html_safe unless bar.subheader.text.nil? %></h2></div>'));
+        ' </div>'));
       $('<style> ' + 
         '.subheader-promo-bar<%= index %> a:hover { ' +
         ' background-color: <%= bar.subheader.button_hover %> !important;' +
