@@ -108,18 +108,15 @@
     });
 
     $('.add_subheader').bind('click', function() {
-      if ($('.add_subheader').attr("value") === "ADD SUBHEADER") {
+      
+      if ($('.subheader_promobar_show').attr("value") == "true") {
+        $('.subheader_promobar_show').attr("value", "false");
         $('.add_subheader').attr("value", "DELETE SUBHEADER");
         $('form[id^="edit_subheader_"]').show();
       } else {
-        $('.add_subheader').attr("value", "ADD SUBHEADER");
-        $('form[id^="edit_subheader_"]').show();
-      }
-   
-      if ($('.subheader_promobar_show').attr("value") == "true") {
-        $('.subheader_promobar_show').attr("value", "false");
-      } else {
         $('.subheader_promobar_show').attr("value", "true");
+        $('.add_subheader').attr("value", "ADD SUBHEADER");
+        $('form[id^="edit_subheader_"]').hide();
       }
  
     });
