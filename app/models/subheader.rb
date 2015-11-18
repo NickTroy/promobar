@@ -20,4 +20,8 @@ class Subheader < ActiveRecord::Base
   def display_button
     self.button_on ? 'inline-block' : 'none'
   end
+
+  def display_bar
+    self.promobar_show ? 'block' : 'none'
+  end
 end

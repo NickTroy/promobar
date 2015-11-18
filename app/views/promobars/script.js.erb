@@ -38,7 +38,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
     '</style>').appendTo('head');
     <% unless bar.subheader.nil? %>
       $('.site-header').after($('<div class="subheader-promo-bar<%= index %>" ' +
-        ' style="width:100%; display: inline-block;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
+        ' style="width:100%; display: <%= bar.subheader.display_bar %>;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
         ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
