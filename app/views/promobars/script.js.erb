@@ -36,6 +36,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' background-color: <%= bar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
+    $('.site-header').after($('<div class="subheader-promo-bar<%= index %>"><h2><%= bar.subheader.text %></h2></div>'));
 
   <% end %>
   $('<script type="text/javascript"> ' + 
