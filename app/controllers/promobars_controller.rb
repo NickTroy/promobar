@@ -4,6 +4,7 @@ class PromobarsController < AuthenticatedController
   # GET /promobars/new
   def new
     @promobar = Promobar.new
+    @subheader = @promobar.create_subheader
     @promobar.background_opacity = 1
   end
 
