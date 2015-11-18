@@ -12,7 +12,7 @@ class SubheadersController < ApplicationController
   def create
     @subheader = @promobar.create_subheader(subheader_params)
     if @subheader.save
-      redirect_to edit_promobar(@promobar)
+      redirect_to edit_promobar_path(@promobar)
     end
   end
 
@@ -20,7 +20,7 @@ class SubheadersController < ApplicationController
     @subheader = @promobar.subheader
     @subheader.update_attributes(subheader_params)
     if @subheader.save
-      redirect_to edit_promobar(@promobar)
+      redirect_to edit_promobar_path(@promobar)
     end
   end
 
