@@ -1,55 +1,4 @@
-<script type="text/javascript">
 
-    $('.subheader-background-color').minicolors({
-      theme: 'bootstrap',
-      defaultValue: $(".subheader-background-color").attr("value") || "#000000",
-      change: function(value) {
-        $('.subheader-background-color').attr("value", value)
-      }
-    });
-
-    $('.button-background-color').minicolors({
-      theme: 'bootstrap',
-      defaultValue: $(".button-background-color").attr("value") || "#ffffff",
-      change: function(value) {
-        $('.button-background-color').attr("value", value)
-      }
-    });
-
-    $('.button-hover').minicolors({
-      theme: 'bootstrap',
-      defaultValue: $(".button-hover").attr("value") || "#000000",
-      change: function(value) {
-        $('.button-hover').attr("value", value)
-      }
-    });
-
-    $( ".subheader-opacity-slider" ).slider({
-      range: "max",
-      min: 1,
-      max: 100,
-      value: $(".subheader-opacity-switcher").attr("value"),
-      slide: function(event, ui) {
-        $(".subheader-opacity-switcher").attr("value", ui.value);
-        $(".subheader-opacity-value").html(ui.value + "%");
-      }
-    });
-
-    $('.subheader_button_switcher').bind('click', function() {
-      if ($('.subheader_button_switcher').attr("value") === "BUTTON ON") {
-        $('.subheader_button_switcher').attr("value", "BUTTON OFF");
-      } else {
-        $('.subheader_button_switcher').attr("value", "BUTTON ON");
-      }
-   
-      if ($('.subheader_button_on').attr("value") == "true") {
-        $('.subheader_button_on').attr("value", "false");
-      } else {
-        $('.subheader_button_on').attr("value", "true");
-      }
-    });
-
-</script>
 
 <%= form_for([@promobar, @subheader], class: "subheader-form") do |f| %>
 
@@ -106,7 +55,7 @@
 
     <div class="col-md-12">
       <div class="form-group">
-        <%= label_tag 'subheader[text]', "BANNER TEXT:" %>
+        <%= label_tag 'subheader[text]', "SUBHEADER TEXT:" %>
         <%= f.text_area :text, :class => "subheader_text form-control", placeholder: "ENTER TEXT HERE" %>
         <script>
           //<![CDATA[
@@ -135,6 +84,44 @@
 
       </div>
     </div>
+    <div class="row">
+        
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="subheader_button_text" style="display:inline-block; width:100%;">SUBHEADER BUTTON TEXT:
+              <div class="form-group pull-right">
+                <input class="btn btn-primary pull-right subheader_button_switcher" name="commit" type="button" value="<%= @subheader.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
+                <%= f.hidden_field :button_on, value: @subheader.button_on, class: "form-control subheader_button_on" %>
+              </div>
+            </label>
+            <%= f.text_area :button_text, :class => "tinymce_subheader_button form-control", placeholder: "ENTER TEXT HERE" %>
+            <script>
+              //<![CDATA[
+              (function() {
+                if (typeof tinyMCE != 'undefined') {
+                  tinyMCE.init({
+                    selector: "textarea.tinymce_subheader_button",
+                    statusbar: false,
+                    menubar: false,
+                    resize: false,
+                    theme: "modern",
+                    fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+                    theme_advanced_fonts: "Arial=arial,Times New Roman=times new roman,times;",
+                    toolbar: ["undo redo | removeformat bold italic underline | fontsizeselect | forecolor backcolor | fontselect | letterspacing | lineheight"],
+                    plugins: "textcolor,letterspacing,lineheight"
+                  });
+                } else {
+                  setTimeout(arguments.callee, 50);
+                }
+              })();
+
+              //]]>
+            </script>
+          </div>
+        </div>
+
+      </div>
+  </div>
 
     <div class="col-md-2">
       <div class="actions">
@@ -142,7 +129,7 @@
       </div>
     </div>
 
-  </div>
+
 
 
 
