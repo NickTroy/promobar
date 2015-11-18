@@ -16,4 +16,8 @@ class Subheader < ActiveRecord::Base
   def enabled_on_mobile?
     self.enable_on_mobile == 1 ? true : false
   end
+
+  def display_button
+    self.button_on ? 'inline-block' : 'none'
+  end
 end
