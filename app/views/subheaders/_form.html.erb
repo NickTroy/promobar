@@ -210,7 +210,7 @@
 </script>-->
 
 <!-- Bar form -->
-<%= form_for(@promobar, class: "bar-form") do |f| %>
+<%= form_for(@subheader, class: "bar-form") do |f| %>
 
   <div class="col-md-12" style="border-bottom: 3px solid #000;margin-bottom: 30px;">
     <% if notice %>
@@ -219,10 +219,10 @@
         </div>
     <% end %>
 
-    <% if @promobar.errors.any? %>
+    <% if @subheader.errors.any? %>
         <div class="alert alert-danger" role="alert">
           <ul>
-            <% @promobar.errors.full_messages.each do |message| %>
+            <% @subheader.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
             <% end %>
           </ul>
@@ -256,17 +256,17 @@
         <%= label_tag 'promobar[bar_type]', 'SELECT BANNER TYPE:' %>  
       </div>
       <div class="col-md-4">
-        <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>  
+        <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @subheader.bar_type }, { :class => "form-control" } %>  
       </div>
     </div>
     
-    <% unless @promobar.promobar_show %>
+    <% unless @subheader.promobar_show %>
       <div class="col-md-2">
         <%= f.submit "Display", class: "btn btn-primary", id: "display_bar_button", style: "width: 80%;" %>
       </div>
     <% end %>
     
-    <% if @promobar.promobar_show and params[:action] != 'new' %>
+    <% if @subheader.promobar_show and params[:action] != 'new' %>
       <div class="col-md-2">
         <div class="actions">
           <%= f.submit "Hide", class: "btn btn-warning", id: "hide_bar_button", style: "width: 80%;" %>
@@ -274,9 +274,9 @@
       </div>
     <% end %>
   
-    <% unless @promobar.id.nil? %>
+    <% unless @subheader.id.nil? %>
       <div class="col-md-2">
-        <%= link_to 'Delete', promobar_url(@promobar), method: :delete, class: "btn btn-danger", style: "width: 80%;",
+        <%= link_to 'Delete', promobar_url(@subheader), method: :delete, class: "btn btn-danger", style: "width: 80%;",
                                data: { confirm: 'Are you sure, you want to delete this promo bar?' } %>  
       </div>
     <% end %> 
@@ -310,7 +310,7 @@
       <div class="form-group">
         <%= label_tag "OPACITY", "OPACITY" %>
         <div class="bar-opacity-slider" style="margin-top: 35px;"></div>
-        <span class="bar-opacity-value" style="display:block; text-align:center; font-weight:bold;"><%= @promobar.background_opacity %>%</span>
+        <span class="bar-opacity-value" style="display:block; text-align:center; font-weight:bold;"><%= @subheader.background_opacity %>%</span>
         <%= f.hidden_field :background_opacity, class: "form-control bar-opacity-switcher" %>
       </div>
     </div> -->
@@ -324,7 +324,7 @@
 
     <div class="col-md-12">
       <div class="form-group">
-        <%= label_tag 'promobar[text]', "BANNER TEXT:" %>
+        <%= label_tag 'subheader[text]', "BANNER TEXT:" %>
         <%= f.text_area :text, :class => "tinymce form-control", placeholder: "ENTER TEXT HERE" %>
         <%= tinymce %>
         
@@ -343,8 +343,8 @@
       <div class="form-group">
         <label for="button_text" style="display:inline-block; width:100%;">BUTTON TEXT:
           <div class="form-group pull-right">
-            <input class="btn btn-primary pull-right button_switcher" name="commit" type="button" value="<%= @promobar.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
-            <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control button_on" %>
+            <input class="btn btn-primary pull-right button_switcher" name="commit" type="button" value="<%= @subheader.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
+            <%= f.hidden_field :button_on, value: @subheader.button_on, class: "form-control button_on" %>
           </div>
         </label>
         <%= f.text_area :button_text, :class => "tinymce_button form-control", placeholder: "ENTER TEXT HERE" %>
@@ -437,13 +437,13 @@
         <% end %>  
       </div>
       
-      <% unless @promobar.promobar_show %>
+      <% unless @subheader.promobar_show %>
         <div class="col-md-2">
           <%= f.submit "Display", class: "btn btn-primary", id: "display_bar_button", style: "width: 80%;" %>
         </div>
       <% end %>
       
-      <% if @promobar.promobar_show and params[:action] != 'new' %>
+      <% if @subheader.promobar_show and params[:action] != 'new' %>
         <div class="col-md-2">
           <div class="actions">
             <%= f.submit "Hide", class: "btn btn-warning", id: "hide_bar_button", style: "width: 80%;" %>
@@ -451,9 +451,9 @@
         </div>
       <% end %>
   
-      <% unless @promobar.id.nil? %>
+      <% unless @subheader.id.nil? %>
         <div class="col-md-2">
-          <%= link_to 'Delete', promobar_url(@promobar), method: :delete, class: "btn btn-danger", style: "width: 80%;",
+          <%= link_to 'Delete', promobar_url(@subheader), method: :delete, class: "btn btn-danger", style: "width: 80%;",
                                  data: { confirm: 'Are you sure, you want to delete this promo bar?' } %>  
         </div>
       <% end %>
