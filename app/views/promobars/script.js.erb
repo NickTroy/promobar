@@ -36,7 +36,10 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' background-color: <%= bar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
-    $('.site-header').after($('<div class="subheader-promo-bar<%= index %>"><h2><%= render html: bar.subheader.text.html_safe unless (bar.subheader.nil? or bar.subheader.text.nil?) %></h2></div>'));
+    $('.site-header').after($('<div class="subheader-promo-bar<%= index %>" ' +
+      ' style="width:100%; background: <%= bar.background_color %>; ' +
+      ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
+      '<h2><%= render html: bar.subheader.text.html_safe unless (bar.subheader.nil? or bar.subheader.text.nil?) %></h2></div>'));
 
   <% end %>
   $('<script type="text/javascript"> ' + 

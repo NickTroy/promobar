@@ -1,4 +1,57 @@
-<%= form_for([@promobar, @subheader], class: "bar-form") do |f| %>
+<script type="text/javascript">
+
+    $('.subheader-background-color').minicolors({
+      theme: 'bootstrap',
+      defaultValue: $(".subheader-background-color").attr("value") || "#000000",
+      change: function(value) {
+        $('.subheader-background-color').attr("value", value)
+      }
+    });
+
+    $('.button-background-color').minicolors({
+      theme: 'bootstrap',
+      defaultValue: $(".button-background-color").attr("value") || "#ffffff",
+      change: function(value) {
+        $('.button-background-color').attr("value", value)
+      }
+    });
+
+    $('.button-hover').minicolors({
+      theme: 'bootstrap',
+      defaultValue: $(".button-hover").attr("value") || "#000000",
+      change: function(value) {
+        $('.button-hover').attr("value", value)
+      }
+    });
+
+    $( ".subheader-opacity-slider" ).slider({
+      range: "max",
+      min: 1,
+      max: 100,
+      value: $(".subheader-opacity-switcher").attr("value"),
+      slide: function(event, ui) {
+        $(".subheader-opacity-switcher").attr("value", ui.value);
+        $(".subheader-opacity-value").html(ui.value + "%");
+      }
+    });
+
+    $('.subheader_button_switcher').bind('click', function() {
+      if ($('.subheader_button_switcher').attr("value") === "BUTTON ON") {
+        $('.subheader_button_switcher').attr("value", "BUTTON OFF");
+      } else {
+        $('.subheader_button_switcher').attr("value", "BUTTON ON");
+      }
+   
+      if ($('.subheader_button_on').attr("value") == "true") {
+        $('.subheader_button_on').attr("value", "false");
+      } else {
+        $('.subheader_button_on').attr("value", "true");
+      }
+    });
+
+</script>
+
+<%= form_for([@promobar, @subheader], class: "subheader-form") do |f| %>
 
   <div class="col-md-12" style="border-bottom: 3px solid #000;margin-bottom: 30px;">
     <% if notice %>
@@ -28,6 +81,26 @@
     <% end %>
   </div>
 
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= label_tag 'subheader[background_color]', "BACKGROUND COLOR" %>
+        <%= f.text_field :background_color, class: "form-control subheader-background-color" %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= label_tag "OPACITY", "OPACITY" %>
+        <div class="subheader-opacity-slider" style="margin-top: 35px;"></div>
+        <span class="subheader-opacity-value" style="display:block; text-align:center; font-weight:bold;"><%= @subheader.background_opacity %>%</span>
+        <%= f.hidden_field :background_opacity, class: "form-control subheader-opacity-switcher" %>
+      </div>
+    </div>
+
+  </div>
+
 
   <div class="row">
 
@@ -41,13 +114,13 @@
             if (typeof tinyMCE != 'undefined') {
               tinyMCE.init({
                 selector: "textarea.subheader_text",
-                statusbar: false,
-                menubar: false,
+                statussubheader: false,
+                menusubheader: false,
                 resize: false,
                 theme: "modern",
                 fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
                 theme_advanced_fonts: "Arial=arial,Times New Roman=times new roman,times;",
-                toolbar: ["undo redo | removeformat bold italic underline | fontsizeselect | forecolor backcolor | fontselect | letterspacing | lineheight"],
+                toolsubheader: ["undo redo | removeformat bold italic underline | fontsizeselect | forecolor backcolor | fontselect | letterspacing | lineheight"],
                 plugins: "textcolor,letterspacing,lineheight"
               });
             } else {
