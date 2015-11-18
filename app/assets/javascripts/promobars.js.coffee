@@ -23,7 +23,7 @@ $ -> $( ".bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(
 $ ->
   $('.add_subheader').bootstrapSwitch()
   $('.add_subheader').on 'switchChange.bootstrapSwitch', (event, state) -> 
-    promobar_show = !state
+    promobar_show = state
     id = $(this).attr("id")
     $('form[id^="edit_subheader_"]').toggle()
     $.ajax "/promobars/#{id}/subheader.json",
