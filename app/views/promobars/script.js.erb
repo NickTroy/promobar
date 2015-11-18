@@ -49,12 +49,27 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
         ' background-color: <%= bar.subheader.button_color %>; ' +
         ' border-radius: 5px;"' +
         ' class="btn btn-sm btn-primary"><%= render html: bar.subheader.button_text.html_safe unless bar.subheader.button_text.nil? %></a>' +
+        ' <button id="subheader-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
+        ' style="display: block; float: right; border-radius: 5px;"' + 
+        ' type="button">X</button> ' +
         ' </div>'));
       $('<style> ' + 
         '.subheader-promo-bar<%= index %> a:hover { ' +
         ' background-color: <%= bar.subheader.button_hover %> !important;' +
         '}' + 
       '</style>').appendTo('head');
+      $('<script type="text/javascript"> ' + 
+        '$(document).ready(function () { ' +
+          '$("#subheader-promobar-x-button<%= index %>").click(function () { ' +
+             '$(".subheader-promo-bar<%= index %>").hide(); ' + 
+          '}); ' +
+          'if (!<%= bar.subheader.enabled_on_mobile? %>) { ' +
+            'if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { ' +
+              '$(".subheader-promo-bar<%= index %>").css("visibility", "hidden"); ' +
+            '} ' +
+          '} ' +
+        '}); ' +
+    '</script>').appendTo('head');
     <% end %>
   <% end %>
   $('<script type="text/javascript"> ' + 

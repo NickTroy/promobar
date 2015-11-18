@@ -12,4 +12,8 @@ class Subheader < ActiveRecord::Base
   def link_blank
     self.url_link_blank == 1 ? '_blank' : '_self'
   end
+
+  def enabled_on_mobile?
+    self.enable_on_mobile == 1 ? true : false
+  end
 end
