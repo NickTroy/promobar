@@ -2,9 +2,6 @@
 
 <%= form_for([@promobar, @subheader], class: "subheader-form") do |f| %>
   <div class="form-group">
-    <div class="col-md-2">
-      <input class="btn btn-primary add_subheader" type="button" value="<%= @promobar.subheader.promobar_show ? "DELETE SUBHEADER": "ADD SUBHEADER" %>" />
-    </div>
     <%= f.hidden_field :promobar_show, value: @subheader.promobar_show, class: "form-control subheader_promobar_show" %>  
   </div> 
   
