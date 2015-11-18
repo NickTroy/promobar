@@ -122,11 +122,13 @@
     });
 
     $(document).ready(function (){
-      if ($('.subheader_promobar_show').attr("value") == "true") {
+      if (@subheader.promobar_show) {
         $('.add_subheader').attr("value", "DELETE SUBHEADER");
+        $('.subheader_promobar_show').attr("value", "true");
         $('form[id^="edit_subheader_"]').show();
       } else {
         $('.add_subheader').attr("value", "ADD SUBHEADER");
+        $('.subheader_promobar_show').attr("value", "false");
         $('form[id^="edit_subheader_"]').hide();
       } 
     });
