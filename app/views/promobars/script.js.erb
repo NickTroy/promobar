@@ -46,7 +46,12 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
         ' background-color: <%= bar.subheader.button_color %>; ' +
         ' border-radius: 5px;"' +
         ' class="btn btn-sm btn-primary"><%= render html: bar.subheader.button_text.html_safe unless bar.subheader.button_text.nil? %></a>' +
-        '<h2><%= render html: bar.subheader.text.html_safe unless bar.subheader.text.nil? %></h2></div>'));
+        '<h2 style="display:inline-block;"><%= render html: bar.subheader.text.html_safe unless bar.subheader.text.nil? %></h2></div>'));
+      $('<style> ' + 
+        '.subheader-promo-bar<%= index %> a:hover { ' +
+        ' background-color: <%= bar.subheader.button_hover %> !important;' +
+        '}' + 
+      '</style>').appendTo('head');
     <% end %>
   <% end %>
   $('<script type="text/javascript"> ' + 
