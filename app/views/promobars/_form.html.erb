@@ -107,32 +107,6 @@
       }
     });
 
-    $('.add_subheader').bind('click', function() {
-      if ($('.add_subheader').attr("value") === "DELETE SUBHEADER") {
-        $('.add_subheader').attr("value", "ADD SUBHEADER");    
-      } else {
-        $('.add_subheader').attr("value", "DELETE SUBHEADER");
-      }
-      if ($('.subheader_promobar_show').attr("value") == "true") {
-        $('.subheader_promobar_show').attr("value", "false");
-      } else {
-        $('.subheader_promobar_show').attr("value", "true");
-      }
-      $('form[id^="edit_subheader_"]').toggle();      
- 
-    });
-
-    $(document).ready(function (){
-      if (<%= @subheader.promobar_show %>) {
-        $('.add_subheader').attr("value", "DELETE SUBHEADER");
-        $('.subheader_promobar_show').attr("value", "true");
-        $('form[id^="edit_subheader_"]').show();
-      } else {
-        $('.add_subheader').attr("value", "ADD SUBHEADER");
-        $('.subheader_promobar_show').attr("value", "false");
-        $('form[id^="edit_subheader_"]').hide();
-      } 
-    });
 
 
     
@@ -526,7 +500,7 @@
 
 <% end %><br>
 
-<input class="btn btn-primary add_subheader" type="button" value="<%= @promobar.subheader.promobar_show ? "DELETE SUBHEADER": "ADD SUBHEADER" %>" />
+<input class="btn btn-primary add_subheader" type="checkbox" id="<%= @promobar.id %>" <%= @promobar.subheader.promobar_show ? "checked" %>/>
 
 
 <!-- Bar form end -->
