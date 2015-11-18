@@ -52,8 +52,6 @@
       }
     });
 
-
-
     
 
 </script>
@@ -106,6 +104,20 @@
       defaultValue: $(".subheader-button-hover").attr("value") || "#000000",
       change: function(value) {
         $('.subheader-button-hover').attr("value", value)
+      }
+    });
+
+    $('.add_subheader').bind('click', function() {
+      if ($('.add_subheader').attr("value") === "ADD SUBHEADER") {
+        $('.button_switcher').attr("value", "DELETE SUBHEADER");
+      } else {
+        $('.button_switcher').attr("value", "ADD SUBHEADER");
+      }
+   
+      if ($('.subheader_promobar_show').attr("value") == "true") {
+        $('.subheader_promobar_show').attr("value", "false");
+      } else {
+        $('.subheader_promobar_show').attr("value", "true");
       }
     });
 
@@ -499,6 +511,8 @@
 
 
 <% end %>
+
+
 <!-- Bar form end -->
 
 
