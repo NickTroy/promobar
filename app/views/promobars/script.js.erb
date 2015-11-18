@@ -44,7 +44,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
         ' style="display:inline-block;"> ' + 
         ' <%= render html: bar.subheader.text.html_safe unless bar.subheader.text.nil? %></h2> ' +
-        ' <a href="' + '<%= bar.subheader.url_link %>' + '"' +  
+        ' <a href="' + '<%= bar.subheader.url_link %>' + '" target=<%= bar.subheader.link_blank %>' +  
         ' style="display: inline-block; ' +
         ' background-color: <%= bar.subheader.button_color %>; ' +
         ' border-radius: 5px;"' +

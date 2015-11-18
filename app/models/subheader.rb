@@ -8,4 +8,8 @@ class Subheader < ActiveRecord::Base
   def text_align align
     { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }.key(align.to_i)
   end
+
+  def link_blank
+    self.url_link_blank == 1 ? '_blank' : '_self'
+  end
 end
