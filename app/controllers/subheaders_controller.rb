@@ -2,6 +2,7 @@ class SubheadersController < ApplicationController
   before_action :set_promobar, only: [:edit, :update] #, :destroy]
 
   def new
+    @promobar = Promobar.new
     @subheader = @promobar.create_subheader
   end
 
