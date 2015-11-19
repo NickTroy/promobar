@@ -20,18 +20,4 @@ $ -> $('.button-text-color').minicolors theme: 'bootstrap', defaultValue: $(".bu
 $ -> $( ".bar-opacity-slider" ).slider range: "max", min: 1, max: 100, value: $(".bar-opacity-switcher").attr("value"), slide: (event, ui) ->  
   $(".bar-opacity-switcher").attr("value", ui.value)
   $(".bar-opacity-value").html(ui.value + "%")
-$(document).ready -> 
-  $ ->
-	  $('.add_subheader').bootstrapSwitch()
-	  $('.add_subheader').on 'switchChange.bootstrapSwitch', (event, state) -> 
-	    promobar_show = state
-	    id = $(this).attr("id")
-	    $('form[id^="edit_subheader_"]').toggle()
-	    $.ajax "/promobars/#{id}/subheader.json",
-	      type: 'POST'
-	      dataType: 'json'
-	      data: 
-	        _method: 'PUT'
-	        "subheader[promobar_show]": promobar_show
-	      success: () ->
-	        alert("success")
+

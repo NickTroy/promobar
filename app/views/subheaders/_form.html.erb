@@ -1,5 +1,28 @@
 
-
+<script type="text/javascript"> 
+  $(document).ready(function() {
+    $(function() {
+      $('.add_subheader').bootstrapSwitch();
+      $('.add_subheader').on('switchChange.bootstrapSwitch', function(event, state) {
+        var id, promobar_show;
+        promobar_show = state;
+        id = $(this).attr("id");
+        $('form[id^="edit_subheader_"]').toggle();
+        $.ajax("/promobars/" + id + "/subheader.json", {
+          type: 'POST',
+          dataType: 'json',
+          data: {
+            _method: 'PUT',
+            "subheader[promobar_show]": promobar_show
+          },
+          success: function() {
+            alert("success");
+          }
+        });
+      });
+    });
+  });
+</script>
 <%= form_for([@promobar, @subheader], class: "subheader-form") do |f| %>
   <div class="form-group">
     <%= f.hidden_field :promobar_show, value: @subheader.promobar_show, class: "form-control subheader_promobar_show" %>  
