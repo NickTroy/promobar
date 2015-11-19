@@ -1,5 +1,5 @@
 class SubheadersController < ApplicationController
-  before_action :set_promobar, only: [:edit, :update, :create] #, :destroy]
+  before_action :set_promobar, only: [:edit, :update] #, :destroy]
 
   def new
     @promobar = Promobar.new
@@ -11,6 +11,7 @@ class SubheadersController < ApplicationController
   end
 
   def create
+    @promobar = Promobar.new
     @subheader = @promobar.subheader_create
     if @subheader.save
       redirect_to root_url
