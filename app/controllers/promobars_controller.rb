@@ -20,8 +20,10 @@ class PromobarsController < AuthenticatedController
     @promobar = Promobar.new(promobar_params)
     @promobar.promobar_show = true
 
+    @subheader = @promobar.subheader_create
+
     respond_to do |format|
-      if @promobar.save
+      if @promobar.save and @subheader_create
         format.html { redirect_to root_url, notice: 'Promobar was successfully created.' }
         format.json { render :show, status: :created, location: @promobar }
       else
@@ -44,7 +46,9 @@ class PromobarsController < AuthenticatedController
         format.html { redirect_to root_url }
       end
 
-      if @promobar.update_attributes(promobar_params)
+      @subheader = @promobar.subheader 
+
+      if @promobar.update_attributes(promobar_params) and @subheader.update_attributes(subheader_params)
         format.html { redirect_to root_url, notice: 'Promobar was successfully updated.' }
         format.json { redirect_to root_url, status: :ok, location: @promobar }
       else
@@ -86,4 +90,7 @@ class PromobarsController < AuthenticatedController
       params.require(:promobar).permit(:bar_type,:name, :text, :background_color, :background_opacity, :promobar_show, :button_on, :button_text,
                                        :button_shape, :button_color, :button_hover, :text_animation, :alignment, :url_link, :url_link_blank, :enable_on_mobile)
     end
+
+    params.require(:subheader).permit(:bar_type,:name, :text, :background_color, :background_opacity, :promobar_show, :button_on, :button_text,
+                                       :button_shape, :button_color, :button_hover, :text_animation, :alignment, :url_link, :url_link_blank, :enable_on_mobile)
 end
