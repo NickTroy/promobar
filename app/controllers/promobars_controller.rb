@@ -20,8 +20,6 @@ class PromobarsController < AuthenticatedController
     @promobar = Promobar.new(promobar_params)
     @promobar.promobar_show = true
 
-    @subheader = @promobar.subheader_create
-
     respond_to do |format|
       if @promobar.save 
         format.html { redirect_to root_url, notice: 'Promobar was successfully created.' }
