@@ -11,7 +11,7 @@ class SubheadersController < ApplicationController
   end
 
   def create
-    @promobar = Promobar.new(promobar_params)
+    @promobar = Promobar.new({:id => params[:promobar_id]})
     @subheader = @promobar.subheader_create
     if @subheader.save
       redirect_to root_url
@@ -36,8 +36,4 @@ class SubheadersController < ApplicationController
                                        :button_shape, :button_color, :button_hover, :text_animation, :alignment, :url_link, :url_link_blank, :enable_on_mobile)
     end
 
-    def promobar_params
-      params.require(:promobar).permit(:bar_type,:name, :text, :background_color, :background_opacity, :promobar_show, :button_on, :button_text,
-                                       :button_shape, :button_color, :button_hover, :text_animation, :alignment, :url_link, :url_link_blank, :enable_on_mobile)
-    end
 end
