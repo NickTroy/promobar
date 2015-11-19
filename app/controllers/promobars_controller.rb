@@ -23,7 +23,7 @@ class PromobarsController < AuthenticatedController
     @subheader = @promobar.subheader_create
 
     respond_to do |format|
-      if @promobar.save and @subheader.save
+      if @promobar.save 
         format.html { redirect_to root_url, notice: 'Promobar was successfully created.' }
         format.json { render :show, status: :created, location: @promobar }
       else
