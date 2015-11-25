@@ -5,6 +5,7 @@ ruby '2.2.3'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
+gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'less-rails', '2.7.0'
@@ -57,7 +58,7 @@ gem "bootstrap-switch-rails"
 
 # Use for heroku
 group :production do
-  gem 'pg', '0.15.1'
+  # gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
   # Use for assets on heroku
   # gem 'rails_stdout_logging'

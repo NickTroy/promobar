@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118094226) do
+ActiveRecord::Schema.define(version: 20151124085131) do
 
   create_table "promobars", force: true do |t|
     t.integer  "bar_type"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20151118094226) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "button_text"
     t.string   "button_color"
     t.string   "button_hover"
     t.integer  "text_animation"
@@ -31,7 +32,6 @@ ActiveRecord::Schema.define(version: 20151118094226) do
     t.string   "button_shape"
     t.boolean  "button_on"
     t.boolean  "promobar_show"
-    t.string   "button_text"
   end
 
   create_table "shops", force: true do |t|
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20151118094226) do
     t.datetime "updated_at"
   end
 
-  add_index "shops", ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
+  add_index "shops", ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true, using: :btree
 
   create_table "subheaders", force: true do |t|
     t.string   "text"
@@ -50,18 +50,18 @@ ActiveRecord::Schema.define(version: 20151118094226) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "background_opacity"
-    t.string   "button_color"
-    t.string   "button_hover"
     t.integer  "text_animation"
     t.integer  "alignment"
-    t.string   "url_link"
     t.integer  "url_link_blank"
     t.integer  "enable_on_mobile"
+    t.string   "button_color"
+    t.string   "button_hover"
+    t.string   "url_link"
+    t.string   "button_text"
     t.boolean  "button_on"
     t.boolean  "promobar_show"
-    t.string   "button_text"
   end
 
-  add_index "subheaders", ["promobar_id"], name: "index_subheaders_on_promobar_id"
+  add_index "subheaders", ["promobar_id"], name: "index_subheaders_on_promobar_id", using: :btree
 
 end

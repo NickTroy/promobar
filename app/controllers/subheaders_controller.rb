@@ -19,10 +19,14 @@ class SubheadersController < ApplicationController
   end
 
   def update
-    @subheader = @promobar.subheader
-    @subheader.update_attributes(subheader_params)
-    if @subheader.save
-      redirect_to root_url
+    respond_to do |format|
+      @subheader = @promobar.subheader
+      @subheader.update_attributes(subheader_params)
+      
+      if @subheader.save
+        format.html { redirect_to root_url }
+        format.json { redirect_to root_url, status: :ok }
+      end
     end
   end
 

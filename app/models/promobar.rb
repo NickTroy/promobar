@@ -21,7 +21,7 @@ class Promobar < ActiveRecord::Base
   end
 
   def display_bar
-    self.promobar_show ? 'block' : 'none'
+    self.promobar_show ? 'visible' : 'hidden'
   end
 
   def display_button

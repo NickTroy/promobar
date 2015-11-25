@@ -110,28 +110,7 @@
     });
 
 
-    $(document).ready(function() {
-      $(function() {
-        $('.add_subheader').bootstrapSwitch();
-        $('.add_subheader').on('switchChange.bootstrapSwitch', function(event, state) {
-          var id, promobar_show;
-          promobar_show = state;
-          id = $(this).attr("id");
-          $('form[id^="edit_subheader_"]').toggle();
-          $.ajax("/promobars/" + id + "/subheader.json", {
-            type: 'POST',
-            dataType: 'json',
-            data: {
-              _method: 'PUT',
-              "subheader[promobar_show]": promobar_show
-            },
-            success: function() {
-              alert("success");
-            }
-          });
-        });
-      });
-    });
+
 
 
    
@@ -275,15 +254,6 @@
         </div>
     <% end %>
 
-    <% if @promobar.errors.any? %>
-        <div class="alert alert-danger" role="alert">
-          <ul>
-            <% @promobar.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
 
     <% if flash[:error] %>
         <div class="alert alert-danger" role="alert">
@@ -525,8 +495,9 @@
 
 <% end %><br>
 
-SUBHEADER <input class="add_subheader" type="checkbox" id="<%= @promobar.id %>" <%= @promobar.subheader.promobar_show ? "checked" : "" %>/>
-
+<% unless params[:action] == 'new' %>
+  SUBHEADER <input class="add_subheader" type="checkbox" id="<%= @promobar.id %>" <%= @promobar.subheader.promobar_show ? "checked" : "" %>/>
+<% end %>
 
 <!-- Bar form end -->
 
