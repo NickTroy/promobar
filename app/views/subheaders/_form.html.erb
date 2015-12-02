@@ -21,6 +21,11 @@
         });
       });
     });
+    if (<%= @subheader.promobar_show %>) {
+      $('.edit_subheader').show();  
+    } else {
+      $('.edit_subheader').hide();
+    }
   });
 </script>
 <%= form_for([@promobar, @subheader], class: "subheader-form") do |f| %>

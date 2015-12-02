@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124085131) do
+ActiveRecord::Schema.define(version: 20151202080905) do
 
   create_table "promobars", force: true do |t|
     t.integer  "bar_type"
-    t.string   "text"
+    t.text     "text"
     t.string   "background_color"
     t.integer  "background_opacity"
     t.datetime "created_at"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20151124085131) do
   add_index "shops", ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true, using: :btree
 
   create_table "subheaders", force: true do |t|
-    t.string   "text"
+    t.text     "text"
     t.string   "background_color"
     t.integer  "promobar_id"
     t.datetime "created_at"
