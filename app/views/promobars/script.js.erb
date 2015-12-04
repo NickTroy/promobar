@@ -13,7 +13,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
       ' style="display: inline-block; "><%= render html: bar.text.html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
-      ' style="display: <%= bar.display_button %>; ' +
+      ' style="display: <%= bar.display_button %>;height:45px; ' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
       ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
@@ -42,10 +42,10 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
-        ' style="display:inline-block;"> ' + 
+        ' style="display:inline-block; margin-top:7px;"> ' + 
         ' <%= render html: bar.subheader.text.html_safe unless bar.subheader.text.nil? %></h2> ' +
         ' <a href="' + '<%= bar.subheader.url_link %>' + '" target=<%= bar.subheader.link_blank %>' +  
-        ' style="display: <%= bar.subheader.display_button %>; ' +
+        ' style="display: <%= bar.subheader.display_button %>; height:25px; margin-top:7px; ' +
         ' background-color: <%= bar.subheader.button_color %>; ' +
         ' border-radius: 5px;"' +
         ' class="btn btn-sm btn-primary"><%= render html: bar.subheader.button_text.html_safe unless bar.subheader.button_text.nil? %></a>' +
@@ -115,7 +115,7 @@ $('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.c
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
       ' style="display: inline-block; "><%= render html: bar.text.html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
-      ' style="display: <%= bar.display_button %>; ' +
+      ' style="display: <%= bar.display_button %>; height:45px;' +
       ' border-radius: 5px;"' +
       ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="footer-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +

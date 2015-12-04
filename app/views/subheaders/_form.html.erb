@@ -21,7 +21,7 @@
         });
       });
     });
-    if (<%= @subheader.promobar_show %>) {
+    if (<%= @subheader.promobar_show == true %>) {
       $('.edit_subheader').show();  
     } else {
       $('.edit_subheader').hide();
@@ -204,11 +204,11 @@
     </div>
 
 
-    <div class="col-md-2">
+    <!--<div class="col-md-2">
       <div class="actions">
         <%= f.submit "SAVE SUBHEADER", class: "btn btn-success", style: "width: 80%;"%>
       </div>
-    </div>
+    </div>-->
 
   </div>
 
