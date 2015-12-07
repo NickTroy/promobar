@@ -11,3 +11,11 @@ $ ->
         "promobar[promobar_show]": promobar_show
       success: () ->
         alert("success")
+    $.ajax "/promobars/#{id}/subheader.json",
+      type: 'POST'
+      dataType: 'json'
+      data: 
+        _method: 'PUT'
+        "subheader[promobar_show]": promobar_show
+      success: () ->
+        alert("success")
