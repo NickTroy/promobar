@@ -1,5 +1,5 @@
 
-$('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">').appendTo('head');
+$('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">').prependTo('head');
 
 $('<style> ' +
   '.option {' +
@@ -19,7 +19,7 @@ $('<style> ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; "><%= render html: bar.text.html_safe %></h1>' +
+      ' style="display: inline-block; "><%= render html: bar.text.gsub("'","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>;height:45px; ' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
@@ -45,14 +45,17 @@ $('<style> ' +
       '}' + 
     '</style>').appendTo('head');
     <% unless bar.subheader.nil? %>
-      $('.logo').before($('<div class="subheader-promo-bar<%= index %>" ' +
+      $('.logo').before('<div class="subheader-promo-bar<%= index %>" ' +
         ' style="float:left; width: 30%; height:40px; display: inline-block;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
         ' style="display:inline-block; margin-top:7px;"> ' + 
-        ' <%= render html: bar.subheader.text.html_safe unless bar.subheader.text.nil? %></h2> ' +
-        ' <a href="' + '<%= bar.subheader.url_link %>' + '" target=<%= bar.subheader.link_blank %>' +  
+        <% sub_text = raw(bar.subheader.text.gsub("'","")) %>
+        <% unless bar.subheader.text.nil? %>
+        ' <%= sub_text %> ' + 
+        <% end %>
+        ' </h2><a href="' + '<%= bar.subheader.url_link %>' + '" target=<%= bar.subheader.link_blank %>' +  
         ' style="display: <%= bar.subheader.display_button %>; height:25px; margin-top:7px; ' +
         ' background-color: <%= bar.subheader.button_color %>; ' +
         ' border-radius: 5px;"' +
@@ -60,7 +63,7 @@ $('<style> ' +
         ' <button id="subheader-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
         ' style="display: block; float: right; border-radius: 5px;"' + 
         ' type="button">X</button> ' +
-        ' </div>'));
+        ' </div>');
       $('<style> ' + 
         '.subheader-promo-bar<%= index %> a:hover { ' +
         ' background-color: <%= bar.subheader.button_hover %> !important;' +
@@ -121,7 +124,7 @@ $('<style> ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; "><%= render html: bar.text.html_safe %></h1>' +
+      ' style="display: inline-block; "><%= render html: bar.text.gsub("'","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>; height:45px;' +
       ' border-radius: 5px;"' +
