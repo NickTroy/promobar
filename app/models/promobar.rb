@@ -10,6 +10,7 @@ class Promobar < ActiveRecord::Base
 
   # before_save :generate_script
   after_destroy :script_cleanup
+  after_create :set_order_number
   has_one :subheader
 
   def animation animation_number
@@ -65,6 +66,11 @@ class Promobar < ActiveRecord::Base
           script.destroy
         end
       end
+    end
+    
+    def set_order_number
+      self.order_number = Promobar.where(bar_type: self.bar_type).count 
+      self.save
     end
 
 
