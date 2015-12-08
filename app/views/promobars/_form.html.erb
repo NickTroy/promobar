@@ -5,7 +5,14 @@
     } else {
       $('.promobar-button-info').hide();
     }
+    
+    $('#save-button').prop("disabled", true);
+    $('.select-bar-type').change(enable_save);
   });
+  
+  function enable_save() {
+    $('#save-button').prop("disabled", false);
+  }
       
     $('.bar-background-color').minicolors({
       theme: 'bootstrap',
@@ -292,7 +299,7 @@
         <%= label_tag 'promobar[bar_type]', 'SELECT BANNER TYPE:' %>  
       </div>
       <div class="col-md-4">
-        <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control" } %>  
+        <%= f.select :bar_type, { 'HEADER BAR' => 1, 'FOOTER BAR' =>  2 }, { selected: @promobar.bar_type }, { :class => "form-control select-bar-type" } %>  
       </div>
     </div>
     
@@ -319,7 +326,7 @@
     
     <div class="col-md-2" style="float:right;">
       <div class="actions">
-        <%= f.submit "Save", class: "btn btn-success", style: "width: 80%;"%>
+        <%= f.submit "Save", class: "btn btn-success", id: "save-button", style: "width: 80%;"%>
       </div>
     </div>
 
