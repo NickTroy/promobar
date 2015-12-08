@@ -25,7 +25,7 @@ $('<style> ' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
       ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
-      ' style="display: block; float: right; border-radius: 5px;"' + 
+      ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').prependTo('body');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
@@ -50,7 +50,7 @@ $('<style> ' +
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
-        ' style="display:inline-block; margin-top:7px;"> ' + 
+        ' style="display:inline-block; margin-top:7px; width:70%;"> ' + 
         <% sub_text = raw(bar.subheader.text.gsub("'","")) %>
         <% unless bar.subheader.text.nil? %>
         ' <%= sub_text %> ' + 
@@ -61,7 +61,7 @@ $('<style> ' +
         ' border-radius: 5px;"' +
         ' class="btn btn-sm btn-primary"><%= render html: bar.subheader.button_text.html_safe unless bar.subheader.button_text.nil? %></a>' +
         ' <button id="subheader-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
-        ' style="display: block; float: right; border-radius: 5px;"' + 
+        ' style="display: <%= bar.subheader.display_x unless bar.subheader.nil? %>; float: right; border-radius: 5px;"' + 
         ' type="button">X</button> ' +
         ' </div>');
       $('<style> ' + 
@@ -130,7 +130,7 @@ $('<style> ' +
       ' border-radius: 5px;"' +
       ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="footer-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
-      ' style="display: block; float: right; border-radius: 5px;"' + 
+      ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').appendTo('body');
     $('<script type="text/javascript"> ' + 
         '$(document).ready(function () { ' +
