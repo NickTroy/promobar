@@ -26,6 +26,11 @@
     } else {
       $('.edit_subheader').hide();
     }
+    if (<%= @subheader.button_on == true %>) {
+      $('.subheader-button-info').show();  
+    } else {
+      $('.subheader-button-info').hide();
+    }
   });
 </script>
 <%= form_for([@promobar, @subheader], class: "subheader-form") do |f| %>
@@ -117,14 +122,14 @@
       </div>
     </div>
     
-  
-    <div class="row">
+    <input class="btn btn-primary pull-right subheader_button_switcher" name="commit" type="button" value="<%= @subheader.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
+    <div class="row subheader-button-info">
         
         <div class="col-md-12">
           <div class="form-group">
             <label for="subheader_button_text" style="display:inline-block; width:100%;">SUBHEADER BUTTON TEXT:
               <div class="form-group pull-right">
-                <input class="btn btn-primary pull-right subheader_button_switcher" name="commit" type="button" value="<%= @subheader.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
+                
                 <%= f.hidden_field :button_on, value: @subheader.button_on, class: "form-control subheader_button_on" %>
               </div>
             </label>
@@ -155,7 +160,7 @@
         </div>
 
       </div>
-    <div class="row">
+    <div class="row subheader-button-info">
       <div class="col-md-4">
         <div class="form-group">
           <%= label_tag 'subheader[button_color]', "SUBHEADER BUTTON COLOR" %>

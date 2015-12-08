@@ -46,7 +46,7 @@ $('<style> ' +
     '</style>').appendTo('head');
     <% unless bar.subheader.nil? %>
       $('.logo').before('<div class="subheader-promo-bar<%= index %>" ' +
-        ' style="float:left; width: 30%; height:40px; display: inline-block;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
+        ' style="float:left; width: 37%; height:40px; display: inline-block;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
@@ -56,7 +56,7 @@ $('<style> ' +
         ' <%= sub_text %> ' + 
         <% end %>
         ' </h2><a href="' + '<%= bar.subheader.url_link %>' + '" target=<%= bar.subheader.link_blank %>' +  
-        ' style="display: <%= bar.subheader.display_button %>; height:25px; margin-top:7px; ' +
+        ' style="display: <%= bar.subheader.display_button %>; height:25px; margin-top:0px; ' +
         ' background-color: <%= bar.subheader.button_color %>; ' +
         ' border-radius: 5px;"' +
         ' class="btn btn-sm btn-primary"><%= render html: bar.subheader.button_text.html_safe unless bar.subheader.button_text.nil? %></a>' +

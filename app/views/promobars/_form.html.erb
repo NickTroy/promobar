@@ -1,6 +1,12 @@
 <script type="text/javascript">
-
-
+  $(document).ready(function(){
+    if (<%= @promobar.button_on == true %>) {
+      $('.promobar-button-info').show();  
+    } else {
+      $('.promobar-button-info').hide();
+    }
+  });
+      
     $('.bar-background-color').minicolors({
       theme: 'bootstrap',
       defaultValue: $(".bar-background-color").attr("value") || "#000000",
@@ -40,8 +46,10 @@
 
     $('.button_switcher').bind('click', function() {
       if ($('.button_switcher').attr("value") === "BUTTON ON") {
+        $('.promobar-button-info').show();
         $('.button_switcher').attr("value", "BUTTON OFF");
       } else {
+        $('.promobar-button-info').hide();
         $('.button_switcher').attr("value", "BUTTON ON");
       }
    
@@ -68,8 +76,10 @@
 
     $('.subheader_button_switcher').bind('click', function() {
       if ($('.subheader_button_switcher').attr("value") === "BUTTON ON") {
+        $('.subheader-button-info').show();
         $('.subheader_button_switcher').attr("value", "BUTTON OFF");
       } else {
+        $('.subheader-button-info').hide();
         $('.subheader_button_switcher').attr("value", "BUTTON ON");
       }
    
@@ -286,14 +296,14 @@
       </div>
     </div>
     
-    <% unless @promobar.promobar_show %>
+    <!--<% unless @promobar.promobar_show %>
       <div class="col-md-2">
         <%= f.submit "Display", class: "btn btn-primary", id: "display_bar_button", style: "width: 80%;" %>
       </div>
-    <% end %>
+    <% end %> -->
     
     <% if @promobar.promobar_show and params[:action] != 'new' %>
-      <div class="col-md-2">
+      <div class="col-md-2" style="float:right;">
         <div class="actions">
           <%= f.submit "Hide", class: "btn btn-warning", id: "hide_bar_button", style: "width: 80%;" %>
         </div>
@@ -301,13 +311,13 @@
     <% end %>
 
     <% unless @promobar.id.nil? %>
-      <div class="col-md-2">
+      <div class="col-md-2" style="float:right;">
         <%= link_to 'Delete', promobar_url(@promobar), method: :delete, class: "btn btn-danger", style: "width: 80%;",
                                data: { confirm: 'Are you sure, you want to delete this promo bar?' } %>  
       </div>
     <% end %>
     
-    <div class="col-md-2">
+    <div class="col-md-2" style="float:right;">
       <div class="actions">
         <%= f.submit "Save", class: "btn btn-success", style: "width: 80%;"%>
       </div>
@@ -362,14 +372,14 @@
   </div>
 
 
-
-  <div class="row">
+  <input class="btn btn-primary pull-right button_switcher" name="commit" type="button" value="<%= @promobar.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
+  <div class="row promobar-button-info">
     
     <div class="col-md-12">
       <div class="form-group">
         <label for="button_text" style="display:inline-block; width:100%;">BUTTON TEXT:
           <div class="form-group pull-right">
-            <input class="btn btn-primary pull-right button_switcher" name="commit" type="button" value="<%= @promobar.button_on ? "BUTTON OFF": "BUTTON ON" %>" />
+            
             <%= f.hidden_field :button_on, value: @promobar.button_on, class: "form-control button_on" %>
           </div>
         </label>
@@ -401,7 +411,7 @@
 
   </div>
 
-  <div class="row">
+  <div class="row promobar-button-info">
 
     <!-- <div class="col-md-4">
       <div class="form-group">
@@ -456,7 +466,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <!--<div class="row">
       <div class="col-md-2">
         <% unless params[:action] == 'new' %>
           <%= link_to 'ADD ANOTHER BANNER', new_promobar_path, class: 'btn btn-primary', style: "width: 80%;" %>
@@ -489,7 +499,7 @@
           <%= f.submit "Save", class: "btn btn-success", style: "width: 80%;"%>
         </div>
       </div>
-    </div>
+    </div> -->
   
 
 
