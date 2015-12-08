@@ -1,10 +1,6 @@
 
 <script type="text/javascript"> 
 
-  function enable_save() {
-    $('#save-button').prop("disabled", false);
-  }
-  
   $(document).ready(function() {
     $(function() {
       $('.add_subheader').bootstrapSwitch();
@@ -107,6 +103,11 @@
                 selector: "textarea.subheader_text",
                 statusbar: false,
                 menubar: false,
+                setup: function (editor) {
+                  editor.on('change', function (e) {  
+                    enable_subheader_save();
+                  });
+                },
                 resize: false,
                 theme: "modern",
                 fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
@@ -148,6 +149,11 @@
                     statusbar: false,
                     menubar: false,
                     resize: false,
+                    setup: function (editor) {
+                      editor.on('change', function (e) {  
+                        enable_subheader_save();
+                      });
+                    },
                     theme: "modern",
                     fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
                     theme_advanced_fonts: "Arial=arial,Times New Roman=times new roman,times;",
@@ -185,14 +191,14 @@
       <div class="col-md-12">
         <div class="form-group">
           <%= label_tag 'subheader[text_animation]', "SUBHEADER TEXT ANIMATION" %><br>
-          <%= f.select :text_animation, { 'FLY FROM LEFT' => 1, 'FADE IN' =>  2, 'BOUNCE' => 3 }, {}, { :class => "form-control" } %>
+          <%= f.select :text_animation, { 'FLY FROM LEFT' => 1, 'FADE IN' =>  2, 'BOUNCE' => 3 }, {}, { :class => "form-control text-animation-select" } %>
         </div>
       </div>
 
       <div class="col-md-12">
         <div class="form-group">
           <%= label_tag 'subheader[text_animation]', "SUBHEADER TEXT ALIGNMENT" %><br>
-          <%= f.select :alignment, { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }, {}, { :class => "form-control" } %>
+          <%= f.select :alignment, { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }, {}, { :class => "form-control bar-align-select" } %>
         </div>
       </div>
 
@@ -201,16 +207,16 @@
       <div class="col-md-12">
         <div class="form-group">
           <%= label_tag 'subheader[text_animation]', "SUBHEADER URL LINK" %><br>
-          <%= f.text_field :url_link, class: "form-control" %>
+          <%= f.text_field :url_link, class: "form-control url-link" %>
         </div>
 
         <div class="form-group">
           <%= label_tag nil, "OPEN IN NEW TAB" %>
-          <%= f.check_box :url_link_blank %><br>
+          <%= f.check_box :url_link_blank, class: "link-blank" %><br>
           <%= label_tag nil, "ENABLE ON MOBILE DEVICES" %>
-          <%= f.check_box :enable_on_mobile %><br>
+          <%= f.check_box :enable_on_mobile, class: "enable-on-mobile" %><br>
           <%= label_tag nil, "ENABLE X BUTTON" %>
-          <%= f.check_box :x_button_on %>
+          <%= f.check_box :x_button_on, class: "enable-x" %>
         </div>
       </div>
     </div>
@@ -218,7 +224,7 @@
 
     <div class="col-md-2">
       <div class="actions">
-        <%= f.submit "SAVE SUBHEADER", class: "btn btn-success", style: "width: 80%;"%>
+        <%= f.submit "SAVE SUBHEADER", class: "btn btn-success", id: "subheader-save", style: "width: 80%;"%>
       </div>
     </div>
 

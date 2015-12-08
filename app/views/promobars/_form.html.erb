@@ -7,19 +7,32 @@
     }
     
     $('#save-button').prop("disabled", true);
+    $('#subheader-save').prop("disabled", true);
     $('.select-bar-type').change(enable_save);
     $('.promobar_name').on('input', enable_save);
     $('.text-animation-select').change(enable_save);
+    $('.text-animation-select').change(enable_subheader_save);
     $('.bar-align-select').change(enable_save);
+    $('.bar-align-select').change(enable_subheader_save);
     $('.url-link').on('input', enable_save);
+    $('.url-link').on('input', enable_subheader_save);
     $('.link-blank').change(enable_save);
     $('.enable-on-mobile').change(enable_save);
     $('.enable-x').change(enable_save);
+    $('.link-blank').change(enable_subheader_save);
+    $('.enable-on-mobile').change(enable_subheader_save);
+    $('.enable-x').change(enable_subheader_save);
+    $('.button_switcher').click(enable_save);
+    $('.subheader_button_switcher').click(enable_subheader_save);
   });
   
   function enable_save() {
     $('#save-button').prop("disabled", false);
   }
+  function enable_subheader_save() {
+    $('#subheader-save').prop("disabled", false);
+  }
+  
       
     $('.bar-background-color').minicolors({
       theme: 'bootstrap',
@@ -89,7 +102,7 @@
       defaultValue: $(".subheader-background-color").attr("value") || "#000000",
       change: function(value) {
         $('.subheader-background-color').attr("value", value);
-        enable_save();
+        enable_subheader_save();
       }
     });
 
@@ -117,7 +130,7 @@
       slide: function(event, ui) {
         $(".subheader-opacity-switcher").attr("value", ui.value);
         $(".subheader-opacity-value").html(ui.value + "%");
-        enable_save();
+        enable_subheader_save();
       }
     });
 
@@ -126,7 +139,7 @@
       defaultValue: $(".subheader-button-background-color").attr("value") || "#ffffff",
       change: function(value) {
         $('.subheader-button-background-color').attr("value", value);
-        enable_save();
+        enable_subheader_save();
       }
     });
 
@@ -135,7 +148,7 @@
       defaultValue: $(".subheader-button-hover").attr("value") || "#000000",
       change: function(value) {
         $('.subheader-button-hover').attr("value", value);
-        enable_save();
+        enable_subheader_save();
 
       }
     });
