@@ -8,6 +8,13 @@
     
     $('#save-button').prop("disabled", true);
     $('.select-bar-type').change(enable_save);
+    $('.promobar_name').on('input', enable_save);
+    $('.text-animation-select').change(enable_save);
+    $('.bar-align-select').change(enable_save);
+    $('.url-link').on('input', enable_save);
+    $('.link-blank').change(enable_save);
+    $('.enable-on-mobile').change(enable_save);
+    $('.enable-x').change(enable_save);
   });
   
   function enable_save() {
@@ -18,7 +25,8 @@
       theme: 'bootstrap',
       defaultValue: $(".bar-background-color").attr("value") || "#000000",
       change: function(value) {
-        $('.bar-background-color').attr("value", value)
+        $('.bar-background-color').attr("value", value);
+        enable_save();
       }
     });
 
@@ -26,7 +34,8 @@
       theme: 'bootstrap',
       defaultValue: $(".button-background-color").attr("value") || "#ffffff",
       change: function(value) {
-        $('.button-background-color').attr("value", value)
+        $('.button-background-color').attr("value", value);
+        enable_save();
       }
     });
 
@@ -34,7 +43,8 @@
       theme: 'bootstrap',
       defaultValue: $(".button-hover").attr("value") || "#000000",
       change: function(value) {
-        $('.button-hover').attr("value", value)
+        $('.button-hover').attr("value", value);
+        enable_save();
       }
     });
 
@@ -48,6 +58,7 @@
       slide: function(event, ui) {
         $(".bar-opacity-switcher").attr("value", ui.value);
         $(".bar-opacity-value").html(ui.value + "%");
+        enable_save();
       }
     });
 
@@ -77,7 +88,8 @@
       theme: 'bootstrap',
       defaultValue: $(".subheader-background-color").attr("value") || "#000000",
       change: function(value) {
-        $('.subheader-background-color').attr("value", value)
+        $('.subheader-background-color').attr("value", value);
+        enable_save();
       }
     });
 
@@ -105,6 +117,7 @@
       slide: function(event, ui) {
         $(".subheader-opacity-switcher").attr("value", ui.value);
         $(".subheader-opacity-value").html(ui.value + "%");
+        enable_save();
       }
     });
 
@@ -112,7 +125,8 @@
       theme: 'bootstrap',
       defaultValue: $(".subheader-button-background-color").attr("value") || "#ffffff",
       change: function(value) {
-        $('.subheader-button-background-color').attr("value", value)
+        $('.subheader-button-background-color').attr("value", value);
+        enable_save();
       }
     });
 
@@ -120,8 +134,8 @@
       theme: 'bootstrap',
       defaultValue: $(".subheader-button-hover").attr("value") || "#000000",
       change: function(value) {
-        $('.subheader-button-hover').attr("value", value)
-
+        $('.subheader-button-hover').attr("value", value);
+        enable_save();
 
       }
     });
@@ -134,6 +148,7 @@
 </script>
 
 <script type="text/javascript">
+
   tinymce.PluginManager.add('letterspacing', function(editor, url) {
     editor.addButton('letterspacing', {
       text: 'Letter Spacing',
@@ -338,7 +353,7 @@
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[name]', "BANNER TITLE:" %><br>
-        <%= f.text_field :name, class: "form-control", placeholder: "ENTER TEXT HERE" %>
+        <%= f.text_field :name, class: "form-control promobar_name", placeholder: "ENTER TEXT HERE" %>
       </div>
     </div>
 
@@ -369,8 +384,36 @@
       <div class="form-group">
         <%= label_tag 'promobar[text]', "BANNER TEXT:" %>
         <%= f.text_area :text, :class => "tinymce form-control", placeholder: "ENTER TEXT HERE" %>
-        <%= tinymce %>
-        
+        <script>
+          function enable_save() {
+            $('#save-button').prop("disabled", false);
+          }
+          //<![CDATA[
+          (function() {
+            if (typeof tinyMCE != 'undefined') {
+              tinyMCE.init({
+                selector: "textarea.tinymce",
+                statusbar: false,
+                menubar: false,
+                resize: false,
+                setup: function (editor) {
+                  editor.on('change', function (e) {  
+                    enable_save();
+                  });
+                },
+                theme: "modern",
+                fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+                theme_advanced_fonts: "Arial=arial,Times New Roman=times new roman,times;",
+                toolbar: ["undo redo | removeformat bold italic underline | fontsizeselect | forecolor backcolor | fontselect | letterspacing | lineheight"],
+                plugins: "textcolor,letterspacing,lineheight"
+              });
+            } else {
+              setTimeout(arguments.callee, 50);
+            }
+          })();
+
+          //]]>
+        </script>
         
 
       </div>
@@ -400,6 +443,11 @@
                 statusbar: false,
                 menubar: false,
                 resize: false,
+                setup: function (editor) {
+                  editor.on('change', function (e) {  
+                    enable_save();
+                  });
+                },
                 theme: "modern",
                 fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
                 theme_advanced_fonts: "Arial=arial,Times New Roman=times new roman,times;",
@@ -446,14 +494,14 @@
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[text_animation]', "TEXT ANIMATION" %><br>
-        <%= f.select :text_animation, { 'FLY FROM LEFT' => 1, 'FADE IN' =>  2, 'BOUNCE' => 3 }, {}, { :class => "form-control" } %>
+        <%= f.select :text_animation, { 'FLY FROM LEFT' => 1, 'FADE IN' =>  2, 'BOUNCE' => 3 }, {}, { :class => "form-control text-animation-select" } %>
       </div>
     </div>
 
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[text_animation]', "TEXT ALIGNMENT" %><br>
-        <%= f.select :alignment, { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }, {}, { :class => "form-control" } %>
+        <%= f.select :alignment, { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }, {}, { :class => "form-control bar-align-select" } %>
       </div>
     </div>
 
@@ -462,16 +510,16 @@
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[text_animation]', "URL LINK" %><br>
-        <%= f.text_field :url_link, class: "form-control" %>
+        <%= f.text_field :url_link, class: "form-control url-link" %>
       </div>
 
       <div class="form-group">
         <%= label_tag nil, "OPEN IN NEW TAB" %>
-        <%= f.check_box :url_link_blank %><br>
+        <%= f.check_box :url_link_blank, class: "link-blank" %><br>
         <%= label_tag nil, "ENABLE ON MOBILE DEVICES" %>
-        <%= f.check_box :enable_on_mobile %><br>
+        <%= f.check_box :enable_on_mobile, class: "enable-on-mobile" %><br>
         <%= label_tag nil, "ENABLE X BUTTON" %>
-        <%= f.check_box :x_button_on %>
+        <%= f.check_box :x_button_on, class: "enable-x" %>
       </div>
     </div>
 
