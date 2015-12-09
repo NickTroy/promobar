@@ -71,10 +71,10 @@ class PromobarsController < AuthenticatedController
   def script
     @header_promobars = Promobar.where(bar_type: 1)
     @footer_promobars = Promobar.where(bar_type: 2)
-    
-    respond_to do |format|
-      format.js  {}
-    end
+    #render 'script', content_type: "text/javascript"
+    #respond_to do |format|
+      #format.js {  }
+    #end
   end
 
   private
@@ -85,7 +85,7 @@ class PromobarsController < AuthenticatedController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promobar_params
-      params.require(:promobar).permit(:bar_type,:name, :text, :background_color, :background_opacity, :promobar_show, :button_on, :button_text, :x_button_on,
+      params.require(:promobar).permit(:bar_type,:name, :text, :background_color, :background_opacity, :promobar_show, :button_on, :button_text, :x_button_on, :order_number,
                                        :button_shape, :button_color, :button_hover, :text_animation, :alignment, :url_link, :url_link_blank, :enable_on_mobile)
     end
     

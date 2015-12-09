@@ -5,6 +5,49 @@
     });
   });
 </script>
+<script>
+$(function() {
+  $('.promobar_switcher').bootstrapSwitch();
+  return $('.promobar_switcher').on('switchChange.bootstrapSwitch', function(event, state) {
+    var id, order_number_offset, promobar_show;
+    promobar_show = state;
+    if (!state) {
+      order_number_offset = 1000;
+    } else {
+      order_number_offset = -1000;
+    }
+    id = $(this).attr("id");
+    order_number = parseInt($('.order_number' + id).text());
+    order_number = order_number + order_number_offset;
+    $('.order_number' + id).text(order_number);
+    //alert(order_number);
+    $.ajax("/promobars/" + id + ".json", {
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        _method: 'PUT',
+        "promobar[promobar_show]": promobar_show,
+        "promobar[order_number]": order_number
+      },
+      success: function() {
+        alert("success");
+      }
+    });
+    $.ajax("/promobars/" + id + "/subheader.json", {
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        _method: 'PUT',
+        "subheader[promobar_show]": promobar_show
+      },
+      success: function() {
+        alert("success");
+      }
+    });
+  });
+});
+
+</script>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -44,8 +87,8 @@
       <tbody>
       <% @promobars.where(bar_type: 1).each_with_index do |bar, i| %>
           <tr>
-            <td><%= i+1 %></td>
-            <td><%= bar.order_number %></td>
+            <td><%= bar.order_number < 1000 ? i+1 : '-' %></td>
+            <td class="order_number<%= bar.id %>"><%= bar.order_number %></td>
             <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
             <td><%= render html: bar.text.html_safe %></td>
             <td><%= bar.button_on ? "YES" : "NO"%></td>
@@ -86,7 +129,7 @@
       <% @promobars.where(bar_type: 2).each_with_index do |bar, i| %>
           <tr>
             <td><%= i+1 %></td>
-            <td><%= bar.order_number  %></td>
+            <td class="order_number<%= bar.id %>"><%= bar.order_number  %></td>
             <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
             <td><%= render html: bar.text.html_safe %></td>
             <td><%= bar.button_on ? "YES" : "NO"%></td>
