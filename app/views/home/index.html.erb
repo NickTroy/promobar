@@ -18,7 +18,7 @@ $(function() {
     }
     id = $(this).attr("id");
     //order_number = parseInt($('.order_number' + id).text());
-    alert($(this).parents("tr:first").find("td:second").text());
+    alert($(this).parents("tr:first").find("td:nth-child(2)").text());
     $('.order_number' + id).text(order_number);
     
     $.ajax("/promobars/" + id + ".json", {
