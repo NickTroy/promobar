@@ -42,11 +42,11 @@ class Promobar < ActiveRecord::Base
   end
 
   def self.count_of_headers_on
-    Promobar.where(bar_type: 1, promobar_show: true)
+    Promobar.where(bar_type: 1, promobar_show: true).count
   end
   
   def self.count_of_footers_on
-    Promobar.where(bar_type: 2, promobar_show: true)
+    Promobar.where(bar_type: 2, promobar_show: true).count
   end
 
   private
