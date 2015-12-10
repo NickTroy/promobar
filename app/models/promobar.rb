@@ -41,6 +41,14 @@ class Promobar < ActiveRecord::Base
     self.x_button_on == 1 ? 'inline-block' : 'none'
   end
 
+  def self.count_of_headers_on
+    Promobar.where(bar_type: 1, promobar_show: true)
+  end
+  
+  def self.count_of_footers_on
+    Promobar.where(bar_type: 2, promobar_show: true)
+  end
+
   private
 
 =begin
