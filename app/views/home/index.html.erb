@@ -12,9 +12,9 @@ $(function() {
     var id, order_number_offset, promobar_show, bar_type, count_of_on_bars, table;
     promobar_show = state;
     
-    table = $(this).parents("table:first tr");
-    table.each(function(i,row) {
-      alert(row.text());
+    table = $(this).parents("table:first tr td:nth-child(2)");
+    table.each(function(i, td) {
+      alert(td.text());
     });
     //alert(count_of_on_bars);
     
