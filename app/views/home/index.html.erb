@@ -18,7 +18,7 @@ $(function() {
     }
     id = $(this).attr("id");
     //order_number = parseInt($('.order_number' + id).text());
-    var caption = $(this).parents("caption");
+    var caption = $(this).parents("caption").text();
     alert(caption);
     order_number = $(this).parents("tr:first").find("td:nth-child(2)").text();
     //alert(order_number);
