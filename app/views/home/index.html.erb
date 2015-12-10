@@ -12,22 +12,22 @@ $(function() {
     var id, order_number_offset, promobar_show;
     promobar_show = state;
     if (!state) {
-      order_number_offset = 1000;
+      
     } else {
-      order_number_offset = -1000;
+      
     }
     id = $(this).attr("id");
-    order_number = parseInt($('.order_number' + id).text());
-    order_number = order_number + order_number_offset;
+    //order_number = parseInt($('.order_number' + id).text());
+    alert($(this).parents("tr:first"));
     $('.order_number' + id).text(order_number);
-    //alert(order_number);
+    
     $.ajax("/promobars/" + id + ".json", {
       type: 'POST',
       dataType: 'json',
       data: {
         _method: 'PUT',
-        "promobar[promobar_show]": promobar_show,
-        "promobar[order_number]": order_number
+        "promobar[promobar_show]": promobar_show
+        //"promobar[order_number]": order_number
       },
       success: function() {
         alert("success");
