@@ -9,15 +9,14 @@
 $(function() {
   $('.promobar_switcher').bootstrapSwitch();
   return $('.promobar_switcher').on('switchChange.bootstrapSwitch', function(event, state) {
-    var id, order_number_offset, promobar_show, bar_type, count_of_on_bars;
+    var id, order_number_offset, promobar_show, bar_type, count_of_on_bars, table;
     promobar_show = state;
-    var caption = $(this).parents("table").find("caption").text();
-    if (caption === "HEADER BANNERS") {
-      count_of_on_bars = <%= Promobar.count_of_headers_on %>;
-    } else {
-      count_of_on_bars = <%= Promobar.count_of_footers_on %>;
-    }
-    alert(count_of_on_bars);
+    
+    table = $(this).parents(table);
+    table.each(function(i,row) {
+      alert(row.find("td:nth-child(2)").text());
+    });
+    //alert(count_of_on_bars);
     
     if (!state) {
       
