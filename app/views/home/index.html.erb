@@ -6,6 +6,18 @@
   });
 </script>
 <script>
+
+$(document).ready(function(){
+    $(".up,.down").click(function(){
+        var row = $(this).parents("tr:first");
+        if ($(this).is(".up")) {
+            row.insertBefore(row.prev());
+        } else {
+            row.insertAfter(row.next());
+        }
+    });
+});
+
 $(function() {
   $('.promobar_switcher').bootstrapSwitch();
   return $('.promobar_switcher').on('switchChange.bootstrapSwitch', function(event, state) {
@@ -83,6 +95,7 @@ $(function() {
       </caption>
       <thead>
       <tr>
+        <th></th>
         <th>ORDER</th>
         <th>ORDER NUMBER</th>
         <th>BAR TITLE</th>
@@ -97,6 +110,10 @@ $(function() {
       <tbody>
       <% @promobars.where(bar_type: 1).each_with_index do |bar, i| %>
           <tr>
+            <td>
+              <a href="#" class="up">Up</a>
+              <a href="#" class="down">Down</a>
+            </td>
             <td><%= bar.order_number < 1000 ? i+1 : '-' %></td>
             <td class="order_number<%= bar.id %> order"><%= bar.order_number %></td>
             <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
@@ -125,6 +142,7 @@ $(function() {
       </caption>
       <thead>
       <tr>
+        <th></th>
         <th>ORDER</th>
         <th>ORDER NUMBER</th>
         <th>BAR TITLE</th>
@@ -138,6 +156,10 @@ $(function() {
       <tbody>
       <% @promobars.where(bar_type: 2).each_with_index do |bar, i| %>
           <tr>
+            <td>
+              <a href="#" class="up">Up</a>
+              <a href="#" class="down">Down</a>
+            </td>
             <td><%= i+1 %></td>
             <td class="order_number<%= bar.id %> order"><%= bar.order_number  %></td>
             <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
