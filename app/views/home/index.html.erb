@@ -8,6 +8,8 @@
 <script>
 
 $(document).ready(function(){
+  $("table > tbody > tr:first td:first a.up").hide();
+  $("table > tbody > tr:last td:first a.down").hide();
   $(".up,.down").click(function(){
     var row = $(this).parents("tr:first");
     if ($(this).is(".up")) {
