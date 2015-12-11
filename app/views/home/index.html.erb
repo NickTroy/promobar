@@ -24,7 +24,7 @@ $(function() {
     var id, promobar_show, order_number, banners_on, banner_type
     promobar_show = state;
     var row = $(this).parents("tr:first");
-    var rows = $(this).parents("tr")
+    
     //alert($('table:first .on').length);
     //alert(count_of_on_bars);
     if ($(this).hasClass("header")) {
@@ -32,11 +32,12 @@ $(function() {
     } else
       banner_type = "footers-table";
     banners_on = $('table.'+ banner_type +' .on').length;
+    var last_row = $('table.' + banner_type + ' tr:last');
     if (!state) {
       row.addClass("off");  
       row.removeClass("on"); 
       row.find("td:nth-child(3)").text('-');
-      row.insertAfter(rows.last());
+      row.insertAfter(last_row);
     } else {
       row.addClass("on");  
       row.removeClass("off"); 
