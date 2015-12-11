@@ -24,15 +24,15 @@ $(function() {
     var id, promobar_show, order_number
     promobar_show = state;
     
-    alert($('.on').length);
+    alert($('table:first .on').length);
     //alert(count_of_on_bars);
     
     if (!state) {
       $(this).parents("tr:first").addClass("on");  
       $(this).parents("tr:first").removeClass("off");  
     } else {
-      $(this).parents("tr:first").addClass("on");  
-      $(this).parents("tr:first").removeClass("off");
+      $(this).parents("tr:first").addClass("off");  
+      $(this).parents("tr:first").removeClass("on");
     }
     id = $(this).attr("id");
     //order_number = parseInt($('.order_number' + id).text());
