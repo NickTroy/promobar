@@ -7,6 +7,16 @@
 </script>
 <script>
 
+function swapRows(row1,row2){
+  row1_order_number = row1.find("td:nth-child(2)").text();
+  row2_order_number = row2.find("td:nth-child(2)").text();
+  row1.find("td:nth-child(2)").text(row2_order_number);
+  row2.find("td:nth-child(2)").text(row1_order_number);
+  row1.find("td:first").insertBefore(row2.find("td:first"));
+  row2.find("td:nth-child(2)").insertBefore(row1.find("td:first"));
+  row1.insertBefore(row2);
+}
+
 $(document).ready(function(){
   $("table.headers-table > tbody > tr:first td:first a.up").hide();
   $("table.footers-table > tbody > tr:first td:first a.up").hide();
@@ -15,23 +25,16 @@ $(document).ready(function(){
   $(".up,.down").click(function(){
     var row = $(this).parents("tr:first");
     if ($(this).is(".up")) {
-      this_row_order_number = row.find("td:nth-child(2)").text();
-      prev_row_order_number = row.prev().find("td:nth-child(2)").text();
-      row.find("td:nth-child(2)").text(prev_row_order_number);
-      row.prev().find("td:nth-child(2)").text(this_row_order_number);
-      row.find("td:first").insertBefore(row.prev().find("td:first"));
-      row.prev().find("td:nth-child(2)").insertBefore(row.find("td:first"));
-      row.insertBefore(row.prev());
-
+      swapRows(row, row.prev());
     } else {
-
-      this_row_order_number = row.find("td:nth-child(2)").text();
+      swapRows(row.next(), row);
+      /*this_row_order_number = row.find("td:nth-child(2)").text();
       next_row_order_number = row.next().find("td:nth-child(2)").text();
       row.find("td:nth-child(2)").text(next_row_order_number);
       row.next().find("td:nth-child(2)").text(this_row_order_number);
       row.find("td:first").insertBefore(row.next().find("td:first"));
       row.next().find("td:nth-child(2)").insertBefore(row.find("td:first"));
-      row.insertAfter(row.next());
+      row.insertAfter(row.next());*/
 
     }
   });
