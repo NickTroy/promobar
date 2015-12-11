@@ -21,12 +21,16 @@ $(document).ready(function(){
 $(function() {
   $('.promobar_switcher').bootstrapSwitch();
   return $('.promobar_switcher').on('switchChange.bootstrapSwitch', function(event, state) {
-    var id, promobar_show, order_number, banners_on
+    var id, promobar_show, order_number, banners_on, banner_type
     promobar_show = state;
     
     //alert($('table:first .on').length);
     //alert(count_of_on_bars);
-    banners_on = $(this).parents('table:first .on').length;
+    if $(this).hasClass("header") {
+      banner_type = "headers-table";
+    } else
+      banner_type = "footers-table";
+    banners_on = $('table.'+ banner_type +' .on').length;
     if (!state) {
       $(this).parents("tr:first").addClass("off");  
       $(this).parents("tr:first").removeClass("on"); 
@@ -123,7 +127,7 @@ $(function() {
             <td><%= bar.subheader.promobar_show ? "YES" : "NO" unless bar.subheader.nil? %></td> 
             <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
             <td>
-            <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
+            <input class="promobar_switcher header" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
             </td>
           </tr>
       <% end %>
@@ -168,7 +172,7 @@ $(function() {
             <td><%= bar.button_on ? "YES" : "NO"%></td>
             <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
             <td>
-            <input class="promobar_switcher" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
+            <input class="promobar_switcher footer" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
             </td>
           </tr>
       <% end %>
