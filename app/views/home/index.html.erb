@@ -41,7 +41,7 @@ $(function() {
       row.find("td:nth-child(3)").text('-');
       row.insertAfter(last_row);
       $('table.' + banner_type + ' > tbody > tr.on').each(function(i, r) {
-        $(r).find("td:nth-child(3)").text(i+1);
+        $(r).find("td:nth-child(2)").text(i+1);
         //("td:nth-child(3)").text(i); 
       });
         
@@ -49,7 +49,7 @@ $(function() {
     } else {
       row.addClass("on");  
       row.removeClass("off"); 
-      row.find("td:nth-child(3)").text(banners_on + 1);
+      row.find("td:nth-child(2)").text(banners_on + 1);
       if (banners_on != 0) {
         row.insertAfter($('table.'+ banner_type +' tr.on:nth-child('+ banners_on +')'));
       } else {
@@ -118,7 +118,6 @@ $(function() {
       <thead>
       <tr>
         <th></th>
-        <th>ORDER</th>
         <th>ORDER NUMBER</th>
         <th>BAR TITLE</th>
         <th>BAR TEXT</th>
@@ -136,7 +135,6 @@ $(function() {
             <a href="#" class="up">Up</a>
             <a href="#" class="down">Down</a>
           </td>
-          <td><%= bar.order_number < 1000 ? i+1 : '-' %></td>
           <td class="order_number<%= bar.id %> order"><%= bar.order_number %></td>
           <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
           <td><%= render html: bar.text.html_safe %></td>
@@ -155,7 +153,6 @@ $(function() {
             <a href="#" class="up">Up</a>
             <a href="#" class="down">Down</a>
           </td>
-          <td><%= bar.order_number < 1000 ? i+1 : '-' %></td>
           <td class="order_number<%= bar.id %> order">-</td>
           <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
           <td><%= render html: bar.text.html_safe %></td>
@@ -184,7 +181,6 @@ $(function() {
       <thead>
       <tr>
         <th></th>
-        <th>ORDER</th>
         <th>ORDER NUMBER</th>
         <th>BAR TITLE</th>
         <th>BAR TEXT</th>
@@ -201,7 +197,6 @@ $(function() {
             <a href="#" class="up">Up</a>
             <a href="#" class="down">Down</a>
           </td>
-          <td><%= i+1 %></td>
           <td class="order_number<%= bar.id %> order"><%= bar.order_number  %></td>
           <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
           <td><%= render html: bar.text.html_safe %></td>
@@ -225,7 +220,6 @@ $(function() {
             <a href="#" class="up">Up</a>
             <a href="#" class="down">Down</a>
           </td>
-          <td><%= i+1 %></td>
           <td class="order_number<%= bar.id %> order">-</td>
           <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
           <td><%= render html: bar.text.html_safe %></td>
