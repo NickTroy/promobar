@@ -8,14 +8,25 @@
 <script>
 
 $(document).ready(function(){
-    $(".up,.down").click(function(){
-        var row = $(this).parents("tr:first");
-        if ($(this).is(".up")) {
-            row.insertBefore(row.prev());
-        } else {
-            row.insertAfter(row.next());
-        }
-    });
+  $(".up,.down").click(function(){
+    var row = $(this).parents("tr:first");
+    if ($(this).is(".up")) {
+      this_row_order_number = row.find("td:nth-child(2)").text();
+      prev_row_order_number = row.prev().find("td:nth-child(2)").text();
+      row.find("td:nth-child(2)").text(prev_row_order_number);
+      row.prev().find("td:nth-child(2)").text(this_row_order_number);
+      row.insertBefore(row.prev());
+
+    } else {
+
+      this_row_order_number = row.find("td:nth-child(2)").text();
+      next_row_order_number = row.next().find("td:nth-child(2)").text();
+      row.find("td:nth-child(2)").text(next_row_order_number);
+      row.next().find("td:nth-child(2)").text(this_row_order_number);
+      row.insertAfter(row.next());
+
+    }
+  });
 });
 
 $(function() {
