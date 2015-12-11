@@ -26,7 +26,7 @@ class HomeController < AuthenticatedController
       @headers_on[i-1].save
     end
     
-    1.upto(@headers_on.count) do |i|
+    1.upto(@headers_off.count) do |i|
       @headers_on[i-1].order_number = 1000
       @headers_on[i-1].save
     end
