@@ -53,7 +53,7 @@ $(function() {
       if (banners_on != 0) {
         row.insertAfter($('table.'+ banner_type +' tr.on:nth-child('+ banners_on +')'));
       } else {
-        row.insertBefore($('table.'+ banner_type +' tr:nth-child(2)'));
+        row.insertBefore($('table.'+ banner_type +' > tbody > tr:first'));
       }
       
     }
