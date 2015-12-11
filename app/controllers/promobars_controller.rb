@@ -71,10 +71,10 @@ class PromobarsController < AuthenticatedController
   def script
     @header_promobars = Promobar.where(bar_type: 1)
     @footer_promobars = Promobar.where(bar_type: 2)
-    render 'script', content_type: "text/javascript"
-    #respond_to do |format|
-      #format.js { }
-    #end
+    #render 'script', content_type: "text/javascript"
+    respond_to do |format|
+      format.js { render :template => "script.js.erb" }
+    end
   end
 
   private
