@@ -31,13 +31,18 @@ $(function() {
       banner_type = "headers-table";
     } else
       banner_type = "footers-table";
-    banners_on = $('table.'+ banner_type +' .on').length;
+    rows_on = $('table.'+ banner_type +' tr.on');
+    banners_on = rows_on.length;
+    
     var last_row = $('table.' + banner_type + ' tr:last');
     if (!state) {
       row.addClass("off");  
       row.removeClass("on"); 
       row.find("td:nth-child(3)").text('-');
       row.insertAfter(last_row);
+      rows_on.each(function(i, r){
+        r.find("td:nth-child(3)").text(i+1);     
+      });
     } else {
       row.addClass("on");  
       row.removeClass("off"); 
