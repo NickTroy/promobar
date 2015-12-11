@@ -19,10 +19,6 @@ $(document).ready(function(){
       prev_row_order_number = row.prev().find("td:nth-child(2)").text();
       row.find("td:nth-child(2)").text(prev_row_order_number);
       row.prev().find("td:nth-child(2)").text(this_row_order_number);
-      this_row_arrows = row.find("td:first").text();
-      prev_row_arrows = row.prev().find("td:first").text();
-      row.find("td:first").text(prev_row_arrows);
-      row.prev().find("td:first").text(this_row_arrows);
       row.insertBefore(row.prev());
 
     } else {
@@ -31,10 +27,6 @@ $(document).ready(function(){
       next_row_order_number = row.next().find("td:nth-child(2)").text();
       row.find("td:nth-child(2)").text(next_row_order_number);
       row.next().find("td:nth-child(2)").text(this_row_order_number);
-      this_row_arrows = row.find("td:first").text();
-      next_row_arrows = row.next().find("td:first").text();
-      row.find("td:first").text(next_row_arrows);
-      row.next().find("td:first").text(this_row_arrows);
       row.insertAfter(row.next());
 
     }
