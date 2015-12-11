@@ -17,8 +17,8 @@ class HomeController < AuthenticatedController
     end
 
     1.upto(@footers_off.count) do |i|
-      @footers[i-1].order_number = 1000 
-      @footers[i-1].save
+      @footers_off[i-1].order_number = 1000 
+      @footers_off[i-1].save
     end
 
     1.upto(@headers_on.count) do |i|
@@ -27,8 +27,8 @@ class HomeController < AuthenticatedController
     end
     
     1.upto(@headers_off.count) do |i|
-      @headers_on[i-1].order_number = 1000
-      @headers_on[i-1].save
+      @headers_off[i-1].order_number = 1000
+      @headers_off[i-1].save
     end
     
     scripts = ShopifyAPI::ScriptTag.all
