@@ -50,10 +50,12 @@ $(function() {
       row.addClass("on");  
       row.removeClass("off"); 
       row.find("td:nth-child(3)").text(banners_on + 1);
-      if (banners_on === 0) {
-        banners_on = 1;
+      if (banners_on != 0) {
+        row.insertAfter($('table.'+ banner_type +' tr.on:nth-child('+ banners_on +')'));
+      } else {
+        row.insertBefore($('table.'+ banner_type +' tr.on:first'));
       }
-      row.insertAfter($('table.'+ banner_type +' tr.on:nth-child('+ banners_on +')'));
+      
     }
     id = $(this).attr("id");
     //order_number = parseInt($('.order_number' + id).text());
