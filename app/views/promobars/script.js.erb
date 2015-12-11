@@ -44,7 +44,7 @@ $('<style> ' +
       ' background-color: <%= bar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
-    <% unless bar.subheader.nil? %>
+    /*<% unless bar.subheader.nil? %>
       $('.logo').before('<div class="subheader-promo-bar<%= index %>" ' +
         ' style="float:left; width: 37%; height:40px; display: inline-block;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
@@ -64,7 +64,7 @@ $('<style> ' +
         ' <button id="subheader-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
         ' style="display: <%= bar.subheader.display_x unless bar.subheader.nil? %>; float: right; border-radius: 5px;"' + 
         ' type="button">X</button> ' +
-        ' </div>');
+        ' </div>');*/
       $('<style> ' + 
         '.subheader-promo-bar<%= index %> a:hover { ' +
         ' background-color: <%= bar.subheader.button_hover %> !important;' +
