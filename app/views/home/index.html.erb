@@ -18,8 +18,8 @@ function swapRows(row1,row2){
 }
 
 function neededArrows(){
-  $("table.headers-table > tbody > tr:first td:first a").show():
-  $("table.footers-table > tbody > tr:first td:first a").show():
+  $("table.headers-table > tbody > tr:first td:first a").show();
+  $("table.footers-table > tbody > tr:first td:first a").show();
   $("table.headers-table > tbody > tr:first td:first a.up").hide();
   $("table.footers-table > tbody > tr:first td:first a.up").hide();
   $("table.headers-table > tbody > tr:last td:first a.down").hide();
@@ -82,7 +82,7 @@ $(function() {
     }
 
     neededArrows();
-    
+
     id = $(this).attr("id");
     //order_number = parseInt($('.order_number' + id).text());
     
