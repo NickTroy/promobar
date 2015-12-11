@@ -26,15 +26,15 @@ $(function() {
     
     //alert($('table:first .on').length);
     //alert(count_of_on_bars);
-    banners_on = $('table:first .on').length;
+    banners_on = $(this).parents('table:first .on').length;
     if (!state) {
       $(this).parents("tr:first").addClass("off");  
       $(this).parents("tr:first").removeClass("on"); 
-      $(this).parents("tr:first").find("td:nth-child(2)").text('-');
+      $(this).parents("tr:first").find("td:nth-child(3)").text('-');
     } else {
       $(this).parents("tr:first").addClass("on");  
       $(this).parents("tr:first").removeClass("off"); 
-      $(this).parents("tr:first").find("td:nth-child(2)").text(banners_on);
+      $(this).parents("tr:first").find("td:nth-child(3)").text(banners_on + 1);
     }
     id = $(this).attr("id");
     //order_number = parseInt($('.order_number' + id).text());
