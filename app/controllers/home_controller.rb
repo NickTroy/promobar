@@ -6,9 +6,9 @@ class HomeController < AuthenticatedController
     @headers = Promobar.where("bar_type = 1").order(:order_number)
     @footers = Promobar.where("bar_type = 2").order(:order_number)
     
-    @headers_on = Promobar.where(promobar_show: true, bar_type: 1)
+    @headers_on = Promobar.where(promobar_show: true, bar_type: 1).order(:order_number)
     @headers_off = Promobar.where(promobar_show: false, bar_type: 1)
-    @footers_on = Promobar.where(promobar_show: true, bar_type: 2)
+    @footers_on = Promobar.where(promobar_show: true, bar_type: 2).order(:order_number)
     @footers_off = Promobar.where(promobar_show: false, bar_type: 2)
     
     1.upto(@footers_on.count) do |i|
