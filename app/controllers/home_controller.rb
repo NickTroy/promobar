@@ -3,26 +3,33 @@ class HomeController < AuthenticatedController
   # GET /promobars.json
   def index
     @promobars = Promobar.all
-    @headers = Promobar.where("bar_type = 1 and order_number < 1000").order(:order_number)
-    @footers = Promobar.where("bar_type = 2 and order_number < 1000").order(:order_number)
+    @headers = Promobar.where("bar_type = 1").order(:order_number)
+    @footers = Promobar.where("bar_type = 2").order(:order_number)
     
-    #@headers.each_with_index do |header, i|
-    #  header.order_number = i+1
-    #  header.save
-    #end
+    @headers_on = Promobar.where(promobar_show: true, bar_type: 1)
+    @headers_off = Promobar.where(promobar_show: false, bar_type: 1)
+    @footers_on = Promobar.where(promobar_show: true, bar_type: 2)
+    @footers_off = Promobar.where(promobar_show: false, bar_type: 2)
     
-    1.upto(@footers.count) do |i|
-      @footers[i-1].order_number = i
+    1.upto(@footers_on.count) do |i|
+      @footers_on[i-1].order_number = i 
+      @footers_on[i-1].save
+    end
+
+    1.upto(@footers_off.count) do |i|
+      @footers[i-1].order_number = 1000 
       @footers[i-1].save
     end
-    1.upto(@headers.count) do |i|
-      @headers[i-1].order_number = i
-      @headers[i-1].save
+
+    1.upto(@headers_on.count) do |i|
+      @headers_on[i-1].order_number = i
+      @headers_on[i-1].save
     end
-    #@footers.each_with_index do |footer, i|
-    #  footer.order_number = i+1
-    #  footer.save
-    #end
+    
+    1.upto(@headers_on.count) do |i|
+      @headers_on[i-1].order_number = 1000
+      @headers_on[i-1].save
+    end
     
     scripts = ShopifyAPI::ScriptTag.all
     @counter = scripts.count
