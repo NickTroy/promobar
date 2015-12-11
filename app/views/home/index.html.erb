@@ -23,7 +23,7 @@ $(function() {
   return $('.promobar_switcher').on('switchChange.bootstrapSwitch', function(event, state) {
     var id, promobar_show, order_number, banners_on, banner_type
     promobar_show = state;
-    
+    var row = $(this).parents("tr:first");
     //alert($('table:first .on').length);
     //alert(count_of_on_bars);
     if ($(this).hasClass("header")) {
@@ -32,13 +32,14 @@ $(function() {
       banner_type = "footers-table";
     banners_on = $('table.'+ banner_type +' .on').length;
     if (!state) {
-      $(this).parents("tr:first").addClass("off");  
-      $(this).parents("tr:first").removeClass("on"); 
-      $(this).parents("tr:first").find("td:nth-child(3)").text('-');
+      row.addClass("off");  
+      row.removeClass("on"); 
+      row.find("td:nth-child(3)").text('-');
+      row.insertAfter(row.last());
     } else {
-      $(this).parents("tr:first").addClass("on");  
-      $(this).parents("tr:first").removeClass("off"); 
-      $(this).parents("tr:first").find("td:nth-child(3)").text(banners_on + 1);
+      row.addClass("on");  
+      row.removeClass("off"); 
+      row.find("td:nth-child(3)").text(banners_on + 1);
     }
     id = $(this).attr("id");
     //order_number = parseInt($('.order_number' + id).text());
