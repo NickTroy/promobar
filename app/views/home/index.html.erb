@@ -93,27 +93,29 @@ $(function() {
 
 </script>
 <script type="text/javascript">
-  function saveBannerOrder(){
-    row = $("table tr.on").each(function(i, r){
-      var id, order_number;
-      id = $(r).find("input").id;
-      order_number = $(r).find("td:nth-child(2)").text();
-      alert("order_number " + text + " id " + id);
-      /*$.ajax("/promobars/" + id + ".json", {
-        type: 'POST',
-        dataType: 'json',
-        data: {
-          _method: 'PUT',
-          "promobar[promobar_show]": promobar_show
-          //"promobar[order_number]": order_number
-        },
-        success: function() {
-         
-        }
-      });*/  
-    });
-    
-  }
+  $(document).ready(function(){
+    function saveBannerOrder(){
+      row = $("table tr.on").each(function(i, r){
+        var id, order_number;
+        id = $(r).find("input").id;
+        order_number = $(r).find("td:nth-child(2)").text();
+        alert("order_number " + text + " id " + id);
+        /*$.ajax("/promobars/" + id + ".json", {
+          type: 'POST',
+          dataType: 'json',
+          data: {
+            _method: 'PUT',
+            "promobar[promobar_show]": promobar_show
+            //"promobar[order_number]": order_number
+          },
+          success: function() {
+           
+          }
+        });*/  
+      });
+      
+    }
+  });  
 </script>
 
 <div class="panel panel-default">
