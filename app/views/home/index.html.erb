@@ -40,9 +40,11 @@ $(function() {
       row.removeClass("on"); 
       row.find("td:nth-child(3)").text('-');
       row.insertAfter(last_row);
-      for (var i=0; i<banners_on; i+=1) {
-        $('table.' + banner_type).rows[i].find("td:nth-child(3)").text(i); 
-      }
+      $('table.' + banner_type + ' > tbody > tr.on').each(function(i, r) {
+        r.find("td:nth-child(3)").text(i); 
+      });
+        
+      
     } else {
       row.addClass("on");  
       row.removeClass("off"); 
