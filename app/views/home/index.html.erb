@@ -35,7 +35,7 @@ $(function() {
       row.addClass("off");  
       row.removeClass("on"); 
       row.find("td:nth-child(3)").text('-');
-      row.insertAfter(row.last());
+      row.insertAfter(row.next());
     } else {
       row.addClass("on");  
       row.removeClass("off"); 
