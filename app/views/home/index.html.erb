@@ -92,10 +92,15 @@ $(function() {
 });
 
 function saveBannerOrder(){
-  row = $("table tr.on").each(function(i, r){
+  row = $("table tr").each(function(i, r){
     var id, order_number;
     id = $(r).find(".promobar_switcher").attr("id");
     order_number = $(r).find("td:nth-child(2)").text();
+    if (order_number === '-') {
+      order_number = 1000;
+    } else {
+      order_number = parseInt(order_number);
+    }
     alert("order_number " + order_number + " id " + id);
     /*$.ajax("/promobars/" + id + ".json", {
       type: 'POST',
