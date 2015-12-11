@@ -102,14 +102,14 @@ function saveBannerOrder(){
       order_number = parseInt(order_number);
     }
     alert("order_number " + order_number + " id " + id);
-    /*$.ajax("/promobars/" + id + ".json", {
+    $.ajax("/promobars/" + id + ".json", {
       type: 'POST',
       dataType: 'json',
       data: {
         _method: 'PUT',
         "promobar[order_number]": order_number
       },
-    });*/  
+    });  
   });
   
 }
