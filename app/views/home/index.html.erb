@@ -41,7 +41,7 @@ $(function() {
       row.find("td:nth-child(3)").text('-');
       row.insertAfter(last_row);
       $('table.' + banner_type + ' > tbody > tr.on').each(function(i, r) {
-        $(r + " td:nth-child(3)").text(i+1);
+        $(r).find("td:nth-child(3)").text(i+1);
         //("td:nth-child(3)").text(i); 
       });
         
