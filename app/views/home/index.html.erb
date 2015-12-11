@@ -38,7 +38,7 @@ $(function() {
     if (!state) {
       row.addClass("off");  
       row.removeClass("on"); 
-      row.find("td:nth-child(3)").text('-');
+      row.find("td:nth-child(2)").text('-');
       row.insertAfter(last_row);
       $('table.' + banner_type + ' > tbody > tr.on').each(function(i, r) {
         $(r).find("td:nth-child(2)").text(i+1);
