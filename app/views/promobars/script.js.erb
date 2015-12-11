@@ -51,8 +51,9 @@ $('<style> ' +
         ' background: <%= bar.subheader.background_color %>;">' +
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
         ' style="display:inline-block; margin-top:7px; width:70%;"> ' + 
-        <% sub_text = raw(bar.subheader.text) %>
-        <% unless bar.subheader.text.nil? %>
+        '<% unless bar.subheader.text.nil? %>'  +
+        '<% sub_text = raw(bar.subheader.text) %> ' +
+        
         ' <%= sub_text %> ' + 
         <% end %>
         ' </h2><a href="' + '<%= bar.subheader.url_link %>' + '" target=<%= bar.subheader.link_blank %>' +  
