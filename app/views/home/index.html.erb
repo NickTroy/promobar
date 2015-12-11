@@ -130,7 +130,7 @@ $(function() {
       </thead>
 
       <tbody>
-      <% @promobars.where(bar_type: 1).each_with_index do |bar, i| %>
+      <% @headers_on.each_with_index do |bar, i| %>
         <tr class="<%= bar.promobar_show ? "on" : "off" %>">
           <td>
             <a href="#" class="up">Up</a>
@@ -138,6 +138,25 @@ $(function() {
           </td>
           <td><%= bar.order_number < 1000 ? i+1 : '-' %></td>
           <td class="order_number<%= bar.id %> order"><%= bar.order_number %></td>
+          <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
+          <td><%= render html: bar.text.html_safe %></td>
+          <td><%= bar.button_on ? "YES" : "NO"%></td>
+          <td><%= bar.subheader.promobar_show ? "YES" : "NO" unless bar.subheader.nil? %></td> 
+          <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+          <td>
+          <input class="promobar_switcher header" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
+          </td>
+        </tr>
+      <% end %>
+
+      <% @headers_off.each_with_index do |bar, i| %>
+        <tr class="<%= bar.promobar_show ? "on" : "off" %>">
+          <td>
+            <a href="#" class="up">Up</a>
+            <a href="#" class="down">Down</a>
+          </td>
+          <td><%= bar.order_number < 1000 ? i+1 : '-' %></td>
+          <td class="order_number<%= bar.id %> order">-</td>
           <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
           <td><%= render html: bar.text.html_safe %></td>
           <td><%= bar.button_on ? "YES" : "NO"%></td>
@@ -176,7 +195,7 @@ $(function() {
       </thead>
 
       <tbody>
-      <% @promobars.where(bar_type: 2).each_with_index do |bar, i| %>
+      <% @footers_on.each_with_index do |bar, i| %>
         <tr class="<%= bar.promobar_show ? "on" : "off" %>">
           <td>
             <a href="#" class="up">Up</a>
@@ -184,6 +203,30 @@ $(function() {
           </td>
           <td><%= i+1 %></td>
           <td class="order_number<%= bar.id %> order"><%= bar.order_number  %></td>
+          <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
+          <td><%= render html: bar.text.html_safe %></td>
+          <td><%= bar.button_on ? "YES" : "NO"%></td>
+          <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+          <td>
+          <input class="promobar_switcher footer" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
+          </td>
+        </tr>
+      <% end %>
+
+      <% unless @promobars.where(bar_type: 2).any? %>
+          <tr>
+            <td colspan="7">No footer banners found.</td>
+          </tr>
+      <% end %>
+
+      <% @footers_off.each_with_index do |bar, i| %>
+        <tr class="<%= bar.promobar_show ? "on" : "off" %>">
+          <td>
+            <a href="#" class="up">Up</a>
+            <a href="#" class="down">Down</a>
+          </td>
+          <td><%= i+1 %></td>
+          <td class="order_number<%= bar.id %> order">-</td>
           <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
           <td><%= render html: bar.text.html_safe %></td>
           <td><%= bar.button_on ? "YES" : "NO"%></td>
