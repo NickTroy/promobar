@@ -18,14 +18,12 @@ function swapRows(row1,row2){
 }
 
 function neededArrows(){
-  $("table.headers-table > tbody > tr td:first a.up").show();
-  $("table.headers-table > tbody > tr td:first a.down").show();
-  $("table.footers-table > tbody > tr td:first a.up").show();
-  $("table.footers-table > tbody > tr td:first a.down").show();
-  $("table.headers-table > tbody > tr:first td:first a.up").hide();
+  $("a.up").show();
+  $("a.down").show();
+  /*$("table.headers-table > tbody > tr:first td:first a.up").hide();
   $("table.footers-table > tbody > tr:first td:first a.up").hide();
   $("table.headers-table > tbody > tr:last td:first a.down").hide();
-  $("table.footers-table > tbody > tr:last td:first a.down").hide();
+  $("table.footers-table > tbody > tr:last td:first a.down").hide();*/
 }
 
 $(document).ready(function(){
