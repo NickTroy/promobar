@@ -19,6 +19,8 @@ $(document).ready(function(){
       prev_row_order_number = row.prev().find("td:nth-child(2)").text();
       row.find("td:nth-child(2)").text(prev_row_order_number);
       row.prev().find("td:nth-child(2)").text(this_row_order_number);
+      row.find("td:first").insertBefore(row.prev().find("td:first"));
+      row.prev().find("td:nth-child(2)").insertBefore(row.find("td:first"));
       row.insertBefore(row.prev());
 
     } else {
