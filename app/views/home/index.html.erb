@@ -94,7 +94,7 @@ $(function() {
 function saveBannerOrder(){
   row = $("table tr.on").each(function(i, r){
     var id, order_number;
-    id = $(r).find("input").id;
+    id = $(r).find(".promobar_switcher").id;
     order_number = $(r).find("td:nth-child(2)").text();
     alert("order_number " + order_number + " id " + id);
     /*$.ajax("/promobars/" + id + ".json", {
