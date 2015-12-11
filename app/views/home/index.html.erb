@@ -92,6 +92,11 @@ $(function() {
 });
 
 </script>
+<script type="text/javascript">
+  function saveBannerOrder(){
+    alert("saved");
+  }
+</script>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -241,6 +246,6 @@ $(function() {
     </table>
 
     <%= link_to 'ADD ANOTHER BANNER', new_promobar_path, class: 'btn btn-primary' %>
-
+    <input type="button" value="Save banners order "class: 'btn btn-success', onclick="saveBannerOrder"/>
   </div>
 </div>
