@@ -86,7 +86,6 @@ $(function() {
       data: {
         _method: 'PUT',
         "promobar[promobar_show]": promobar_show
-        //"promobar[order_number]": order_number
       },
       success: function() {
         alert("success");
@@ -116,7 +115,7 @@ function saveBannerOrder(){
     } else {
       order_number = parseInt(order_number);
     }
-    alert("order_number " + order_number + " id " + id);
+    //alert("order_number " + order_number + " id " + id);
     $.ajax("/promobars/" + id + ".json", {
       type: 'POST',
       dataType: 'json',
@@ -124,6 +123,9 @@ function saveBannerOrder(){
         _method: 'PUT',
         "promobar[order_number]": order_number
       },
+      success: function() {
+        alert("success");
+      }
     });  
   });
   
