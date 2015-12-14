@@ -29,10 +29,13 @@ function neededArrows(){
 $(document).ready(function(){
   $("table.headers-table > tbody > tr.off td:first a.up").hide();
   $("table.headers-table > tbody > tr.off td:first a.down").hide();
+  $("table.footers-table > tbody > tr.off td:first a.up").hide();
+  $("table.footers-table > tbody > tr.off td:first a.down").hide();
+
   $("table.headers-table > tbody > tr:first td:first a.up").hide();
   $("table.footers-table > tbody > tr:first td:first a.up").hide();
-  $("table.headers-table > tbody > tr.on:last td:first a.down").hide();
-  $("table.footers-table > tbody > tr.on:last td:first a.down").hide();
+  $("table.headers-table > tbody > tr:last td:first a.down").hide();
+  $("table.footers-table > tbody > tr:last td:first a.down").hide();
   $(".up,.down").click(function(){
     var row = $(this).parents("tr:first");
     if ($(this).is(".up")) {
