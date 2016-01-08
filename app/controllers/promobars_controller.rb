@@ -69,17 +69,18 @@ class PromobarsController < AuthenticatedController
 
   # GET /promobars/script
   def script
+#    headers['Content-Type'] = 'application/javascript'
+
     @header_promobars = Promobar.where(bar_type: 1)
     @footer_promobars = Promobar.where(bar_type: 2)
-    headers['Content-Type'] = 'application/javascript'
 
-    render 'script', content_type: "application/javascript"
-    #respond_to do |format|
-     # format.js do
-      #  headers['Content-Type'] = 'text/javascript' 
-       # render :template => "promobars/script.js.erb" 
-     # end
-    #end
+#    render 'script', content_type: "application/javascript"
+    respond_to do |format|
+      format.js do
+        headers['Content-Type'] = 'text/javascript'
+        render :template => "promobars/script.js.erb"
+      end
+    end
   end
 
   private
