@@ -146,7 +146,7 @@ function saveBannerOrder(){
         alert("success");
       }
     });
-    alert("Banners order updated.");  
+    //alert("Banners order updated.");  
   });
   
 }
@@ -267,12 +267,6 @@ function saveBannerOrder(){
           <input class="promobar_switcher footer" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
           </td>
         </tr>
-      <% end %>
-
-      <% unless @promobars.where(bar_type: 2).any? %>
-          <tr>
-            <td colspan="7">No footer banners found.</td>
-          </tr>
       <% end %>
 
       <% @footers_off.each_with_index do |bar, i| %>
