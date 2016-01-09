@@ -22,7 +22,7 @@ class PromobarsController < AuthenticatedController
 
     respond_to do |format|
       if @promobar.save 
-        format.html { redirect_to root_url, notice: 'Promobar was successfully created.' }
+        format.html { redirect_to root_url(:protocol => 'https'), notice: 'Promobar was successfully created.' }
         format.json { render :show, status: :created, location: @promobar }
       else
         flash[:error] = @promobar.errors.full_messages
@@ -41,14 +41,14 @@ class PromobarsController < AuthenticatedController
       elsif params[:commit] == 'Hide'
         @promobar.update_attribute("promobar_show", false)
       elsif params[:commit] == 'Back'
-        format.html { redirect_to root_url }
+        format.html { redirect_to root_url(:protocol => 'https') }
       end
 
       @subheader = @promobar.subheader 
 
       if @promobar.update_attributes(promobar_params) 
-        format.html { redirect_to root_url, notice: 'Promobar was successfully updated.' }
-        format.json { redirect_to root_url, location: @promobar, notice: 'Promobar was successfully updated.' }
+        format.html { redirect_to root_url(:protocol => 'https'), notice: 'Promobar was successfully updated.' }
+        format.json { redirect_to root_url(:protocol => 'https'), location: @promobar, notice: 'Promobar was successfully updated.' }
       else
         flash[:error] = @promobar.errors.full_messages
         format.html { redirect_to :back }
@@ -62,7 +62,7 @@ class PromobarsController < AuthenticatedController
   def destroy
     @promobar.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Promobar was successfully deleted.' }
+      format.html { redirect_to root_url(:protocol => 'https'), notice: 'Promobar was successfully deleted.' }
       format.json { head :no_content }
     end
   end
