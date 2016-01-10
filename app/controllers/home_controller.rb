@@ -38,7 +38,7 @@ class HomeController < AuthenticatedController
       unless scripts.any?
         script = ShopifyAPI::ScriptTag.new
         script.event = "onload"
-        script.src = script_promobars_url+'.js'
+        script.src = script_promobars_url(:protocol => 'https')+'.js'
         script.save
 
         @counter = '1'
@@ -47,6 +47,5 @@ class HomeController < AuthenticatedController
 
 
     @sc = ShopifyAPI::ScriptTag.first || 'No scripts detected'
-
   end
 end

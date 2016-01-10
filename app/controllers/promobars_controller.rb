@@ -78,7 +78,7 @@ class PromobarsController < AuthenticatedController
     respond_to do |format|
       format.js do
         headers['Content-Type'] = 'text/javascript'
-        render :template => "promobars/script.js.erb"
+        render :template => "promobars/script.js.erb", :content_type => 'text/javascript'
       end
     end
   end
