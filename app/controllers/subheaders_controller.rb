@@ -24,7 +24,7 @@ class SubheadersController < ApplicationController
       @subheader.update_attributes(subheader_params)
       
       if @subheader.save
-        format.html { redirect_to root_url }
+        format.html { redirect_to root_url( :protocol => 'https') }
         format.json { redirect_to root_url, status: :ok }
       end
     end

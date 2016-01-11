@@ -1,6 +1,6 @@
-$('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">').prependTo('head');
+jQuery('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">').prependTo('head');
 
-$('<style> ' +
+jQuery('<style> ' +
   '.option {' +
   '-webkit-animation-iteration-count: 1;' +
   '-moz-animation-iteration-count: 1;' +
@@ -12,7 +12,7 @@ $('<style> ' +
 <% unless @header_promobars.empty? %>
   <% @header_promobars.each_with_index do |bar, index| %>
 
-    $('<div class="header-promo-bar<%= index %>" style="top: 0; width: 100%; height:50px;' +
+    jQuery('<div class="header-promo-bar<%= index %>" style="top: 0; width: 100%; height:50px;' +
       ' visibility: <%= bar.display_bar %>; ' +
       ' background: <%= bar.background_color %>; ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
@@ -26,25 +26,25 @@ $('<style> ' +
       ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').prependTo('body');
-    $('<script type="text/javascript"> ' + 
-        '$(document).ready(function () { ' +
-          '$("#header-promobar-x-button<%= index %>").click(function () { ' +
-             '$(".header-promo-bar<%= index %>").css("visibility", "hidden"); ' + 
+    jQuery('<script type="text/javascript"> ' + 
+        'jQuery(document).ready(function () { ' +
+          'jQuery("#header-promobar-x-button<%= index %>").click(function () { ' +
+             'jQuery(".header-promo-bar<%= index %>").css("visibility", "hidden"); ' + 
           '}); ' +
           'if (!<%= bar.enabled_on_mobile? %>) { ' +
             'if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { ' +
-              '$(".header-promo-bar<%= index %>").css("visibility", "hidden"); ' +
+              'jQuery(".header-promo-bar<%= index %>").css("visibility", "hidden"); ' +
             '} ' +
           '} ' +
         '}); ' +
     '</script>').appendTo('head');
-    $('<style> ' + 
+    jQuery('<style> ' + 
       '.header-promo-bar<%= index %> a:hover { ' +
       ' background-color: <%= bar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
     <% unless bar.subheader.nil? %>
-      $('.logo').before('<div class="subheader-promo-bar<%= index %>" ' +
+      jQuery('.logo').before('<div class="subheader-promo-bar<%= index %>" ' +
         ' style="float:left; width: 37%; height:40px; display: inline-block;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
@@ -64,28 +64,28 @@ $('<style> ' +
         ' style="display: <%= bar.subheader.display_x unless bar.subheader.nil? %>; float: right; border-radius: 5px;"' + 
         ' type="button">X</button> ' +
         ' </div>');
-      $('<style> ' + 
+      jQuery('<style> ' + 
         '.subheader-promo-bar<%= index %> a:hover { ' +
         ' background-color: <%= bar.subheader.button_hover %> !important;' +
         '}' + 
       '</style>').appendTo('head');
-      $('<script type="text/javascript"> ' + 
-        '$(document).ready(function () { ' +
-          '$("#subheader-promobar-x-button<%= index %>").click(function () { ' +
-             '$(".subheader-promo-bar<%= index %>").css("visibility", "hidden"); ' + 
+      jQuery('<script type="text/javascript"> ' + 
+        'jQuery(document).ready(function () { ' +
+          'jQuery("#subheader-promobar-x-button<%= index %>").click(function () { ' +
+             'jQuery(".subheader-promo-bar<%= index %>").css("visibility", "hidden"); ' + 
           '}); ' +
           'if (!<%= bar.subheader.enabled_on_mobile? %>) { ' +
             'if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { ' +
-              '$(".subheader-promo-bar<%= index %>").css("visibility", "hidden"); ' +
+              'jQuery(".subheader-promo-bar<%= index %>").css("visibility", "hidden"); ' +
             '} ' +
           '} ' +
         '}); ' +
     '</script>').appendTo('head');
     <% end %>
   <% end %>
-  $('<script type="text/javascript"> ' + 
-      '$(document).ready(function () { ' +
-        'var divs = $(\'div[class^="header-promo-bar"]\'); ' +
+  jQuery('<script type="text/javascript"> ' + 
+      'jQuery(document).ready(function () { ' +
+        'var divs = jQuery(\'div[class^="header-promo-bar"]\'); ' +
         'divs.hide(); ' +
         'var i; ' +
         'i = 0; ' +
@@ -97,9 +97,9 @@ $('<style> ' +
         '})(); ' +
       '}); ' +
     '</script>').appendTo('head');
-    $('<script type="text/javascript"> ' + 
-      '$(document).ready(function () { ' +
-        'var divs = $(\'div[class^="subheader-promo-bar"]\'); ' +
+    jQuery('<script type="text/javascript"> ' + 
+      'jQuery(document).ready(function () { ' +
+        'var divs = jQuery(\'div[class^="subheader-promo-bar"]\'); ' +
         'divs.hide(); ' +
         'var i; ' +
         'i = 0; ' +
@@ -116,7 +116,7 @@ $('<style> ' +
 <% end %>
 <% unless @footer_promobars.nil? %>
   <% @footer_promobars.each_with_index do |bar, index| %>
-    $('<div class="footer-promo-bar<%= index %>" style="bottom: 0; width: 100%; height:50px;' +
+    jQuery('<div class="footer-promo-bar<%= index %>" style="bottom: 0; width: 100%; height:50px;' +
       ' visibility: <%= bar.display_bar %>; ' +
       ' background: <%= bar.background_color %>; ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
@@ -130,27 +130,27 @@ $('<style> ' +
       ' <button id="footer-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').appendTo('body');
-    $('<script type="text/javascript"> ' + 
-        '$(document).ready(function () { ' +
-          '$("#footer-promobar-x-button<%= index %>").click(function () { ' +
-             '$(".footer-promo-bar<%= index %>").css("visibility", "hidden"); ' + 
+    jQuery('<script type="text/javascript"> ' + 
+        'jQuery(document).ready(function () { ' +
+          'jQuery("#footer-promobar-x-button<%= index %>").click(function () { ' +
+             'jQuery(".footer-promo-bar<%= index %>").css("visibility", "hidden"); ' + 
           '}); ' +
           'if (!<%= bar.enabled_on_mobile? %>) { ' +
             'if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { ' +
-              '$(".footer-promo-bar<%= index %>").css("visibility", "hidden"); ' +
+              'jQuery(".footer-promo-bar<%= index %>").css("visibility", "hidden"); ' +
             '} ' +
           '} ' +
         '}); ' +
     '</script>').appendTo('head');
-    $('<style> ' + 
+    jQuery('<style> ' + 
       '.footer-promo-bar<%= index %> a:hover { ' +
       ' background-color: <%= bar.button_hover %> !important;' +
       '}' + 
     '</style>').appendTo('head');
   <% end %>
-  $('<script type="text/javascript"> ' + 
-      '$(document).ready(function () { ' +
-        'var divs = $(\'div[class^="footer-promo-bar"]\'); ' +
+  jQuery('<script type="text/javascript"> ' + 
+      'jQuery(document).ready(function () { ' +
+        'var divs = jQuery(\'div[class^="footer-promo-bar"]\'); ' +
         'divs.hide(); ' +
         'var i; ' +
         'i = 0; ' +
