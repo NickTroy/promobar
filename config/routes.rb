@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get '/script' => 'promobars#script', :on => :collection
     resource :subheader
   end
-
+  get '/script' => 'script#script' 
   root :to => 'home#index'
 
   mount ShopifyApp::Engine, at: '/'
