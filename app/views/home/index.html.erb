@@ -99,7 +99,7 @@ $(function() {
     //alert(order_number);
     //$('.order_number' + id).text(order_number);
     
-    $.ajax("/promobar/promobars/" + id + ".json", {
+    $.ajax("/promobars/" + id + ".json", {
       type: 'POST',
       dataType: 'json',
       data: {
@@ -110,7 +110,7 @@ $(function() {
         alert("success");
       }
     });
-    $.ajax("/promobar/promobars/" + id + "/subheader.json", {
+    $.ajax("/promobars/" + id + "/subheader.json", {
       type: 'POST',
       dataType: 'json',
       data: {
@@ -135,7 +135,7 @@ function saveBannerOrder(){
       order_number = parseInt(order_number);
     }
     //alert("order_number " + order_number + " id " + id);
-    $.ajax("/promobar/promobars/" + id + ".json", {
+    $.ajax("/promobars/" + id + ".json", {
       type: 'POST',
       dataType: 'json',
       data: {
