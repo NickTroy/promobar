@@ -44,8 +44,8 @@ jQuery('<style> ' +
       '}' + 
     '</style>').appendTo('head');
     <% unless bar.subheader.nil? %>
-      jQuery('.logo').before('<div class="subheader-promo-bar<%= index %>" ' +
-        ' style="float:left; width: 37%; height:40px; display: inline-block;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
+      jQuery('.searchArea').before('<div class="subheader-promo-bar<%= index %>" ' +
+        ' style="float:left; width: 37%; height:40px; display: inline-block; margin-top: -30px;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
