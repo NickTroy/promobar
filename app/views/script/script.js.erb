@@ -124,7 +124,7 @@ jQuery('<style> ' +
       ' style="display: inline-block; "><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>; height:45px;' +
-      ' border-radius: 5px;"' +
+      ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
       ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.gsub("'","").gsub("\n","").gsub("\r","").html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="footer-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
