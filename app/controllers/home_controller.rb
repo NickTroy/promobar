@@ -47,5 +47,6 @@ class HomeController < AuthenticatedController
 
 
     @sc = ShopifyAPI::ScriptTag.first || 'No scripts detected'
+    render 'index.html.erb'
   end
 end
