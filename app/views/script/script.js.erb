@@ -18,7 +18,7 @@ jQuery('<style> ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; "><%= render html: bar.text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe %></h1>' +
+      ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>;height:45px; ' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
@@ -121,7 +121,7 @@ jQuery('<style> ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; "><%= render html: bar.text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe %></h1>' +
+      ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>; height:45px;' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
