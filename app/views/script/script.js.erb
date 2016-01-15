@@ -90,7 +90,7 @@ jQuery('<style> ' +
         'i = 0; ' +
         '(function cycle() { ' +
           'divs.eq(i).fadeIn(400) ' +
-                    '.delay(2000) ' +
+                    '.delay(<%= @change_time * 1000 %>) ' +
                     '.fadeOut(400, cycle); ' +
           'i = ++i % divs.length; '  +
         '})(); ' +
@@ -104,7 +104,7 @@ jQuery('<style> ' +
         'i = 0; ' +
         '(function cycle() { ' +
           'divs.eq(i).fadeIn(400) ' +
-                    '.delay(2000) ' +
+                    '.delay(<%= @change_time * 1000 %>) ' +
                     '.fadeOut(400, cycle); ' +
           'i = ++i % divs.length; '  +
         '})(); ' +
@@ -155,7 +155,7 @@ jQuery('<style> ' +
         'i = 0; ' +
         '(function cycle() { ' +
           'divs.eq(i).fadeIn(400) ' +
-                    '.delay(2000) ' +
+                    '.delay(<%= @change_time * 1000 %>) ' +
                     '.fadeOut(400, cycle); ' +
           'i = ++i % divs.length; '  +
         '})(); ' +

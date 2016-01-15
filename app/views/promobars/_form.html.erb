@@ -536,7 +536,7 @@
     </div>
 
   </div>
-
+  <div class="row">
     <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[text_animation]', "TEXT ANIMATION" %><br>
@@ -567,7 +567,16 @@
         <%= label_tag nil, "ENABLE X BUTTON" %>
         <%= f.check_box :x_button_on, class: "enable-x" %>
       </div>
+
+
     </div>
+    <div class="col-md-2 form-group">
+      <%= label_tag 'promobar[change_time]', "Change Time" %>
+      <%= f.number_field :change_time, class: "form-control", min: 1, max:20 %>
+    </div>
+  </div>
+
+
 
     <!--<div class="row">
       <div class="col-md-2">

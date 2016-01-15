@@ -19,7 +19,9 @@ class PromobarsController < AuthenticatedController
   def create
     @promobar = Promobar.new(promobar_params)
     @promobar.promobar_show = true
-
+    Promobar.all.each do |bar| 
+      bar.update_attributes(:change_time => promobar_params[:change_time])
+    end
     respond_to do |format|
       if @promobar.save 
         format.html { redirect_to root_url(:protocol => 'https'), notice: 'Promobar was successfully created.' }
@@ -45,6 +47,9 @@ class PromobarsController < AuthenticatedController
       end
 
       @subheader = @promobar.subheader 
+      Promobar.all.each do |bar|
+        bar.update_attributes(:change_time => promobar_params[:change_time])
+      end
 
       if @promobar.update_attributes(promobar_params) 
         format.html { redirect_to root_url(:protocol => 'https'), notice: 'Promobar was successfully updated.' }
@@ -92,7 +97,7 @@ class PromobarsController < AuthenticatedController
     # Never trust parameters from the scary internet, only allow the white list through.
     def promobar_params
       params.require(:promobar).permit(:bar_type,:name, :text, :background_color, :background_opacity, :promobar_show, :button_on, :button_text, :x_button_on, :order_number,
-                                       :button_shape, :button_color, :button_hover, :text_animation, :alignment, :url_link, :url_link_blank, :enable_on_mobile)
+                                       :button_shape, :button_color, :button_hover, :text_animation, :alignment, :url_link, :url_link_blank, :enable_on_mobile, :change_time)
     end
 
     def set_js_content_type

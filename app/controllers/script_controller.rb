@@ -6,6 +6,7 @@ class ScriptController < ApplicationController
 
     @header_promobars = Promobar.where(bar_type: 1)
     @footer_promobars = Promobar.where(bar_type: 2)
+    @change_time = @header_promobars.first.change_time
     #render 'script', content_type: "application/javascript"
     respond_to do |format|
       format.js do
