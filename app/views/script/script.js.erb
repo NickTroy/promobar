@@ -10,13 +10,19 @@ jQuery('<style> ' +
   '</style>').appendTo('head');
 
 <% unless @header_promobars.empty? %>
+  jQuery('<div class="header-promo" style="top: 0; width: 100%; height:50px;' +
+      ' visibility: <%= @header_promobars.first.display_bar %>; ' +
+      ' background: <%= @header_promobars.first.background_color %>; ' +
+      ' text-align: <%= @header_promobars.first.text_align(@header_promobars.first.alignment)%>; ' +
+      ' opacity: <%= (100 - @header_promobars.first.background_opacity) / 100.0 %>;">' +
+      '</div>').prependTo('body');
   <% @header_promobars.each_with_index do |bar, index| %>
 
-    jQuery('<div class="header-promo-bar<%= index %>" style="top: 0; width: 100%; height:50px;' +
-      ' visibility: <%= bar.display_bar %>; ' +
+    jQuery('<div class="header-promo-bar<%= index %>" style="top: 0; width: 100%; height:50px;">' +
+     /* ' visibility: <%= bar.display_bar %>; ' +
       ' background: <%= bar.background_color %>; ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
-      ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
+      ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +*/
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
       ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
@@ -25,7 +31,7 @@ jQuery('<style> ' +
       ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
-      ' type="button">X</button></div>').prependTo('body');
+      ' type="button">X</button></div>').prependTo('.header-promo');
     jQuery('<script type="text/javascript"> ' + 
         'jQuery(document).ready(function () { ' +
           'jQuery("#header-promobar-x-button<%= index %>").click(function () { ' +
