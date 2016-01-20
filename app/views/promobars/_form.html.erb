@@ -26,6 +26,7 @@
     $('.button_switcher').click(enable_save);
     $('.subheader_button_switcher').click(enable_subheader_save);
     $('#promobar_change_time').change(enable_save);
+    $('#promobar_height').change(enable_save);
   });
   
   function enable_save() {
@@ -387,6 +388,12 @@
         <%= f.hidden_field :background_opacity, class: "form-control bar-opacity-switcher" %>
       </div>
     </div>
+   <div class="col-md-3">
+     <div class="form-group">
+       <%= label_tag 'promobar[height]', 'SELECT BANNER HEIGHT:' %>
+       <%= f.select :height, { 'Big' => 2, 'Middle' =>  1 }, { selected: @promobar.height }, { :class => "form-control select-bar-height" } %>
+     </div>
+   </div>
 
   </div>
 

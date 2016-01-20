@@ -20,7 +20,10 @@ class Promobar < ActiveRecord::Base
   def text_align align
     { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }.key(align.to_i)
   end
-
+  
+  def promobar_height height
+    { '50px' => 1, '100px' => 2 }.key(height.to_i)
+  end
   def display_bar
     self.promobar_show ? 'visible' : 'hidden'
   end

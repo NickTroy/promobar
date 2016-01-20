@@ -10,21 +10,22 @@ jQuery('<style> ' +
   '</style>').appendTo('head');
 
 <% unless @header_promobars.empty? %>
-  jQuery('<div class="header-promo" style="top: 0; width: 100%; height:50px;' +
+  jQuery('<div class="header-promo" style="top: 0; width: 100%; height:<%= @header_promobars.first.promobar_height(@header_promobars.first.height) %>;' +
       ' visibility: <%= @header_promobars.first.display_bar %>; ' +
       ' background: <%= @header_promobars.first.background_color %>; ' +
       ' text-align: <%= @header_promobars.first.text_align(@header_promobars.first.alignment)%>; ' +
+      /*' padding: <%= @header_promobars.first.height == "2" ? "20px 0px" : "10px 0px"%>;' +*/
       ' opacity: <%= (100 - @header_promobars.first.background_opacity) / 100.0 %>;">' +
       '</div>').prependTo('body');
   <% @header_promobars.each_with_index do |bar, index| %>
 
-    jQuery('<div class="header-promo-bar<%= index %>" style="top: 0; width: 100%; height:50px;">' +
+    jQuery('<div class="header-promo-bar<%= index %>" style="top: 0; width: 100%; height: <%= @header_promobars.first.promobar_height(@header_promobars.first.height) %>;">' +
      /* ' visibility: <%= bar.display_bar %>; ' +
       ' background: <%= bar.background_color %>; ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +*/
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
+      ' style="display: inline-block; padding: <%= @header_promobars.first.height == "2" ? "20px 0px" : "10px 0px"%>;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>;height:45px; ' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
