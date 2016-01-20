@@ -24,11 +24,11 @@ jQuery('<style> ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +*/
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe %></h1>' +
+      ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>;height:45px; ' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
-      ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe unless bar.button_text.nil? %></a>' +
+      ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.gsub("'","").gsub("\n","").gsub("\r","").html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').prependTo('.header-promo');
@@ -57,14 +57,14 @@ jQuery('<style> ' +
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
         ' style="display:inline-block; margin-top:7px; width:70%;"> ' + 
         '<% unless bar.subheader.text.nil? %>'  +
-        '<% sub_text = raw(bar.subheader.text.gsub("'","").gsub("\n","<br></br>").gsub("\r","")) %> ' +
+        '<% sub_text = raw(bar.subheader.text.gsub("'","").gsub("\n","").gsub("\r","")) %> ' +
         ' <%= sub_text %> ' +
         '<% end %> ' +
         ' </h2><a href="' + '<%= bar.subheader.url_link %>' + '" target=<%= bar.subheader.link_blank %>' +  
         ' style="display: <%= bar.subheader.display_button %>; height:25px; margin-top:0px; ' +
         ' background-color: <%= bar.subheader.button_color %>; ' +
         ' border-radius: 5px;"' +
-        ' class="btn btn-sm btn-primary"><%= render html: bar.subheader.button_text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe unless bar.subheader.button_text.nil? %></a>' +
+        ' class="btn btn-sm btn-primary"><%= render html: bar.subheader.button_text.gsub("'","").gsub("\n","").gsub("\r","").html_safe unless bar.subheader.button_text.nil? %></a>' +
         ' <button id="subheader-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
         ' style="display: <%= bar.subheader.display_x unless bar.subheader.nil? %>; float: right; border-radius: 5px;"' + 
         ' type="button">X</button> ' +
@@ -134,11 +134,11 @@ jQuery('<style> ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe %></h1>' +
+      ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>; height:45px;' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
-      ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.gsub("'","").gsub("\n","<br></br>").gsub("\r","").html_safe unless bar.button_text.nil? %></a>' +
+      ' class="btn btn-sm btn-primary"><%= render html: bar.button_text.gsub("'","").gsub("\n", "").gsub("\r","").html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="footer-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
       ' type="button">X</button></div>').appendTo('.footer-promo');

@@ -19,8 +19,12 @@ class PromobarsController < AuthenticatedController
   def create
     @promobar = Promobar.new(promobar_params)
     @promobar.promobar_show = true
-    Promobar.all.each do |bar| 
-      bar.update_attributes(:change_time => promobar_params[:change_time])
+    if promobar_params[:change_time].nil? or promobar_params[:change_time] == ""
+      @promobar.change_time = Promobar.all.first.change_time
+    else
+      Promobar.all.each do |bar| 
+        bar.update_attributes(:change_time => promobar_params[:change_time])
+      end
     end
     respond_to do |format|
       if @promobar.save 
