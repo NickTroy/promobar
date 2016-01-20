@@ -9,7 +9,7 @@
         promobar_show = state;
         id = $(this).attr("id");
         $('form[id^="edit_subheader_"]').toggle();
-        $.ajax("/promobar/promobars/" + id + "/subheader.json", {
+        $.ajax("/promobars/" + id + "/subheader.json", {
           type: 'POST',
           dataType: 'json',
           data: {
