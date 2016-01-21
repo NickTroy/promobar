@@ -25,7 +25,7 @@ jQuery('<style> ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +*/
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; padding: <%= @header_promobars.first.height == "2" ? "20px 0px" : "10px 0px"%>;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
+      ' style="display: inline-block; padding: <%= @header_promobars.first.height == "2" ? "10px 0px" : "10px 0px"%>;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>;height:45px; ' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
@@ -51,7 +51,7 @@ jQuery('<style> ' +
       '}' + 
     '</style>').appendTo('head');
     <% unless bar.subheader.nil? %>
-      jQuery('.searchArea').before('<div class="subheader-promo-bar<%= index %>" ' +
+      jQuery('.searchArea').parent().prepend('<div class="subheader-promo-bar<%= index %>" ' +
         ' style="float:left; width: 37%; height:40px; display: inline-block; margin-top: -30px;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
@@ -91,6 +91,7 @@ jQuery('<style> ' +
   <% end %>
   jQuery('<script type="text/javascript"> ' + 
       'jQuery(document).ready(function () { ' +
+        'jQuery(".header-promo p").css({height: "35px"});' +
         'var divs = jQuery(\'div[class^="header-promo-bar"]\'); ' +
         'divs.hide(); ' +
         'var i; ' +

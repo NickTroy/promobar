@@ -4,8 +4,8 @@ class ScriptController < ApplicationController
     
     headers['Content-Type'] = 'application/javascript'
 
-    @header_promobars = Promobar.where(bar_type: 1)
-    @footer_promobars = Promobar.where(bar_type: 2)
+    @header_promobars = Promobar.where(bar_type: 1).order(:order_number)
+    @footer_promobars = Promobar.where(bar_type: 2).order(:order_number)
     @change_time = Promobar.all.first.change_time if Promobar.all.any?
     #render 'script', content_type: "application/javascript"
     respond_to do |format|
