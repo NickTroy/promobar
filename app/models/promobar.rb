@@ -1,7 +1,6 @@
 class Promobar < ActiveRecord::Base
   validates :name,
-            presence: true,
-            uniqueness: true
+            presence: true
 
   validates :url_link,
             :format => { with: /(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?/ix },
@@ -73,7 +72,8 @@ class Promobar < ActiveRecord::Base
     end
     
     def set_order_number
-      self.order_number = Promobar.where(bar_type: self.bar_type, promobar_show: true).count 
+      shop_domain = self.shop_domain
+      self.order_number = Promobar.where(bar_type: self.bar_type, promobar_show: true, shop_domain:self_shop_domain).count 
       self.save
     end
 

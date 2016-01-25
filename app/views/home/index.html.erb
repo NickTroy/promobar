@@ -197,7 +197,7 @@ function saveBannerOrder(){
             <a href="#" class="down">Down</a>
           </td>
           <td class="order_number<%= bar.id %> order"><%= bar.order_number %></td>
-          <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
+          <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
           <td><%= render html: bar.text.html_safe %></td>
           <td><%= bar.button_on ? "YES" : "NO"%></td>
           <td><%= bar.subheader.promobar_show ? "YES" : "NO" unless bar.subheader.nil? %></td> 
@@ -215,7 +215,7 @@ function saveBannerOrder(){
             <a href="#" class="down">Down</a>
           </td>
           <td class="order_number<%= bar.id %> order">-</td>
-          <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
+          <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
           <td><%= render html: bar.text.html_safe %></td>
           <td><%= bar.button_on ? "YES" : "NO"%></td>
           <td><%= bar.subheader.promobar_show ? "YES" : "NO" unless bar.subheader.nil? %></td> 
@@ -259,7 +259,7 @@ function saveBannerOrder(){
             <a href="#" class="down">Down</a>
           </td>
           <td class="order_number<%= bar.id %> order"><%= bar.order_number  %></td>
-          <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
+          <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
           <td><%= render html: bar.text.html_safe %></td>
           <td><%= bar.button_on ? "YES" : "NO"%></td>
           <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
@@ -276,7 +276,7 @@ function saveBannerOrder(){
             <a href="#" class="down">Down</a>
           </td>
           <td class="order_number<%= bar.id %> order">-</td>
-          <td><%= link_to bar.name, edit_promobar_path(bar) %></td>
+          <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
           <td><%= render html: bar.text.html_safe %></td>
           <td><%= bar.button_on ? "YES" : "NO"%></td>
           <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
@@ -295,7 +295,7 @@ function saveBannerOrder(){
       </tbody>
     </table>
 
-    <%= link_to 'ADD ANOTHER BANNER', new_promobar_path, class: 'btn btn-primary' %>
+    <%= link_to 'ADD ANOTHER BANNER', new_promobar_path(:shop_domain => params[:shop]), class: 'btn btn-primary' %>
     <input type="button" value="Save banners order" class="btn btn-success" onclick="saveBannerOrder()">
   </div>
   <%= @site_url %>

@@ -17,12 +17,18 @@ class PromobarsController < AuthenticatedController
   # POST /promobars
   # POST /promobars.json
   def create
+    if params[:commit] == 'Back'
+      redirect_to root_url(:protocol => 'https', :shop => params[:shop_domain])
+      return
+    end
     @promobar = Promobar.new(promobar_params)
     @promobar.promobar_show = true
-    if promobar_params[:change_time].nil? or promobar_params[:change_time] == ""
-      @promobar.change_time = Promobar.all.first.change_time
+    @promobar.shop_domain = params[:shop_domain]
+    @store_promobars = Promobar.where(:shop_domain => params[:shop_domain])
+    if (@store_promobars.any?) and (promobar_params[:change_time].nil? or promobar_params[:change_time] == "")
+      @promobar.change_time = @store_promobars.first.change_time
     else
-      Promobar.all.each do |bar| 
+      @store_promobars.all.each do |bar| 
         bar.update_attributes(:change_time => promobar_params[:change_time])
       end
     end
@@ -31,7 +37,7 @@ class PromobarsController < AuthenticatedController
     end
     respond_to do |format|
       if @promobar.save 
-        format.html { redirect_to root_url(:protocol => 'https'), notice: 'Promobar was successfully created.' }
+        format.html { redirect_to root_url(:protocol => 'https', :shop => params[:shop_domain]), notice: 'Promobar was successfully created.' }
         format.json { render :show, status: :created, location: @promobar }
       else
         flash[:error] = @promobar.errors.full_messages
@@ -50,17 +56,19 @@ class PromobarsController < AuthenticatedController
       elsif params[:commit] == 'Hide'
         @promobar.update_attribute("promobar_show", false)
       elsif params[:commit] == 'Back'
-        format.html { redirect_to root_url(:protocol => 'https') }
+        format.html { redirect_to root_url(:protocol => 'https', :shop => params[:shop_domain]) }
       end
 
       @subheader = @promobar.subheader 
-      Promobar.all.each do |bar|
-        bar.update_attributes(:change_time => promobar_params[:change_time]) unless promobar_params[:change_time].nil? or promobar_params[:change_time] == ""
+      @store_promobars = Promobar.where(:shop_domain => params[:shop_domain])
+      unless @store_promobars.empty? and promobar_params[:change_time] != "" and promobar_params[:change_time] != nil
+        @store_promobars.each do |bar|
+          bar.update_attributes(:change_time => promobar_params[:change_time])
+        end
       end
-
       if @promobar.update_attributes(promobar_params) 
-        format.html { redirect_to root_url(:protocol => 'https'), notice: 'Promobar was successfully updated.' }
-        format.json { redirect_to root_url(:protocol => 'https'), location: @promobar, notice: 'Promobar was successfully updated.' }
+        format.html { redirect_to root_url(:protocol => 'https', :shop => params[:shop_domain]), notice: 'Promobar was successfully updated.' }
+        format.json { redirect_to root_url(:protocol => 'https', :shop => params[:shop_domain]), location: @promobar, notice: 'Promobar was successfully updated.' }
       else
         flash[:error] = @promobar.errors.full_messages
         format.html { redirect_to :back }
@@ -74,7 +82,7 @@ class PromobarsController < AuthenticatedController
   def destroy
     @promobar.destroy
     respond_to do |format|
-      format.html { redirect_to root_url(:protocol => 'https'), notice: 'Promobar was successfully deleted.' }
+      format.html { redirect_to root_url(:protocol => 'https', :shop => params[:shop_domain]), notice: 'Promobar was successfully deleted.' }
       format.json { head :no_content }
     end
   end
