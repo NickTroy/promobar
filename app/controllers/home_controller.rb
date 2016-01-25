@@ -2,15 +2,15 @@ class HomeController < AuthenticatedController
   # GET /promobars
   # GET /promobars.json
   def index
-    @site_url = ShopifyAPI::Base.site.to_s
-    @promobars = Promobar.all
-    @headers = Promobar.where("bar_type = 1").order(:order_number)
-    @footers = Promobar.where("bar_type = 2").order(:order_number)
+    @site_url = params[:shop]
+    @promobars = Promobar.where(:shop_domain => params[:shop])
+    @headers = @promobars.where("bar_type = 1").order(:order_number)
+    @footers = @promobars.where("bar_type = 2").order(:order_number)
     
-    @headers_on = Promobar.where(promobar_show: true, bar_type: 1).order(:order_number)
-    @headers_off = Promobar.where(promobar_show: false, bar_type: 1)
-    @footers_on = Promobar.where(promobar_show: true, bar_type: 2).order(:order_number)
-    @footers_off = Promobar.where(promobar_show: false, bar_type: 2)
+    @headers_on = @promobars.where(promobar_show: true, bar_type: 1).order(:order_number)
+    @headers_off = @promobars.where(promobar_show: false, bar_type: 1)
+    @footers_on = @promobars.where(promobar_show: true, bar_type: 2).order(:order_number)
+    @footers_off = @promobars.where(promobar_show: false, bar_type: 2)
     
     1.upto(@footers_on.count) do |i|
       @footers_on[i-1].order_number = i 
@@ -39,7 +39,7 @@ class HomeController < AuthenticatedController
       unless scripts.any?
         script = ShopifyAPI::ScriptTag.new
         script.event = "onload"
-        script.src = script_url(:protocol => 'https')+'.js'
+        script.src = script_url(:protocol => 'https', :shop => params[:shop])+'.js'
         script.save
 
         @counter = '1'
