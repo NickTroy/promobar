@@ -2,6 +2,7 @@ class HomeController < AuthenticatedController
   # GET /promobars
   # GET /promobars.json
   def index
+    @site_url = ShopifyAPI::Base.site.to_s
     @promobars = Promobar.all
     @headers = Promobar.where("bar_type = 1").order(:order_number)
     @footers = Promobar.where("bar_type = 2").order(:order_number)
