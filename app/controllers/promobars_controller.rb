@@ -55,7 +55,7 @@ class PromobarsController < AuthenticatedController
 
       @subheader = @promobar.subheader 
       Promobar.all.each do |bar|
-        bar.update_attributes(:change_time => promobar_params[:change_time])
+        bar.update_attributes(:change_time => promobar_params[:change_time]) unless promobar_params[:change_time].nil? or promobar_params[:change_time] == ""
       end
 
       if @promobar.update_attributes(promobar_params) 

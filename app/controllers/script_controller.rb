@@ -3,10 +3,11 @@ class ScriptController < ApplicationController
   def script
     
     headers['Content-Type'] = 'application/javascript'
-
-    @header_promobars = Promobar.where(bar_type: 1).order(:order_number)
-    @footer_promobars = Promobar.where(bar_type: 2).order(:order_number)
-    @change_time = Promobar.all.first.change_time if Promobar.all.any?
+    @store_promobars = Promobar.where(:shop_domain => params[:shop])
+    @header_promobars = @store_promobars.where(bar_type: 1).order(:order_number)
+    @footer_promobars = @store_promobars.where(bar_type: 2).order(:order_number)
+    @change_time = @store_promobars.all.first.change_time if @store_promobars.any?
+    @change_time ||= 1000
     #render 'script', content_type: "application/javascript"
     respond_to do |format|
       format.js do
