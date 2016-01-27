@@ -73,7 +73,7 @@ class Promobar < ActiveRecord::Base
     
     def set_order_number
       shop_domain = self.shop_domain
-      self.order_number = Promobar.where(bar_type: self.bar_type, promobar_show: true, shop_domain:self_shop_domain).count 
+      self.order_number = Promobar.where(bar_type: self.bar_type, promobar_show: true, shop_domain:shop_domain).count 
       self.save
     end
 
