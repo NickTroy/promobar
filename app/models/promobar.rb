@@ -52,8 +52,10 @@ class Promobar < ActiveRecord::Base
     else 
       if self.promobar_link_blank == 0
         return "onclick=location.href='" + self.promobar_link + "';"
-      else
+      elsif !(self.promobar_link_blank.nil?)
         return "onclick=window.open('" + self.promobar_link + "','newWindow');"
+      else
+        return ""
       end
     end
   end 
