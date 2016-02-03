@@ -6,6 +6,9 @@ class Promobar < ActiveRecord::Base
             :format => { with: /(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?/ix },
             :allow_blank => true
 
+  validates :promobar_link,
+            :format => { with: /(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?/ix },
+            :allow_blank => true
 
   # before_save :generate_script
   after_destroy :script_cleanup
@@ -43,7 +46,17 @@ class Promobar < ActiveRecord::Base
     self.x_button_on == 1 ? 'inline-block' : 'none'
   end
 
- 
+  def promobar_link_onclick
+    if self.promobar_link == ""
+      return ""
+    else 
+      if self.promobar_link_blank == 0
+        return "onclick=location.href='" + self.promobar_link + "';"
+      else
+        return "onclick=window.open('" + self.promobar_link + "','newWindow');"
+      end
+    end
+  end 
   private
 
 =begin

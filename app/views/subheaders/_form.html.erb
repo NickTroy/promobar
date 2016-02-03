@@ -128,8 +128,8 @@
                 "Verdana=verdana,geneva;"+
                 "Webdings=webdings;"+
                 "Wingdings=wingdings,zapf dingbats; Open Sans='Open Sans', sans-serif;Playfair Display='Playfair Display', serif;",
-                toolbar: ["undo redo | removeformat bold italic underline | fontsizeselect | forecolor backcolor | fontselect | letterspacing"],
-                plugins: "textcolor,letterspacing"
+                toolbar: ["undo redo | removeformat bold italic underline | fontsizeselect | forecolor backcolor | fontselect | link | letterspacing"],
+                plugins: "textcolor,letterspacing,link"
               });
             } else {
               setTimeout(arguments.callee, 50);
@@ -238,7 +238,7 @@
 
       <div class="col-md-12">
         <div class="form-group">
-          <%= label_tag 'subheader[text_animation]', "SUBHEADER URL LINK" %><br>
+          <%= label_tag 'subheader[url_link]', "SUBHEADER BUTTON URL" %><br>
           <%= f.text_field :url_link, class: "form-control url-link" %>
         </div>
 

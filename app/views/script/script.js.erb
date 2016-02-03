@@ -19,7 +19,8 @@ jQuery('<style> ' +
       '</div>').prependTo('body');
   <% @header_promobars.each_with_index do |bar, index| %>
 
-    jQuery('<div class="header-promo-bar<%= index %>" style="visibility: <%= bar.display_bar %>; top: 0; width: 100%; height: <%= @header_promobars.first.promobar_height(@header_promobars.first.height) %>;">' +
+    jQuery('<div <%= bar.promobar_link_onclick %> class="header-promo-bar<%= index %>" style="visibility: <%= bar.display_bar %>; top: 0; width: 100;' + 
+      '<%= "cursor: pointer;" unless bar.promobar_link == "" %>height: <%= @header_promobars.first.promobar_height(@header_promobars.first.height) %>;">' +
      /* ' visibility: <%= bar.display_bar %>; ' +
       ' background: <%= bar.background_color %>; ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
