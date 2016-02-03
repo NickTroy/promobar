@@ -463,6 +463,14 @@
         <%= f.select :alignment, { 'CENTER' => 1, 'LEFT' =>  2, 'RIGHT' => 3 }, {}, { :class => "form-control bar-align-select" } %>
       </div>
     </div>
+    
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[text_animation]', "TEXT ANIMATION" %><br>
+        <%= f.select :text_animation, { 'FLY FROM LEFT' => 1, 'FADE IN' =>  2, 'BOUNCE' => 3 }, {}, { :class => "form-control text-animation-select" } %>
+      </div>
+    </div>
+    
     <div class="col-md-4">
       <div class="form-group">
         <%= label_tag nil, "ENABLE ON MOBILE DEVICES" %>
@@ -534,28 +542,28 @@
 
   <div class="row promobar-button-info">
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= label_tag 'promobar[button_color]', "BUTTON COLOR" %>
         <%= f.text_field :button_color, class: "form-control button-background-color" %>
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= label_tag 'promobar[button_hover]', "HOVER" %>
         <%= f.text_field :button_hover, class: "form-control button-hover" %>
       </div>
     </div>
     
-    <div class="col-md-4">
+    <div class="col-md-12">
       <div class="form-group">
         <%= label_tag 'promobar[url_link]', "BUTTON LINK" %><br>
         <%= f.text_field :url_link, class: "form-control url-link" %>
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= label_tag nil, "OPEN BUTTON LINK IN NEW TAB" %>
         <%= f.check_box :url_link_blank, class: "link-blank" %>
@@ -563,12 +571,6 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12">
-      <div class="form-group">
-        <%= label_tag 'promobar[text_animation]', "TEXT ANIMATION" %><br>
-        <%= f.select :text_animation, { 'FLY FROM LEFT' => 1, 'FADE IN' =>  2, 'BOUNCE' => 3 }, {}, { :class => "form-control text-animation-select" } %>
-      </div>
-    </div>
 
     <div class="col-md-12">
       
