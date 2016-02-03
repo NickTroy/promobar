@@ -131,7 +131,7 @@ jQuery('<style> ' +
       '</div>').appendTo('body');
 
   <% @footer_promobars.each_with_index do |bar, index| %>
-    jQuery('<div class="footer-promo-bar<%= index %>" style="bottom: 0; width: 100%; height:50px;' +
+    jQuery('<div <%= bar.promobar_link_onclick %> class="footer-promo-bar<%= index %>" style="bottom: 0; width: 100%; height:50px; <%= "cursor: pointer;" unless bar.promobar_link == "" %>' +
       ' visibility: <%= bar.display_bar %>; ' +
       ' background: <%= bar.background_color %>; ' +
       ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
