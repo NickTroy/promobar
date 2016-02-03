@@ -256,12 +256,21 @@
 
     </div>
     <div class="row">
-
       <div class="col-md-12">
+   
         <div class="form-group">
+          <%= label_tag 'subheader[subheader_link]', "WHOLE SUBHEADER LINK" %><br>
+          <%= f.text_field :subheader_link, class: "form-control subheader-link" %>
+        </div>
+
+  
+        <div class="form-group">
+          <%= label_tag nil, "OPEN WHOLE SUBHEADER LINK IN NEW TAB" %>
+          <%= f.check_box :subheader_link_blank, class: "link-blank" %><br>
           <%= label_tag nil, "ENABLE X BUTTON" %>
           <%= f.check_box :x_button_on, class: "enable-x" %>
         </div>
+
       </div>
 
       <div class="col-md-2">

@@ -13,20 +13,14 @@ jQuery('<style> ' +
   jQuery('<div class="header-promo" style="top: 0; width: 100%; height:<%= @header_promobars.first.promobar_height(@header_promobars.first.height) %>;' +
       ' visibility: <%= @header_promobars.first.display_bar %>; ' +
       ' background: <%= @header_promobars.first.background_color %>; ' +
-      /*' text-align: <%= @header_promobars.first.text_align(@header_promobars.first.alignment)%>; ' +
-      ' padding: <%= @header_promobars.first.height == "2" ? "20px 0px" : "10px 0px"%>;' +*/
       ' opacity: <%= (100 - @header_promobars.first.background_opacity) / 100.0 %>;">' +
       '</div>').prependTo('body');
   <% @header_promobars.each_with_index do |bar, index| %>
 
     jQuery('<div <%= bar.promobar_link_onclick %> class="header-promo-bar<%= index %>" style="visibility: <%= bar.display_bar %>; top: 0; width: 100;' + 
-      '<%= "cursor: pointer;" unless bar.promobar_link == "" %>' + 
+      '<%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' + 
       'text-align: <%= bar.text_align(bar.alignment)%>; ' +
       'height: <%= @header_promobars.first.promobar_height(@header_promobars.first.height) %>;">' +
-     /* ' visibility: <%= bar.display_bar %>; ' +
-      ' background: <%= bar.background_color %>; ' +
-      ' text-align: <%= bar.text_align(bar.alignment)%>; ' +
-      ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +*/
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
       ' style="display: inline-block; padding: <%= @header_promobars.first.height == "2" ? "10px 0px" : "10px 0px"%>;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
@@ -54,8 +48,9 @@ jQuery('<style> ' +
       '}' + 
     '</style>').appendTo('head');
     <% unless bar.subheader.nil? %>
-      jQuery('.searchArea').parent().prepend('<div class="subheader-promo-bar<%= index %>" ' +
+      jQuery('.searchArea').parent().prepend('<div <%= bar.subheader.subheader_link_onclick %> class="subheader-promo-bar<%= index %>" ' +
         ' style="float:left; width: 37%; height:40px; display: inline-block; margin-top: -30px;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
+        ' <%= "cursor: pointer;" unless bar.subheader.subheader_link == "" or bar.subheader.subheader_link.nil? %>' +
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
         ' <h2 class="<%= bar.animation(bar.subheader.text_animation) %>"' +
@@ -128,16 +123,12 @@ jQuery('<style> ' +
   jQuery('<div class="footer-promo" style="top: 0; width: 100%; height:50px;' +
       ' visibility: <%= @footer_promobars.first.display_bar %>; ' +
       ' background: <%= @footer_promobars.first.background_color %>; ' +
-      //' text-align: <%= @footer_promobars.first.text_align(@footer_promobars.first.alignment)%>; ' +
       ' opacity: <%= (100 - @footer_promobars.first.background_opacity) / 100.0 %>;">' +
       '</div>').appendTo('body');
 
   <% @footer_promobars.each_with_index do |bar, index| %>
-    jQuery('<div <%= bar.promobar_link_onclick %> class="footer-promo-bar<%= index %>" style="bottom: 0; width: 100%; height:50px; <%= "cursor: pointer;" unless bar.promobar_link == "" %>' +
-      //' visibility: <%= bar.display_bar %>; ' +
-      //' background: <%= bar.background_color %>; ' +
+    jQuery('<div <%= bar.promobar_link_onclick %> class="footer-promo-bar<%= index %>" style="bottom: 0; width: 100%; height:50px; <%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' +
       ' text-align: <%= bar.text_align(bar.alignment)%>;">' +
-      //' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
       ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  

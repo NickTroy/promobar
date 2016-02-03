@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203100357) do
+ActiveRecord::Schema.define(version: 20160203130622) do
 
   create_table "promobars", force: true do |t|
     t.integer  "bar_type"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 20160203100357) do
     t.boolean  "button_on"
     t.boolean  "promobar_show"
     t.integer  "x_button_on"
+    t.string   "subheader_link"
+    t.integer  "subheader_link_blank"
   end
 
   add_index "subheaders", ["promobar_id"], name: "index_subheaders_on_promobar_id", using: :btree
