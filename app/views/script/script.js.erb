@@ -10,19 +10,19 @@ jQuery('<style> ' +
   '</style>').appendTo('head');
 
 <% unless @header_promobars.empty? %>
-  jQuery('<div class="header-promo" style="top: 0; width: 100%; height:<%= @header_promobars.first.promobar_height(@header_promobars.first.height) %>;' +
-      ' visibility: <%= @header_promobars.first.display_bar %>; ' +
-      ' background: <%= @header_promobars.first.background_color %>; ' +
-      ' opacity: <%= (100 - @header_promobars.first.background_opacity) / 100.0 %>;">' +
+  jQuery('<div class="header-promo" style="top: 0; width: 100%; height:<%= @header_promobars.last.promobar_height(@header_promobars.last.height) %>;' +
+      ' visibility: <%= @header_promobars.last.display_bar %>; ' +
+      ' background: <%= @header_promobars.last.background_color %>; ' +
+      ' opacity: <%= (100 - @header_promobars.last.background_opacity) / 100.0 %>;">' +
       '</div>').prependTo('body');
   <% @header_promobars.each_with_index do |bar, index| %>
 
     jQuery('<div <%= bar.promobar_link_onclick %> class="header-promo-bar<%= index %>" style="visibility: <%= bar.display_bar %>; top: 0; width: 100;' + 
       '<%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' + 
       'text-align: <%= bar.text_align(bar.alignment)%>; ' +
-      'height: <%= @header_promobars.first.promobar_height(@header_promobars.first.height) %>;">' +
+      'height: <%= @header_promobars.last.promobar_height(@header_promobars.last.height) %>;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; padding: <%= @header_promobars.first.height == "2" ? "10px 0px" : "10px 0px"%>;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
+      ' style="display: inline-block; padding: <%= @header_promobars.last.height == "2" ? "10px 0px" : "10px 0px"%>;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>;height:45px; ' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
@@ -120,15 +120,17 @@ jQuery('<style> ' +
      
 <% end %>
 <% unless @footer_promobars.empty? %>
-  jQuery('<div class="footer-promo" style="top: 0; width: 100%; height:50px;' +
+  jQuery('<div class="footer-promo" style="top: 0; width: 100%; height: <%= @footer_promobars.first.promobar_height(@footer_promobars.first.height) %>;' +
       ' visibility: <%= @footer_promobars.first.display_bar %>; ' +
       ' background: <%= @footer_promobars.first.background_color %>; ' +
       ' opacity: <%= (100 - @footer_promobars.first.background_opacity) / 100.0 %>;">' +
       '</div>').appendTo('body');
 
   <% @footer_promobars.each_with_index do |bar, index| %>
-    jQuery('<div <%= bar.promobar_link_onclick %> class="footer-promo-bar<%= index %>" style="bottom: 0; width: 100%; height:50px; <%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' +
-      ' text-align: <%= bar.text_align(bar.alignment)%>;">' +
+    jQuery('<div <%= bar.promobar_link_onclick %> class="footer-promo-bar<%= index %>" style="visibility: <%= bar.display_bar %>; top: 0; width: 100;' + 
+      '<%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' + 
+      'text-align: <%= bar.text_align(bar.alignment)%>; ' +
+      'height: <%= @footer_promobars.first.promobar_height(@footer_promobars.first.height) %>;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
       ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
