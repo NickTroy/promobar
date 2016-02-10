@@ -38,7 +38,7 @@ class HomeController < AuthenticatedController
       unless scripts.any?
         script = ShopifyAPI::ScriptTag.new
         script.event = "onload"
-        script.src = script_url(:protocol => 'https', :shop => params[:shop])+'.js'
+        script.src = script_url(:protocol => 'https', :shop => params[:shop])
         script.save
 
         @counter = '1'
