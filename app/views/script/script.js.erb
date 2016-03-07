@@ -39,7 +39,7 @@ jQuery('<style> ' +
           '}); ' +
           'if (!<%= bar.enabled_on_mobile? %>) { ' +
             'if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { ' +
-              'jQuery(".header-promo-bar<%= index %>").css("visibility", "hidden"); ' +
+              'jQuery(".header-promo-bar<%= index %>").remove();' +
             '} ' +
           '} ' +
         '}); ' +
@@ -82,7 +82,7 @@ jQuery('<style> ' +
           '}); ' +
           'if (!<%= bar.subheader.enabled_on_mobile? %>) { ' +
             'if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { ' +
-              'jQuery(".subheader-promo-bar<%= index %>").css("visibility", "hidden"); ' +
+              'jQuery(".subheader-promo-bar<%= index %>").remove();' +
             '} ' +
           '} ' +
         '}); ' +
@@ -151,7 +151,7 @@ jQuery('<style> ' +
           '}); ' +
           'if (!<%= bar.enabled_on_mobile? %>) { ' +
             'if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { ' +
-              'jQuery(".footer-promo-bar<%= index %>").css("visibility", "hidden"); ' +
+              'jQuery(".footer-promo-bar<%= index %>").remove();' +
             '} ' +
           '} ' +
         '}); ' +
