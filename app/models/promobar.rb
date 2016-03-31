@@ -24,7 +24,10 @@ class Promobar < ActiveRecord::Base
   end
   
   def promobar_height height
-    { '50px' => 1, '100px' => 2 }.key(height.to_i)
+    { '100px' => 1, '100px' => 2 }.key(height.to_i)
+  end
+  def line_height height
+    { '100px' => 1, '45px' => 2 }.key(height.to_i)
   end
   def display_bar
     self.promobar_show ? 'visible' : 'hidden'

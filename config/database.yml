@@ -1,38 +1,25 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-# 
-default: &default
- adapter: sqlite3
- pool: 5
- timeout: 5000
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: promobar_db
+  username: root
+  password: ''
+  host: localhost
+  socket: /var/lib/mysql/mysql.sock
 
 development:
   adapter: mysql2
   encoding: utf8
   database: promobar_db
+  username: root
+  password: ''
   host: localhost
-  username: promobar
-  password: rlREm91btH
   socket: /var/lib/mysql/mysql.sock
-
 test:
-  <<: *default
-  database: db/test.sqlite3
-#
-production:
   adapter: mysql2
   encoding: utf8
-  database: promobar_db
+  database: promobar_test_db
+  username: root
+  password: ''
   host: localhost
-  username: promobar
-  password: rlREm91btH
   socket: /var/lib/mysql/mysql.sock
-#         SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#

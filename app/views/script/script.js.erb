@@ -7,6 +7,9 @@ jQuery('<style> ' +
   '-o-animation-iteration-count: 1;' +
   '-ms-animation-iteration-count: 1;' +
   '}' +
+  'div[class^="header-promo-bar"] h1 p {' +
+  ' padding-bottom: 0px !important;' +
+  '} ' +
   '</style>').appendTo('head');
 
 <% unless @header_promobars.empty? %>
@@ -22,9 +25,10 @@ jQuery('<style> ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' + 
       '<%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' + 
       'text-align: <%= bar.text_align(bar.alignment)%>; ' +
-      'height: <%= @header_promobars.last.promobar_height(@header_promobars.last.height) %>;">' +
+      'height: 100px">' +  
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; padding: <%= @header_promobars.last.height == "2" ? "10px 0px" : "10px 0px"%>;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
+      ' style="display: inline-block; padding-bottom: 0px !important;' +
+      ' line-height: <%= bar.line_height(bar.height) %>"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>;height:45px; ' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
@@ -134,9 +138,10 @@ jQuery('<style> ' +
       ' background: <%= bar.background_color %>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
       'text-align: <%= bar.text_align(bar.alignment)%>; ' +
-      'height: <%= @footer_promobars.first.promobar_height(@footer_promobars.first.height) %>;">' +
+      'height: 100px;">' +
       ' <h1 class="<%= bar.animation(bar.text_animation) %>" ' +
-      ' style="display: inline-block; padding: 10px 0px;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
+      ' style="display: inline-block; padding-bottom: 0px !important;' + 
+      ' line-height: <%= bar.line_height(bar.height) %>;"><%= render html: bar.text.gsub("'","").gsub("\n","").gsub("\r","").html_safe %></h1>' +
       ' <a href="' + '<%= bar.url_link %>' + '" target=<%= bar.link_blank %>' +  
       ' style="display: <%= bar.display_button %>; height:45px;' +
       ' background-color: <%= bar.button_color %>; border-radius: 5px;"' +
