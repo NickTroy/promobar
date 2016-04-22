@@ -29,6 +29,7 @@
     $('.subheader_button_switcher').click(enable_subheader_save);
     $('#promobar_change_time').change(enable_save);
     $('#promobar_height').change(enable_save);
+    $('.custom_css').on('input', enable_save);
   });
   
   function enable_save() {
@@ -456,6 +457,12 @@
         </script>
         
 
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= label_tag 'promobar[custom_css]', 'ADD CUSTOM CLASS' %><br>
+        <%= f.text_area :custom_css, :class => "form-control custom_css" %>
       </div>
     </div>
     <div class="col-md-12">

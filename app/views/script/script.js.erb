@@ -10,6 +10,9 @@ jQuery('<style> ' +
   'div[class^="header-promo-bar"] h1 p {' +
   ' padding-bottom: 0px !important;' +
   '} ' +
+  '[class^="subheader-promo-bar"] p {' +
+  ' line-height: 5px;' +
+  '}' +
   '</style>').appendTo('head');
 
 <% unless @header_promobars.empty? %>
@@ -20,7 +23,7 @@ jQuery('<style> ' +
       '</div>').prependTo('body');*/
   <% @header_promobars.each_with_index do |bar, index| %>
 
-    jQuery('<div <%= bar.promobar_link_onclick %> class="header-promo-bar<%= index %>" style="visibility: <%= bar.display_bar %>; top: 0; width: 100;' +
+    jQuery('<div <%= bar.promobar_link_onclick %> class="header-promo-bar<%= index %> <%= bar.custom_css unless bar.custom_css.nil? %>" style="visibility: <%= bar.display_bar %>; top: 0; width: 100;' +
       ' background: <%= bar.background_color %>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' + 
       '<%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' + 
