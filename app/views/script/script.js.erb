@@ -7,11 +7,12 @@ jQuery('<style> ' +
   '-o-animation-iteration-count: 1;' +
   '-ms-animation-iteration-count: 1;' +
   '}' +
-  'div[class^="header-promo-bar"] h1 p {' +
+  'div[class^="header-promo-bar"] h1 p, div[class^="footer-promo-bar"] h1 p {' +
   ' padding-bottom: 0px !important;' +
   '} ' +
   '[class^="subheader-promo-bar"] p {' +
-  ' line-height: 5px;' +
+  ' line-height: 20px;' +
+  ' padding-bottom: 0px !important;' +
   '}' +
   '</style>').appendTo('head');
 
@@ -58,7 +59,7 @@ jQuery('<style> ' +
     '</style>').appendTo('head');
     <% unless bar.subheader.nil? %>
       jQuery('.searchArea').parent().prepend('<div <%= bar.subheader.subheader_link_onclick %> class="subheader-promo-bar<%= index %>" ' +
-        ' style="float:left; width: 37%; height:40px; display: inline-block; margin-top: -30px;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
+        ' style="float:left; width: 45%; height:40px; display: inline-block; margin-top: -30px;  text-align: <%= bar.subheader.text_align(bar.subheader.alignment)%>;' +
         ' <%= "cursor: pointer;" unless bar.subheader.subheader_link == "" or bar.subheader.subheader_link.nil? %>' +
         ' visibility: <%= bar.subheader.display_bar %>; opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
         ' background: <%= bar.subheader.background_color %>;">' +
@@ -136,7 +137,7 @@ jQuery('<style> ' +
       '</div>').appendTo('body');*/
 
   <% @footer_promobars.each_with_index do |bar, index| %>
-    jQuery('<div <%= bar.promobar_link_onclick %> class="footer-promo-bar<%= index %>" style="visibility: <%= bar.display_bar %>; top: 0; width: 100;' + 
+    jQuery('<div <%= bar.promobar_link_onclick %> class="footer-promo-bar<%= index %>" style="visibility: <%= bar.display_bar %>; width: 100;' + 
       '<%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' + 
       ' background: <%= bar.background_color %>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
