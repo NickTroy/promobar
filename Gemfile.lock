@@ -177,7 +177,7 @@ DEPENDENCIES
   coffee-script-source (= 1.8.0)
   jbuilder (~> 2.0)
   jquery-minicolors-rails
-  jquery-rails
+  jquery-rails (= 3.1.4)
   jquery-ui-rails
   mysql2 (~> 0.3.18)
   pry
