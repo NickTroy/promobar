@@ -14,7 +14,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui
-//= require jquery-ui-rails
 //= require turbolinks
 //= require jquery.minicolors
 //= require bootstrap-switch
