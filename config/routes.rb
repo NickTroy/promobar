@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # resources :promobars, constraints: { format: :html } do
+  resources :locks, only: [:update]
   resources :promobars do
     get '/script' => 'promobars#script', :on => :collection
     resource :subheader

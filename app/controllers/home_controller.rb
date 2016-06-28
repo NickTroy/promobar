@@ -44,7 +44,8 @@ class HomeController < AuthenticatedController
         @counter = '1'
       end
     end
-
+    
+    @lock = Lock.first
 
     @sc = ShopifyAPI::ScriptTag.first || 'No scripts detected'
     render 'index.html.erb'

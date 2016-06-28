@@ -50,6 +50,36 @@ $(document).ready(function(){
       swapRows(row.next(), row);
     }
   });
+  $("#tabs").tabs();
+  
+  //lock feature 
+  $('.lock_turned_on').bootstrapSwitch();
+  
+  $('.lock_color').minicolors({
+    theme: 'bootstrap'
+  });
+  
+  $('.save_lock_feature').click(function(e){
+    e.preventDefault();
+    var turned_on = $('.lock_turned_on').bootstrapSwitch("state");
+    var color = $('.lock_color').val();
+    var disable_transition = $('.lock_disable_transition').prop("checked");
+    $.ajax({
+      url: "<%= lock_url(protocol: 'https', id: @lock.id) %>",
+      method: "POST",
+      data: {
+        _method: "PUT",
+        lock: {
+          turned_on: turned_on,
+          color: color,
+          disable_transition
+        }
+      },
+      success: function(){
+        alert("success")
+      }
+    })
+  })
 });
 
 $(function() {
@@ -152,150 +182,191 @@ function saveBannerOrder(){
 }
 
 </script>
-
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Promo bars</h3>
-  </div>
-  <div class="panel-body">
-    <% if notice %>
-      <div class="alert alert-success" role="alert">
-        <%= notice %>
+  
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Promobars Listing</a></li>
+    <li><a href="#tabs-2">Lock Promobars</a></li>
+  </ul>
+  <div id="tabs-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Promo bars</h3>
       </div>
-    <% end %>
-    <!--<p>Script counter: <%#= @counter %></p>-->
-
-    <%# if @sc.is_a? String %>
-      <!--<p><%#= @sc %></p>-->
-    <%# else %>
-      <!--<p>Script attributes: <%#= @sc.attributes.inspect %></p>-->
-    <%# end %>
-
-    <table class="table table-bordered table-striped table-hover headers-table" style="text-align:center;">
-      <caption style="text-align:center;">
-        HEADER BANNERS
-      </caption>
-      <thead>
-      <tr>
-        <th></th>
-        <th>ORDER NUMBER</th>
-        <th>BAR TITLE</th>
-        <th>BAR TEXT</th>
-        <th>BUTTON</th>
-        <th>SUB-HEADER</th>
-        <th>DATE</th>
-        <th>ON/OFF</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <% @headers_on.each_with_index do |bar, i| %>
-        <tr class="<%= bar.promobar_show ? "on" : "off" %>">
-          <td>
-            <a href="#" class="up">Up</a>
-            <a href="#" class="down">Down</a>
-          </td>
-          <td class="order_number<%= bar.id %> order"><%= bar.order_number %></td>
-          <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
-          <td><%= render html: bar.text.html_safe %></td>
-          <td><%= bar.button_on ? "YES" : "NO"%></td>
-          <td><%= bar.subheader.promobar_show ? "YES" : "NO" unless bar.subheader.nil? %></td> 
-          <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
-          <td>
-          <input class="promobar_switcher header" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
-          </td>
-        </tr>
-      <% end %>
-
-      <% @headers_off.each_with_index do |bar, i| %>
-        <tr class="<%= bar.promobar_show ? "on" : "off" %>">
-          <td>
-            <a href="#" class="up">Up</a>
-            <a href="#" class="down">Down</a>
-          </td>
-          <td class="order_number<%= bar.id %> order">-</td>
-          <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
-          <td><%= render html: bar.text.html_safe %></td>
-          <td><%= bar.button_on ? "YES" : "NO"%></td>
-          <td><%= bar.subheader.promobar_show ? "YES" : "NO" unless bar.subheader.nil? %></td> 
-          <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
-          <td>
-          <input class="promobar_switcher header" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
-          </td>
-        </tr>
-      <% end %>
-
-      <% unless @promobars.where(bar_type: 1).any? %>
+      <div class="panel-body">
+        <% if notice %>
+          <div class="alert alert-success" role="alert">
+            <%= notice %>
+          </div>
+        <% end %>
+        <!--<p>Script counter: <%#= @counter %></p>-->
+    
+        <%# if @sc.is_a? String %>
+          <!--<p><%#= @sc %></p>-->
+        <%# else %>
+          <!--<p>Script attributes: <%#= @sc.attributes.inspect %></p>-->
+        <%# end %>
+    
+        <table class="table table-bordered table-striped table-hover headers-table" style="text-align:center;">
+          <caption style="text-align:center;">
+            HEADER BANNERS
+          </caption>
+          <thead>
           <tr>
-            <td colspan="7">No header banners found.</td>
+            <th></th>
+            <th>ORDER NUMBER</th>
+            <th>BAR TITLE</th>
+            <th>BAR TEXT</th>
+            <th>BUTTON</th>
+            <th>SUB-HEADER</th>
+            <th>DATE</th>
+            <th>ON/OFF</th>
           </tr>
-      <% end %>
-
-      </tbody>
-    </table>
-
-    <table class="table table-bordered table-striped table-hover footers-table" style="text-align:center;">
-      <caption style="text-align:center;">
-        FOOTER BANNERS
-      </caption>
-      <thead>
-      <tr>
-        <th></th>
-        <th>ORDER NUMBER</th>
-        <th>BAR TITLE</th>
-        <th>BAR TEXT</th>
-        <th>BUTTON</th>
-        <th>DATE</th>
-        <th>ON/OFF</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <% @footers_on.each_with_index do |bar, i| %>
-        <tr class="<%= bar.promobar_show ? "on" : "off" %>">
-          <td>
-            <a href="#" class="up">Up</a>
-            <a href="#" class="down">Down</a>
-          </td>
-          <td class="order_number<%= bar.id %> order"><%= bar.order_number  %></td>
-          <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
-          <td><%= render html: bar.text.html_safe %></td>
-          <td><%= bar.button_on ? "YES" : "NO"%></td>
-          <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
-          <td>
-          <input class="promobar_switcher footer" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
-          </td>
-        </tr>
-      <% end %>
-
-      <% @footers_off.each_with_index do |bar, i| %>
-        <tr class="<%= bar.promobar_show ? "on" : "off" %>">
-          <td>
-            <a href="#" class="up">Up</a>
-            <a href="#" class="down">Down</a>
-          </td>
-          <td class="order_number<%= bar.id %> order">-</td>
-          <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
-          <td><%= render html: bar.text.html_safe %></td>
-          <td><%= bar.button_on ? "YES" : "NO"%></td>
-          <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
-          <td>
-          <input class="promobar_switcher footer" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
-          </td>
-        </tr>
-      <% end %>
-
-      <% unless @promobars.where(bar_type: 2).any? %>
+          </thead>
+    
+          <tbody>
+          <% @headers_on.each_with_index do |bar, i| %>
+            <tr class="<%= bar.promobar_show ? "on" : "off" %>">
+              <td>
+                <a href="#" class="up">Up</a>
+                <a href="#" class="down">Down</a>
+              </td>
+              <td class="order_number<%= bar.id %> order"><%= bar.order_number %></td>
+              <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
+              <td><%= render html: bar.text.html_safe %></td>
+              <td><%= bar.button_on ? "YES" : "NO"%></td>
+              <td><%= bar.subheader.promobar_show ? "YES" : "NO" unless bar.subheader.nil? %></td> 
+              <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+              <td>
+              <input class="promobar_switcher header" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
+              </td>
+            </tr>
+          <% end %>
+    
+          <% @headers_off.each_with_index do |bar, i| %>
+            <tr class="<%= bar.promobar_show ? "on" : "off" %>">
+              <td>
+                <a href="#" class="up">Up</a>
+                <a href="#" class="down">Down</a>
+              </td>
+              <td class="order_number<%= bar.id %> order">-</td>
+              <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
+              <td><%= render html: bar.text.html_safe %></td>
+              <td><%= bar.button_on ? "YES" : "NO"%></td>
+              <td><%= bar.subheader.promobar_show ? "YES" : "NO" unless bar.subheader.nil? %></td> 
+              <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+              <td>
+              <input class="promobar_switcher header" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
+              </td>
+            </tr>
+          <% end %>
+    
+          <% unless @promobars.where(bar_type: 1).any? %>
+              <tr>
+                <td colspan="7">No header banners found.</td>
+              </tr>
+          <% end %>
+    
+          </tbody>
+        </table>
+    
+        <table class="table table-bordered table-striped table-hover footers-table" style="text-align:center;">
+          <caption style="text-align:center;">
+            FOOTER BANNERS
+          </caption>
+          <thead>
           <tr>
-            <td colspan="7">No footer banners found.</td>
+            <th></th>
+            <th>ORDER NUMBER</th>
+            <th>BAR TITLE</th>
+            <th>BAR TEXT</th>
+            <th>BUTTON</th>
+            <th>DATE</th>
+            <th>ON/OFF</th>
           </tr>
-      <% end %>
-
-      </tbody>
-    </table>
-
-    <%= link_to 'ADD ANOTHER BANNER', new_promobar_path(:shop_domain => params[:shop]), class: 'btn btn-primary' %>
-    <input type="button" value="Save banners order" class="btn btn-success" onclick="saveBannerOrder()">
+          </thead>
+    
+          <tbody>
+          <% @footers_on.each_with_index do |bar, i| %>
+            <tr class="<%= bar.promobar_show ? "on" : "off" %>">
+              <td>
+                <a href="#" class="up">Up</a>
+                <a href="#" class="down">Down</a>
+              </td>
+              <td class="order_number<%= bar.id %> order"><%= bar.order_number  %></td>
+              <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
+              <td><%= render html: bar.text.html_safe %></td>
+              <td><%= bar.button_on ? "YES" : "NO"%></td>
+              <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+              <td>
+              <input class="promobar_switcher footer" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
+              </td>
+            </tr>
+          <% end %>
+    
+          <% @footers_off.each_with_index do |bar, i| %>
+            <tr class="<%= bar.promobar_show ? "on" : "off" %>">
+              <td>
+                <a href="#" class="up">Up</a>
+                <a href="#" class="down">Down</a>
+              </td>
+              <td class="order_number<%= bar.id %> order">-</td>
+              <td><%= link_to bar.name, edit_promobar_path(bar, :shop_domain => params[:shop]) %></td>
+              <td><%= render html: bar.text.html_safe %></td>
+              <td><%= bar.button_on ? "YES" : "NO"%></td>
+              <td ><%= bar.updated_at == bar.created_at ? 'Created: ' + bar.created_at.to_s: 'Updated: ' + bar.updated_at.to_s %></td>
+              <td>
+              <input class="promobar_switcher footer" id=<%="#{bar.id}"%> type="checkbox" <%= !bar.promobar_show ? "" : "checked" %> />
+              </td>
+            </tr>
+          <% end %>
+    
+          <% unless @promobars.where(bar_type: 2).any? %>
+              <tr>
+                <td colspan="7">No footer banners found.</td>
+              </tr>
+          <% end %>
+    
+          </tbody>
+        </table>
+    
+        <%= link_to 'ADD ANOTHER BANNER', new_promobar_path(:shop_domain => params[:shop]), class: 'btn btn-primary' %>
+        <input type="button" value="Save banners order" class="btn btn-success" onclick="saveBannerOrder()">
+      </div>
+    </div>
+  </div>
+  
+  <div id="tabs-2">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row lock_feature_form">
+          <div class="col-md-3 text-center">
+            <div class="form-group">
+              <label>Turn ON/OFF Lock Feature</label>
+              <input type="checkbox" class="form-control lock_turned_on" <%= @lock.turned_on ? "checked" : "" %>>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="form-group">
+              <label>Promobars background</label>
+              <input type="text" class="form-control lock_color" value="<%= @lock.color %>">
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="form-group">
+              <label>Disable Transition Between Promobars</label>
+              <input type="checkbox" class="form-control lock_disable_transition" <%= @lock.disable_transition ? "checked" : "" %>>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <br>
+            <button class="btn btn-info save_lock_feature">
+              Save Lock Feature Parameters
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+        

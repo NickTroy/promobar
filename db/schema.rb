@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422102117) do
+ActiveRecord::Schema.define(version: 20160628122735) do
+
+  create_table "locks", force: true do |t|
+    t.boolean  "turned_on",          default: false
+    t.string   "color",              default: "#000000"
+    t.boolean  "disable_transition", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "promobars", force: true do |t|
     t.integer  "bar_type"

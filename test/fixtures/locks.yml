@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  turned_on: false
+  color: MyString
+  disable_transition: false
+
+two:
+  turned_on: false
+  color: MyString
+  disable_transition: false
