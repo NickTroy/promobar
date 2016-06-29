@@ -17,15 +17,17 @@ jQuery('<style> ' +
   '</style>').appendTo('head');
 
 <% unless @header_promobars.empty? %>
-  /*jQuery('<div class="header-promo" style="top: 0; width: 100%; height:<%= @header_promobars.last.promobar_height(@header_promobars.last.height) %>;' +
-      ' visibility: <%= @header_promobars.last.display_bar %>; ' +
-      ' background: <%= @header_promobars.last.background_color %>; ' +
-      ' opacity: <%= (100 - @header_promobars.last.background_opacity) / 100.0 %>;">' +
-      '</div>').prependTo('body');*/
+  var header_append_node = jQuery('body');
+  <% if @lock.turned_on %>
+  jQuery('<div class="header-promo" style="top: 0; width: 100%; height:<%= @header_promobars.last.promobar_height(@header_promobars.last.height) %>;' +
+      ' background: <%= @lock.color %>; ">' +
+      '</div>').prependTo('body');
+  header_append_node = jQuery('.header-promo');
+  <% end %>
   <% @header_promobars.each_with_index do |bar, index| %>
 
     jQuery('<div <%= bar.promobar_link_onclick %> class="header-promo-bar<%= index %> <%= bar.custom_css unless bar.custom_css.nil? %>" style="visibility: <%= bar.display_bar %>; top: 0; width: 100;' +
-      ' background: <%= bar.background_color %>; ' +
+      ' background: <%= @lock.turned_on ? "" : bar.background_color %>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' + 
       '<%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' + 
       'text-align: <%= bar.text_align(bar.alignment)%>; ' +
@@ -39,7 +41,7 @@ jQuery('<style> ' +
       ' class="btn btn-sm btn-primary promobar-button"><%= render html: bar.button_text.gsub("'","&#39;").gsub("\n","").gsub("\r","").html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="header-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
-      ' type="button">X</button></div>').prependTo('body');
+      ' type="button">X</button></div>').prependTo(header_append_node);
     jQuery('<script type="text/javascript"> ' + 
         'jQuery(document).ready(function () { ' +
           'jQuery("#header-promobar-x-button<%= index %>").click(function () { ' +
@@ -105,9 +107,15 @@ jQuery('<style> ' +
         'var i; ' +
         'i = 0; ' +
         '(function cycle() { ' +
+          <% if @lock.turned_on and @lock.disable_transition %>
+          'divs.eq(i).fadeIn(50) ' +
+                    '.delay(<%= @change_time * 1000 %>) ' +
+                    '.fadeOut(50, cycle); ' +
+          <% else %>
           'divs.eq(i).fadeIn(400) ' +
                     '.delay(<%= @change_time * 1000 %>) ' +
                     '.fadeOut(400, cycle); ' +
+          <% end %>
           'i = ++i % divs.length; '  +
         '})(); ' +
       '}); ' +
@@ -130,16 +138,17 @@ jQuery('<style> ' +
      
 <% end %>
 <% unless @footer_promobars.empty? %>
-  /*jQuery('<div class="footer-promo" style="top: 0; width: 100%; height: <%= @footer_promobars.first.promobar_height(@footer_promobars.first.height) %>;' +
-      ' visibility: <%= @footer_promobars.first.display_bar %>; ' +
-      ' background: <%= @footer_promobars.first.background_color %>; ' +
-      ' opacity: <%= (100 - @footer_promobars.first.background_opacity) / 100.0 %>;">' +
-      '</div>').appendTo('body');*/
-
+  var footer_append_node = jQuery('body');
+  <% if @lock.turned_on %>
+  jQuery('<div class="footer-promo" style="top: 0; width: 100%; height:<%= @footer_promobars.last.promobar_height(@footer_promobars.last.height) %>;' +
+      ' background: <%= @lock.color %>; ">' +
+      '</div>').appendTo('body');
+  footer_append_node = jQuery('.footer-promo');
+  <% end %>
   <% @footer_promobars.each_with_index do |bar, index| %>
     jQuery('<div <%= bar.promobar_link_onclick %> class="footer-promo-bar<%= index %>" style="visibility: <%= bar.display_bar %>; width: 100;' + 
       '<%= "cursor: pointer;" unless bar.promobar_link == "" or bar.promobar_link.nil? %>' + 
-      ' background: <%= bar.background_color %>; ' +
+      ' background: <%= @lock.turned_on ? "" : bar.background_color %>; ' +
       ' opacity: <%= (100 - bar.background_opacity) / 100.0 %>;' +
       'text-align: <%= bar.text_align(bar.alignment)%>; ' +
       'height: 100px;">' +
@@ -152,7 +161,7 @@ jQuery('<style> ' +
       ' class="btn btn-sm btn-primary promobar-button"><%= render html: bar.button_text.gsub("'","&#39;").gsub("\n", "").gsub("\r","").html_safe unless bar.button_text.nil? %></a>' +
       ' <button id="footer-promobar-x-button<%= index %>" class="btn btn-sm btn-primary"' +
       ' style="display: <%= bar.display_x %>; float: right; border-radius: 5px;"' + 
-      ' type="button">X</button></div>').appendTo('body');
+      ' type="button">X</button></div>').appendTo(footer_append_node);
     jQuery('<script type="text/javascript"> ' + 
         'jQuery(document).ready(function () { ' +
           'jQuery("#footer-promobar-x-button<%= index %>").click(function () { ' +
@@ -178,9 +187,15 @@ jQuery('<style> ' +
         'var i; ' +
         'i = 0; ' +
         '(function cycle() { ' +
+          <% if @lock.turned_on and @lock.disable_transition %>
+          'divs.eq(i).fadeIn(50) ' +
+                    '.delay(<%= @change_time * 1000 %>) ' +
+                    '.fadeOut(50, cycle); ' +
+          <% else %>
           'divs.eq(i).fadeIn(400) ' +
                     '.delay(<%= @change_time * 1000 %>) ' +
                     '.fadeOut(400, cycle); ' +
+          <% end %>
           'i = ++i % divs.length; '  +
         '})(); ' +
       '}); ' +

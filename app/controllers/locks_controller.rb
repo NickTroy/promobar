@@ -3,7 +3,6 @@ class LocksController < ApplicationController
     @lock = Lock.first
     @lock.update_attributes(lock_params)
     
-    binding.pry
     render json: { message: "updated" }, status: 200
   end
   
