@@ -3,7 +3,7 @@ class ScriptController < ApplicationController
   def script
     
     headers['Content-Type'] = 'application/javascript'
-    @lock = Lock.first
+    @lock = Lock.where(:shop_domain => params[:shop])[0] || Lock.create(shop_domain: params[:shop])
     @store_promobars = Promobar.where(:shop_domain => params[:shop])
     @header_promobars = @store_promobars.where(bar_type: 1, promobar_show: true).order('order_number DESC' )
     @footer_promobars = @store_promobars.where(bar_type: 2, promobar_show: true).order('order_number')

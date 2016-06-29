@@ -1,8 +1,7 @@
 class LocksController < ApplicationController
   def update
-    @lock = Lock.first
+    @lock = Lock.find(params[:id])
     @lock.update_attributes(lock_params)
-    
     render json: { message: "updated" }, status: 200
   end
   

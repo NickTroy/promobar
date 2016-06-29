@@ -45,7 +45,7 @@ class HomeController < AuthenticatedController
       end
     end
     
-    @lock = Lock.first
+    @lock = Lock.where(shop_domain: params[:shop])[0] || Lock.create(shop_domain: params[:shop])
 
     @sc = ShopifyAPI::ScriptTag.first || 'No scripts detected'
     render 'index.html.erb'

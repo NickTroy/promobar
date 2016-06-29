@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628122735) do
+ActiveRecord::Schema.define(version: 20160629122629) do
 
   create_table "locks", force: true do |t|
     t.boolean  "turned_on",          default: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160628122735) do
     t.boolean  "disable_transition", default: true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "shop_domain"
   end
 
   create_table "promobars", force: true do |t|
