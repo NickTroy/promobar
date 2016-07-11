@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get '/script' => 'promobars#script', :on => :collection
     resource :subheader
   end
+  put '/update_promobars_settings', to: "promobars#update_settings"
   get '/script' => 'script#script' 
   root :to => 'home#index'
 

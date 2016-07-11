@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629122629) do
+ActiveRecord::Schema.define(version: 20160711084306) do
 
   create_table "locks", force: true do |t|
     t.boolean  "turned_on",          default: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160629122629) do
     t.string   "promobar_link"
     t.integer  "promobar_link_blank"
     t.text     "custom_css"
+    t.boolean  "only_on_index",       default: false
   end
 
   create_table "shops", force: true do |t|

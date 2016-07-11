@@ -3,6 +3,7 @@ class HomeController < AuthenticatedController
   # GET /promobars.json
   def index
     @promobars = Promobar.where(:shop_domain => params[:shop])
+    @only_on_index = @promobars.first.only_on_index
     @headers = @promobars.where("bar_type = 1").order(:order_number)
     @footers = @promobars.where("bar_type = 2").order(:order_number)
     

@@ -200,3 +200,16 @@ jQuery('<style> ' +
       '}); ' +
     '</script>').appendTo('head');
 <% end %>
+<% unless @store_promobars.empty? %>
+  <% if @store_promobars.first.only_on_index %>
+    jQuery('<script>' +
+      'if (window.location.pathname !== "/") {' + 
+        'jQuery("div[class^=\\\"header-promo-bar\\\"]").remove();' +
+        'jQuery("div[class=\\\"header-promo\\\"]").remove();' + 
+        'jQuery("div[class^=\\\"footer-promo-bar\\\"]").remove();' + 
+        'jQuery("div[class=\\\"footer-promo\\\"]").remove();' +
+        'jQuery("div[class^=\\\"subheader-promo-bar\\\"]").remove();' +
+      '}' + 
+    '</script>').appendTo('head');
+  <% end %>
+<% end %>

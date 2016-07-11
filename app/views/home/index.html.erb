@@ -80,6 +80,26 @@ $(document).ready(function(){
       }
     })
   })
+  
+  // show promobars only on index
+  $('.only_on_index').bootstrapSwitch();
+  
+  $('.only_on_index').on('switchChange.bootstrapSwitch', function(event, state) {
+    var only_on_index = state;
+    var shop_domain = "<%= @promobars.first.shop_domain %>"
+    $.ajax({
+      url: "<%= update_promobars_settings_url(protocol: 'https') %>",
+      method: "POST",
+      data: {
+        _method: "PUT",
+        only_on_index: only_on_index,
+        shop_domain: shop_domain
+      },
+      success: function(){
+        alert("Global settings were updated.")
+      }
+    })
+  });
 });
 
 $(function() {
@@ -186,7 +206,7 @@ function saveBannerOrder(){
 <div id="tabs">
   <ul>
     <li><a href="#tabs-1">Promobars Listing</a></li>
-    <li><a href="#tabs-2">Lock Promobars</a></li>
+    <li><a href="#tabs-2">Promobars Settings</a></li>
   </ul>
   <div id="tabs-1">
     <div class="panel panel-default">
@@ -340,6 +360,7 @@ function saveBannerOrder(){
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="row lock_feature_form">
+          <h3 class="text-center">Lock Feature Settings</h3>
           <div class="col-md-3 text-center">
             <div class="form-group">
               <label>Turn ON/OFF Lock Feature</label>
@@ -364,6 +385,15 @@ function saveBannerOrder(){
               Save Lock Feature Parameters
             </button>
           </div>
+        </div>
+        <div class="global_promobar_settings row">
+          <h3 class="text-center">Global Promobars Settings</h3>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Show promobars only on index page</label>
+              <input type="checkbox" class="form-control only_on_index" <%= @only_on_index ? "checked" : "" %>>    
+            </div>
+          </div>  
         </div>
       </div>
     </div>

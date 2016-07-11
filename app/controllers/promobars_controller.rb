@@ -102,6 +102,15 @@ class PromobarsController < AuthenticatedController
       end
     end
   end
+  
+  def update_settings
+    _shop_domain = params[:shop_domain]
+    _only_on_index = params[:only_on_index]
+    Promobar.where(shop_domain: _shop_domain).each do |promobar|
+      promobar.update_attributes(only_on_index: _only_on_index)
+    end
+    render json: { message: "updated"}, status: 200
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
